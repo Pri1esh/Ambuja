@@ -1,0 +1,246 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  width: 100%;
+  background-color: $secondary;
+
+  .filterWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    position: static;
+    width: 100%;
+
+    .dropdown {
+      flex: 0 0 100%;
+      @include rem(margin-bottom, 20);
+
+      @include media($lg, min) {
+        flex: 0 0 32%;
+        margin-bottom: 0;
+      }
+
+      > div {
+        @include rem(border-radius, 8);
+        @include rem(height, 60);
+        background-color: $secondary;
+
+        @include media($lg, min) {
+          @include rem(border-radius, 18);
+          @include rem(height, 40);
+          background-color: $culturedLight;
+          border: none;
+        }
+
+        > div {
+          @include media($lg, min) {
+            @include padding(7, 10, 7, 20);
+            top: 0;
+          }
+
+          &:first-child {
+            @include media($lg, min) {
+              @include padding(7, 0, 7, 0);
+              top: 3rem;
+            }
+          }
+
+          span {
+            font-family: $font-medium;
+            @include rem(font-size, 16);
+          }
+        }
+
+        > span {
+          i {
+            &:global(.icon-up) {
+              font-size: 0.4rem;
+              fill: $raisinblack;
+            }
+          }
+        }
+      }
+    }
+
+    @include media($lg, min) {
+      padding: 0 1.875rem;
+      position: absolute;
+      right: 0;
+      top: 1.8rem;
+    }
+  }
+
+  .materialWrapper {
+    margin: 0;
+    @include rem(margin-bottom, 60);
+
+    @include media($lg, min) {
+      @include rem(margin-bottom, 17);
+    }
+  }
+
+  .materialDetailsWrapper {
+    @include padding(15, 16, 15, 16);
+    display: flex;
+    justify-content: space-between;
+    border: 0.063rem solid $platinum;
+    background-color: $lightgraycultured;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom: none;
+    width: 100%;
+    margin: 0;
+
+    @include media($lg, min) {
+      border: none;
+      border-bottom: 0.063rem solid $platinum;
+      background-color: $secondary;
+      @include rem(margin-bottom, 0);
+      @include padding(20, 30, 10, 30);
+    }
+
+    h4 {
+      @include rem(font-size, 14);
+      color: $raisinblack;
+      @include rem(min-width, 96);
+      align-items: center;
+      width: 100%;
+      font-family: $font-medium;
+
+      @include media($lg, min) {
+        @include rem(font-size, 18);
+        flex: 0 0 38%;
+
+        width: auto;
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 20%;
+        padding-left: 2rem;
+
+        @include media($md, min) {
+          padding-left: 0;
+        }
+      }
+
+      &:last-child {
+        text-align: right;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .fields {
+    border: 0.063rem solid $platinum;
+
+    > div {
+      border-bottom: 0.063rem solid $platinum;
+
+      &:hover {
+        background-color: $culturedLight;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include media($lg, min) {
+      border: none;
+    }
+  }
+
+  .materialPriceWrapper {
+    @include padding(15, 16, 15, 16);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+
+    @include media($lg, min) {
+      @include padding(15, 30, 15, 30);
+    }
+
+    div,
+    &.totalCost {
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      @include rem(font-size, 14);
+      color: $raisinblack;
+      @include rem(min-width, 96);
+      align-items: center;
+      width: 100%;
+
+      @include media($lg, min) {
+        flex: 0 0 38%;
+        width: auto;
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 20%;
+        padding-left: 2rem;
+
+        @include media($md, min) {
+          padding-left: 0;
+        }
+      }
+
+      &:last-child {
+        font-family: $font-medium;
+        text-align: right;
+        justify-content: flex-end;
+      }
+    }
+
+    &.totalCost {
+      border-bottom: none;
+      padding: 0 1.875rem;
+
+      span {
+        @include rem(font-size, 22);
+        font-family: $font-bold;
+        color: $raisinblack;
+      }
+    }
+
+    i {
+      @include rem(font-size, 20);
+      @include rem(padding-top, 3);
+      @include rem(padding-right, 6);
+
+      @include media($lg, min) {
+        @include rem(padding-right, 20);
+      }
+    }
+
+    input {
+      @include rem(width, 75);
+      @include rem(height, 33);
+      @include rem(min-height, 33);
+      @include rem(border-radius, 4);
+      padding: 0 0.5rem !important;
+
+      @include media($lg, min) {
+        @include rem(width, 100);
+        @include rem(height, 40);
+        @include rem(min-height, 40);
+      }
+    }
+
+    label {
+      display: none;
+    }
+
+    .quantity {
+      font-family: $font-medium;
+    }
+  }
+}

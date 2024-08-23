@@ -1,0 +1,197 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+
+  > div {
+    @include rem(margin-left, -20);
+    @include rem(margin-right, -20);
+
+    > div {
+      div {
+        min-height: 0;
+      }
+    }
+
+    @include media($sm, min) {
+      @include rem(margin-left, 0);
+      @include rem(margin-right, 0);
+      padding: 0;
+    }
+  }
+
+  .item {
+    position: relative;
+
+    img {
+      @include rem(border-radius, 8);
+      @include rem(margin-bottom, 20);
+      @include rem(height, 230);
+    }
+
+    .textContainer {
+      @include rem(margin-top, 16);
+
+      h3 {
+        @include font-size(20);
+        @include rem(padding, 0);
+        @include rem(margin-bottom, 10);
+        color: $raisinblack;
+        font-family: $font-medium;
+      }
+
+      p {
+        @include rem(margin-bottom, 0);
+        @include rem(line-height, 24);
+        color: $granite;
+      }
+    }
+
+    .imageWrapper {
+      overflow: hidden;
+      position: relative;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      @include rem(border-radius, 8);
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      @include rem(height, 230);
+
+      img {
+        @include media($sm, min) {
+          transform: scale(1);
+          transition: ease-in-out all 2600ms;
+        }
+      }
+    }
+
+    &:hover {
+      .imageWrapper {
+        overflow: hidden;
+
+        img {
+          transform: scale(1.1);
+          transition: ease-in-out transform 2600ms;
+        }
+      }
+    }
+  }
+
+  :global(.slick-track) {
+    > div:last-child {
+      @include rem(margin-right, 20);
+    }
+
+    @include media($md, min) {
+      > div:last-child {
+        margin-right: calc(((100vw - 60rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($lgb, min) {
+      > div:last-child {
+        margin-right: calc(((100vw - 71.25rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($xxxl, min) {
+      margin-left: 0;
+    }
+  }
+
+  :global(.slick-list) {
+    @include margin(0, -10, 0, -10);
+
+    :global(.slick-track) {
+      display: flex;
+      -webkit-transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+
+      :global(.slick-slide) {
+        @include margin(0, 10, 0, 10);
+
+        > div {
+          display: block;
+        }
+
+        .item {
+          position: relative;
+          transition: ease all 0.6s;
+
+          img {
+            object-fit: cover;
+            object-position: top left;
+            width: 100%;
+          }
+
+          span {
+            @include padding(12, 8, 12, 8);
+            @include rem(min-width, 130);
+            @include rem(left, 12);
+            @include rem(bottom, 12);
+            position: absolute;
+            background: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  :global(.slick-arrow) {
+    @include rem(top, -60);
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+
+    &:global(.slick-prev) {
+      right: calc(((100% - 45rem) / 2) + 4.375rem);
+      left: unset;
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 4.375rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 4.375rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 4.375rem);
+      }
+    }
+
+    &:global(.slick-next) {
+      right: calc(((100% - 45rem) / 2) + 0.938rem);
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 0.938rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 0.938rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 0.938rem);
+      }
+    }
+  }
+}
+
+.dealerWrapper {
+  :global(.slick-list) {
+    :global(.slick-track) {
+      :global(.slick-slide) {
+        @include margin(0, 10, 0, 10);
+
+        @include media($lg, min) {
+          @include margin(0, 20, 0, 20);
+        }
+      }
+    }
+  }
+}

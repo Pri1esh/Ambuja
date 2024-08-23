@@ -1,0 +1,447 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.calculatorWrapper {
+  @include padding(52, 0, 24, 0);
+  background-color: $floralwhite;
+  width: 100%;
+
+  @include media($lg, min) {
+    @include padding(100, 0, 100, 0);
+  }
+
+  .wrapper {
+    width: 100%;
+
+    @include media($lg, min) {
+      width: 62%;
+      margin: 0 auto;
+    }
+
+    .heading {
+      @include rem(font-size, 26);
+      @include rem(margin-bottom, 20);
+      color: $indigo;
+
+      @include media($md, $lg) {
+        @include rem(padding-left, 30);
+      }
+
+      @include media($lg, min) {
+        @include rem(font-size, 40);
+        @include rem(margin-bottom, 32);
+        display: none;
+      }
+    }
+
+    .subTabWrapper {
+      width: 100%;
+      margin: 0;
+
+      .tab {
+        @include rem(padding, 0);
+        @include rem(margin-bottom, 20);
+        @include rem(border-radius, 8);
+        background-color: $floralwhite;
+        position: relative;
+        border: none;
+
+        @include media($lg, min) {
+          @include padding(30, 0, 30, 0);
+          background-color: $secondary;
+          border: 0.063rem solid $platinum;
+        }
+
+        .tabHeader {
+          @include padding(0, 30, 0, 30);
+          display: none;
+          justify-content: space-between;
+
+          .tabTitle {
+            @include rem(font-size, 26);
+            color: $raisinblack;
+            font-family: $font-medium;
+
+            .tabSubTitle {
+              @include rem(font-size, 20);
+              font-family: $font-regular;
+              color: $granite;
+
+              &.activeTabSubTitle {
+                @include rem(font-size, 16);
+                @include rem(margin-top, 6);
+                display: block;
+              }
+            }
+          }
+
+          .editBtn {
+            @include rem(font-size, 16);
+            text-decoration: underline;
+            color: $raisinblack;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            padding: 0;
+          }
+
+          @include media($lg, min) {
+            display: flex;
+          }
+        }
+
+        .tabContent {
+          @include rem(margin-top, 10);
+        }
+
+        .tabTooltipInfo {
+          @include rem(font-size, 16);
+          color: $granite;
+          position: absolute;
+          right: 0.5rem;
+          top: -3rem;
+
+          .tooltipIcon {
+            @include rem(margin-left, 8);
+            color: $darkcharcoal;
+            cursor: pointer;
+          }
+
+          @include media($lg, min) {
+            right: 2rem;
+            top: 7.2rem;
+          }
+        }
+
+        .tabInfo {
+          @include padding(0, 30, 0, 30);
+          @include rem(font-size, 16);
+          line-height: 1;
+
+          span {
+            color: $granite;
+
+            &:before {
+              @include rem(border-radius, 5);
+              @include rem(margin-left, 10);
+              @include rem(margin-right, 10);
+              @include rem(margin-bottom, 2);
+              @include rem(height, 7);
+              @include rem(width, 7);
+              content: '';
+              display: inline-block;
+              background-color: $lightsilver;
+            }
+
+            &:first-child {
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .downloadEstimate {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin: 0 auto;
+
+      .downloadWrapper {
+        @include rem(font-size, 20);
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        color: $denim;
+        cursor: pointer;
+
+        .downloadLabel {
+          @include rem(padding-left, 6.4);
+        }
+      }
+    }
+  }
+}
+
+.offCanvas {
+  &:global(.offcanvas),
+  &:global(.offcanvas.offcanvas-bottom) {
+    height: 100%;
+    border-top: 0;
+  }
+
+  :global(.offcanvas-body) {
+    padding-top: 0;
+  }
+
+  :global(.btn-close) {
+    position: absolute;
+    left: 0.75rem;
+  }
+
+  :global(.offcanvas-header) {
+    @include rem(margin-bottom, 16);
+    box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .offcanvasHeader {
+    @include rem(padding-left, 20);
+    @include rem(margin-left, 20);
+
+    h3 {
+      @include rem(font-size, 22);
+      color: $raisinblack;
+      margin-bottom: 0;
+    }
+
+    p {
+      @include rem(font-size, 14);
+      color: $granite;
+      margin-bottom: 0;
+    }
+
+    button {
+      @include rem(left, 20);
+      @include rem(top, 28);
+      @include font-size(20);
+      position: absolute;
+      border: none;
+      background: transparent;
+      padding: 0;
+    }
+  }
+
+  .calculatorWrapper {
+    @include padding(0, 4, 30, 4);
+    background-color: $secondary;
+    width: 100%;
+
+    .wrapper {
+      width: 100%;
+
+      .heading {
+        display: none;
+      }
+
+      .subTabWrapper {
+        width: 100%;
+        margin: 0;
+
+        .tab {
+          @include padding(20, 0, 20, 0);
+          @include rem(border-radius, 8);
+          background-color: $secondary;
+          border: none;
+          margin-bottom: 0;
+
+          &:first-child {
+            border: 0.063rem solid $platinum;
+          }
+
+          .tabHeader {
+            @include padding(0, 20, 0, 20);
+            display: flex;
+            justify-content: space-between;
+
+            .tabTitle {
+              @include rem(font-size, 20);
+              @include rem(margin-bottom, 10);
+              color: $raisinblack;
+              font-family: $font-medium;
+
+              .tabSubTitle {
+                @include rem(font-size, 20);
+                font-family: $font-regular;
+                color: $granite;
+              }
+            }
+
+            .editBtn {
+              @include rem(font-size, 16);
+              text-decoration: underline;
+              color: $raisinblack;
+              cursor: pointer;
+            }
+
+            &.heading {
+              display: none;
+            }
+          }
+
+          .tabContent {
+            @include rem(margin-top, 0);
+          }
+
+          .tabInfo {
+            @include rem(font-size, 14);
+            @include padding(0, 20, 0, 20);
+            color: $granite;
+            line-height: 1;
+
+            .infoAreaLabel {
+              @include rem(margin-top, 10);
+              white-space: nowrap;
+              display: block;
+
+              &::before {
+                @include rem(margin-right, 0);
+                @include rem(margin-left, 0);
+                @include rem(height, 0);
+                @include rem(width, 0);
+                content: '';
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+
+      .downloadEstimate {
+        display: flex;
+        justify-content: flex-end;
+        width: 70%;
+        margin: 0 auto;
+
+        .downloadWrapper {
+          @include rem(font-size, 20);
+          @include rem(padding-right, 30);
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          color: $denim;
+          cursor: pointer;
+          text-align: center;
+
+          .downloadLabel {
+            @include rem(padding-left, 6.4);
+          }
+        }
+      }
+    }
+  }
+
+  .btnWrapper {
+    @include padding(0, 20, 0, 20);
+    margin: -1.25rem;
+    box-shadow: 0 -0.125rem 0.25rem 0 rgba(0, 0, 0, 0.08);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $secondary;
+
+    .downloadBtnWrapper {
+      @include rem(margin-top, 18);
+      @include rem(margin-bottom, 36);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .costWrapper {
+      width: 48%;
+
+      h4 {
+        margin-bottom: 0;
+        color: $raisinblack;
+      }
+
+      p {
+        @include rem(font-size, 15);
+        margin-bottom: 0;
+      }
+    }
+
+    .downloadBtn {
+      @include padding(0, 14, 0, 14);
+      @include rem(border-radius, 30);
+      font-family: $font-bold;
+      background-color: $chromeYellow;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      a {
+        color: $raisinblack;
+        text-decoration: none;
+        font-family: $font-medium;
+      }
+    }
+  }
+}
+
+.tooltip {
+  :global(.tooltip-inner) {
+    @include rem(max-width, 350);
+    @include padding(20, 13, 20, 13);
+    @include rem(font-size, 12);
+    color: $secondary;
+    background-color: $raisinblack;
+    text-align: left;
+    margin-left: 0;
+
+    .tooltipContent {
+      .info {
+        @include rem(margin-bottom, 10);
+        display: block;
+
+        &:last-child {
+          @include rem(margin-bottom, 0);
+        }
+
+        .infoHeading {
+          font-family: $font-bold;
+        }
+      }
+    }
+
+    @include media($lg, min) {
+      margin-left: -17.75rem;
+    }
+  }
+
+  &:global(.show) {
+    :global(.tooltip-arrow) {
+      &::before {
+        border-bottom-color: $raisinblack;
+      }
+    }
+  }
+
+  &.inPageTooltipWrapper {
+    @include media($lg, min) {
+      :global(.tooltip-inner) {
+        margin-left: -15.75rem;
+      }
+    }
+  }
+}
+
+.loaderWrapper {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.inPageWrapper {
+  .tab {
+    position: relative;
+  }
+
+  .tabTooltipInfo {
+    top: -3.5rem;
+    position: absolute;
+    right: 0;
+
+    @include media($lg, min) {
+      top: -4rem;
+    }
+
+    .tooltipIcon {
+      color: $darkcharcoal;
+    }
+  }
+}

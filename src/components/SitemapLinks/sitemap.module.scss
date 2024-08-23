@@ -1,0 +1,51 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.sitemapLinkWrapper {
+  @include rem(padding-bottom, 52);
+  @include rem(margin-top, 40);
+
+  @include media($md, min) {
+    @include rem(margin-top, 88);
+    @include rem(padding-bottom, 16);
+    @include rem(padding-top, 0);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sitemapLinks {
+    @include rem(margin-bottom, 30);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 52);
+      width: 25%;
+    }
+
+    a {
+      font-family: $font-regular;
+      color: $granite;
+      display: table;
+      text-decoration: none;
+      text-transform: none;
+      line-height: 2rem;
+
+      &:hover {
+        color: $granite;
+        text-decoration: underline;
+      }
+    }
+
+    .heading {
+      @include font-size(26);
+      @include rem(margin-bottom, 16);
+      line-height: normal;
+      color: $raisinblack;
+      width: 100%;
+      font-family: $font-bold;
+    }
+  }
+}

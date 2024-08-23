@@ -1,0 +1,39 @@
+.slideInUp {
+  -webkit-animation: slideUp 1s ease-in;
+  animation: slideUp 1s ease-in;
+  animation-delay: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  position: relative;
+
+  @keyframes slideUp {
+    from {
+      top: 10rem;
+      opacity: 0;
+    }
+
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.bgTransition {
+  -webkit-animation: bgTransition 0.2s ease-in;
+  animation: bgTransition 0.2s ease-in;
+  animation-delay: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  position: relative;
+
+  @keyframes bgTransition {
+    from {
+      background-color: $snow;
+    }
+
+    to {
+      background-color: $secondary;
+    }
+  }
+}

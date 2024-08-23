@@ -1,0 +1,277 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(margin-top, 100);
+  @include rem(margin-bottom, 100);
+
+  .header {
+    @include rem(margin-bottom, 52);
+    @include rem(font-size, 60);
+    font-family: $font-bold;
+    color: $raisinblack;
+
+    .subHeader {
+      @include rem(font-size, 30);
+      font-family: $font-regular;
+      color: $granite;
+    }
+  }
+
+  .dealerDetailsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .dealerDetails {
+      @include rem(border-radius, 10);
+      border: 0.063rem solid $platinum;
+      flex: 0 0 calc(50% - 30px);
+
+      @include media($xl, min) {
+        flex: 0 0 calc(33.33% - 30px);
+      }
+
+      .dealerInfoHeader {
+        @include rem(border-radius, 10);
+        display: flex;
+        padding: 1.875rem;
+        background-color: $secondary;
+
+        .dealerImage {
+          border-radius: 50%;
+          @include rem(height, 53);
+          @include rem(min-width, 53);
+          @include rem(margin-right, 20);
+          background-color: $floralwhite;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            padding-right: 0.2rem;
+            fill: $raisinblack;
+          }
+        }
+
+        .dealerDescription {
+          .dealerOrganisation {
+            @include rem(font-size, 18);
+            @include rem(margin-bottom, 14);
+            color: $raisinblack;
+            font-family: $font-medium;
+          }
+
+          .dealerName {
+            @include rem(font-size, 16);
+            @include rem(margin-bottom, 12);
+            font-family: $font-regular;
+            color: $granite;
+
+            span {
+              @include rem(margin-left, 10);
+            }
+          }
+
+          .dealerInfoList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .dealerInfo {
+              .dealerInfoDescription {
+                @include rem(font-size, 16);
+                color: $granite;
+                word-break: break-all;
+                font-family: $font-regular;
+              }
+            }
+
+            p {
+              @include rem(margin-bottom, 12);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btnWrapper {
+    @include rem(margin-top, 50);
+    text-align: center;
+
+    .showMoreBtn {
+      @include rem(border-radius, 30);
+      max-width: 30%;
+      color: $raisinblack;
+      font-family: $font-medium;
+    }
+  }
+}
+
+.dealerResultOffcanvasHeader {
+  display: flex;
+
+  button {
+    @include rem(margin-top, -5);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    i {
+      @include rem(font-size, 20);
+      @include rem(margin-right, 10);
+    }
+  }
+
+  .offcanvasHeader {
+    @include rem(font-size, 22);
+    font-family: $font-bold;
+    color: $raisinblack;
+
+    .offcanvasSubHeader {
+      @include rem(font-size, 16);
+      font-family: $font-regular;
+      color: $granite;
+    }
+  }
+}
+
+.offcanvasDealerListWrapper {
+  margin-bottom: 6rem;
+  min-height: 90vh;
+
+  .header {
+    @include rem(margin-bottom, 34);
+    @include rem(font-size, 22);
+    font-family: $font-bold;
+    color: $raisinblack;
+
+    .subHeader {
+      @include rem(font-size, 18);
+      font-family: $font-regular;
+      color: $granite;
+    }
+  }
+
+  .overlayHeading {
+    @include rem(font-size, 22);
+    @include rem(margin-bottom, 20);
+    position: relative;
+    font-family: $font-bold;
+    color: $ateneoblue;
+
+    @include media($md, min) {
+      @include rem(font-size, 32);
+    }
+  }
+
+  .dealerDetailsWrapper {
+    margin-bottom: 7rem;
+
+    .dealerDetails {
+      @include rem(margin-bottom, 12);
+
+      .dealerInfoHeader {
+        @include rem(border-radius, 10);
+        @include rem(padding, 20);
+        display: flex;
+        border: 0.063rem solid $platinum;
+        background-color: $secondary;
+
+        .dealerImage {
+          @include rem(height, 40);
+          @include rem(min-width, 40);
+          @include rem(margin-right, 20);
+          background-color: $floralwhite;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            padding-right: 0.2rem;
+            fill: $raisinblack;
+          }
+        }
+
+        .dealerDescription {
+          .dealerOrganisation {
+            @include rem(font-size, 16);
+            @include rem(margin-bottom, 6);
+            color: $raisinblack;
+            font-family: $font-bold;
+          }
+
+          .dealerName {
+            @include rem(font-size, 14);
+            @include rem(margin-bottom, 4);
+            font-family: $font-regular;
+            color: $granite;
+
+            span {
+              display: none;
+            }
+          }
+
+          .dealerInfoList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .dealerInfo {
+              @include rem(margin-bottom, 6);
+              position: relative;
+
+              .dealerInfoLabel {
+                margin: 0;
+                padding: 0;
+
+                i {
+                  display: none;
+                }
+              }
+
+              .dealerInfoDescription {
+                @include rem(font-size, 14);
+                color: $granite;
+                font-family: $font-regular;
+                word-break: break-all;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btnWrapper {
+    padding: 2rem 0;
+    position: absolute;
+    z-index: $zindex-1;
+    background: white;
+    width: 100%;
+    bottom: 0;
+
+    .showMoreBtn {
+      @include rem(border-radius, 30);
+      color: $raisinblack;
+      font-family: $font-medium;
+      width: 91%;
+    }
+
+    &.overlayBtn {
+      .showMoreBtn {
+        width: 80%;
+
+        @include media($sm, min) {
+          width: 91%;
+        }
+
+        @include media($md, min) {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

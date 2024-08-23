@@ -1,0 +1,110 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(margin-bottom, 30);
+  position: relative;
+
+  &.showHeading {
+    margin-bottom: 0;
+  }
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+    @include rem(margin-top, 100);
+  }
+
+  .paraHeading {
+    @include rem(font-size, 26);
+    color: $indigo;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 30);
+    }
+  }
+}
+
+.description {
+  @include rem(font-size, 20);
+  margin: 0;
+  color: $granite;
+  position: relative;
+}
+
+.image {
+  @include rem(border-radius, 8);
+  @include rem(margin-bottom, 20);
+  width: 100%;
+
+  @include media($md, min) {
+    @include rem(max-height, 300);
+    @include rem(margin-bottom, 30);
+  }
+}
+
+.headingWrapper {
+  @include rem(margin-bottom, 20);
+  @include rem(margin-top, 30);
+  display: flex;
+
+  h1 {
+    @include rem(font-size, 26);
+    margin-bottom: 0;
+    color: $indigo;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+    }
+  }
+
+  .backLink {
+    :global(.icon-arrowleft) {
+      &::before {
+        display: none;
+
+        @include media($lg, min) {
+          @include rem(margin-right, 22);
+          @include rem(padding-top, 24);
+          @include rem(height, 23);
+          @include rem(width, 13);
+          display: inline-block;
+          color: $ateneoblue;
+        }
+      }
+    }
+  }
+}
+
+.aboutMobile {
+  @include rem(margin-bottom, 30);
+
+  .about {
+    @include rem(margin-bottom, 10);
+    @include rem(font-size, 20);
+
+    &.textOverflow {
+      @include rem(line-height, 24);
+      @include rem(max-height, 88);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+
+  button {
+    color: $raisinblack;
+    text-decoration: underline;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+}
+
+.descriptionWrapper {
+  @include media($md, min) {
+    @include rem(margin-left, 33.6);
+  }
+}

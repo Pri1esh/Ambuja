@@ -1,0 +1,129 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  .overview {
+    @include media($md, max) {
+      h1 {
+        display: none;
+      }
+    }
+  }
+
+  .heading {
+    @include rem(margin-bottom, 30);
+    @include rem(font-size, 26);
+    @include rem(line-height, 28);
+    font-family: $font-bold;
+    color: $indigo;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(line-height, 68);
+      @include rem(margin-bottom, 50);
+    }
+  }
+
+  .listWrapper {
+    @include rem(grid-gap, 40);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include media($sm, min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .item {
+    @include rem(margin-bottom, 10);
+
+    .imageWrapper {
+      @include rem(border-radius, 8);
+      @include rem(margin-bottom, 20);
+      overflow: hidden;
+      position: relative;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      width: 100%;
+
+      a {
+        @include rem(border-radius, 8);
+      }
+
+      img {
+        @include rem(border-radius, 8);
+        @include rem(min-height, 220);
+        width: 100%;
+
+        @include media($lg, min) {
+          transform: scale(1);
+          transition: ease-in-out all 2600ms;
+        }
+      }
+    }
+
+    @include media($lg, min) {
+      &:hover {
+        .imageWrapper {
+          overflow: hidden;
+
+          img {
+            @include rem(border-radius, 8);
+            transform: scale(1.1);
+            transition: ease-in-out transform 2600ms;
+          }
+        }
+      }
+    }
+
+    .textContainer {
+      h3 {
+        @include rem(font-size, 26);
+        @include rem(margin-bottom, 10);
+        font-family: $font-bold;
+        color: $indigo;
+      }
+
+      > p {
+        @include rem(font-size, 16);
+        @include rem(margin-bottom, 10);
+        @include rem(line-height, 24);
+        font-family: $font-regular;
+        color: $granite;
+
+        @include media($md, max) {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        @include media($md, min) {
+          @include rem(font-size, 20);
+          @include rem(line-height, 30);
+        }
+      }
+
+      a {
+        @include rem(font-size, 16);
+        @include rem(line-height, 30);
+        margin-bottom: 0;
+        color: $raisinblack;
+
+        @include media($md, min) {
+          @include rem(font-size, 20);
+        }
+      }
+    }
+  }
+}

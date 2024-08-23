@@ -1,0 +1,170 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.locatorWrapper {
+  padding: 0;
+  margin-bottom: 3.5rem;
+
+  @include media($lg, min) {
+    margin-bottom: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  :global(.offcanvas) {
+    .wrapper {
+      padding: 0;
+    }
+  }
+
+  .loader {
+    text-align: center;
+  }
+}
+
+.emptyDataWrapper {
+  min-height: 25vh;
+
+  @include media($lg, min) {
+    min-height: 50vh;
+  }
+}
+
+.noResultOffCanvas {
+  &:global(.offcanvas.offcanvas-end) {
+    width: 100%;
+    border: transparent;
+  }
+}
+
+.offCanvas {
+  height: 100vh;
+
+  @include media($md, max) {
+    &:global(.offcanvas.offcanvas-bottom) {
+      max-height: 100vh;
+      height: 100vh;
+    }
+
+    :global(.offcanvas-body) {
+      padding: 0;
+    }
+  }
+
+  :global(.offcanvas-header) {
+    @include rem(margin-top, 22);
+  }
+
+  .offcanvasHeader {
+    @include rem(padding, 20);
+    @include rem(margin-top, 22);
+    @include rem(padding-bottom, 0);
+    width: 100%;
+
+    :global(.btn-close) {
+      outline: 0;
+      border: 0;
+      box-shadow: none;
+      margin-left: -0.5rem;
+    }
+  }
+
+  .offcanvasBody {
+    @include rem(padding, 20);
+    @include rem(margin-top, 16);
+    @include rem(padding-top, 0);
+    width: 100%;
+  }
+
+  @include media($lg, min) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+
+    .offcanvasHeader {
+      @include rem(padding, 40);
+      @include rem(padding-bottom, 0);
+      @include rem(margin-top, 0);
+
+      :global(.btn-close) {
+        opacity: 1;
+
+        &:hover {
+          background-color: $antiflashwhite;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .offcanvasBody {
+      @include rem(padding, 40);
+      @include rem(padding-top, 0);
+      @include rem(margin-top, 40);
+    }
+  }
+}
+
+.backIcon {
+  display: inline;
+
+  span {
+    cursor: pointer;
+  }
+
+  @include rem(margin-bottom, 24);
+  @include rem(padding-top, 24);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 26);
+    @include rem(padding-top, 20);
+  }
+
+  text-align: left;
+
+  i {
+    @include rem(font-size, 10);
+    color: $raisinblack;
+    transform: rotate(-90deg);
+    display: inline-block;
+  }
+}
+
+.dealerResultOffcanvasHeader {
+  display: flex;
+
+  button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  i {
+    @include rem(font-size, 20);
+    @include rem(margin-right, 10);
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .dealerResultOffcanvasHeading {
+    @include rem(font-size, 22);
+    @include rem(margin-top, 0);
+    @include rem(margin-bottom, 0);
+    font-family: $font-bold;
+    color: $raisinblack;
+    line-height: 1;
+
+    .offcanvasSubHeader {
+      @include rem(font-size, 16);
+      font-family: $font-regular;
+      color: $granite;
+      margin-top: 0.35rem;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.editWrapper {
+  @include rem(margin-left, 20);
+  @include rem(margin-right, 20);
+}

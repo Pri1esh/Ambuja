@@ -1,0 +1,204 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: linear 1000ms height;
+
+  :global(.slick-slide) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .item {
+    height: 100%;
+    transition: linear 1000ms height;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: ease all 0.3s;
+      height: 100%;
+      min-height: 30vh;
+    }
+  }
+
+  :global(.slick-dots) {
+    @include center(horizontal);
+    bottom: 1.25rem;
+
+    li {
+      width: 0.5rem;
+      @include margin(0, 12, 0, 12);
+
+      &:global(.slick-active) {
+        opacity: 1;
+
+        button {
+          &::before {
+            background-color: $secondary;
+            width: 0.688rem;
+            height: 0.688rem;
+            opacity: 1;
+            transition: ease all 0.3s;
+            border: 0.0625rem solid $deepSaffron;
+            color: transparent;
+          }
+        }
+      }
+
+      button {
+        width: 1rem;
+
+        &::before {
+          @include rem(border-radius, 16);
+          @include center(both);
+          width: 0.375rem;
+          height: 0.375rem;
+          background: $secondary;
+          color: transparent;
+          opacity: 0.4;
+          transition: ease all 0.3s;
+        }
+      }
+    }
+  }
+
+  .videoWrapper {
+    video {
+      object-fit: cover;
+      height: 80vh;
+
+      @include media($sm, min) {
+        height: 100vh;
+      }
+    }
+  }
+
+  :global(.slick-arrow) {
+    opacity: 0;
+    transition: ease all 0.3s;
+
+    &:global(.slick-disabled) {
+      opacity: 0;
+    }
+
+    @include center(vertical);
+    z-index: 2;
+
+    &:global(.slick-next) {
+      right: 2.5rem;
+
+      i {
+        &::before {
+          top: 0;
+          left: 63%;
+          @include rem(font-size, 6);
+        }
+      }
+    }
+
+    &:global(.slick-prev) {
+      left: 2rem;
+
+      i {
+        &::before {
+          top: 0;
+          left: 63%;
+          @include rem(font-size, 6);
+        }
+      }
+    }
+
+    i {
+      width: 2rem;
+      height: 2rem;
+      color: $primary;
+    }
+  }
+
+  &:hover {
+    :global(.slick-arrow) {
+      opacity: 1;
+      transition: ease all 0.3s;
+
+      &:global(.slick-disabled) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.contentWrapper {
+  @include center(horizontal);
+  text-align: center;
+  color: $secondary;
+  z-index: $zindex-1;
+  width: 100%;
+  padding: 0 5%;
+  bottom: 4rem;
+
+  .subHeading {
+    @include font-size(18);
+    @include rem(margin-bottom, 20);
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include font-size(30);
+      @include rem(margin-bottom, 40);
+    }
+  }
+
+  .heading {
+    @include font-size(30);
+    @include rem(margin-bottom, 10);
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 20);
+      @include font-size(60);
+      @include rem(line-height, 60);
+      text-align: left;
+    }
+  }
+
+  @include media($md, min) {
+    @include center(vertical);
+    left: 4%;
+    text-align: left;
+    bottom: unset;
+  }
+
+  .textWrapper {
+    width: 90%;
+    margin: auto;
+
+    a {
+      @include padding(14, 37, 14, 37);
+      @include font-size(14.4);
+      font-family: $font-bold;
+    }
+
+    @include media($sm, min) {
+      margin: inherit;
+      width: 40%;
+      text-align: left;
+
+      a {
+        @include padding(15, 44, 15, 44);
+        @include font-size(16);
+
+        &:hover {
+          background: $secondary;
+          color: $darkcharcoal;
+        }
+      }
+    }
+
+    @include media($md, $lg) {
+      width: 50%;
+    }
+  }
+}

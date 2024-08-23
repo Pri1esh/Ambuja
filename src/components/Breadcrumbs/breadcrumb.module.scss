@@ -1,0 +1,49 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.breadcrumb {
+  @include rem(margin-bottom, 40);
+  display: none;
+
+  @include media($md, min) {
+    display: block;
+  }
+
+  span {
+    @include font-size(13);
+    color: $granite;
+  }
+
+  a {
+    span {
+      @include font-size(13);
+      color: $raisinblack;
+      text-decoration: underline;
+    }
+  }
+
+  &.lightTheme {
+    :global(.breadcrumb-item) {
+      &::before {
+        color: $secondary;
+      }
+    }
+
+    :global(.active) {
+      span {
+        color: $quicksilver;
+      }
+    }
+
+    li {
+      a {
+        color: $secondary;
+
+        span {
+          color: $secondary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

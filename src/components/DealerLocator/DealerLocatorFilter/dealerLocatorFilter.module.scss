@@ -1,0 +1,264 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  width: 100%;
+
+  .filterHeading {
+    @include rem(font-size, 16);
+    @include rem(margin-bottom, 24);
+    @include rem(padding-left, 15);
+    position: relative;
+    font-family: $font-bold;
+    color: $primary;
+
+    &::after {
+      @include rem(width, 20);
+      @include rem(height, 2);
+      @include rem(bottom, -5);
+      @include rem(left, 51);
+      content: '';
+      background: $primary;
+      position: absolute;
+    }
+
+    @include media($lg, min) {
+      @include rem(font-size, 18);
+    }
+  }
+
+  .filterDescription {
+    display: none;
+  }
+
+  .filter {
+    @include rem(border-radius, 43);
+    @include padding(14, 14, 14, 14);
+    width: 100%;
+    background-color: $secondary;
+
+    @include media($md, min) {
+      display: flex;
+    }
+
+    .filterDropdown {
+      width: 40%;
+
+      > div {
+        border: none;
+        height: 3.4rem;
+
+        &:after {
+          content: '';
+          right: 0;
+          width: 0.065rem;
+          background: $chineseDarkSilver;
+          min-height: 2rem;
+          @include center(vertical);
+
+          @media screen and (max-width: 991px) {
+            display: none;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        > div {
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+
+    .btnWrapper {
+      width: 40%;
+      @include rem(max-width, 185);
+
+      @include media($lgb, min) {
+        @include rem(margin-left, 50);
+      }
+
+      .submitBtn {
+        @include rem(border-radius, 30);
+        color: $raisinblack;
+        font-family: $font-bold;
+        width: 100%;
+
+        &.disabledBtn {
+          pointer-events: none;
+          background-color: $platinum;
+          color: $secondary;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.offcanvasFilterWrapper {
+  @include rem(margin-bottom, 52);
+
+  .filterHeading {
+    @include rem(font-size, 22);
+    @include rem(margin-bottom, 26);
+    position: relative;
+    font-family: $font-bold;
+    color: $ateneoblue;
+
+    @include media($lg, min) {
+      @include rem(font-size, 32);
+      @include rem(margin-bottom, 20);
+    }
+
+    &.overlayHeading {
+      @include rem(font-size, 16);
+      @include rem(margin-bottom, 24);
+      position: relative;
+      font-family: $font-bold;
+      color: $primary;
+
+      &::after {
+        @include rem(width, 20);
+        @include rem(height, 1);
+        @include rem(bottom, -5);
+        @include rem(left, 35);
+        content: '';
+        background: $primary;
+        position: absolute;
+      }
+
+      @include media($lg, min) {
+        @include rem(font-size, 18);
+      }
+    }
+  }
+
+  .filterDescription {
+    @include rem(font-size, 16);
+    @include rem(margin-bottom, 36);
+    color: $granite;
+    font-family: $font-regular;
+
+    @include media($lg, min) {
+      @include rem(margin-bottom, 30);
+    }
+
+    &.overlayDescription {
+      display: none;
+    }
+  }
+
+  .filter {
+    .filterDropdown {
+      @include rem(margin-bottom, 30);
+    }
+
+    .submitBtn {
+      @include rem(border-radius, 30);
+      color: $raisinblack;
+      font-family: $font-medium;
+      width: 100%;
+
+      &.disabledBtn {
+        pointer-events: none;
+        background-color: $platinum;
+        color: $secondary;
+        border: none;
+      }
+    }
+
+    &.filterOverlay {
+      padding-bottom: 4rem;
+
+      .overlayBtnWrapper {
+        width: 90%;
+        position: absolute;
+        bottom: 0;
+
+        padding: 1rem 0 2.5rem 0;
+        background-color: $secondary;
+        z-index: $zindex-2;
+
+        @include media($sm, min) {
+          width: 95%;
+        }
+
+        @include media($lg, min) {
+          width: 80%;
+          padding: 1rem 0 3rem 0;
+        }
+
+        &.overlayBtn {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.inPageWrapper {
+  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.01);
+
+  .filterHeading,
+  .filterDescription {
+    display: none;
+  }
+
+  .filter {
+    width: 100%;
+    gap: 1rem;
+
+    @include media($md, min) {
+      display: flex;
+    }
+
+    .filterDropdown {
+      width: 40%;
+    }
+
+    .btnWrapper {
+      @include rem(max-width, 280);
+      width: 40%;
+
+      .submitBtn {
+        @include rem(border-radius, 30);
+        color: $raisinblack;
+        font-family: $font-bold;
+        width: 100%;
+
+        &.disabledBtn {
+          background-color: $platinum;
+          color: $secondary;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.toast {
+  @include rem(border-radius, 8);
+  @include rem(max-width, 200);
+  background-color: $raisinblack;
+
+  p {
+    @include rem(font-size, 14);
+    color: $secondary;
+    font-family: $font-regular;
+  }
+}
+
+.filterDropdown {
+  > div {
+    border-color: $platinum;
+
+    > label {
+      left: 1.3rem;
+    }
+  }
+}

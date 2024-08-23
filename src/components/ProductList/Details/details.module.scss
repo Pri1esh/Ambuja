@@ -1,0 +1,55 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(padding-bottom, 10);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .textContainer {
+    flex: 1;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      flex: 2 1;
+    }
+
+    .subHeading {
+      @include font-size(26);
+      @include rem(margin-bottom, 10);
+      color: $goldenrod;
+      font-family: $font-regular;
+
+      @include media($md, max) {
+        @include rem(margin-bottom, 5);
+        @include font-size(16);
+      }
+    }
+
+    .heading {
+      color: $secondary;
+      @include font-size(60);
+      @include rem(margin-bottom, 40);
+      font-family: $font-bold;
+
+      @include media($md, max) {
+        @include rem(margin-bottom, 32);
+        @include font-size(26);
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 1;
+
+    @include media($sm, max) {
+      display: none;
+    }
+
+    img {
+      @include rem(max-width, 140);
+      margin-left: auto;
+    }
+  }
+}

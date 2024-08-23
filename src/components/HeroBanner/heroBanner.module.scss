@@ -1,0 +1,385 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+  transition: ease all 0.3s;
+
+  @include media($sm, min) {
+    @include rem(min-height, 180);
+    height: auto;
+  }
+
+  .item {
+    height: 100%;
+    position: relative;
+
+    .imageWrapper {
+      position: relative;
+      height: 100%;
+
+      img {
+        @include rem(min-height, 300);
+        max-height: 60vh;
+        height: 100%;
+        width: 100%;
+        transition: ease all 0.3s;
+        object-fit: cover;
+        object-position: top center;
+
+        @include media($md, min) {
+          @include rem(min-height, 400);
+        }
+      }
+    }
+
+    .contentWrapper {
+      @include center(horizontal);
+      text-align: center;
+      color: $secondary;
+      z-index: $zindex-1;
+      width: 100%;
+      bottom: 2.5rem;
+
+      .textWrapper {
+        margin: auto;
+        @include padding(0, 15, 0, 15);
+
+        @include media($sm, min) {
+          margin: inherit;
+          width: 50%;
+          text-align: left;
+          padding: 0;
+        }
+      }
+
+      @include media($sm, min) {
+        @include center(vertical);
+        left: 5%;
+        width: 95%;
+        text-align: left;
+        bottom: unset;
+      }
+
+      @include media($md, min) {
+        @include padding(0, 18, 0, 18);
+      }
+    }
+  }
+
+  .subHeading {
+    @include font-size(16);
+    @include rem(margin-bottom, 0);
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include font-size(30);
+    }
+  }
+
+  .heading {
+    @include font-size(32);
+    @include rem(margin-bottom, 10);
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include font-size(50);
+      @include rem(line-height, 60);
+      text-align: left;
+    }
+  }
+
+  &.large {
+    .item {
+      .imageWrapper {
+        img {
+          @include rem(min-height, 400);
+          max-height: 75vh;
+
+          @include media($md, min) {
+            max-height: 65vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bannerWrapper {
+  position: relative;
+
+  :global(.container) {
+    position: relative;
+  }
+}
+
+.extraMargin {
+  @include rem(margin-bottom, 30);
+
+  @include media($sm, min) {
+    @include rem(margin-bottom, 100);
+  }
+}
+
+.detailsBanner {
+  @include rem(margin-top, 90);
+
+  @include media($sm, min) {
+    @include rem(margin-top, 130);
+  }
+
+  .productImage {
+    img {
+      @include rem(max-height, 500);
+      margin: auto;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%);
+
+      @include media($sm, max) {
+        max-height: 60%;
+        top: 6%;
+      }
+
+      @include media-min-max($sm, $md) {
+        max-height: 60%;
+        top: 3%;
+      }
+    }
+  }
+
+  .details {
+    text-align: center;
+
+    h2 {
+      @include rem(font-size, 16);
+      @include rem(margin-bottom, 8);
+      color: $raisinblack;
+      font-family: $font-medium;
+
+      @include media($md, min) {
+        @include rem(font-size, 24);
+      }
+    }
+
+    h3 {
+      @include rem(font-size, 32);
+      @include rem(margin-bottom, 21);
+      color: $ateneoblue;
+
+      @include media($md, min) {
+        @include rem(font-size, 60);
+      }
+    }
+
+    p {
+      @include rem(margin-bottom, 52);
+      max-width: 100%;
+
+      @include media($sm, min) {
+        @include rem(margin-bottom, 40);
+        max-width: 60%;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.socialWrapper {
+  position: relative;
+
+  .socialIcons {
+    z-index: $zindex-1;
+    @include rem(width, 40);
+    @include rem(height, 40);
+    @include rem(bottom, 20);
+    background-color: $secondary;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include media($md, max) {
+      @include rem(right, 20);
+    }
+
+    &:global(.btn) {
+      background-color: $secondary;
+      border-color: $secondary;
+
+      &:active,
+      &:hover,
+      &:focus {
+        background-color: $secondary;
+        border-color: $secondary;
+      }
+    }
+  }
+
+  .iconsWrapper {
+    @include rem(right, 80);
+    @include rem(bottom, -80);
+    background-color: $secondary;
+    z-index: $zindex-2;
+    position: absolute;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+
+    @include media($md, min) {
+      @include rem(right, 65);
+    }
+
+    &::after {
+      background: transparent;
+      border-bottom: 0.438rem solid transparent;
+      border-left: 0.5rem solid $secondary;
+      border-top: 0.438rem solid transparent;
+      content: '';
+      position: absolute;
+      right: -0.5rem;
+      bottom: 7rem;
+    }
+
+    .anchor {
+      @include font-size(12);
+      color: $raisinblack;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i:hover {
+        background-color: $antiflashSecondary;
+      }
+
+      &:not(:last-child) {
+        @include rem(padding-bottom, 16);
+      }
+
+      i {
+        @include rem(width, 32);
+        @include rem(height, 32);
+        @include rem(line-height, 32);
+        border: 0.063rem solid $chinesesilver;
+        border-radius: 50%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.buttonGroup {
+  @include rem(margin-bottom, 30);
+  @include rem(margin-top, 30);
+
+  a {
+    text-align: center;
+
+    @include media($sm, max) {
+      width: 100%;
+    }
+
+    &:first-child {
+      @include rem(margin-right, 9);
+    }
+
+    @include media($sm, min) {
+      &.btn {
+        @include rem(min-width, 200);
+      }
+
+      &:first-child {
+        @include rem(margin-right, 20);
+      }
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
+  }
+}
+
+.footerButtons {
+  @include padding(13, 0, 13, 0);
+  z-index: $zindex-3;
+  background-color: $secondary;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -0.25rem 0.25rem 0 rgba(0, 0, 0, 0.02);
+
+  @include media($sm, max) {
+    @include rem(padding-bottom, 24);
+  }
+
+  h3 {
+    @include font-size(22);
+    color: $raisinblack;
+    font-family: $font-medium;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .buttonGroup {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+
+      @include media($sm, max) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footerMargin {
+  @include rem(margin-bottom, 80);
+}
+
+.breadCrumb {
+  @include rem(top, 30);
+  position: absolute;
+  z-index: $zindex-1;
+
+  :global(.breadcrumb-item) {
+    &::before {
+      color: $granite;
+    }
+  }
+
+  :global(.active) {
+    span {
+      color: $granite;
+    }
+  }
+
+  li {
+    a {
+      color: $raisinblack;
+
+      span {
+        color: $raisinblack;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.breadcrumbList {
+  position: relative;
+  left: calc(5% + 1.25rem);
+  width: 50%;
+}
+
+.desktopHeading {
+  @include rem(margin-top, 160);
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+}

@@ -1,0 +1,831 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.headerWrapper {
+  background-color: $secondary;
+  border-bottom: 0.0625rem solid $platinum;
+  transition: transform 0.2s ease-in-out;
+
+  &:global(.floatingHeader) {
+    border: none;
+    margin: 0;
+
+    &:not(:global(.sticky)) {
+      background-color: transparent;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: $zindex-3;
+
+      &.scrollOnAbsolute {
+        position: absolute;
+      }
+
+      .menu {
+        i {
+          color: $secondary;
+        }
+      }
+
+      :global(.dropdown) {
+        &:last-child {
+          border: 0.0625rem solid transparent;
+        }
+
+        > a {
+          color: $secondary;
+          display: flex;
+        }
+      }
+
+      .hamburgerMenu {
+        i {
+          color: $secondary;
+        }
+      }
+    }
+
+    &:not(.scrollOnAbsolute) {
+      position: fixed;
+    }
+
+    .navbarNav {
+      .navbarMenu {
+        > div {
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .mainNav {
+    .brand {
+      display: flex;
+      align-items: center;
+      line-height: normal;
+
+      .hamburgerMenu {
+        @include rem(margin-right, 10);
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          @include rem(font-size, 16);
+          cursor: pointer;
+        }
+
+        button {
+          padding: 0;
+          width: 2.25rem;
+          height: 2.25rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+          border: none;
+
+          &:hover {
+            background: rgba(162, 162, 162, 0.1);
+          }
+        }
+      }
+    }
+
+    @include media($md, min) {
+      height: 5rem;
+      padding: 0;
+      position: relative;
+    }
+  }
+
+  @include media($md, min) {
+    display: block;
+  }
+
+  @include media($sm, min) {
+    border: none;
+  }
+
+  :global(.container-fluid) {
+    @include padding(14, 20, 13, 20);
+
+    @include media($md, min) {
+      @include padding(0, 20, 0, 20);
+    }
+
+    @include media($lgb, min) {
+      @include padding(0, 30, 0, 34);
+    }
+  }
+
+  .topNav {
+    @include media($sm, max) {
+      display: none;
+    }
+
+    a {
+      font-family: $font-regular;
+
+      svg {
+        @include rem(margin-right, 8);
+      }
+    }
+
+    .businessHeader,
+    .phoneNumber {
+      color: $secondary;
+      padding: 0.38rem 0.75rem;
+    }
+
+    @include media($md, min) {
+      @include rem(margin-top, 4);
+      @include rem(min-height, 35);
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+
+      i {
+        @include rem(font-size, 12);
+        @include rem(margin-right, 8);
+      }
+
+      a,
+      button {
+        @include rem(font-size, 14);
+        color: $primary;
+        padding: 1rem 0.65rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    :global(.dropdown-menu) {
+      @include rem(min-width, 280);
+      @include rem(border-radius, 8);
+      border: 0.031rem solid hsla(0, 0%, 46%, 0.28);
+      padding: 0.625rem 0;
+
+      i {
+        @include rem(font-size, 20.6);
+      }
+
+      a {
+        @include padding(11, 12, 11, 12);
+        color: $darkcharcoal;
+      }
+    }
+  }
+
+  .navItem {
+    .iconBox {
+      @include rem(margin-left, 8);
+
+      i {
+        @include rem(font-size, 10);
+      }
+    }
+
+    svg {
+      @include rem(width, 18);
+      fill: $secondary;
+    }
+
+    > a {
+      @include rem(border-radius, 20);
+      @include rem(font-size, 14);
+      @include padding(8, 20, 6, 20);
+      cursor: pointer;
+      display: block;
+      text-align: center;
+      color: $raisinblack;
+      text-decoration: none;
+
+      &:hover {
+        background: hsla(0, 0%, 100%, 0.1);
+        color: $darkcharcoal;
+      }
+    }
+
+    &.activeNav {
+      border-bottom: 0.25rem solid $indigo;
+      @include rem(margin-bottom, -22);
+    }
+  }
+
+  &:global(.sticky) {
+    background-color: $secondary;
+    z-index: $zindex-3;
+    left: 0;
+    right: 0;
+
+    &.borderBottom {
+      border-bottom: solid 0.0625rem $platinum;
+      top: 0;
+      animation: slide-down 0.45s;
+    }
+
+    &:global(.floatingHeader) {
+      border-bottom: 0.0625rem solid $platinum;
+    }
+
+    &:not(.noAnimate) {
+      animation: slide-down 0.4s;
+      z-index: $zindex-3;
+    }
+
+    .businessHeader,
+    .phoneNumber {
+      color: $primary;
+    }
+
+    .headerNav {
+      .navbarNav {
+        .navbarMenu {
+          > div {
+            &:hover {
+              :global(.dropdown-toggle) {
+                background-color: $antiflashSecondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .phoneNumber {
+    color: $secondary;
+    text-decoration: none;
+  }
+
+  &.borderBottom {
+    position: fixed;
+    width: 100%;
+    animation: slide-down 0.4s;
+
+    .noAnimate {
+      animation: slide-down 0.4s;
+    }
+
+    .topNav {
+      display: none;
+    }
+  }
+}
+
+.isActive {
+  opacity: 1;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background: $surface;
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 25rem;
+  border-right: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.businessHeader {
+  @include rem(font-size, 14);
+  @include rem(padding-right, 11);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  color: $secondary;
+  align-self: center;
+
+  &:after {
+    display: none;
+  }
+
+  svg {
+    @include rem(margin-top, 4);
+    @include rem(margin-right, 8);
+    width: 0.75rem;
+  }
+
+  &:global(.dropdown-toggle) {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.headerLogo {
+  display: flex;
+
+  img {
+    @include rem(width, 110);
+
+    @include media($md, min) {
+      @include rem(width, 145);
+    }
+
+    @include media-min-max($lg, $lgb) {
+      @include rem(width, 110);
+    }
+  }
+}
+
+.hamburger {
+  overflow-y: auto;
+  background-color: $secondary;
+  position: relative;
+  height: 100%;
+
+  .hamburgerLinks {
+    height: calc(100% - 5rem);
+    overflow: auto;
+  }
+
+  .hamburgerSection {
+    @include rem(margin-bottom, 8);
+    background-color: $secondary;
+    padding: 1.5rem 0 1rem;
+
+    h5 {
+      @include rem(font-size, 12);
+      font-family: $font-regular;
+      color: $spanishgray;
+      margin: 0;
+      padding: 0 0 0.75rem 1.5rem;
+      text-transform: uppercase;
+    }
+
+    ul {
+      background-color: $secondary;
+
+      li {
+        position: relative;
+
+        .subMenu {
+          a {
+            @include padding(12, 0, 12, 60);
+            @include rem(min-height, 48);
+          }
+        }
+      }
+    }
+
+    .menuItem {
+      @include padding(12, 24, 12, 24);
+      @include rem(font-size, 16);
+      font-family: $font-regular;
+      align-items: center;
+      color: $darkcharcoal;
+      cursor: pointer;
+      display: flex;
+      text-decoration: none;
+      width: 100%;
+      border: transparent;
+      background-color: transparent;
+
+      &:hover {
+        background: $antiflashSecondary;
+      }
+
+      &:global(.active) {
+        background-color: rgba(13, 103, 202, 0.05);
+      }
+
+      &[aria-expanded='true'] {
+        .icon {
+          transform: rotate(180deg);
+          transition: ease transform 0.2s;
+        }
+      }
+
+      .icon {
+        fill: $davygray;
+        margin-left: auto;
+        font-size: 0.75rem;
+
+        &:global(.icon) {
+          fill: $granite;
+          width: 0.8125rem;
+          margin: 0 0 0 auto;
+          transition: transform 0.3s;
+        }
+      }
+
+      .highlightText {
+        @include rem(font-size, 12);
+        @include rem(border-radius, 10);
+        @include padding(4, 8, 4, 8);
+        color: $darkcharcoal;
+        font-family: $font-medium;
+        background: $chromeYellow;
+        margin-left: auto;
+      }
+
+      label {
+        cursor: pointer;
+        line-height: normal;
+
+        &.cursorDefault {
+          cursor: default;
+        }
+
+        &.viewAll {
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      &.cursorDefault {
+        cursor: default;
+      }
+
+      :global(.iconBox) {
+        @include rem(margin-right, 18);
+        @include rem(line-height, 26);
+        @include rem(max-height, 24);
+        color: $davygray;
+      }
+
+      span {
+        &.iconBox {
+          width: 2.25rem;
+          text-align: left;
+        }
+      }
+    }
+
+    &.singleItem {
+      @include padding(8, 0, 8, 0);
+      background-color: $antiflashSecondary;
+
+      button.menuItem {
+        @include rem(min-height, 56);
+        background-color: $secondary;
+      }
+
+      a {
+        @include rem(min-height, 48);
+        padding: 0.75rem 0 0.75rem 3.5rem;
+
+        span {
+          @include rem(max-width, 36);
+          @include rem(font-size, 20);
+        }
+      }
+    }
+
+    li.calling {
+      background: $antiflashSecondary;
+      @include padding(8, 0, 8, 0);
+
+      a {
+        background: $secondary;
+
+        &:hover {
+          background: $antiflashSecondary;
+        }
+      }
+
+      @include media($lg, min) {
+        display: none;
+      }
+    }
+  }
+
+  footer {
+    padding: 1.125rem 1.5rem;
+    position: absolute;
+    bottom: 0;
+    background-color: $antiflashSecondary;
+    width: 100%;
+  }
+
+  .ripple {
+    position: relative;
+    overflow: hidden;
+    z-index: $zindex-1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:active {
+      &::before {
+        animation: rippleEffect 0.6s ease-out forwards;
+        height: 200%;
+      }
+    }
+
+    @keyframes rippleEffect {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.4;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0.2;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:global(.sticky) {
+    .hamburgerMenu {
+      button:hover {
+        background-color: $antiflashwhite;
+      }
+    }
+  }
+}
+
+.headerNav {
+  @include media($md, min) {
+    margin-left: auto;
+    display: block;
+  }
+
+  .navbarNav {
+    .navbarMenu {
+      display: flex;
+      position: relative;
+
+      div {
+        display: none;
+
+        @include media($sm, min) {
+          &:last-child {
+            display: block;
+          }
+        }
+
+        @include media($md, min) {
+          display: block;
+        }
+      }
+
+      .navItem {
+        color: $secondary;
+
+        &:global(.dropdown) {
+          &:last-child {
+            margin-right: 0;
+            border: 0.0625rem solid $secondary;
+
+            a {
+              &:hover {
+                background: none;
+              }
+            }
+          }
+        }
+
+        a {
+          display: flex;
+
+          &:after {
+            content: '';
+            display: none;
+          }
+
+          &:hover {
+            background: hsla(0, 0%, 100%, 0.1);
+          }
+        }
+      }
+
+      :global(.dropdown) {
+        :global(.basicDropdown) {
+          ~ :global(.dropdown-menu) {
+            p {
+              @include rem(font-size, 14);
+              font-family: $font-medium;
+              color: $darkcharcoal;
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        :global(.dropdown-menu) {
+          @include rem(margin-top, 38);
+          @include rem(border-radius, 8);
+          @include rem(max-width, 864);
+          padding: 0;
+          top: 100%;
+          transform: unset !important;
+          left: 1rem;
+          overflow: hidden;
+          border: none;
+          box-shadow: 0 0 0.0625rem $spanishgray;
+
+          .itemNav {
+            position: relative;
+            display: flex;
+
+            > a {
+              width: 14.125rem;
+              position: relative;
+
+              span {
+                @include rem(font-size, 5);
+                @include rem(top, 23);
+                position: absolute;
+                right: 1rem;
+                transform: rotate(90deg);
+              }
+            }
+          }
+
+          a {
+            @include rem(font-size, 14);
+            @include padding(15, 20, 15, 20);
+
+            &:hover {
+              background: $antiflashSecondary;
+            }
+          }
+
+          @include media($lgb, min) {
+            padding: 0;
+          }
+
+          .menuContainer {
+            @include padding(10, 0, 10, 0);
+            @include rem(margin-right, 6);
+            display: flex;
+            @include rem(max-height, 275);
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            .subMenu {
+              @include rem(margin-top, -10);
+              @include rem(margin-bottom, -10);
+              @include rem(padding-top, 10);
+              min-width: 14.375rem;
+              text-align: left;
+              background: $secondary;
+              opacity: 1;
+              display: block;
+              padding-left: 0;
+              border-left: 0.0625rem solid $platinumgrey;
+              border-top-right-radius: 0.5rem;
+              border-bottom-right-radius: 0.5rem;
+
+              li {
+                list-style: none;
+
+                a {
+                  @include rem(font-size, 14);
+                  @include padding(15, 5, 15, 30);
+                  color: $raisinblack;
+                  text-decoration: none;
+                }
+              }
+            }
+
+            .activeMenu {
+              background-color: $antiflashSecondary;
+            }
+
+            &::-webkit-scrollbar {
+              @include rem(width, 8);
+            }
+
+            &::-webkit-scrollbar-thumb {
+              @include rem(border-radius, 4);
+              background-color: $silversand;
+            }
+          }
+        }
+      }
+    }
+
+    .navItem.dropdown {
+      display: none;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    to {
+      opacity: 0.9;
+      transform: translateY(100);
+    }
+  }
+}
+
+.mEnquiryButton {
+  a {
+    @include rem(font-size, 14);
+    @include rem(border-radius, 20);
+    @include padding(8, 30, 8, 30);
+    font-family: $font-medium;
+    background: $chineeseyellow;
+    border: none;
+    color: $primary;
+
+    &:hover {
+      color: $primary;
+      background-color: $chineeseyellow;
+      border: 0.0625rem solid $chineeseyellow;
+    }
+
+    @include media($md, min) {
+      @include padding(7, 30, 7, 30);
+    }
+
+    @include media($lg, min) {
+      background: transparent;
+      border: 0.0625rem solid $raisinblack;
+    }
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  @include media($lg, min) {
+    @include rem(margin-left, 20);
+  }
+}
+
+.backHeader {
+  display: flex;
+  color: $raisinblack;
+  align-items: center;
+  @include rem(min-height, 41);
+
+  i {
+    @include font-size(20);
+    vertical-align: text-bottom;
+  }
+
+  .pageHeading {
+    @include font-size(22);
+    @include rem(margin-left, 16);
+    font-family: $font-bold;
+  }
+
+  img {
+    @include rem(margin-left, 16);
+  }
+
+  button {
+    background: transparent;
+    border: transparent;
+    padding: 0;
+  }
+}
+
+.headerContainer {
+  @include rem(height, 80);
+}
+
+.headerContainerWithTopNav {
+  @include rem(height, 80);
+
+  @include media($lg, min) {
+    @include rem(height, 115);
+  }
+}

@@ -1,0 +1,98 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(margin-bottom, 30);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+
+  @include media($sm, min) {
+    height: 100vh;
+  }
+
+  .mainWrapper {
+    position: relative;
+
+    img {
+      margin: 0 auto;
+      max-width: 50vw;
+    }
+  }
+
+  .heading {
+    @include font-size(30);
+    line-height: 1;
+    font-family: $font-bold;
+    color: $granite;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+
+    @include media($sm, min) {
+      @include font-size(30);
+      top: 15%;
+    }
+
+    @include media($md, min) {
+      @include font-size(40);
+      @include rem(letter-spacing, 14);
+      top: 20%;
+    }
+  }
+
+  .contentWrapper {
+    width: 100%;
+    top: 100%;
+    text-align: center;
+
+    .textWrapper {
+      width: 100%;
+
+      h6 {
+        @include font-size(24);
+        @include rem(line-height, 32);
+        @include rem(margin-bottom, 12);
+        font-family: $font-bold;
+        font-weight: normal;
+        color: $granite;
+
+        @include media($md, min) {
+          @include font-size(40);
+          @include rem(line-height, 68);
+          font-family: $font-regular;
+        }
+      }
+
+      p {
+        @include font-size(14);
+        @include rem(line-height, 22);
+        font-family: $font-regular;
+        color: $granite;
+        width: 50%;
+        margin: 0 auto;
+
+        @include media($sm, min) {
+          @include font-size(16);
+          @include rem(line-height, 32);
+          width: 100%;
+        }
+
+        @include media($md, min) {
+          @include font-size(24);
+        }
+      }
+
+      button {
+        @include rem(max-width, 180);
+        @include rem(margin-top, 24);
+
+        @include media($md, min) {
+          @include rem(margin-top, 32);
+        }
+      }
+    }
+  }
+}

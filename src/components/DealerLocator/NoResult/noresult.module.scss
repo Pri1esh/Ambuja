@@ -1,0 +1,57 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.headingWrapper {
+  @include rem(margin-left, 20);
+  display: flex;
+  align-items: center;
+
+  @include media($lg, min) {
+    @include rem(margin-top, 30);
+  }
+
+  .mainHeading {
+    @include rem(font-size, 22);
+    @include rem(margin-right, 6);
+    color: $raisinblack;
+
+    @include media($lg, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-right, 10);
+    }
+  }
+
+  span {
+    @include rem(font-size, 18);
+    color: $granite;
+
+    @include media($lg, min) {
+      @include rem(font-size, 30);
+    }
+  }
+}
+
+.wrapper {
+  @include rem(margin-top, 109);
+  @include rem(margin-bottom, 103);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media($sm, min) {
+    @include rem(margin-top, 100);
+  }
+
+  .title {
+    @include rem(margin-top, 32);
+    @include rem(margin-bottom, 10);
+    @include rem(font-size, 24);
+    font-family: $font-bold;
+    color: $raisinblack;
+  }
+
+  .description {
+    color: $granite;
+    text-align: center;
+  }
+}

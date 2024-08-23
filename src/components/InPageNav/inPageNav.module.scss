@@ -1,0 +1,87 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.btngroup {
+  @include rem(margin-bottom, 30);
+  @include rem(padding-top, 16);
+  background-color: $ateneoblue;
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include media($sm, min) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media($md, max) {
+    margin-left: -1.25rem;
+    overflow-y: hidden;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+
+    @include media($md, max) {
+      @include rem(margin-left, 20);
+      margin-top: 0;
+      border: 0;
+    }
+
+    li {
+      white-space: nowrap;
+      border-bottom: 0.125rem solid transparent;
+      margin-bottom: -0.0625rem;
+      border-radius: 0.0625rem;
+      @include rem(margin-right, 40);
+
+      &:global(.tabActive) {
+        border-bottom: 0.12rem solid $secondary;
+
+        @include media($md, max) {
+          border-bottom: 0.19rem solid $secondary;
+        }
+
+        a {
+          font-family: $font-medium;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        &:last-child {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  a {
+    font-size: 1rem;
+    color: $secondary;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      @include media($sm, max) {
+        background: transparent;
+      }
+    }
+  }
+}
+
+.stickyTop {
+  position: sticky;
+  top: 4.8rem;
+  z-index: $zindex-2;
+
+  @include media($md, min) {
+    top: 5rem;
+  }
+}

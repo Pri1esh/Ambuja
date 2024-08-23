@@ -1,0 +1,74 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.cardItem {
+  @include rem(margin-bottom, 50);
+
+  @include media($sm, max) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .imageWrapper {
+    @include rem(margin-bottom, 20);
+    overflow: hidden;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    @include rem(border-radius, 8);
+
+    a {
+      @include rem(border-radius, 8);
+      overflow: hidden;
+    }
+
+    img {
+      @include rem(border-radius, 8);
+      width: 100%;
+
+      @include media($sm, min) {
+        transform: scale(1);
+        transition: ease-in-out all 2600ms;
+      }
+    }
+  }
+
+  &:hover {
+    .imageWrapper {
+      overflow: hidden;
+
+      img {
+        @include rem(border-radius, 8);
+        transition: ease-in-out transform 2600ms;
+
+        @include media($md, min) {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .textContainer {
+    h3 {
+      @include font-size(18);
+      @include rem(margin-bottom, 10);
+      color: $raisinblack;
+      font-family: $font-bold;
+
+      @include media($md, min) {
+        @include font-size(20);
+      }
+    }
+
+    p {
+      @include rem(margin-bottom, 10);
+      @include rem(line-height, 24);
+      color: $granite;
+    }
+  }
+}

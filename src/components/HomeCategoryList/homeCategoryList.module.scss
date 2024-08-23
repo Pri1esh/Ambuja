@@ -1,0 +1,139 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(padding-top, 72);
+  @include rem(padding-bottom, 72);
+  display: flex;
+  justify-content: center;
+
+  @include media($sm, max) {
+    @include rem(padding-top, 30);
+    @include rem(padding-bottom, 22);
+  }
+
+  .row {
+    @include rem(column-gap, 20);
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .col {
+      border: none;
+      padding: 0;
+      background: transparent;
+
+      &:first-child {
+        @include rem(margin-left, 20);
+      }
+
+      &:last-child {
+        @include rem(margin-right, 20);
+      }
+    }
+  }
+
+  @include media($md, min) {
+    .row {
+      @include rem(column-gap, 60);
+    }
+  }
+}
+
+.card {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .cardThumb {
+    @include rem(width, 80);
+    margin: 0 auto 0.75rem auto;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    background-color: $primary;
+
+    @include media($sm, min) {
+      // @include rem(width, 160);
+      width: 100%;
+      @include rem(margin-bottom, 20);
+      transition: width ease-in-out 2600ms;
+    }
+
+    img {
+      @include rem(width, 80);
+      height: 100%;
+      border-radius: 100%;
+
+      @include media($sm, min) {
+        // @include rem(width, 160);
+        width: 100%;
+        transform: scale(1);
+        transition: ease-in-out all 2600ms;
+      }
+    }
+  }
+
+  .enableBorder {
+    border: 0.25rem solid $chineeseyellow;
+  }
+
+  .cardDescription {
+    text-align: center;
+    cursor: pointer;
+
+    h2 {
+      @include rem(font-size, 16);
+      font-family: $font-regular;
+      color: $darkcharcoal;
+
+      @include media($md, min) {
+        @include rem(font-size, 18);
+      }
+    }
+  }
+
+  &:hover {
+    .cardThumb {
+      img {
+        opacity: 0.9;
+
+        @include media($md, min) {
+          transform: scale(1.1);
+          transition: ease-in-out transform 2600ms;
+        }
+
+        @media only screen and (min-device-width: 64rem) and (max-device-width: 85.375rem) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+          transform: scale(1);
+          transition: unset;
+        }
+
+        @media only screen and (min-device-width: 64rem) and (max-device-width: 85.375rem) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+          transform: scale(1);
+          transition: unset;
+        }
+
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.categoryContainer {
+  background-color: $floralwhite;
+}

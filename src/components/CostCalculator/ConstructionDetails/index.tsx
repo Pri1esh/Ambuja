@@ -1,0 +1,180 @@
+import { Button } from '@components';
+import {
+  IConstructionDetails,
+  IConstructionTabInputTab,
+  IConstructionTabRadioOption,
+  ISelectDropdownOption,
+} from '@interfaces';
+import { goToCostCalculatorPage, validateConstructionTabInputs } from '@logic/costCalculator';
+import { GTMHelper, mobileNumberValidatorRegex, setFallBack } from '@utils';
+import { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
+import { Controller, useForm } from 'react-hook-form';
+import { SelectDropdown, TabInput } from 'src/components/Forms/Fields';
+import styles from './constructionDetails.module.scss';
+
+const ConstructionDetails = (props: IConstructionDetails) => {
+  const { compData, handleFormSubmit, inPage = true, selectedValues = null, apiData = null } = props;
+  const { submitButton, buttonTabs, labels, inputTabs } = compData;
+  const [selectedRadioOption, setSelectedRadioOption] = useState<IConstructionTabRadioOption | null>(null);
+
+  const {
+    control,
+    getValues,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<any>({
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+  });
+
+  useEffect(() => {
+    if (selectedValues) {
+      const selectedOption: IConstructionTabRadioOption | null =
+        buttonTabs?.find((tab) => tab?.label === selectedValues?.structureType) ?? null;
+
+      const selectedDropdownOption = inputTabs
+        ?.find((inputTab) => inputTab?.type === 'dropdown')
+        ?.options?.find((option) => option.label === selectedValues?.dropdown);
+
+      setSelectedRadioOption(selectedOption);
+      setValue('tab', { dropdown: selectedDropdownOption, area: parseInt(selectedValues?.area?.toString()) });
+
+      if (selectedDropdownOption?.label && selectedOption?.label && parseInt(selectedValues?.area?.toString())) {
+        apiData === null &&
+          handleFormSubmit &&
+          handleFormSubmit(
+            {
+              dropdown: selectedDropdownOption?.label,
+              structureType: selectedOption?.label,
+              area: parseInt(selectedValues?.area?.toString()),
+            },
+            selectedOption?.id || buttonTabs?.[0]?.id,
+            submitButton,
+          );
+      }
+    } else {
+      const selectedDropdownOption = inputTabs?.find((inputTab) => inputTab?.type === 'dropdown')?.options?.[0];
+      handleRadioClick(buttonTabs?.[0]);
+      setValue('tab', { dropdown: selectedDropdownOption });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const onSubmit = (data: any) => {
+    if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
+      goToCostCalculatorPage(
+        {
+          structuretype: selectedRadioOption?.label,
+          constructionstage: data?.tab?.dropdown?.label,
+          area: data?.tab?.area,
+        },
+        submitButton,
+      );
+    } else if (handleFormSubmit) {
+      handleFormSubmit(
+        { dropdown: data?.tab?.dropdown?.label, structureType: selectedRadioOption?.label, area: data?.tab?.area },
+        setFallBack(selectedRadioOption?.id, buttonTabs?.[0]?.id),
+        submitButton,
+      );
+    }
+  };
+
+  const handleRadioClick = (val: IConstructionTabRadioOption) => {
+    setSelectedRadioOption(val);
+  };
+
+  return (
+    <div className={`${styles.wrapper} ${!inPage ? styles.inPageWrapper : ''}`}>
+      <div className={styles.tabs}>
+        {buttonTabs?.map((buttonTab: IConstructionTabRadioOption, index: number) => (
+          <Form.Check.Label key={`${buttonTab?.id + index}`}>
+            <span className={`${buttonTab?.id === selectedRadioOption?.id ? styles.selected : ''} ${styles.tabOption}`}>
+              <Form.Check.Input
+                id={buttonTab?.id}
+                type={'radio'}
+                checked={buttonTab?.id === selectedRadioOption?.id}
+                onChange={() => {
+                  handleRadioClick(buttonTab);
+                }}
+                value={buttonTab?.label}
+                className={styles.radioStyle}
+              />
+              {buttonTab?.label}
+            </span>
+          </Form.Check.Label>
+        ))}
+      </div>
+      <Form className={styles.constructionForm} onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          control={control}
+          name={'tab'}
+          rules={{
+            validate: () => validateConstructionTabInputs(getValues('tab')),
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <div className={styles.formInputs}>
+              {inputTabs?.map((inputTab: IConstructionTabInputTab) =>
+                inputTab?.type === 'dropdown' ? (
+                  <SelectDropdown
+                    key={inputTab?.type}
+                    classname={styles.dropdown}
+                    options={inputTab?.options}
+                    placeholder={inputTab?.placeholder}
+                    onBlur={onBlur}
+                    setSelected={(val: ISelectDropdownOption | null) => {
+                      onChange({ ...getValues('tab'), dropdown: val });
+                    }}
+                    selected={value?.dropdown || inputTab?.options?.[0]}
+                    isClose={false}
+                    showSelectedTick={true}
+                  />
+                ) : (
+                  <TabInput
+                    key={inputTab?.type}
+                    className={styles.tabInput}
+                    placeholder={inputTab?.placeholder}
+                    label={inputTab?.placeholder}
+                    onChange={(e: string) => {
+                      if (e?.toString() === '') {
+                        onChange({ ...getValues('tab'), area: '' });
+                        return;
+                      }
+                      if (!mobileNumberValidatorRegex?.test(e?.toString())) {
+                        return;
+                      }
+                      onChange({ ...getValues('tab'), area: parseInt(e?.toString()) });
+                    }}
+                    onBlur={onBlur}
+                    errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
+                    fieldName={inputTab?.fieldName}
+                    value={value?.area}
+                    inPage={inPage}
+                  />
+                ),
+              )}
+            </div>
+          )}
+        />
+
+        <Button
+          className={styles.submitButton}
+          type={'submit'}
+          onClick={() => {
+            GTMHelper({
+              ...labels?.gtmData,
+              construction_type: selectedRadioOption?.id,
+              construction_stage: getValues('tab')?.dropdown?.label,
+              construction_area: getValues('tab')?.area,
+            });
+          }}
+        >
+          {labels?.submitButtonLabel}
+        </Button>
+      </Form>
+    </div>
+  );
+};
+
+export default ConstructionDetails;

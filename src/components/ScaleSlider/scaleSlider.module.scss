@@ -1,0 +1,14 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(padding-top, 60);
+  @include rem(padding-bottom, 10);
+  position: relative;
+  background-color: $ateneoblue;
+
+  @include media($lg, min) {
+    @include rem(padding-top, 100);
+    padding-bottom: 0;
+  }
+}

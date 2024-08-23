@@ -1,0 +1,48 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(padding-bottom, 10);
+  position: relative;
+
+  @include media($lg, max) {
+    @include rem(max-width, 600);
+    @include rem(padding-bottom, 8);
+  }
+
+  img {
+    @include rem(margin-bottom, 27);
+    max-width: 5.625rem;
+
+    @include media($md, max) {
+      display: none;
+    }
+  }
+
+  .subHeading {
+    @include font-size(16);
+    @include rem(line-height, 26);
+    color: $raisinblack;
+    font-family: $font-medium;
+    margin-bottom: 0;
+
+    @include media($md, min) {
+      @include rem(line-height, 30);
+      @include font-size(26);
+      @include rem(margin-bottom, 10);
+    }
+  }
+
+  .heading {
+    @include rem(line-height, 28);
+    @include font-size(26);
+    color: $ateneoblue;
+    font-family: $font-bold;
+
+    @include media($md, min) {
+      @include rem(line-height, 61);
+      @include font-size(60);
+      @include rem(margin-bottom, 32);
+    }
+  }
+}

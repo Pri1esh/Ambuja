@@ -1,0 +1,80 @@
+@import 'styles/partials/variable';
+@import 'styles/partials/mixins';
+
+.wrapper {
+  padding-bottom: 4.5rem;
+  overflow-y: scroll;
+}
+
+.product {
+  @include rem(margin-bottom, 16);
+
+  .productImage {
+    @include rem(height, 140);
+    padding: 0;
+    border: none;
+    position: relative;
+
+    &.show {
+      .label {
+        i {
+          display: inline-block;
+          transform: rotate(0);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    .label {
+      @include rem(font-size, 18);
+      @include rem(padding-left, 16);
+      color: $raisinblack;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      i {
+        @include rem(font-size, 8);
+        @include rem(margin-left, 12);
+        vertical-align: middle;
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .productDD {
+    @include rem(margin-top, 8);
+    max-height: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    &.dropdown {
+      @include rem(max-height, 500);
+      transition: all 0.3s ease-in-out;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+
+      li {
+        a {
+          @include padding(16, 14, 14, 16);
+          @include rem(font-size, 14);
+          color: $raisinblack;
+          font-family: $font-regular;
+        }
+      }
+    }
+  }
+}

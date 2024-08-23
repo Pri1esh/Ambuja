@@ -1,0 +1,37 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(padding-top, 100);
+  @include rem(padding-bottom, 80);
+  background-color: $ateneoblue;
+  position: relative;
+
+  @include media($md, max) {
+    @include rem(padding-top, 52);
+    @include rem(padding-bottom, 30);
+  }
+
+  .productListContainer {
+    @include rem(gap, 20);
+    display: grid;
+    justify-content: center;
+
+    @include media($sm, min) {
+      grid-template-columns: repeat(auto-fill, minmax(21.875rem, 1fr));
+    }
+  }
+
+  .heading {
+    @include rem(font-size, 22);
+    @include rem(margin-bottom, 10);
+    color: $raisinblack;
+  }
+
+  .link {
+    position: absolute;
+    top: 3.25rem;
+    right: 1.25rem;
+    color: $raisinblack;
+  }
+}

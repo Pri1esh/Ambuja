@@ -1,0 +1,92 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  background-color: $floralwhite;
+
+  .sectionWrapper {
+    @include rem(padding-top, 52);
+    @include rem(padding-bottom, 30);
+    @include rem(padding-left, 20);
+    @include rem(padding-right, 20);
+    display: block;
+
+    .section {
+      flex: 0 0 45%;
+      margin: 0;
+
+      .figure {
+        @include rem(height, 90);
+        @include rem(width, 90);
+        @include rem(margin-bottom, 30);
+
+        @include media($md, max) {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .heading {
+        @include rem(font-size, 26);
+        @include rem(margin-bottom, 30);
+        color: $ateneoblue;
+        font-family: $font-bold;
+
+        @include media($md, min) {
+          @include rem(font-size, 60);
+          @include rem(margin-bottom, 20);
+        }
+      }
+
+      .description {
+        @include rem(font-size, 20);
+        color: $granite;
+        padding-right: 0;
+
+        @include media($md, min) {
+          padding-right: 2rem;
+        }
+
+        @include media($md, max) {
+          display: none;
+        }
+      }
+
+      .widgetWrapper {
+        @include rem(padding, 0);
+        @include rem(border-radius, 24);
+        background-color: transparent;
+
+        .widgetHeader {
+          @include rem(font-size, 26);
+          @include rem(margin-bottom, 32);
+          font-family: $font-bold;
+          color: $primary;
+          display: none;
+
+          @include media($md, min) {
+            display: block;
+          }
+        }
+
+        @include media($md, min) {
+          background-color: $secondary;
+          @include rem(padding, 50);
+        }
+      }
+    }
+
+    @include media($md, min) {
+      @include rem(padding-top, 100);
+      @include rem(padding-bottom, 80);
+      @include rem(padding-left, 0);
+      @include rem(padding-right, 0);
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
