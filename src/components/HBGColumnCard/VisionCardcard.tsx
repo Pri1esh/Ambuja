@@ -3,7 +3,7 @@ import { useDeviceType } from '@utils';
 import CustomImage from '../CustomImage';
 import styles from './twoColumnCard.module.scss';
 
-const VisionCard = (props: { cardData: ICardData }) => {
+const HBGVisionCard = (props: { cardData: ICardData }) => {
   const { cardData } = props;
   const { deviceType } = useDeviceType();
   const { imageSource, imageSourceMobile, imageSourceTablet, imageAlt, iconImage, textData, iconImageAlt, sectionID } =
@@ -37,4 +37,4 @@ const VisionCard = (props: { cardData: ICardData }) => {
   );
 };
 
-export default VisionCard;
+export default HBGVisionCard;

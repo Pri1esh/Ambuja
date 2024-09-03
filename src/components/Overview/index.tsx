@@ -60,7 +60,7 @@ const Overview = (props: IOverview) => {
   };
 
   return (
-    <div className={cx(styles.wrapper, className, !isMargin ? styles.showHeading : '')}>
+    <div className={`${cx(styles.wrapper, className, !isMargin ? styles.showHeading : '')} hbg-Overview`}>
       {getHeading()}
       {imageSource && (
         <CustomImage

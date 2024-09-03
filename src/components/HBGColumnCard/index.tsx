@@ -1,24 +1,24 @@
 import { ITwoColumnCard } from '@interfaces';
-import Card from './Card';
-import CardList from './CardList';
-import MessageCard from './MessageCard';
-import VisionCard from './VisionCardcard';
+import HBGCard from './Card';
+import HBGCardList from './CardList';
+import HBGMessageCard from './MessageCard';
+import HBGVisionCard from './VisionCardcard';
 import styles from './twoColumnCard.module.scss';
 
-const TwoColumnCard = (props: ITwoColumnCard) => {
+const HBGColumnCard = (props: ITwoColumnCard) => {
   const { compData } = props;
   const { data, variant, theme } = compData;
 
   const getCardType = (variant: string) => {
     switch (variant) {
       case 'card':
-        return <Card cardData={data[0]} theme={theme} />;
+        return <HBGCard cardData={data[0]} theme={theme} />;
       case 'messageCard':
-        return <MessageCard cardData={data[0]} />;
+        return <HBGMessageCard cardData={data[0]} />;
       case 'visionCard':
-        return <VisionCard cardData={data[0]} />;
+        return <HBGVisionCard cardData={data[0]} />;
       case 'cardList':
-        return <CardList cardData={data} />;
+        return <HBGCardList cardData={data} />;
       default:
         return <></>;
     }
@@ -31,4 +31,4 @@ const TwoColumnCard = (props: ITwoColumnCard) => {
   );
 };
 
-export default TwoColumnCard;
+export default HBGColumnCard;

@@ -26,8 +26,11 @@ const SubNavItem = (props: ISubNav) => {
             <li key={index}>
               <CustomLink href={item?.link} target={item?.linkTarget}>
                 <div className={styles.menuTab}>
-                  <Image src={rightarrow} alt="->" />
-                  <p className="">{item.linkText}</p>
+                  <div className="d-flex align-items-center">
+                    <Image src={rightarrow} alt="->" />
+                    <p className="">{item.linkText}</p>
+                  </div>
+                  { item.active && <Image src={rightarrow} alt="->" />}
                 </div>
               </CustomLink>
             </li>

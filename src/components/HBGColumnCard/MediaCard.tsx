@@ -2,7 +2,7 @@ import { CustomImage, CustomVideo } from '@components';
 import { ICardData } from '@interfaces';
 import styles from './twoColumnCard.module.scss';
 
-const MediaCard = (props: { cardData: ICardData }) => {
+const HBGMediaCard = (props: { cardData: ICardData }) => {
   const { cardData } = props;
 
   const getComponent = () => {
@@ -54,4 +54,4 @@ const MediaCard = (props: { cardData: ICardData }) => {
   return <div className={styles.mediaSection}>{getComponent()}</div>;
 };
 
-export default MediaCard;
+export default HBGMediaCard;

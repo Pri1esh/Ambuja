@@ -4,7 +4,7 @@ import { GTMHelper } from '@utils';
 import { useState } from 'react';
 import styles from './twoColumnCard.module.scss';
 
-const TextCard = (props: { cardData: ICardData }) => {
+const HBGTextCard = (props: { cardData: ICardData }) => {
   const { cardData } = props;
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -51,4 +51,4 @@ const TextCard = (props: { cardData: ICardData }) => {
   );
 };
 
-export default TextCard;
+export default HBGTextCard;

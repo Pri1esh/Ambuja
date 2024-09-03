@@ -3,7 +3,7 @@ import { ICardListData } from '@interfaces';
 import { GTMHelper } from '@utils';
 import styles from './twoColumnCard.module.scss';
 
-const CardList = (props: ICardListData) => {
+const HBGCardList = (props: ICardListData) => {
   const { cardData } = props;
   return (
     <div className={styles.cardWrapper}>
@@ -80,4 +80,4 @@ const CardList = (props: ICardListData) => {
   );
 };
 
-export default CardList;
+export default HBGCardList;

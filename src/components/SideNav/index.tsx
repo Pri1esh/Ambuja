@@ -5,6 +5,7 @@ import { getIconByName, useDeviceType } from '@utils';
 import { useState } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import SubNavItem from './SubNavItem';
+import MobileSubNavItem from './MobileSubNavItem';
 import styles from './sideNav.module.scss';
 
 const SideNav = (props: ISubNav) => {
@@ -28,7 +29,7 @@ const SideNav = (props: ISubNav) => {
           <Offcanvas className={styles.offCanvas} placement={'bottom'} show={showNav} onHide={() => setShowNav(false)}>
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body className={styles.offcanvasBody}>
-              <SubNavItem
+              <MobileSubNavItem
                 compData={compData}
                 isMobileDropdown={isMobileDropdown}
                 offcanvasHeading={offcanvasHeading}

@@ -5,7 +5,7 @@ import MediaCard from './MediaCard';
 import TextCard from './TextCard';
 import styles from './twoColumnCard.module.scss';
 
-const MessageCard = (props: { cardData: ICardData }) => {
+const HBGMessageCard = (props: { cardData: ICardData }) => {
   const { cardData } = props;
   const { deviceType } = useDeviceType();
 
@@ -31,4 +31,4 @@ const MessageCard = (props: { cardData: ICardData }) => {
   );
 };
 
-export default MessageCard;
+export default HBGMessageCard;

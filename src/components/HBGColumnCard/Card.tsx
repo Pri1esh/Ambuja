@@ -1,5 +1,5 @@
-import MediaCard from './MediaCard';
-import TextCard from './TextCard';
+import HBGMediaCard from './MediaCard';
+import HBGTextCard from './TextCard';
 import styles from './twoColumnCard.module.scss';
 
 const getTheme = (theme: string) => {
@@ -13,7 +13,7 @@ const getTheme = (theme: string) => {
   }
 };
 
-const Card = (props: any) => {
+const HBGCard = (props: any) => {
   const { theme, cardData } = props;
   return (
     <div
@@ -21,10 +21,10 @@ const Card = (props: any) => {
         cardData?.textFirst === false ? styles.reverseColumn : ''
       }`}
     >
-      <TextCard cardData={cardData} />
-      <MediaCard cardData={cardData} />
+      <HBGTextCard cardData={cardData} />
+      <HBGMediaCard cardData={cardData} />
     </div>
   );
 };
 
-export default Card;
+export default HBGCard;

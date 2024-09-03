@@ -1,7 +1,6 @@
 import { ENDPOINT } from '@api-manager';
-import { ErrorFallback, HeroBanner, Layout, SubNav, TwoColumnCard } from '@components';
+import { ErrorFallback, HeroBanner, Layout, HBGColumnCard, SideNav } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
-import SideNav from 'src/components/SideNav';
 
 import styles from '../homeBuilder.module.scss';
 
@@ -35,22 +34,25 @@ const ChoosingTheRightLand = async () => {
           <HeroBanner compData={mainBanner?.fields} noMargin={true} breadCrumbList={breadCrumbList?.fields} />
         </div>
       )}
-      <div className="container pt-5">
-      <div className="row mt-5">
-        <div className="col-md-4">
-          {subNav?.fields?.subNavItems?.length > 0 && (
-            <SideNav
-              compData={subNav?.fields?.subNavItems}
-              heading={subNav?.fields?.heading}
-              offcanvasHeading={subNav?.fields?.offcanvasHeading}
-              isMobileDropdown={true}
-            />
-          )}
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2 className={styles.heading}>Home Building Guide</h2>
+          </div>
+          <div className="col-lg-4">
+            {subNav?.fields?.subNavItems?.length > 0 && (
+              <SideNav
+                compData={subNav?.fields?.subNavItems}
+                heading={subNav?.fields?.heading}
+                offcanvasHeading={subNav?.fields?.offcanvasHeading}
+                isMobileDropdown={true}
+              />
+            )}
+          </div>
+          <div className={`col-lg-8 hbg-Container`}>
+            {TwoColumnCardData?.fields && <HBGColumnCard compData={TwoColumnCardData?.fields} />}
+          </div>
         </div>
-        <div className={`col-md-8 hbg-Container`}>
-          {TwoColumnCardData?.fields && <TwoColumnCard compData={TwoColumnCardData?.fields} />}
-        </div>
-      </div>
       </div>
     </Layout>
   );

@@ -1,6 +1,8 @@
 import { ENDPOINT } from '@api-manager';
-import { CardList, ErrorFallback, HeroBanner, Layout, Overview, SubNav } from '@components';
+import { CardList, ErrorFallback, HeroBanner, Layout, Overview, SideNav } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
+
+import styles from "../homeBuilder.module.scss";
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.homeConstructionBudget);
   const { data } = apiData;
@@ -28,17 +30,27 @@ const HomeConstructionBudgetPage = async () => {
           <HeroBanner compData={mainBanner?.fields} breadCrumbList={breadCrumbList?.fields} noMargin={true} />
         )}
       </div>
-      {subNav?.fields?.subNavItems?.length > 0 && (
-        <SubNav
-          compData={subNav?.fields?.subNavItems}
-          heading={subNav?.fields?.heading}
-          offcanvasHeading={subNav?.fields?.offcanvasHeading}
-          isMobileDropdown={true}
-        />
-      )}
+
       <div className="container">
-        {overview?.fields && <Overview compData={overview?.fields} showHeading={true} isMargin={false} />}
+      <div className="row">
+      <div className="col-12">
+          <h2 className={styles.heading}>Home Building Guide</h2>
+        </div>
+        <div className="col-md-4">
+          {subNav?.fields?.subNavItems?.length > 0 && (
+            <SideNav
+              compData={subNav?.fields?.subNavItems}
+              heading={subNav?.fields?.heading}
+              offcanvasHeading={subNav?.fields?.offcanvasHeading}
+              isMobileDropdown={true}
+            />
+          )}
+        </div>
+        <div className={`col-md-8 hbg-Container`}>
+        {overview?.fields && <Overview compData={overview?.fields} showHeading={false} isMargin={false} />}
         {cardListData?.fields && <CardList compData={cardListData?.fields} />}
+        </div>
+      </div>
       </div>
     </Layout>
   );
