@@ -1,0 +1,206 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.navWrapper {
+  bottom: 0rem;
+  width: 100%;
+
+  .heading {
+    display: none;
+  }
+
+  .hbgMenu{
+    list-style: none;
+    padding-left: 0;
+    li{
+      @include rem(margin-bottom,30);
+      a{
+        .menuTab{
+          cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        img{
+          width: 30px;
+          aspect-ratio: 1;
+        }
+        p{
+          @include rem(font-size,22);
+          @include rem(line-height,25);
+          margin-bottom: 0;
+          color: #000000;
+          font-weight: 600;
+        }
+        }
+        
+      }
+    }
+  }
+
+  .pageNavWrapper {
+    @include rem(margin-bottom, 30);
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    display: none;
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 100);
+      display: block;
+    }
+
+    .pageNav {
+      @include padding(18, 20, 10, 15);
+      @include rem(margin-bottom, 0);
+      max-width: 100%;
+      list-style: none;
+      text-align: center;
+      overflow-x: auto;
+      display: -webkit-inline-box;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pageNavItem {
+        white-space: nowrap;
+        text-align: center;
+
+        a {
+          font-family: $font-regular;
+          @include padding(0, 10, 0, 10);
+          @include margin(0, 5, 0, 5);
+          @include rem(font-size, 16);
+          border-bottom: 0.0625rem solid transparent;
+          color: $secondary;
+          text-decoration: none;
+          position: relative;
+          border-radius: 0;
+
+          @include media($sm, min) {
+            @include margin(0, 20, 0, 20);
+          }
+
+          &.activeNavItem {
+            font-family: $font-bold;
+            border-bottom: 0.125rem solid $secondary;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+   
+  }
+}
+
+.mobileWrapper {
+  .heading {
+    display: block;
+  }
+
+  ul {
+    @include rem(margin, 0);
+    @include rem(padding, 0);
+    list-style: none;
+
+    li {
+      @include padding(16, 30, 16, 16);
+      @include rem(font-size, 14);
+      width: 100%;
+      background: $secondary;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        color: $darkcharcoal;
+        text-decoration: none;
+        background-color: $antiflashSecondary;
+      }
+
+      button {
+        @include padding(16, 30, 16, 16);
+        @include rem(font-size, 14);
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: none;
+        color: $darkcharcoal;
+      }
+
+      &.selected {
+        background-color: $antiflashSecondary;
+        font-family: $font-medium;
+
+        i {
+          @include center(vertical);
+          @include rem(font-size, 10);
+          color: $raisinblack;
+          right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.pageHeading {
+  display: flex;
+  @include rem(font-size, 26);
+  font-family: $font-bold;
+  color: $primary;
+  @include padding(30, 0, 30, 0);
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+
+  span {
+    @include rem(font-size, 18);
+    @include rem(padding-left, 40);
+    transition: ease all 0.3s;
+  }
+
+  .active {
+    transform: rotate(180deg);
+    line-height: 1.25rem;
+    transition: ease all 0.3s;
+  }
+}
+
+.offCanvas {
+  &:global(.offcanvas-bottom) {
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  :global(.offcanvas-header) {
+    @include padding(25, 0, 25, 15);
+
+    button {
+      opacity: 1;
+      box-shadow: none;
+    }
+  }
+
+  h2 {
+    @include rem(padding-left, 20);
+    @include rem(font-size, 22);
+    color: $primary;
+  }
+
+  :global(.offcanvas-body) {
+    padding: 0;
+  }
+
+  a {
+    font-family: $font-regular;
+    color: $raisinblack;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      color: $raisinblack;
+    }
+  }
+}

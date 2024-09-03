@@ -1,3 +1,5 @@
+"use client"
+
 import { CustomImage, CustomLink } from '@components';
 import { IHomeCategoryList, IHomeCategoryListDetail } from '@interfaces';
 import { GTMHelper } from '@utils';
@@ -8,9 +10,11 @@ const HomeCategoryList = (props: IHomeCategoryList) => {
   const { categoryData, type = '', isCategoryPage = false } = props;
   const myref = useRef<HTMLDivElement>(null);
 
+  const isBrowser = typeof window !== 'undefined';
+
   return (
     <div
-      className={`container ${styles.wrapper} ${type === 'category' ? styles.categoryContainer : ''}`}
+    className={`container ${styles.wrapper} ${type === 'category' ? styles.categoryContainer : ''}`}
       itemScope
       itemType="https://schema.org/ItemList"
     >

@@ -1,6 +1,9 @@
 import { ENDPOINT } from '@api-manager';
 import { ErrorFallback, HeroBanner, Layout, SubNav, TwoColumnCard } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
+import SideNav from 'src/components/SideNav';
+
+import styles from '../homeBuilder.module.scss';
 
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.choosingLand);
@@ -32,15 +35,23 @@ const ChoosingTheRightLand = async () => {
           <HeroBanner compData={mainBanner?.fields} noMargin={true} breadCrumbList={breadCrumbList?.fields} />
         </div>
       )}
-      {subNav?.fields?.subNavItems?.length > 0 && (
-        <SubNav
-          compData={subNav?.fields?.subNavItems}
-          heading={subNav?.fields?.heading}
-          offcanvasHeading={subNav?.fields?.offcanvasHeading}
-          isMobileDropdown={true}
-        />
-      )}
-      {TwoColumnCardData?.fields && <TwoColumnCard compData={TwoColumnCardData?.fields} />}
+      <div className="container pt-5">
+      <div className="row mt-5">
+        <div className="col-md-4">
+          {subNav?.fields?.subNavItems?.length > 0 && (
+            <SideNav
+              compData={subNav?.fields?.subNavItems}
+              heading={subNav?.fields?.heading}
+              offcanvasHeading={subNav?.fields?.offcanvasHeading}
+              isMobileDropdown={true}
+            />
+          )}
+        </div>
+        <div className={`col-md-8 hbg-Container`}>
+          {TwoColumnCardData?.fields && <TwoColumnCard compData={TwoColumnCardData?.fields} />}
+        </div>
+      </div>
+      </div>
     </Layout>
   );
 };
