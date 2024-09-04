@@ -1,6 +1,9 @@
 import { ENDPOINT } from '@api-manager';
-import { ErrorFallback, HeroBanner, Layout, SubNav, TwoColumnCard } from '@components';
+import { ErrorFallback, HeroBanner, HBGColumnCard, Layout, SideNav, TwoColumnCard } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
+
+import styles from '../homeBuilder.module.scss';
+
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.homeConstructionCarePage);
   const { data } = apiData;
@@ -24,21 +27,33 @@ const HomeConstructionCare = async () => {
       headerData={header?.header?.fields}
       seoData={seoData?.fields}
     >
-      <div className="d-none d-lg-block">
-        {mainBanner?.fields && (
+      {mainBanner?.fields && (
+        <div className="d-none d-lg-block">
           <HeroBanner compData={mainBanner?.fields} noMargin={true} breadCrumbList={breadCrumbList?.fields} />
-        )}
-      </div>
-
-      {subNav?.fields?.subNavItems && (
-        <SubNav
-          compData={subNav?.fields?.subNavItems}
-          heading={subNav?.fields?.heading}
-          offcanvasHeading={subNav?.fields?.offcanvasHeading}
-          isMobileDropdown={true}
-        />
+        </div>
       )}
-      {TwoColumnCardData?.fields && <TwoColumnCard compData={TwoColumnCardData?.fields} />}
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <a className={styles.heading} href="/home-building-guide">
+              <h2>Home Building Guide</h2>
+            </a>
+          </div>
+          <div className="col-lg-4">
+            {subNav?.fields?.subNavItems?.length > 0 && (
+              <SideNav
+                compData={subNav?.fields?.subNavItems}
+                heading={subNav?.fields?.heading}
+                offcanvasHeading={subNav?.fields?.offcanvasHeading}
+                isMobileDropdown={true}
+              />
+            )}
+          </div>
+          <div className={`col-lg-8 hbg-Container`}>
+            {TwoColumnCardData?.fields && <HBGColumnCard compData={TwoColumnCardData?.fields} />}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

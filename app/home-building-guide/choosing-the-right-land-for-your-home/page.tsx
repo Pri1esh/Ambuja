@@ -36,8 +36,10 @@ const ChoosingTheRightLand = async () => {
       )}
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <h2 className={styles.heading}>Home Building Guide</h2>
+        <div className="col-12">
+            <a className={styles.heading} href="/home-building-guide">
+              <h2>Home Building Guide</h2>
+            </a>
           </div>
           <div className="col-lg-4">
             {subNav?.fields?.subNavItems?.length > 0 && (

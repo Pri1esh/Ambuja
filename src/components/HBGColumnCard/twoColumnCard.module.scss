@@ -580,7 +580,9 @@
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
-    aspect-ratio: 4 / 5;
+    @include media($lg, min) {
+      aspect-ratio: 4 / 5;
+    }
 
     a {
       @include rem(border-radius, 8);
@@ -600,6 +602,7 @@
       @include media($lg, min) {
         transform: scale(1);
         transition: ease-in-out all 2600ms;
+        object-fit: cover;
       }
     }
   }

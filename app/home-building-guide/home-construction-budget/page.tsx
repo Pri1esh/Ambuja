@@ -2,7 +2,7 @@ import { ENDPOINT } from '@api-manager';
 import { CardList, ErrorFallback, HeroBanner, Layout, Overview, SideNav } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
 
-import styles from "../homeBuilder.module.scss";
+import styles from '../homeBuilder.module.scss';
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.homeConstructionBudget);
   const { data } = apiData;
@@ -32,25 +32,27 @@ const HomeConstructionBudgetPage = async () => {
       </div>
 
       <div className="container">
-      <div className="row">
-      <div className="col-12">
-          <h2 className={styles.heading}>Home Building Guide</h2>
+        <div className="row">
+          <div className="col-12">
+            <a className={styles.heading} href="/home-building-guide">
+              <h2>Home Building Guide</h2>
+            </a>
+          </div>
+          <div className="col-md-4">
+            {subNav?.fields?.subNavItems?.length > 0 && (
+              <SideNav
+                compData={subNav?.fields?.subNavItems}
+                heading={subNav?.fields?.heading}
+                offcanvasHeading={subNav?.fields?.offcanvasHeading}
+                isMobileDropdown={true}
+              />
+            )}
+          </div>
+          <div className={`col-md-8 hbg-Container`}>
+            {overview?.fields && <Overview compData={overview?.fields} showHeading={true} isMargin={false} />}
+            {cardListData?.fields && <CardList compData={cardListData?.fields} />}
+          </div>
         </div>
-        <div className="col-md-4">
-          {subNav?.fields?.subNavItems?.length > 0 && (
-            <SideNav
-              compData={subNav?.fields?.subNavItems}
-              heading={subNav?.fields?.heading}
-              offcanvasHeading={subNav?.fields?.offcanvasHeading}
-              isMobileDropdown={true}
-            />
-          )}
-        </div>
-        <div className={`col-md-8 hbg-Container`}>
-        {overview?.fields && <Overview compData={overview?.fields} showHeading={false} isMargin={false} />}
-        {cardListData?.fields && <CardList compData={cardListData?.fields} />}
-        </div>
-      </div>
       </div>
     </Layout>
   );

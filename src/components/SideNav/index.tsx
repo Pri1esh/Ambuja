@@ -20,7 +20,7 @@ const SideNav = (props: ISubNav) => {
   return (
     <>
       {isMobileDropdown && deviceType !== 'desktop' && deviceType !== 'tablet' ? (
-        <div className="container">
+        <div className={`container ${styles.offCanvasBox}`}>
           <button className={styles.pageHeading} onClick={handleToggleMenu}>
             {heading}
             <span className={`${styles.downArrow} ${showNav ? styles.active : ''}`}>{getIconByName('arrowdown')}</span>

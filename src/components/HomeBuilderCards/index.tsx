@@ -29,7 +29,7 @@ const HomeBuilderCards = (props: { compData: IHomeBuilderCards }) => {
               
             </ul>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-8 hbg-Container">
             <div className="row">
               {cardData?.map((item, index) => <CardItem key={`${heading + index}`} compData={item} />)}
             </div>

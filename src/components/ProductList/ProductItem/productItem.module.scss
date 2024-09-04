@@ -44,6 +44,13 @@
     justify-content: center;
     align-items: center;
 
+    .title {
+      @include rem(font-size, 18);
+      @include rem(margin-top, 20);
+      text-align: center;
+      color: $raisinblack;
+    }
+
     .imgContainer {
       display: flex;
       justify-content: center;
@@ -96,11 +103,7 @@
       @include padding(0, 16, 0, 16);
     }
 
-    .title {
-      @include rem(font-size, 18);
-      text-align: center;
-      color: $raisinblack;
-    }
+    
 
     .subTitle {
       @include rem(font-size, 16);

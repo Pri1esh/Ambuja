@@ -14,10 +14,11 @@ const HomeCategoryList = (props: IHomeCategoryList) => {
 
   return (
     <div
-    className={`container ${styles.wrapper} ${type === 'category' ? styles.categoryContainer : ''}`}
+    className={`${styles.wrapper} ${type === 'category' ? styles.categoryContainer : ''}`}
       itemScope
       itemType="https://schema.org/ItemList"
     >
+      <div className="container">
       <div className={styles.row} ref={myref}>
         {categoryData?.map((data: IHomeCategoryListDetail, key: number) => (
           <button
@@ -63,6 +64,7 @@ const HomeCategoryList = (props: IHomeCategoryList) => {
             </div>
           </button>
         ))}
+      </div>
       </div>
     </div>
   );

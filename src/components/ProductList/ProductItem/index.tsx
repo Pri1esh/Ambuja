@@ -62,7 +62,10 @@ const ProductItem = (props: IProductCard) => {
         </CustomLink>
       ) : (
         <div className={styles.cardFront}>
+          <h2 className={styles.title}>{heading}</h2>
+
           <div className={styles.imgContainer}>
+
             <CustomImage
               src={{
                 mobileSource: imageSourceMobile,
@@ -74,7 +77,6 @@ const ProductItem = (props: IProductCard) => {
             />
           </div>
           <div className={styles.textContainer}>
-            <h2 className={styles.title}>{heading}</h2>
             <p className={styles.subTitle}>{description}</p>
           </div>
         </div>

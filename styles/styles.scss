@@ -133,14 +133,16 @@ div.grecaptcha-badge {
 }
 
 
-.hbg-Container{
-  max-height: 500px;
-  overflow-y: scroll;
-  border-bottom: 1px solid #ddd;
-  &::-webkit-scrollbar{
-    display: none;
-  }
-  .hbg-Overview{
-    margin-top: 0;
+@media (min-width:$lg){
+  .hbg-Container{
+    max-height: 600px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    .hbg-Overview{
+      margin-top: 0;
+    }
   }
 }

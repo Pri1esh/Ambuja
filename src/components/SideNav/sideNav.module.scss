@@ -161,7 +161,7 @@
 
   span {
     @include rem(font-size, 18);
-    @include rem(padding-left, 40);
+    @include rem(margin-left, 40);
     transition: ease all 0.3s;
   }
 
@@ -205,5 +205,11 @@
     &:hover {
       color: $raisinblack;
     }
+  }
+}
+
+.offCanvasBox{
+  @include media($lg,max){
+    padding-inline: 0;
   }
 }

@@ -1,12 +1,22 @@
-.hbgContainer{
-    
-    .buildingCards{
-        
-        aspect-ratio: 4 / 5;
-    }
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.hbgContainer {
+  .buildingCards {
+    aspect-ratio: 4 / 5;
+  }
 }
 
-.heading{
+.heading {
+  text-decoration: none;
+  h2 {
     font-size: 50px;
     margin-block: 50px;
+  }
+}
+
+@include media($lg, max) {
+  .heading {
+    display: none;
+  }
 }
