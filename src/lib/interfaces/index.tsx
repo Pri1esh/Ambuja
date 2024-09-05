@@ -1635,6 +1635,8 @@ export interface ISliderGalleryData {
   imageSourceTablet?: string;
   imageAlt: string;
   label?: string;
+  heading?: string;
+  description?: string;
 }
 export interface ISlider {
   gallery: ISliderGalleryData[];

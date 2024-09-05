@@ -45,10 +45,11 @@
     align-items: center;
 
     .title {
-      @include rem(font-size, 18);
+      @include rem(font-size, 25);
       @include rem(margin-top, 20);
       text-align: center;
       color: $raisinblack;
+      color: #184f79;
     }
 
     .imgContainer {
@@ -130,6 +131,12 @@
     transition: all 1s ease-in-out;
     background-color: $secondary;
     left: 0;
+
+    .hoveredtitle{
+      @include rem(font-size, 18);
+      text-align: center;
+      color: $raisinblack;
+    }
 
     .iconContainer {
       @include rem(margin-top, 40);

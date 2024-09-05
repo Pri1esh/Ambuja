@@ -69,3 +69,4 @@ export { default as TwoColumnList } from './TwoColumnList';
 export { default as VectorCard } from './VectorCard';
 export { default as VerticalCarousel } from './VerticalCarousel';
 export { default as VideoCard } from './VideoCard';
+export { default as HBGMenu } from './HBGMenu';

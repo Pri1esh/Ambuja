@@ -1,0 +1,185 @@
+@import "../../../styles/partials/variable";
+@import "../../../styles/partials/mixins";
+
+.wrapper {
+  @include rem(padding-top, 60);
+  @include rem(padding-bottom, 10);
+  position: relative;
+  background-color: $ateneoblue;
+
+  @include media($lg, min) {
+    @include rem(padding-top, 100);
+    @include rem(padding-bottom, 0);
+
+    .dreamHomeReality{
+      max-height: 580px;
+      .childDreamHome{
+        max-height: 580px;
+        overflow: hidden;
+      }
+    }
+
+    @keyframes expand-card-desktop {
+      0% {
+        width: initial; // Start from the current width
+        max-height: unset;
+      }
+      100% {
+        width: calc(
+          (100vw / var(--child-count)) * 1.75
+        ); // Expand to the calculated width
+        max-height: unset;
+      }
+    }
+
+    
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        opacity: 1; /* End fully visible */
+    }
+  }
+  
+  .dreamHomeReality {
+    @include rem(padding-bottom, 50);
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 480px;
+
+    .childDreamHome {
+      flex-basis: 14.28%;
+      @include rem(padding-inline, 12);
+      @include rem(padding-block, 60);
+      transition: flex-basis 0.6s ease-in-out, padding-inline 0.6s ease-in-out,
+        opacity 0.6s ease-in-out, padding-inline 0.6s ease-in-out;
+
+      .dreamHomeImg {
+        aspect-ratio: 2 / 4;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: aspect-ratio 0.6s ease-in-out;
+      }
+
+      .contentData {
+        .mainHead {
+          @include rem(margin-top, 30);
+          @include rem(font-size, 18);
+          font-weight: 600;
+          color: #000000;
+        }
+        .dataHead {
+          @include rem(font-size, 16);
+          @include rem(margin-top, 20);
+          font-weight: 400;
+          color: #414141;
+          display: none; /* Initially hidden */
+          opacity: 0; /* Initially invisible */
+        }
+        a{
+          text-decoration: none;
+          .viewDetails {
+            @include rem(border-radius, 22);
+            @include rem(font-size, 15);
+            @include rem(padding-inline, 12);
+            @include rem(padding-block, 2);
+            border: 1px solid #707070;
+            font-weight: 400;
+            color: #414141;
+            align-items: center;
+            display: none;
+            background-color: transparent;
+            img {
+              @include rem(margin-left, 5);
+              width: 12px;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        @include rem(padding-inline, 15);
+        flex-basis: 20.7%;
+        animation: expand-card-desktop 0.6s ease-in-out forwards; // Apply the animation
+        .dreamHomeImg {
+          aspect-ratio: 1 / 1;
+          transition-duration: 0.6s;
+        }
+        .contentData {
+          .dataHead {
+            opacity: 0; /* Initially hidden */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            animation: fadeIn 0.6s ease-in-out 0.3s forwards; /* 1s duration, 2s delay */
+          }
+          .viewDetails {
+            opacity:0;
+            animation: fadeIn 0.8s ease-in-out 0.3s forwards; /* 1s duration, 2s delay */
+            display: flex;
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: #fef9ef;
+      }
+
+      &:nth-child(even) {
+        background-color: #ecf6ff;
+      }
+    }
+  }
+
+  @include media($lg, max) {
+    .dreamHomeReality {
+      @include rem(min-height, 280);
+      flex-direction: column;
+
+      .childDreamHome {
+        @include rem(padding-block, 20);
+        display: flex;
+        gap: 10px;
+        @include rem(max-height, 300);
+        transition: max-height 6s ease-in-out;
+        .dreamHomeImg {
+          aspect-ratio: 4/4;
+          @include rem(max-height, 100);
+          @include rem(max-width, 100);
+          
+        }
+        .contentData {
+          .mainHead {
+            @include rem(margin-top, 10);
+          }
+        }
+
+        &:hover {
+          animation: unset;
+          transition-duration: 2s;
+          .dreamHomeImg {
+            aspect-ratio:4 / 4;
+            @include rem(max-height, 100);
+            @include rem(max-width, 100);
+            
+          }
+          .contentData {
+            .mainHead {
+              @include rem(margin-top, 0);
+              @include rem(margin-bottom, 5);
+              transition: height 1s ease-in-out;
+            }
+            .dataHead {
+              @include rem(margin-top, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

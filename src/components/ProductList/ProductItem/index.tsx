@@ -43,6 +43,7 @@ const ProductItem = (props: IProductCard) => {
           }}
         >
           <div className={styles.cardFront}>
+          <h2 className={styles.title}>{heading}</h2>
             <div className={styles.imgContainer}>
               <CustomImage
                 src={{
@@ -55,7 +56,6 @@ const ProductItem = (props: IProductCard) => {
               />
             </div>
             <div className={styles.textContainer}>
-              <h2 className={styles.title}>{heading}</h2>
               <p className={styles.subTitle}>{description}</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ const ProductItem = (props: IProductCard) => {
       {/* card hovered */}
       <div className={styles.hovered}>
         <div className={styles.textContainer}>
-          <h2 className={styles.title}>{heading}</h2>
+          <h2 className={styles.hoveredtitle}>{heading}</h2>
           <p className={styles.subTitle}>{description}</p>
         </div>
         <div className={styles.iconContainer}>

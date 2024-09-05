@@ -10,7 +10,7 @@ import {
   HomeCategoryList,
   Layout,
   MainBanner,
-  ScaleSlider,
+  HBGMenu,
   VerticalCarousel,
 } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
@@ -44,7 +44,7 @@ const HomePage = async () => {
       {main?.categoriesList?.fields?.categoriesList && (
         <HomeCategoryList categoryData={main?.categoriesList?.fields?.categoriesList} />
       )}
-      {main?.ScaleSlider?.fields && <ScaleSlider compData={main?.ScaleSlider?.fields} />}
+      {main?.ScaleSlider?.fields && <HBGMenu compData={main?.ScaleSlider?.fields} />}
       {main?.costCalculatorData?.fields && (
         <CostCalculatorWidget compData={main?.costCalculatorData?.fields} inPage={false} />
       )}

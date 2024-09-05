@@ -1,0 +1,306 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  @include padding(0, 20, 0, 20);
+  background-color: $ateneoblue;
+  position: relative;
+
+  @include media($sm, min) {
+    @include rem(min-height, 400);
+    padding: 0 0 1.25rem;
+  }
+
+  @include media($lg, min) {
+    @include rem(min-height, 540);
+    padding: 0 0 1.5rem;
+  }
+
+  @include media-min-max($md, $lg) {
+    @include rem(min-height, 410);
+    padding: 0 0 1rem;
+  }
+
+  .item {
+    img {
+      @include rem(max-height, 220);
+      @include rem(min-height, 220);
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  :global(.slick-list) {
+    padding-left: 4.25vw;
+
+    :global(.slick-track) {
+      @include rem(column-gap, 20);
+      display: flex;
+      align-items: baseline;
+      -webkit-transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+
+      @include media($md, min) {
+        @include rem(column-gap, 30);
+        display: flex;
+        align-items: flex-end;
+      }
+
+      @include media-min-max($md, $lg) {
+        @include rem(column-gap, 20);
+      }
+
+      :global(.slick-slide) {
+        .item {
+          width: 27vw;
+          position: relative;
+          transition: ease all 0.6s;
+          min-height: 23.75rem;
+          max-width: 23.75rem;
+          background-color: #fff;
+          border-radius: 0.5rem;
+
+          img {
+            @include rem(max-height, 275);
+            width: 27vw;
+            object-fit: cover;
+            height: 40vh;
+            transition: ease all 0.5s;
+            transition-delay: 0.8s;
+            object-position: top left;
+
+            @include media-min-max($sm, $lg) {
+              @include rem(max-height, 184);
+            }
+
+            @include media($lg, min) {
+              @include rem(height, 275);
+              max-height: 100%;
+            }
+          }
+
+          span {
+            @include padding(20, 28, 20, 28);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: $secondary;
+            z-index: $zindex-1;
+          }
+        }
+      }
+
+      :global(.slick-active) {
+        + {
+          :global(.slick-active) {
+            + {
+              :global(.slick-active) {
+                .item {
+                  width: 27vw;
+                  transition: ease all 0.3s;
+
+                  img {
+                    @include rem(max-height, 220);
+                    width: 100%;
+                    height: 50vh;
+                    transition: ease all 0.8s;
+
+                    @include media($lg, min) {
+                      @include rem(height, 330);
+                      max-height: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  :global(.slick-arrow) {
+    @include rem(top, -60);
+    overflow: hidden;
+
+    &:global(.slick-prev) {
+      right: calc(((100% - 45rem) / 2) + 9rem);
+      left: unset;
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 9rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 9rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 9rem);
+      }
+    }
+
+    &:global(.slick-next) {
+      right: calc(((100% - 45rem) / 2) + 5.938rem);
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 5.938rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 5.938rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 5.938rem);
+      }
+    }
+  }
+
+  :global(.slick-track) {
+    @include rem(margin-left, 20);
+
+    > div:last-child {
+      @include rem(margin-right, 20);
+    }
+
+    @include media($md, min) {
+      margin-left: calc(((100% - 60rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 60rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($lgb, min) {
+      margin-left: calc(((100% - 71.25rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 71.25rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($xxxl, min) {
+      margin-left: calc(((100% - 82.5rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 82.5rem) / 2) - 0.938rem);
+      }
+    }
+  }
+
+  :global(.slick-disabled) {
+    opacity: 0.4;
+    pointer-events: none;
+
+    i {
+      opacity: 1;
+    }
+  }
+
+  @include media($sm, max) {
+    .item {
+      position: relative;
+
+      a {
+        @include font-size(18);
+        color: $secondary;
+      }
+
+      span {
+        @include rem(left, 12);
+        @include rem(bottom, 12);
+        @include rem(min-width, 130);
+        @include padding(12, 8, 12, 8);
+        position: absolute;
+        z-index: $zindex-1;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .textContainer {
+    @include padding(24, 20, 24, 20);
+    @include rem(min-height, 120);
+    background-color: $secondary;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include media($md, min) {
+      @include rem(min-height, 140);
+    }
+
+    h3 {
+      @include font-size(18);
+      @include rem(padding, 0);
+      @include rem(margin, 0);
+      @include rem(margin-bottom, 6);
+      color: $raisinblack;
+    }
+
+    p {
+      @include rem(margin-bottom, 0);
+      @include font-size(14);
+      text-transform: none;
+      color: $raisinblack;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:hover {
+      .arrow {
+        background-color: $chineeseyellow;
+        border: none;
+
+        i:before {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .textWrapper {
+    width: 100%;
+
+    @include media($lg, min) {
+      width: 80%;
+      display: block;
+    }
+  }
+
+  .arrowWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrow {
+      @include rem(width, 35);
+      @include rem(height, 35);
+      border-radius: 50%;
+      transform: rotate(90deg);
+      border: 1px solid $primary;
+
+      i:before {
+        @include center(both);
+        @include font-size(8);
+        color: $raisinblack;
+      }
+
+      span {
+        @include font-size(0);
+      }
+
+      @include media($md, max) {
+        display: none;
+      }
+    }
+  }
+}

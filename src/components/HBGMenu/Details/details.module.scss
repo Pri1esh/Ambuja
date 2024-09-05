@@ -1,0 +1,76 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  position: relative;
+  z-index: $zindex-1;
+
+  @include media($sm, min) {
+    padding-bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .textWrapper {
+    flex: 0 0 60%;
+
+    @include media-min-max($sm, $lg) {
+      @include rem(margin-bottom, 48);
+    }
+
+    a {
+      color: $indigo;
+      @include rem(margin-bottom, 40);
+
+      @include media($md, max) {
+        display: none;
+      }
+
+      &:hover {
+        background: $secondary;
+        color: $indigo;
+      }
+    }
+  }
+
+  .subHeading {
+    @include font-size(16);
+    @include rem(line-height, 26);
+    color: $chineeseyellow;
+    font-family: $font-medium;
+    margin-bottom: 0;
+
+    @include media($md, min) {
+      @include rem(line-height, 30);
+      @include font-size(26);
+      @include rem(margin-bottom, 10);
+    }
+  }
+
+  .heading {
+    color: $secondary;
+    @include rem(line-height, 32);
+    @include font-size(26);
+
+    @include media($md, min) {
+      @include rem(line-height, 61);
+      @include font-size(60);
+      @include rem(margin-bottom, 32);
+    }
+  }
+}
+
+.imgWrapper {
+  @include rem(margin-right, 64);
+  max-width: 10.5rem;
+
+  @include media($md, max) {
+    display: none;
+  }
+
+  img {
+    @include rem(width, 140);
+    @include rem(height, 140);
+  }
+}
