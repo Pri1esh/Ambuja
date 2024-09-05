@@ -1,6 +1,8 @@
 import { ENDPOINT } from '@api-manager';
-import { Breadcrumbs, ErrorFallback, HomeBuilderCards, Layout } from '@components';
+import { Breadcrumbs, ErrorFallback, HomeBuilderCards, Layout,SideNav,HBGColumnCard } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
+
+import styles from './homeBuilder.module.scss';
 
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.homeBuildingGuide);
@@ -18,7 +20,7 @@ const HomeBuildingGuidePage = async () => {
   }
 
   const { footer, header, main } = data;
-  const { seoData, breadCrumbList, homeBuilderCard } = main;
+  const { seoData, breadCrumbList, homeBuilderCard, subNav,TwoColumnCardData} = main;
 
   return (
     <Layout
@@ -32,7 +34,29 @@ const HomeBuildingGuidePage = async () => {
           <Breadcrumbs list={breadCrumbList?.fields?.items} />
         </div>
       )}
-      {homeBuilderCard?.fields && <HomeBuilderCards compData={homeBuilderCard?.fields} />}
+
+      <div className="container">
+        <div className="row">
+        <div className="col-12">
+            <a className={styles.heading} href="/home-building-guide">
+              <h2>Home Building Guide</h2>
+            </a>
+          </div>
+          <div className="col-lg-4">
+            {subNav?.fields?.subNavItems?.length > 0 && (
+              <SideNav
+                compData={subNav?.fields?.subNavItems}
+                heading={subNav?.fields?.heading}
+                offcanvasHeading={subNav?.fields?.offcanvasHeading}
+                isMobileDropdown={true}
+              />
+            )}
+          </div>
+          <div className={`col-lg-8 hbg-Container`}>
+          {homeBuilderCard?.fields && <HomeBuilderCards compData={homeBuilderCard?.fields} />}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

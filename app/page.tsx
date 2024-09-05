@@ -44,11 +44,11 @@ const HomePage = async () => {
       {main?.categoriesList?.fields?.categoriesList && (
         <HomeCategoryList categoryData={main?.categoriesList?.fields?.categoriesList} />
       )}
+      {main?.verticalCarousel?.fields && <VerticalCarousel compData={main?.verticalCarousel?.fields} />}
       {main?.ScaleSlider?.fields && <HBGMenu compData={main?.ScaleSlider?.fields} />}
       {main?.costCalculatorData?.fields && (
         <CostCalculatorWidget compData={main?.costCalculatorData?.fields} inPage={false} />
       )}
-      {main?.verticalCarousel?.fields && <VerticalCarousel compData={main?.verticalCarousel?.fields} />}
       {main?.CardSlider?.fields && <CardSlider compData={main?.CardSlider?.fields} />}
       <div className="container">
         {main?.HomeFAQ?.fields && <Faqs compData={main?.HomeFAQ?.fields} />}

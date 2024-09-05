@@ -21,31 +21,4 @@
       color: $indigo;
     }
   }
-
-  .hbgMenu{
-    list-style: none;
-    li{
-      @include rem(margin-bottom,30);
-      a{
-        .menuTab{
-          cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        img{
-          width: 30px;
-          aspect-ratio: 1;
-        }
-        p{
-          @include rem(font-size,22);
-          @include rem(line-height,25);
-          margin-bottom: 0;
-          color: #000000;
-          font-weight: 600;
-        }
-        }
-        
-      }
-    }
-  }
 }

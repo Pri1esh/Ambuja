@@ -1805,6 +1805,7 @@ export interface ISubNav {
   offcanvasHeading?: string;
   isMobileDropdown?: boolean;
   classname?: string;
+  iconSource?: string;
 }
 
 export interface ILoader {

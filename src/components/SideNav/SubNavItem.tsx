@@ -1,4 +1,5 @@
 import { ISubNav } from '@interfaces';
+import { CustomImage } from '@components';
 import { GTMHelper, getIconByName, scrollTabIntoView, useDeviceType } from '@utils';
 import { useEffect, useRef } from 'react';
 import CustomLink from '../CustomLink';
@@ -22,15 +23,24 @@ const SubNavItem = (props: ISubNav) => {
       <h2 className={styles.heading}>{offcanvasHeading}</h2>
       {compData && (
         <ul className={styles.hbgMenu}>
-          {compData.map((item, index) => (
+          {compData.map((item: any, index) => (
             <li key={index}>
               <CustomLink href={item?.link} target={item?.linkTarget}>
                 <div className={styles.menuTab}>
                   <div className="d-flex align-items-center">
-                    <Image src={rightarrow} alt="->" />
+                    <CustomImage
+                      lazy="false"
+                      src={{
+                        mobileSource: item?.iconSource,
+                        tabletSource: item?.iconSource,
+                        defaultSource: item?.iconSource,
+                      }}
+                      loader="false"
+                      alt="->"
+                    />
                     <p className="">{item.linkText}</p>
                   </div>
-                  { item.active && <Image src={rightarrow} alt="->" />}
+                  {item.active && <Image src={rightarrow} alt="->" />}
                 </div>
               </CustomLink>
             </li>

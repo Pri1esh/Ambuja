@@ -37,7 +37,17 @@ const CardItem = (props: { compData: ICardItem }) => {
         </CustomLink>
       </div>
       <div className={styles.textContainer}>
-      {compData?.heading && <Image className={styles.cardIco} src={homeic} alt='nothing'/>}
+      {compData?.heading && <CustomImage
+           className={styles.cardIco}
+            lazy="false"
+            src={{
+              mobileSource: compData?.imageSourceMobile,
+              tabletSource: compData?.imageSourceTablet,
+              defaultSource: compData?.imageSource,
+            }}
+            loader="false"
+            alt={compData?.imageAlt}
+          /> }
         {compData?.heading && <h3>{compData?.heading}</h3>}
         {compData?.description && <p className={styles.description}>{compData?.description}</p>}
         {compData?.link && (

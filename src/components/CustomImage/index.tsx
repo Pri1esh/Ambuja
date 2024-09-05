@@ -12,7 +12,7 @@ const getImageSource = (deviceType: any, src: any) => {
     imageSource = src?.defaultSource;
   }
   // uncomment for local fallback 
-  return 'https://uat-s.ambujahelp.in' + imageSource || src?.defaultSource;
+  return 'https://ambujahelp.dev.local' + imageSource || src?.defaultSource;
   // return imageSource || src?.defaultSource;
 };
 
