@@ -9,6 +9,7 @@ const CustomVideo = (props: ICustomVideo) => {
   const { compData, classname = '' } = props;
   const { isOverlayRequired = true, autoplay = true } = compData;
   const { deviceType } = useDeviceType();
+  const preFix :string = process.env.NEXT_PUBLIC_STAGING_LINK ?  process.env.NEXT_PUBLIC_STAGING_LINK : '';
 
   const [playVideo, setPlayVideo] = useState<boolean>(!isOverlayRequired);
 
@@ -88,7 +89,7 @@ const CustomVideo = (props: ICustomVideo) => {
             autoPlay={autoplay || playVideo}
             muted
             loop={true}
-            poster={'https://sitecorecm.uat.adanirealty.com/' + compData?.posterImage}
+            poster={preFix + compData?.posterImage}
             playsInline
             controls={isOverlayRequired && playVideo}
             itemProp="video"

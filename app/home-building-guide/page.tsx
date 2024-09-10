@@ -1,5 +1,5 @@
 import { ENDPOINT } from '@api-manager';
-import { Breadcrumbs, ErrorFallback, HomeBuilderCards, Layout,SideNav,HBGColumnCard } from '@components';
+import { Breadcrumbs, ErrorFallback, HomeBuilderCards, Layout,SideNav } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
 
 import styles from './homeBuilder.module.scss';
@@ -20,7 +20,7 @@ const HomeBuildingGuidePage = async () => {
   }
 
   const { footer, header, main } = data;
-  const { seoData, breadCrumbList, homeBuilderCard, subNav,TwoColumnCardData} = main;
+  const { seoData, breadCrumbList, homeBuilderCard, subNav} = main;
 
   return (
     <Layout

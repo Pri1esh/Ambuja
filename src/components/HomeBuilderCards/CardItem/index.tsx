@@ -1,11 +1,10 @@
-import { CustomIcon, CustomImage, CustomLink } from '@components';
+import { CustomImage, CustomLink } from '@components';
 import { ICardItem } from '@interfaces';
 import { GTMHelper } from '@utils';
 import styles from './cardItem.module.scss';
 
 import Image from "next/image"
 
-import homeic from "../../../assets/temp/home.svg"
 import rightarrow from "../../../assets/icons/arrowrighttail.svg"
 
 
@@ -41,9 +40,9 @@ const CardItem = (props: { compData: ICardItem }) => {
            className={styles.cardIco}
             lazy="false"
             src={{
-              mobileSource: compData?.imageSourceMobile,
-              tabletSource: compData?.imageSourceTablet,
-              defaultSource: compData?.imageSource,
+              mobileSource: compData?.iconSource,
+              tabletSource: compData?.iconSource,
+              defaultSource: compData?.iconSource,
             }}
             loader="false"
             alt={compData?.imageAlt}

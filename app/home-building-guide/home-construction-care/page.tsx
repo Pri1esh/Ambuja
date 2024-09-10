@@ -1,5 +1,5 @@
 import { ENDPOINT } from '@api-manager';
-import { ErrorFallback, HeroBanner, HBGColumnCard, Layout, SideNav, TwoColumnCard } from '@components';
+import { ErrorFallback, HeroBanner, HBGColumnCard, Layout, SideNav} from '@components';
 import { getApiData, getMetadata } from '@utils/server';
 
 import styles from '../homeBuilder.module.scss';

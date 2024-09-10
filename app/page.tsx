@@ -12,6 +12,7 @@ import {
   MainBanner,
   HBGMenu,
   VerticalCarousel,
+  VideoSlider,
 } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
 
@@ -49,7 +50,7 @@ const HomePage = async () => {
       {main?.costCalculatorData?.fields && (
         <CostCalculatorWidget compData={main?.costCalculatorData?.fields} inPage={false} />
       )}
-      {main?.CardSlider?.fields && <CardSlider compData={main?.CardSlider?.fields} />}
+      {main?.CardSlider?.fields && <VideoSlider compData={main?.CardSlider?.fields} />}
       <div className="container">
         {main?.HomeFAQ?.fields && <Faqs compData={main?.HomeFAQ?.fields} />}
         {main?.videoBanner?.fields && <CustomVideo compData={main?.videoBanner?.fields} />}

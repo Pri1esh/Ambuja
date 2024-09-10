@@ -22,8 +22,9 @@
     left: 50%;
     top: 0;
     transform: translate(-50%,-50%);
-    height: 80px;
-    width: 80px;
+    height: auto;
+    aspect-ratio: 1;
+    width: 22%;
   }
   .cardArrow{
     height: 100%;
@@ -106,7 +107,8 @@
       text-decoration: none;
       button{
         border: 1px solid #000000;
-        @include rem(width,200);
+        @include rem(max-width,200);
+        width: -webkit-fill-available;
         background-color: transparent;
         display: flex;
         flex-direction: row;

@@ -6,11 +6,6 @@ import { Container } from 'react-bootstrap';
 import Details from './Details';
 import Slider from './Slider';
 import styles from './scaleSlider.module.scss';
-import Image from 'next/image';
-import CustomImage from '../CustomImage';
-import { ArrowRight } from 'src/icons/ArrowRight';
-import rightarrow from '../../assets/icons/arrowrighttail.svg';
-
 
 const ScaleSlider = (props: IScaleSlider) => {
   const { compData } = props;

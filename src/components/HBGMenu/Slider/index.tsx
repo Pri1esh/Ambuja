@@ -1,6 +1,5 @@
-import { BaseSlider, CustomIcon, CustomImage, CustomLink } from '@components';
-import { ISlider, ISliderCardData, ISliderGalleryData } from '@interfaces';
-import { useDeviceType } from '@utils';
+import { CustomImage } from '@components';
+import { ISlider,  ISliderGalleryData } from '@interfaces';
 import React from 'react';
 // import styles from './slider.module.scss';
 import Image from 'next/image';
@@ -9,10 +8,7 @@ import rightarrow from '../../../assets/icons/arrowrighttail.svg';
 
 const Slider = (props: ISlider) => {
   const { gallery } = props;
-  const { deviceType } = useDeviceType();
-  const isMobile = deviceType === 'mobile';
-  console.log(gallery);
-
+  
   return (
     <div className={styles.wrapper}>
       <div className="container">

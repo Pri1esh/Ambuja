@@ -2050,6 +2050,7 @@ export interface ICardItem {
   linkText: string;
   linkTarget: string;
   gtmData: IGTMData;
+  iconSource: string;
 }
 
 export interface IChecklist {

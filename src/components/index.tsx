@@ -10,6 +10,7 @@ export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as BrochureCard } from './BrochureCard';
 export { default as CardList } from './CardList';
 export { default as CardSlider } from './CardSlider';
+export { default as VideoSlider } from './VideoSlider';
 export { default as Checklist } from './Checklist';
 export { default as AppCookie } from './Cookies';
 export { default as CostCalculator } from './CostCalculator';
