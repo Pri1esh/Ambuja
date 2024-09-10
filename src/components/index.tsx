@@ -5,6 +5,7 @@ export { default as Analytics } from './Analytics';
 export { default as AppWrapper } from './AppWrapper';
 export { default as BackToTop } from './BackToTop';
 export { default as BaseSlider } from './BaseSlider';
+export { default as BaseVideoSlider } from './BaseVideoSlider';
 export { default as BottomLinks } from './BottomLinks';
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as BrochureCard } from './BrochureCard';

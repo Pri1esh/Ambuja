@@ -1,4 +1,4 @@
-import { BaseSlider, CustomImage, CustomLink, CustomVideo } from '@components';
+import { BaseVideoSlider, CustomImage, CustomLink, CustomVideo } from '@components';
 import { ICardSliderData, ISliderCardData } from '@interfaces';
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
@@ -98,7 +98,7 @@ const Slider = (item: ICardSliderData) => {
 
   return (
     <div className={`${styles.wrapper} container`}>
-      <BaseSlider
+      <BaseVideoSlider
         isMobSlider={true}
         settings={{
           dots: false,
@@ -157,7 +157,7 @@ const Slider = (item: ICardSliderData) => {
             </div>
           ))}
         </React.Fragment>
-      </BaseSlider>
+      </BaseVideoSlider>
     </div>
   );
 };

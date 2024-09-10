@@ -5,8 +5,7 @@
   position: relative;
 
   > div {
-    @include rem(margin-left, -20);
-    @include rem(margin-right, -20);
+    
 
     @include media($sm, min) {
       padding: 0 0;
@@ -101,17 +100,20 @@
   // VideoCard Start
 
 .VideoTest {
-  padding: 35px;
+  padding: 0;
 
-  &:hover {
-    background-color: #ffffff;
-
-    .title {
-      color: #222222;
-    }
-
-    .desc {
-      color: #222222;
+  @include media($md, min) {
+    padding: 35px;
+    &:hover {
+      background-color: #ffffff;
+  
+      .title {
+        color: #222222;
+      }
+  
+      .desc {
+        color: #222222;
+      }
     }
   }
 
@@ -122,6 +124,9 @@
     color: #ffffff;
     letter-spacing: 0;
     margin-bottom: 0.8rem;
+    @include media($md, max) {
+      font-size: 22px;
+    }
   }
 
   .desc {
@@ -137,6 +142,10 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  @include media($md, max) {
+    -webkit-line-clamp: 2; 
+  }
+  
   }
 
   .VideoTestBox {
@@ -145,6 +154,9 @@
     margin-bottom: 2rem;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    @include media($md, max) {
+      margin-bottom: 1rem;
+    }
 
     img {
       position: absolute;
