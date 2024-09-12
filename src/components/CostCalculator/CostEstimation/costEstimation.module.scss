@@ -111,13 +111,13 @@
 
       @include media($lg, min) {
         @include rem(font-size, 18);
-        flex: 0 0 38%;
+        // flex: 0 0 38%;
 
         width: auto;
       }
 
       &:nth-child(2) {
-        flex: 0 0 20%;
+        // flex: 0 0 20%;
         padding-left: 2rem;
 
         @include media($md, min) {
@@ -128,6 +128,21 @@
       &:last-child {
         text-align: right;
         justify-content: flex-end;
+      }
+      &.materialHead {
+        flex: 0 0 25%;
+      }
+      &.quantityHead {
+        flex: 0 0 12%;
+      }
+      &.baseProductHead {
+        flex: 0 0 25%;
+      }
+      &.premiumProduct {
+        flex: 0 0 25%;
+      }
+      &.Budget {
+        flex: 0 0 12%;
       }
     }
   }
@@ -180,12 +195,10 @@
       width: 100%;
 
       @include media($lg, min) {
-        flex: 0 0 38%;
         width: auto;
       }
 
       &:nth-child(2) {
-        flex: 0 0 20%;
         padding-left: 2rem;
 
         @include media($md, min) {
@@ -197,6 +210,85 @@
         font-family: $font-medium;
         text-align: right;
         justify-content: flex-end;
+      }
+
+      &.materialHead{
+        flex: 0 0 25%;
+      }
+
+      &.quantityHead{
+        flex: 0 0 12%;
+      }
+
+      &.baseProductSlab{
+        flex: 0 0 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        .budgetBtn{
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0;
+          line-height: 19px;
+          margin-block: 6px;
+          margin-right: 15px;
+          padding: 10px;
+
+          &.active{
+            background-color: #eef5f2;
+            border: 1px solid #4aa35a;
+            color: #4aa35a;
+            font-weight: 500;
+          }
+        }
+      }
+
+      &.premiumProductSlab{
+        flex: 0 0 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        .premiumBtn{
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0;
+          line-height: 19px;
+          margin-block: 6px;
+          margin-right: 15px;
+          padding: 10px;
+          
+          &.active{
+            background-color: #eef5f2;
+            border: 1px solid #4aa35a;
+            color: #4aa35a;
+            font-weight: 500;
+          }
+        }
+      }
+
+
+      &.BudgetPrice {
+        flex: 0 0 12%;
+        p{
+        @include rem(font-size,16);
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 21px;
+        padding: 0;
+        text-align: right;
+        }
       }
     }
 

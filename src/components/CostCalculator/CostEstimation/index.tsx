@@ -2,7 +2,7 @@ import { CustomIcon, FloatingInput, SelectDropdown } from '@components';
 import { ICostEstimation, ICostSlab, IMaterialEstimateFilter, IMaterialSlab, ISelectDropdownOption } from '@interfaces';
 import { getAmountDetail } from '@logic/costCalculator';
 import { setFallBack, useDeviceType } from '@utils';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './costEstimation.module.scss';
 
 const CostSlab = (props: ICostSlab) => {
@@ -22,6 +22,11 @@ const CostSlab = (props: ICostSlab) => {
     type === 'percentage' ? `${defaultPrice}%` : defaultPrice,
   );
 
+  const budgetBtnRef = useRef<HTMLButtonElement>(null);
+  const premiumBtnRef = useRef<HTMLButtonElement>(null);
+  const budgetSlabRef = useRef<HTMLDivElement>(null);
+  const premiumSlabRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const idx = priceData?.findIndex((i: any) => i?.label === label);
 
@@ -40,13 +45,105 @@ const CostSlab = (props: ICostSlab) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enteredPrice]);
 
-  return (
+  return label.includes("bags") ?
+  (
     <div className={styles.materialPriceWrapper}>
-      <div>
+      <div className={styles.materialHead}>
         <CustomIcon iconName={icon} /> {label}
       </div>
-      <div className={styles.quantity}>{qty}</div>
-      <div>
+      <div className={styles.quantityHead}>{qty}</div>
+
+      <div ref={budgetSlabRef} className={styles.baseProductSlab}>
+
+        <button  className={styles.budgetBtn}
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+            premiumBtnRef?.current?.classList.remove(styles.active);
+
+            if(premiumSlabRef.current){
+              Array.from(premiumSlabRef.current.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+            // Get the parent element
+            const parent = event.currentTarget.parentElement;
+
+            if (parent) {
+              Array.from(parent.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+          }
+        }
+        >
+          Budget
+        </button>
+
+        <button  className={styles.budgetBtn}
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+            premiumBtnRef?.current?.classList.remove(styles.active);
+
+            if(premiumSlabRef.current){
+              Array.from(premiumSlabRef.current.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+            // Get the parent element
+            const parent = event.currentTarget.parentElement;
+
+            if (parent) {
+              Array.from(parent.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+          }
+        }
+        >
+          Budget
+        </button>
+
+      </div>
+
+      <div className={styles.premiumProductSlab} ref={premiumSlabRef}>
+        <button className={styles.premiumBtn} 
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+            budgetBtnRef?.current?.classList.remove(styles.active);
+          }
+        }>
+          Premium
+        </button>
+      </div>
+
+      <div className={styles.BudgetPrice}>
+          <p>10.71 Lakh</p>
+      </div>
+
+    </div>
+  ):  
+  (
+    <div className={styles.materialPriceWrapper}>
+      <div className={styles.materialHead}>
+        <CustomIcon iconName={icon} /> {label}
+      </div>
+      <div className={styles.quantityHead}>{qty}</div>
+      {/* <div>
         <FloatingInput
           inputType={`${type === 'percentage' ? type : 'tel'}`}
           maxLen={type === 'percentage' ? 3 : 6}
@@ -89,9 +186,42 @@ const CostSlab = (props: ICostSlab) => {
           defaultValue={enteredPrice?.toString()}
           alignValueToRight={true}
         />
+      </div> */}
+
+      <div className={styles.baseProductSlab}>
+        <button className={styles.budgetBtn} ref={budgetBtnRef} 
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+            premiumBtnRef?.current?.classList.remove(styles.active);
+          }
+        }
+        >
+          Budget
+        </button>
       </div>
+
+      <div className={styles.premiumProductSlab}>
+        <button className={styles.premiumBtn} ref={premiumBtnRef}
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+            budgetBtnRef?.current?.classList.remove(styles.active);
+          }
+        }>
+          Premium
+        </button>
+      </div>
+
+      <div className={styles.BudgetPrice}>
+          <p>10.71 Lakh</p>
+      </div>
+
     </div>
-  );
+  )
+  
+
+  
 };
 
 const CostEstimation = (props: ICostEstimation) => {
@@ -137,9 +267,11 @@ const CostEstimation = (props: ICostEstimation) => {
 
       <div className={styles.materialWrapper}>
         <div className={styles.materialDetailsWrapper}>
-          <h4>{compData?.labels?.materialLabel}</h4>
-          <h4 className={styles.middle}>{compData?.labels?.quantitytLabel}</h4>
-          <h4>{compData?.labels?.pricePerUnitLabel}</h4>
+          <h4 className={styles.materialHead}>{compData?.labels?.materialLabel}</h4>
+          <h4 className={styles.quantityHead}>{compData?.labels?.quantitytLabel}</h4>
+          <h4 className={styles.baseProductHead}>Base Product</h4>
+          <h4 className={styles.premiumProduct}>Premium Product</h4>
+          <h4 className={styles.Budget}>{compData?.labels?.pricePerUnitLabel}</h4>
         </div>
         <div className={styles.fields} key={materialData?.materialInfo?.toString()}>
           {materialData?.materialInfo?.map((data: IMaterialSlab, index: number) => (

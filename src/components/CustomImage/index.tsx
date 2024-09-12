@@ -45,6 +45,7 @@ const CustomImage = (props: ICustomImage) => {
     />
   ) : (
     <img
+    data-percent={20}
       {...props}
       loading={lazy === 'true' && !priority ? 'lazy' : 'eager'}
       src={getImageSource(deviceType, src) || src?.defaultSource}
