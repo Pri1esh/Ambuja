@@ -43,7 +43,7 @@
     }
 
     .formInputs {
-      @include rem(gap, 20);
+      @include rem(gap, 16);
       display: flex;
       flex-wrap: wrap;
       width: 100%;
@@ -72,7 +72,7 @@
       .formInputs {
         .dropdown,
         .tabInput {
-          flex: 0 0 50%;
+          flex: 0 0 32%;
         }
       }
 

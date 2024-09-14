@@ -9,3 +9,4 @@ export { default as SelectDropdown } from './SelectDropdown';
 export { default as SelectDropdownCustom } from './SelectDropdownCustom';
 export { default as CostCalcDropdown } from './CostCalcDropdown';
 export { default as TabInput } from './TabInput';
+export { default as CostCalcTabInput } from './CostCalcTabInput';

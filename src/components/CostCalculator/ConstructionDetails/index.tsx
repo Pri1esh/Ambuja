@@ -6,12 +6,12 @@ import {
   ISelectDropdownOption,
   IDDOption
 } from '@interfaces';
-import { goToCostCalculatorPage, validateConstructionTabInputs } from '@logic/costCalculator';
+import { goToCostCalculatorPage, validateConstructionTabInputs, validateConstructionSelect } from '@logic/costCalculator';
 import { GTMHelper, mobileNumberValidatorRegex, setFallBack } from '@utils';
 import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
-import { SelectDropdown, TabInput } from 'src/components/Forms/Fields';
+import { SelectDropdown, CostCalcTabInput } from 'src/components/Forms/Fields';
 import styles from './constructionDetails.module.scss';
 import { Checkbox, CostCalcDropdown } from '../../Forms/Fields';
 
@@ -111,6 +111,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
             setValue('district', '');
             setValue('area', '');
             setAreaOptions([]);
+            console.warn(errors?.['state'])
           } else if (inputTab?.placeholder.toLowerCase()?.includes('district')) {
             setAreaOptions(e?.areaOptions || []);
             setResetOnOptionChange(true);
@@ -119,7 +120,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
         }}
         inpValue={value?.label}
         selected={value?.dropdown}
-        errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
+        errorMessage={errors?.[inputTab?.fieldName] && !value ? inputTab?.errorMessage : ''}
         placeholder={inputTab?.placeholder}
         onBlur={onBlur}
         options={getDropDownOptions(inputTab)}
@@ -130,18 +131,22 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   }
 
   const onSubmit = (data: any) => {
+    console.log("data",data)
     if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
       goToCostCalculatorPage(
         {
           structuretype: selectedRadioOption?.label,
           constructionstage: data?.tab?.dropdown?.label,
           area: data?.tab?.area,
+          stateName: data?.state?.label, districtName: data?.district?.label, areaName: data?.area?.label
         },
         submitButton,
       );
     } else if (handleFormSubmit) {
       handleFormSubmit(
-        { dropdown: data?.tab?.dropdown?.label, structureType: selectedRadioOption?.label, area: data?.tab?.area },
+        { dropdown: data?.tab?.dropdown?.label, structureType: selectedRadioOption?.label, area: data?.tab?.area,
+          stateName: data?.state?.label, districtName: data?.district?.label, areaName: data?.area?.label
+         },
         setFallBack(selectedRadioOption?.id, buttonTabs?.[0]?.id),
         submitButton,
       );
@@ -181,10 +186,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
                     <Controller
                       control={control}
                       name={'tab'}
-                      rules={{
-                        validate: () => validateConstructionTabInputs(getValues('tab')),
-                      }}
-
                       render={({ field: { onChange, onBlur, value } }) => (
                       <SelectDropdown
                         key={inputTab?.type}
@@ -210,11 +211,11 @@ const ConstructionDetails = (props: IConstructionDetails) => {
                       control={control}
                       name={inputTab?.fieldName || ''}
                       rules={{
-                        validate: () => validateConstructionTabInputs(getValues()),
+                        validate: () => validateConstructionSelect({...getValues(inputTab?.fieldName || '')},inputTab?.type),
                       }}
 
                       render={({ field: { onChange, onBlur, value } }) => (
-                        <div className={getDropDownStyle(inputTab)}>{getDropDown(inputTab, onChange, onBlur, value)}</div>
+                        <div className={getDropDownStyle(inputTab)+" "+styles.dropdown}>{getDropDown(inputTab, onChange, onBlur, value)}</div>
                       )}
                     />
                   )
@@ -230,7 +231,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
                       }}
 
                       render={({ field: { onChange, onBlur, value } }) => (
-                        <TabInput
+                        <CostCalcTabInput
                         key={inputTab?.type}
                         className={styles.tabInput}
                         placeholder={inputTab?.placeholder}

@@ -24,13 +24,20 @@ const handleMaterialEstimationTabFilterChange = (
 };
 
 const validateConstructionTabInputs = (values: IConstructionTabValues) => {
-  console.log(values)
   if (!values?.area || values?.area === 0) {
     return false;
   }
 
   return true;
 };
+
+const validateConstructionSelect = (value: any,fieldType:string) =>{
+  if(JSON.stringify(value) === '{}'){
+    console.log("in")
+    return false;
+  }
+  return true;
+}
 
 const updateCostInCostEstimation = async (params: IupdateCostInCostEstimation) => {
   const {
@@ -135,4 +142,5 @@ export {
   handleMaterialEstimationTabFilterChange,
   updateCostInCostEstimation,
   validateConstructionTabInputs,
+  validateConstructionSelect
 };
