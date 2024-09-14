@@ -4,6 +4,7 @@ import {
   IConstructionTabInputTab,
   IConstructionTabRadioOption,
   ISelectDropdownOption,
+  IDDOption
 } from '@interfaces';
 import { goToCostCalculatorPage, validateConstructionTabInputs } from '@logic/costCalculator';
 import { GTMHelper, mobileNumberValidatorRegex, setFallBack } from '@utils';
@@ -12,11 +13,18 @@ import { Form } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
 import { SelectDropdown, TabInput } from 'src/components/Forms/Fields';
 import styles from './constructionDetails.module.scss';
+import { Checkbox, CostCalcDropdown } from '../../Forms/Fields';
 
 const ConstructionDetails = (props: IConstructionDetails) => {
   const { compData, handleFormSubmit, inPage = true, selectedValues = null, apiData = null } = props;
   const { submitButton, buttonTabs, labels, inputTabs } = compData;
   const [selectedRadioOption, setSelectedRadioOption] = useState<IConstructionTabRadioOption | null>(null);
+  const [districtOptions, setDistrictOptions] = useState<IDDOption[]>([]);
+  const [areaOptions, setAreaOptions] = useState<IDDOption[]>([]);
+  const [queryOptions, setQueryOptions] = useState<IDDOption[]>([]);
+  const [resetOnOptionChange, setResetOnOptionChange] = useState(false);
+
+
 
   const {
     control,
@@ -61,6 +69,65 @@ const ConstructionDetails = (props: IConstructionDetails) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
+  // To get dropdown style
+  const getDropDownStyle = (formField: any) => {
+    if (
+      formField?.fieldName?.toLowerCase()?.includes('district') &&
+      districtOptions &&
+      districtOptions.length < 1
+    ) {
+      return styles.disabled;
+    } else if (formField?.fieldName?.toLowerCase()?.includes('area') && areaOptions && areaOptions.length < 1) {
+      return styles.disabled;
+    } else {
+      return '';
+    }
+  };
+
+  // To get the data in dropdowns
+  const getDropDownOptions = (inputTab: any) => {
+   if (inputTab?.type?.toLowerCase()?.includes('district')) {
+      return districtOptions;
+    } else if (inputTab?.type?.toLowerCase()?.includes('area')) {
+      return areaOptions;
+    } else { 
+      return inputTab?.options;
+    }
+  };
+
+
+  // To get state area dristict in form
+  const getDropDown = (inputTab: any, onChange: any, onBlur: any, value: any) => {
+    return (
+      <CostCalcDropdown
+        classname={inputTab.fieldName+"-control"}
+        setSelected={(e: any): void => {
+          onChange(e);
+          if (inputTab?.placeholder.toLowerCase()?.includes('state')) {
+            setDistrictOptions(e?.subOptions || []);
+            setResetOnOptionChange(true);
+            setValue('district', '');
+            setValue('area', '');
+            setAreaOptions([]);
+          } else if (inputTab?.placeholder.toLowerCase()?.includes('district')) {
+            setAreaOptions(e?.areaOptions || []);
+            setResetOnOptionChange(true);
+            setValue('area', '');
+          }
+        }}
+        inpValue={value?.label}
+        selected={value?.dropdown}
+        errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
+        placeholder={inputTab?.placeholder}
+        onBlur={onBlur}
+        options={getDropDownOptions(inputTab)}
+        showSelectedTick={true}
+        isClose={true}
+      />
+    );
+  }
 
   const onSubmit = (data: any) => {
     if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
@@ -107,7 +174,95 @@ const ConstructionDetails = (props: IConstructionDetails) => {
         ))}
       </div>
       <Form className={styles.constructionForm} onSubmit={handleSubmit(onSubmit)}>
-        <Controller
+      <div className={styles.formInputs}>
+      {inputTabs?.map((inputTab: IConstructionTabInputTab) => {
+                if (inputTab?.type === 'dropdown') {
+                  return (
+                    <Controller
+                      control={control}
+                      name={'tab'}
+                      rules={{
+                        validate: () => validateConstructionTabInputs(getValues('tab')),
+                      }}
+
+                      render={({ field: { onChange, onBlur, value } }) => (
+                      <SelectDropdown
+                        key={inputTab?.type}
+                        classname={styles.dropdown}
+                        options={inputTab?.options}
+                        placeholder={inputTab?.placeholder}
+                        onBlur={onBlur}
+                        setSelected={(val: ISelectDropdownOption | null) => {
+                          onChange({ ...getValues('tab'), dropdown: val });
+                        }}
+                        selected={value?.dropdown || inputTab?.options?.[0]}
+                        isClose={false}
+                        showSelectedTick={true}
+                      />
+                      )}
+                    />
+                  )
+                }
+
+                else if (inputTab?.type === 'statedropdown' || inputTab?.type === 'districtdropdown' || inputTab?.type === 'areadropdown'){
+                  return (
+                    <Controller
+                      control={control}
+                      name={inputTab?.fieldName || ''}
+                      rules={{
+                        validate: () => validateConstructionTabInputs(getValues()),
+                      }}
+
+                      render={({ field: { onChange, onBlur, value } }) => (
+                        <div className={getDropDownStyle(inputTab)}>{getDropDown(inputTab, onChange, onBlur, value)}</div>
+                      )}
+                    />
+                  )
+                }
+
+                else{
+                  return (
+                    <Controller
+                      control={control}
+                      name={'tab'}
+                      rules={{
+                        validate: () => validateConstructionTabInputs(getValues('tab')),
+                      }}
+
+                      render={({ field: { onChange, onBlur, value } }) => (
+                        <TabInput
+                        key={inputTab?.type}
+                        className={styles.tabInput}
+                        placeholder={inputTab?.placeholder}
+                        label={inputTab?.placeholder}
+                        onChange={(e: string) => {
+                          if (e?.toString() === '') {
+                            onChange({ ...getValues('tab'), area: '' });
+                            return;
+                          }
+                          if (!mobileNumberValidatorRegex?.test(e?.toString())) {
+                            return;
+                          }
+                          onChange({ ...getValues('tab'), area: parseInt(e?.toString()) });
+                        }}
+                        onBlur={onBlur}
+                        errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
+                        fieldName={inputTab?.fieldName}
+                        value={value?.area}
+                        inPage={inPage}
+                      />
+                      )}
+                    />
+                  )
+                }
+        })
+      }
+      
+      </div>
+        
+
+
+        {/* <Controller
           control={control}
           name={'tab'}
           rules={{
@@ -115,48 +270,59 @@ const ConstructionDetails = (props: IConstructionDetails) => {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <div className={styles.formInputs}>
-              {inputTabs?.map((inputTab: IConstructionTabInputTab) =>
-                inputTab?.type === 'dropdown' ? (
-                  <SelectDropdown
-                    key={inputTab?.type}
-                    classname={styles.dropdown}
-                    options={inputTab?.options}
-                    placeholder={inputTab?.placeholder}
-                    onBlur={onBlur}
-                    setSelected={(val: ISelectDropdownOption | null) => {
-                      onChange({ ...getValues('tab'), dropdown: val });
-                    }}
-                    selected={value?.dropdown || inputTab?.options?.[0]}
-                    isClose={false}
-                    showSelectedTick={true}
-                  />
-                ) : (
-                  <TabInput
-                    key={inputTab?.type}
-                    className={styles.tabInput}
-                    placeholder={inputTab?.placeholder}
-                    label={inputTab?.placeholder}
-                    onChange={(e: string) => {
-                      if (e?.toString() === '') {
-                        onChange({ ...getValues('tab'), area: '' });
-                        return;
-                      }
-                      if (!mobileNumberValidatorRegex?.test(e?.toString())) {
-                        return;
-                      }
-                      onChange({ ...getValues('tab'), area: parseInt(e?.toString()) });
-                    }}
-                    onBlur={onBlur}
-                    errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
-                    fieldName={inputTab?.fieldName}
-                    value={value?.area}
-                    inPage={inPage}
-                  />
-                ),
-              )}
+              {inputTabs?.map((inputTab: IConstructionTabInputTab) => {
+                if (inputTab?.type === 'dropdown') {
+                  return (
+                    <SelectDropdown
+                      key={inputTab?.type}
+                      classname={styles.dropdown}
+                      options={inputTab?.options}
+                      placeholder={inputTab?.placeholder}
+                      onBlur={onBlur}
+                      setSelected={(val: ISelectDropdownOption | null) => {
+                        onChange({ ...getValues('tab'), dropdown: val });
+                      }}
+                      selected={value?.dropdown || inputTab?.options?.[0]}
+                      isClose={false}
+                      showSelectedTick={true}
+                    />
+                  );
+                }
+
+                else if (inputTab?.type === 'statedropdown' || inputTab?.type === 'districtdropdown' || inputTab?.type === 'areadropdown') {
+                 
+                  return  (<div className={getDropDownStyle(inputTab)}>{getDropDown(inputTab, onChange, onBlur, value)}</div>)
+                } 
+                
+                else {
+                  return (
+                    <TabInput
+                      key={inputTab?.type}
+                      className={styles.tabInput}
+                      placeholder={inputTab?.placeholder}
+                      label={inputTab?.placeholder}
+                      onChange={(e: string) => {
+                        if (e?.toString() === '') {
+                          onChange({ ...getValues('tab'), area: '' });
+                          return;
+                        }
+                        if (!mobileNumberValidatorRegex?.test(e?.toString())) {
+                          return;
+                        }
+                        onChange({ ...getValues('tab'), area: parseInt(e?.toString()) });
+                      }}
+                      onBlur={onBlur}
+                      errorMessage={errors?.['tab'] && !value?.area ? inputTab?.errorMessage : ''}
+                      fieldName={inputTab?.fieldName}
+                      value={value?.area}
+                      inPage={inPage}
+                    />
+                  );
+                }
+              })}
             </div>
-          )}
-        />
+          )} */}
+        
 
         <Button
           className={styles.submitButton}

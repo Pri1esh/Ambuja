@@ -24,6 +24,7 @@ const handleMaterialEstimationTabFilterChange = (
 };
 
 const validateConstructionTabInputs = (values: IConstructionTabValues) => {
+  console.log(values)
   if (!values?.area || values?.area === 0) {
     return false;
   }

@@ -124,10 +124,56 @@ const CostSlab = (props: ICostSlab) => {
         onClick={
           (event)=>{
             event.currentTarget.classList.add(styles.active);
-            budgetBtnRef?.current?.classList.remove(styles.active);
+
+            if(budgetSlabRef.current){
+              Array.from(budgetSlabRef.current.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+            // Get the parent element
+            const parent = event.currentTarget.parentElement;
+
+            if (parent) {
+              Array.from(parent.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
           }
         }>
           Premium
+        </button>
+
+        <button className={styles.premiumBtn} 
+        onClick={
+          (event)=>{
+            event.currentTarget.classList.add(styles.active);
+
+            if(budgetSlabRef.current){
+              Array.from(budgetSlabRef.current.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+
+            // Get the parent element
+            const parent = event.currentTarget.parentElement;
+
+            if (parent) {
+              Array.from(parent.children).forEach((child) => {
+                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                  child.classList.remove(styles.active);
+                }
+              });
+            }
+          }
+        }>
+          Premiummm
         </button>
       </div>
 
@@ -252,7 +298,7 @@ const CostEstimation = (props: ICostEstimation) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.filterWrapper}>
+      {/* <div className={styles.filterWrapper}>
         <SelectDropdown
           classname={styles.dropdown}
           options={materialData?.materialDropdownOptions?.options}
@@ -263,7 +309,7 @@ const CostEstimation = (props: ICostEstimation) => {
           selected={setFallBack(selectedFilter?.constructionStage, materialData?.materialDropdownOptions?.options?.[0])}
           isClose={false}
         />
-      </div>
+      </div> */}
 
       <div className={styles.materialWrapper}>
         <div className={styles.materialDetailsWrapper}>

@@ -174,6 +174,7 @@ export interface IFloatingInput {
   onFocus?: (a: any) => void;
   disableBorder?: boolean;
   readOnly?: boolean;
+  inputVal?: string;
 }
 
 export interface IButton {
@@ -333,6 +334,8 @@ export interface ISelectDropdownCustom {
   handleOnClear?: () => void;
   dataFallback?: string;
   disabled?: boolean;
+  dropdownRef?: any;
+  inpValue? : any;
 }
 export interface ICountrySprite {
   code?: string;
@@ -757,6 +760,7 @@ export interface IConstructionTabInputTab {
   placeholder: string;
   errorMessage: string;
   options?: ISelectDropdownOption[];
+  subOptions?: ISelectDropdownOption[];
   fieldName?: string;
 }
 

@@ -125,4 +125,10 @@
   input:checked[type='radio'] {
     --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3.5 -3.5 7 7'%3e%3ccircle r='2' fill='%23222222'/%3e%3c/svg%3e");
   }
+
+  .disabled {
+    pointer-events: none;
+  }
+  
 }
+
