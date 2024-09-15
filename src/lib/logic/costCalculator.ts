@@ -112,7 +112,7 @@ const goToCostCalculatorPage = (payload: any, buttonPropeties?: IConstructionSub
   openLink(url, buttonPropeties?.linkTarget ?? '');
 };
 
-const filterCostCalculatorData = (data: any, selectedStructureType: string, area: string | number) => {
+const filterCostCalculatorData = (data: any, selectedStructureType: string, area: string | number,stateName:string,districtName:string,areaName:string) => {
   const newData = data?.map((materialInfoData: any) => {
     const filteredData = materialInfoData?.data?.filter((i: any) => i?.type === selectedStructureType)?.[0];
   console.log("filterData=>",filteredData)
@@ -131,7 +131,7 @@ const filterCostCalculatorData = (data: any, selectedStructureType: string, area
       };
       return updatedQtyData;
     });
-    return { filter: materialInfoData?.filter, data: { ...filteredData, data: updatedData } };
+    return { filter: materialInfoData?.filter, data: { ...filteredData, data: updatedData },stateName,districtName,areaName };
   });
   return newData;
 };

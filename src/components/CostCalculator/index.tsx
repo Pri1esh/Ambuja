@@ -54,6 +54,9 @@ const CostCalculator = (props: ICostCalculator) => {
         structureType: searchParams?.get('structuretype')?.replace(/_/g, ' ') ?? '',
         dropdown: searchParams?.get('constructionstage')?.replace(/_/g, ' ') ?? '',
         area: searchParams?.get('area')?.replace(/_/g, ' ') ?? '',
+        stateName: searchParams?.get('stateName')?.replace(/_/g, ' ') ?? '',
+        districtName: searchParams?.get('districtName')?.replace(/_/g, ' ') ?? '',
+        areaName: searchParams?.get('areaName')?.replace(/_/g, ' ') ?? '',
       });
       setLoading(false);
     }
@@ -166,7 +169,7 @@ const CostCalculator = (props: ICostCalculator) => {
     return tabs;
   };
 
-  const handleApiResponse = (data: any, selectedStructureTypeId: string, payload: IConstructionTabValues) => {
+  const handleApiResponse = (data: any, selectedStructureTypeId: string, payload: any) => {
     if (data) {
       setPriceData([]);
       setPercentageData({ percentage: 0, percentageAmount: 0 });
@@ -176,6 +179,9 @@ const CostCalculator = (props: ICostCalculator) => {
         data?.materialInfo?.fields?.materialInfo,
         selectedStructureTypeId,
         payload?.area,
+        payload?.stateName,
+        payload?.districtName,
+        payload?.areaName
       );
       setApiData({
         materialInfo: filteredData,
@@ -187,18 +193,31 @@ const CostCalculator = (props: ICostCalculator) => {
 
       const dataIdx = filteredData?.findIndex((i: any) => i?.filter?.[0]?.id === selectedDropdownOption?.id);
 
-      console.log("statedata",getStateWiseData(data.CostCalculatorAPIStateData.fields?.costInfo,payload?.stateName))
-      console.log("*",filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data)
+      const stateWiseData = getStateWiseData(data.CostCalculatorAPIStateData.fields?.costInfo,payload?.stateName);
+      const constructionData = filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data;
+
+      console.log("statedata",stateWiseData)
+      console.log("*",constructionData)
+      console.warn(mergeData(constructionData,stateWiseData))
 
       setMaterialData({
-        materialInfo: filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data,
+        materialInfo: mergeData(constructionData,stateWiseData),
         materialDropdownOptions: data?.dropdownOptions?.fields?.dropdownOptions?.[0],
       });
     }
   };
 
   const getStateWiseData = (stateArray:any,stateName:string) => {
-    stateArray.filter((state:any)=>{state?.statefilter?.})
+    const stateData = stateArray.find((state:any)=>(state?.statefilter[0]?.state === stateName))?.statedata;
+    return stateData;
+  }
+
+  const mergeData = (constructionData:any,stateWiseData:any) => {
+    return constructionData.map((baseData:any)=>{
+      const additionData = stateWiseData.find((item:any)=>(item?.type.includes(baseData?.label.split(' ')[0])))?.data;
+      baseData.data = additionData;
+      return baseData
+    });
   }
 
   const handleFilterChange = async (type: string, value: ISelectDropdownOption | null) => {
@@ -247,6 +266,9 @@ const CostCalculator = (props: ICostCalculator) => {
           structureType: payload?.structureType,
           area: payload?.area,
           dropdown: payload?.dropdown,
+          stateName: payload?.stateName,
+          districtName: payload?.districtName,
+          areaName : payload?.areaName
         });
         handleTabChange(0);
         setLoading(false);

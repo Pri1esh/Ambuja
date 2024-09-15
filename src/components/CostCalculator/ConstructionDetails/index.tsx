@@ -21,9 +21,11 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   const [selectedRadioOption, setSelectedRadioOption] = useState<IConstructionTabRadioOption | null>(null);
   const [districtOptions, setDistrictOptions] = useState<IDDOption[]>([]);
   const [areaOptions, setAreaOptions] = useState<IDDOption[]>([]);
+
+  
   const [queryOptions, setQueryOptions] = useState<IDDOption[]>([]);
   const [resetOnOptionChange, setResetOnOptionChange] = useState(false);
-
+  
 
 
   const {
@@ -39,6 +41,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
 
   useEffect(() => {
     if (selectedValues) {
+      console.log("running")
       const selectedOption: IConstructionTabRadioOption | null =
         buttonTabs?.find((tab) => tab?.label === selectedValues?.structureType) ?? null;
 
@@ -48,6 +51,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
 
       setSelectedRadioOption(selectedOption);
       setValue('tab', { dropdown: selectedDropdownOption, area: parseInt(selectedValues?.area?.toString()) });
+      getSelectedPlace(selectedValues.stateName||'',selectedValues.districtName||'',selectedValues.areaName||'')
 
       if (selectedDropdownOption?.label && selectedOption?.label && parseInt(selectedValues?.area?.toString())) {
         apiData === null &&
@@ -69,6 +73,21 @@ const ConstructionDetails = (props: IConstructionDetails) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // To get the place selected
+  const getSelectedPlace = (state:string,district:string,area:string)=>{
+    if(inputTabs){
+      const stateInfoArray = inputTabs.find((inputTab:any)=>(inputTab?.placeholder.toLowerCase() === "state"))?.options;
+      const state:any = stateInfoArray?.find((state:any)=>(state?.label === selectedValues?.stateName));
+      const district:any = state?.subOptions?.find((district:any)=>(district?.label === selectedValues?.districtName))
+      setDistrictOptions(state?.subOptions);
+      const area:any = district?.areaOptions?.find((area:any)=>(area?.label === selectedValues?.areaName))
+      setAreaOptions(district?.areaOptions);
+      setValue('state',state)
+      setValue('district',district);
+      setValue('area', area);
+    }
+  }
 
 
   // To get dropdown style
@@ -118,8 +137,8 @@ const ConstructionDetails = (props: IConstructionDetails) => {
             setValue('area', '');
           }
         }}
-        inpValue={value?.label}
-        selected={value?.dropdown}
+        inpValue={value?.label || (selectedValues?.[inputTab?.fieldName+'Name'] && getValues(inputTab?.fieldName))}
+        selected={value?.dropdown || (selectedValues?.[inputTab?.fieldName+'Name'] && getValues(inputTab?.fieldName))}
         errorMessage={errors?.[inputTab?.fieldName] && !value ? inputTab?.errorMessage : ''}
         placeholder={inputTab?.placeholder}
         onBlur={onBlur}
@@ -131,6 +150,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   }
 
   const onSubmit = (data: any) => {
+    console.warn("----->",data)
     if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
       goToCostCalculatorPage(
         {

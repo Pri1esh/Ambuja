@@ -765,10 +765,13 @@ export interface IConstructionTabInputTab {
 }
 
 export interface IConstructionTabValues {
+  [key: string]: any;
   structureType: string;
   dropdown: string;
   area: number | string;
-  stateName:string;
+  stateName? : string,
+  districtName? :string,
+  areaName? :string
 }
 
 export interface IConstructionSubmitButton {
