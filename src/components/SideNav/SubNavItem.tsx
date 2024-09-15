@@ -14,7 +14,6 @@ const SubNavItem = (props: ISubNav) => {
 
   useEffect(() => {
     setTimeout(() => scrollTabIntoView(parentRef?.current, activeTabRef?.current), 100);
-    console.log(compData);
   }, []);
 
   return (

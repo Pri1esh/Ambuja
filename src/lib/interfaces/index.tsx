@@ -768,6 +768,7 @@ export interface IConstructionTabValues {
   structureType: string;
   dropdown: string;
   area: number | string;
+  stateName:string;
 }
 
 export interface IConstructionSubmitButton {

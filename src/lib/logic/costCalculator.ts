@@ -33,7 +33,6 @@ const validateConstructionTabInputs = (values: IConstructionTabValues) => {
 
 const validateConstructionSelect = (value: any,fieldType:string) =>{
   if(JSON.stringify(value) === '{}'){
-    console.log("in")
     return false;
   }
   return true;
@@ -116,6 +115,8 @@ const goToCostCalculatorPage = (payload: any, buttonPropeties?: IConstructionSub
 const filterCostCalculatorData = (data: any, selectedStructureType: string, area: string | number) => {
   const newData = data?.map((materialInfoData: any) => {
     const filteredData = materialInfoData?.data?.filter((i: any) => i?.type === selectedStructureType)?.[0];
+  console.log("filterData=>",filteredData)
+
     const updatedData = filteredData?.data?.map((materialData: any) => {
       const updatedQtyData = {
         ...materialData,

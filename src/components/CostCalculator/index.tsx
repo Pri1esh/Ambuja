@@ -186,12 +186,20 @@ const CostCalculator = (props: ICostCalculator) => {
       );
 
       const dataIdx = filteredData?.findIndex((i: any) => i?.filter?.[0]?.id === selectedDropdownOption?.id);
+
+      console.log("statedata",getStateWiseData(data.CostCalculatorAPIStateData.fields?.costInfo,payload?.stateName))
+      console.log("*",filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data)
+
       setMaterialData({
         materialInfo: filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data,
         materialDropdownOptions: data?.dropdownOptions?.fields?.dropdownOptions?.[0],
       });
     }
   };
+
+  const getStateWiseData = (stateArray:any,stateName:string) => {
+    stateArray.filter((state:any)=>{state?.statefilter?.})
+  }
 
   const handleFilterChange = async (type: string, value: ISelectDropdownOption | null) => {
     selectedValues && setSelectedValues({ ...selectedValues, dropdown: value?.label ?? '' });
@@ -230,6 +238,7 @@ const CostCalculator = (props: ICostCalculator) => {
     setLoading(true);
 
     try {
+      console.warn(payload)
       if (tabData?.length > 1) {
         const res = await getAPI(ENDPOINT.CLIENT.costCalculatorResponse, false);
         const data = apiDataFilter(res);

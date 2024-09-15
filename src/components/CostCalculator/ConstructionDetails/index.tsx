@@ -131,7 +131,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   }
 
   const onSubmit = (data: any) => {
-    console.log("data",data)
     if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
       goToCostCalculatorPage(
         {
