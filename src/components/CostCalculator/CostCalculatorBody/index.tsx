@@ -106,6 +106,7 @@ const CostCalculatorBody = (props: ICostCalculatorBody) => {
                 <span className={styles.infoAreaLabel}>
                   {labels?.totalAreaLabel} : {selectedValues?.area} {labels?.areaLabel}
                 </span>
+                <span>{selectedValues?.stateName}</span>
               </div>
             )}
           </div>

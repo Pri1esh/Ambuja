@@ -5,7 +5,7 @@ import { setFallBack, useDeviceType } from '@utils';
 import { useEffect, useRef, useState } from 'react';
 import styles from './costEstimation.module.scss';
 
-const CostSlab = (props: ICostSlab) => {
+const CostSlab = (props: any) => {
   const {
     label,
     qty,
@@ -16,6 +16,9 @@ const CostSlab = (props: ICostSlab) => {
     priceData,
     setPriceData,
     defaultPrice,
+    data,
+    costList,
+    setCostList
   } = props;
 
   const [enteredPrice, setEnteredPrice] = useState<string | number>(
@@ -26,6 +29,23 @@ const CostSlab = (props: ICostSlab) => {
   const premiumBtnRef = useRef<HTMLButtonElement>(null);
   const budgetSlabRef = useRef<HTMLDivElement>(null);
   const premiumSlabRef = useRef<HTMLDivElement>(null);
+
+  const [slabPrice,setSlabPrice] = useState<number>();
+
+  const getProductPrice = (product:string)=>{
+    return qty*data[0]?.[product];
+  }
+
+
+  useEffect(()=>{
+    if(label==="Cement -bags"){
+
+    }
+    else{
+    setCostList([...costList,{label:label,cost:getProductPrice('budget')}]);
+    setSlabPrice(getProductPrice('budget'));
+    }
+  },[])
 
   useEffect(() => {
     const idx = priceData?.findIndex((i: any) => i?.label === label);
@@ -189,50 +209,6 @@ const CostSlab = (props: ICostSlab) => {
         <CustomIcon iconName={icon} /> {label}
       </div>
       <div className={styles.quantityHead}>{qty}</div>
-      {/* <div>
-        <FloatingInput
-          inputType={`${type === 'percentage' ? type : 'tel'}`}
-          maxLen={type === 'percentage' ? 3 : 6}
-          onFocus={(e) => {
-            e.target.value = e?.target?.value?.replace('%', '');
-            if (e?.target?.value?.toString()?.length === 1 && e?.target?.value?.toString()?.[0] === '0') {
-              e.target.value = '';
-              setEnteredPrice(e.target.value);
-            }
-          }}
-          onBlur={(e) => {
-            e.target.value = e?.target?.value?.replace('%', '');
-            if (e?.target?.value?.toString() === '') {
-              e.target.value = type === 'percentage' ? 0 + '%' : 0;
-              setEnteredPrice(e.target.value);
-            }
-          }}
-          onChange={(e) => {
-            e.target.value = e?.target?.value?.replace('%', '');
-            if (e?.target?.value?.toString()?.length > 1 && e?.target?.value?.toString()?.[0] === '0') {
-              e.target.value = parseInt(e.target.value.toString().substring(1));
-            }
-
-            const prevPrice = parseFloat(enteredPrice?.toString()?.replace('%', '') || '0');
-            const newPrice = parseFloat(e?.target?.value || 0);
-
-            if (newPrice === prevPrice) return;
-
-            updateCost(
-              isNaN(prevPrice) ? 0 : prevPrice * calculatorNum,
-              qty,
-              isNaN(newPrice) ? 0 : newPrice * calculatorNum,
-              label,
-              type,
-            );
-            e.target.value = type === 'percentage' ? e?.target?.value || 0 + '%' : e?.target?.value || 0;
-            setEnteredPrice(e?.target?.value || 0);
-          }}
-          isClear={false}
-          defaultValue={enteredPrice?.toString()}
-          alignValueToRight={true}
-        />
-      </div> */}
 
       <div className={styles.baseProductSlab}>
         <button className={styles.budgetBtn} ref={budgetBtnRef} 
@@ -260,7 +236,7 @@ const CostSlab = (props: ICostSlab) => {
       </div>
 
       <div className={styles.BudgetPrice}>
-          <p>10.71 Lakh</p>
+          <p>{slabPrice}</p>
       </div>
 
     </div>
@@ -283,6 +259,9 @@ const CostEstimation = (props: ICostEstimation) => {
   } = props;
 
   const [selectedFilter, setSelectedFilter] = useState<IMaterialEstimateFilter>();
+  const [costList, setCostList] = useState<any>([]);
+  const [totalCost, setTotalCost] = useState<any>([]);
+
 
   const { deviceType } = useDeviceType();
 
@@ -293,8 +272,22 @@ const CostEstimation = (props: ICostEstimation) => {
       );
       setSelectedFilter({ constructionStage: selectedDropdownValue });
     }
+
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log("slabdata",materialData);
   }, []);
+
+  useEffect(() => {
+    if(costList){
+      var totalCosting = 0;
+    costList.forEach((item:any)=>{
+      console.warn("777",item?.cost)
+      totalCosting = totalCosting + item?.cost;
+    });
+    setTotalCost(totalCosting);
+    }
+  },[costList])
 
   return (
     <div className={styles.wrapper}>
@@ -331,6 +324,9 @@ const CostEstimation = (props: ICostEstimation) => {
                 type={data?.type}
                 setPriceData={setPriceData}
                 priceData={priceData}
+                costList={costList}
+                setCostList={setCostList}
+                data={data?.data}
                 defaultPrice={
                   priceData?.findIndex((i: any) => i?.label === data?.label) === -1
                     ? 0
@@ -346,8 +342,7 @@ const CostEstimation = (props: ICostEstimation) => {
         <div className={`${styles.materialPriceWrapper} ${styles.totalCost}`}>
           <span>{compData?.labels?.totalCostLabel}</span>
           <span>
-            {compData?.labels?.priceLabel} {getAmountDetail(totalAmount)?.value || 0}{' '}
-            {getAmountDetail(totalAmount)?.type}
+            {compData?.labels?.priceLabel} {totalCost}
           </span>
         </div>
       )}

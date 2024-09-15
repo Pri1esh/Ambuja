@@ -41,7 +41,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
 
   useEffect(() => {
     if (selectedValues) {
-      console.log("running")
       const selectedOption: IConstructionTabRadioOption | null =
         buttonTabs?.find((tab) => tab?.label === selectedValues?.structureType) ?? null;
 
@@ -130,7 +129,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
             setValue('district', '');
             setValue('area', '');
             setAreaOptions([]);
-            console.warn(errors?.['state'])
           } else if (inputTab?.placeholder.toLowerCase()?.includes('district')) {
             setAreaOptions(e?.areaOptions || []);
             setResetOnOptionChange(true);
@@ -150,7 +148,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   }
 
   const onSubmit = (data: any) => {
-    console.warn("----->",data)
     if (typeof window !== 'undefined' && submitButton?.type === 'link' && submitButton?.link) {
       goToCostCalculatorPage(
         {

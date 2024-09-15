@@ -790,6 +790,7 @@ export interface IMaterialSlab {
   icon: string;
   type: string;
   calculatorNum?: number;
+  data?: any;
 }
 
 export interface IMaterialEstimateFilter {

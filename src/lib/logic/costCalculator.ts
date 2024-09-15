@@ -115,7 +115,6 @@ const goToCostCalculatorPage = (payload: any, buttonPropeties?: IConstructionSub
 const filterCostCalculatorData = (data: any, selectedStructureType: string, area: string | number,stateName:string,districtName:string,areaName:string) => {
   const newData = data?.map((materialInfoData: any) => {
     const filteredData = materialInfoData?.data?.filter((i: any) => i?.type === selectedStructureType)?.[0];
-  console.log("filterData=>",filteredData)
 
     const updatedData = filteredData?.data?.map((materialData: any) => {
       const updatedQtyData = {
