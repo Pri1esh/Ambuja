@@ -31,21 +31,78 @@ const CostSlab = (props: any) => {
   const premiumSlabRef = useRef<HTMLDivElement>(null);
 
   const [slabPrice,setSlabPrice] = useState<number>();
+  const [activeprod,setActiveprod] = useState<string>();
+  const [activebag,setActivebag] = useState<string>();
 
   const getProductPrice = (product:string)=>{
     return qty*data[0]?.[product];
   }
 
+  const getBagPrice = (bagName:string)=>{
+    let bagRate = data[0]?.categorydata.find((item:any)=>(item.category===bagName))?.rate;
+    if(bagRate==="na"){
+      bagRate=0;
+    }
+    return qty*bagRate;
+  }
+
+  const updateCostList = (label: string, newCost: number) => {
+    setCostList((prevList: any[]) => {
+        const existingIndex = prevList.findIndex(item => item.label === label);
+        
+        if (existingIndex !== -1) {
+            return prevList.map((item, index) =>
+                index === existingIndex ? { ...item, cost: newCost } : item
+            );
+        } else {
+            return [...prevList, { label, cost: newCost }];
+        }
+    });
+};
+
+  const formatIndianNumber = (num: number): string => {
+    if (num < 100000) {
+        // Numbers less than 100,000 are formatted as standard Indian number format
+        return num.toLocaleString('en-IN');
+    } else if (num < 10000000) {
+        // Numbers between 100,000 and 10,000,000 are formatted in lakhs
+        const lakhs = num / 100000;
+        const formattedLakhs = lakhs.toFixed(2); // Format to 2 decimal places
+        return `${formattedLakhs} lakh`;
+    } else {
+        // Numbers 10,000,000 and above are formatted in crores
+        const crores = num / 10000000;
+        const formattedCrores = crores.toFixed(2); // Format to 2 decimal places
+        return `${formattedCrores} Cr`;
+    }
+  };
+
 
   useEffect(()=>{
     if(label==="Cement -bags"){
-
+      let shouldActive = '';
+      for(let i = 0; i < data[0]?.categorydata.length; i++) {
+        const bag = data[0]?.categorydata[i];
+        if (bag?.rate !== "na") {
+          shouldActive = bag?.category;
+          break; // Exit loop when condition is met
+        }
+      }
+      updateCostList(label,getBagPrice(shouldActive));
+      setActivebag(shouldActive);
+      setSlabPrice(getBagPrice(shouldActive));
     }
     else{
-    setCostList([...costList,{label:label,cost:getProductPrice('budget')}]);
+    updateCostList(label,getProductPrice('budget'));
     setSlabPrice(getProductPrice('budget'));
+    setActiveprod('budget')
     }
   },[])
+
+  
+  useEffect(() => {
+    console.log("list",costList)
+  },[costList])
 
   useEffect(() => {
     const idx = priceData?.findIndex((i: any) => i?.label === label);
@@ -74,131 +131,91 @@ const CostSlab = (props: any) => {
       <div className={styles.quantityHead}>{qty}</div>
 
       <div ref={budgetSlabRef} className={styles.baseProductSlab}>
-
-        <button  className={styles.budgetBtn}
-        onClick={
-          (event)=>{
-            event.currentTarget.classList.add(styles.active);
-            premiumBtnRef?.current?.classList.remove(styles.active);
-
-            if(premiumSlabRef.current){
-              Array.from(premiumSlabRef.current.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
+        {data?.[0]?.categorydata.map((bagButton:any)=>(
+          <>
+          { bagButton?.type.toLowerCase()==='budget' &&
+            <button  className={`${styles.budgetBtn} ${activebag===bagButton?.category ? styles.active:''}`}
+            onClick={
+            (event)=>{
+              event.currentTarget.classList.add(styles.active);
+              premiumBtnRef?.current?.classList.remove(styles.active);
+              updateCostList(label,getBagPrice(bagButton?.category));
+              setSlabPrice(getBagPrice(bagButton?.category));
+  
+              if(premiumSlabRef.current){
+                Array.from(premiumSlabRef.current.children).forEach((child) => {
+                  if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                    child.classList.remove(styles.active);
+                  }
+                });
+              }
+  
+              // Get the parent element
+              const parent = event.currentTarget.parentElement;
+  
+              if (parent) {
+                Array.from(parent.children).forEach((child) => {
+                  if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                    child.classList.remove(styles.active);
+                  }
+                });
+              }
+  
             }
-
-            // Get the parent element
-            const parent = event.currentTarget.parentElement;
-
-            if (parent) {
-              Array.from(parent.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-
           }
-        }
-        >
-          Budget
-        </button>
-
-        <button  className={styles.budgetBtn}
-        onClick={
-          (event)=>{
-            event.currentTarget.classList.add(styles.active);
-            premiumBtnRef?.current?.classList.remove(styles.active);
-
-            if(premiumSlabRef.current){
-              Array.from(premiumSlabRef.current.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-
-            // Get the parent element
-            const parent = event.currentTarget.parentElement;
-
-            if (parent) {
-              Array.from(parent.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-
+          >
+            {bagButton?.category}
+          </button>
           }
-        }
-        >
-          Budget
-        </button>
+          </>
+        ))}
+
+
 
       </div>
 
       <div className={styles.premiumProductSlab} ref={premiumSlabRef}>
-        <button className={styles.premiumBtn} 
-        onClick={
-          (event)=>{
-            event.currentTarget.classList.add(styles.active);
 
-            if(budgetSlabRef.current){
-              Array.from(budgetSlabRef.current.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
+      {data?.[0]?.categorydata.map((bagButton:any)=>(
+        <>
+        { bagButton?.type.toLowerCase()==="premium" &&
+          <button className={`${styles.premiumBtn} ${activebag===bagButton?.category ? styles.active:''}`} 
+          onClick={
+            (event)=>{
+              event.currentTarget.classList.add(styles.active);
+              budgetBtnRef?.current?.classList.remove(styles.active);
+              updateCostList(label,getBagPrice(bagButton?.category));
+              setSlabPrice(getBagPrice(bagButton?.category));
+  
+              if(budgetSlabRef.current){
+                Array.from(budgetSlabRef.current.children).forEach((child) => {
+                  if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                    child.classList.remove(styles.active);
+                  }
+                });
+              }
+  
+              // Get the parent element
+              const parent = event.currentTarget.parentElement;
+  
+              if (parent) {
+                Array.from(parent.children).forEach((child) => {
+                  if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
+                    child.classList.remove(styles.active);
+                  }
+                });
+              }
             }
-
-            // Get the parent element
-            const parent = event.currentTarget.parentElement;
-
-            if (parent) {
-              Array.from(parent.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-          }
-        }>
-          Premium
-        </button>
-
-        <button className={styles.premiumBtn} 
-        onClick={
-          (event)=>{
-            event.currentTarget.classList.add(styles.active);
-
-            if(budgetSlabRef.current){
-              Array.from(budgetSlabRef.current.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-
-            // Get the parent element
-            const parent = event.currentTarget.parentElement;
-
-            if (parent) {
-              Array.from(parent.children).forEach((child) => {
-                if (child instanceof HTMLButtonElement && child !== event.currentTarget) {
-                  child.classList.remove(styles.active);
-                }
-              });
-            }
-          }
-        }>
-          Premiummm
-        </button>
+          }>
+            {bagButton?.category}
+          </button>
+        }
+        </>
+      ))}
       </div>
 
       <div className={styles.BudgetPrice}>
-          <p>10.71 Lakh</p>
+          <p>{formatIndianNumber(slabPrice||0)}</p>
       </div>
 
     </div>
@@ -211,11 +228,13 @@ const CostSlab = (props: any) => {
       <div className={styles.quantityHead}>{qty}</div>
 
       <div className={styles.baseProductSlab}>
-        <button className={styles.budgetBtn} ref={budgetBtnRef} 
+        <button className={`${styles.budgetBtn} ${activeprod === 'budget' ? styles.active: ''}` } ref={budgetBtnRef} 
         onClick={
           (event)=>{
             event.currentTarget.classList.add(styles.active);
             premiumBtnRef?.current?.classList.remove(styles.active);
+            updateCostList(label,getProductPrice('budget'));
+            setSlabPrice(getProductPrice('budget'));
           }
         }
         >
@@ -224,11 +243,13 @@ const CostSlab = (props: any) => {
       </div>
 
       <div className={styles.premiumProductSlab}>
-        <button className={styles.premiumBtn} ref={premiumBtnRef}
+        <button className={`${styles.premiumBtn} ${activeprod === 'premium' ? styles.active: ''}` } ref={premiumBtnRef}
         onClick={
           (event)=>{
             event.currentTarget.classList.add(styles.active);
             budgetBtnRef?.current?.classList.remove(styles.active);
+            updateCostList(label,getProductPrice('premium'));
+            setSlabPrice(getProductPrice('premium'));
           }
         }>
           Premium
@@ -236,7 +257,7 @@ const CostSlab = (props: any) => {
       </div>
 
       <div className={styles.BudgetPrice}>
-          <p>{slabPrice}</p>
+          <p>{formatIndianNumber(slabPrice||0)}</p>
       </div>
 
     </div>
@@ -264,6 +285,23 @@ const CostEstimation = (props: ICostEstimation) => {
 
 
   const { deviceType } = useDeviceType();
+
+  const formatIndianNumber = (num: number): string => {
+    if (num < 100000) {
+        // Numbers less than 100,000 are formatted as standard Indian number format
+        return num.toLocaleString('en-IN');
+    } else if (num < 10000000) {
+        // Numbers between 100,000 and 10,000,000 are formatted in lakhs
+        const lakhs = num / 100000;
+        const formattedLakhs = lakhs.toFixed(2); // Format to 2 decimal places
+        return `${formattedLakhs} lakh`;
+    } else {
+        // Numbers 10,000,000 and above are formatted in crores
+        const crores = num / 10000000;
+        const formattedCrores = crores.toFixed(2); // Format to 2 decimal places
+        return `${formattedCrores} Cr`;
+    }
+  };
 
   useEffect(() => {
     if (selectedValues) {
@@ -342,7 +380,7 @@ const CostEstimation = (props: ICostEstimation) => {
         <div className={`${styles.materialPriceWrapper} ${styles.totalCost}`}>
           <span>{compData?.labels?.totalCostLabel}</span>
           <span>
-            {compData?.labels?.priceLabel} {totalCost}
+            {compData?.labels?.priceLabel} {formatIndianNumber(totalCost||0)}
           </span>
         </div>
       )}
