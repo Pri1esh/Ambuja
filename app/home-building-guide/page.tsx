@@ -42,7 +42,7 @@ const HomeBuildingGuidePage = async () => {
               <h2>Home Building Guide</h2>
             </a>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-xl-3">
             {subNav?.fields?.subNavItems?.length > 0 && (
               <SideNav
                 compData={subNav?.fields?.subNavItems}
@@ -52,7 +52,7 @@ const HomeBuildingGuidePage = async () => {
               />
             )}
           </div>
-          <div className={`col-lg-8 hbg-Container`}>
+          <div className={`col-lg-8 col-xl-9 hbg-Container`}>
           {homeBuilderCard?.fields && <HomeBuilderCards compData={homeBuilderCard?.fields} />}
           </div>
         </div>

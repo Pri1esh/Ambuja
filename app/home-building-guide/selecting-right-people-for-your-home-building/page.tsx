@@ -84,7 +84,7 @@ const SelectingRightPeople = async () => {
               <h2>Home Building Guide</h2>
             </a>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-xl-3">
             {subNav?.fields?.subNavItems?.length > 0 && (
               <SideNav
                 compData={subNav?.fields?.subNavItems}
@@ -94,7 +94,7 @@ const SelectingRightPeople = async () => {
               />
             )}
           </div>
-          <div className={`col-lg-8 hbg-Container`}>
+          <div className={`col-lg-8 col-xl-9 hbg-Container`}>
             {overview?.fields && <Overview compData={overview?.fields} showHeading={true} />}
             {twoColumnListData?.fields && <TwoColumnList compData={twoColumnListData?.fields} extraMargin={false} />}
             {cardListData?.fields && <CardList compData={cardListData?.fields} />}
