@@ -137,6 +137,7 @@ const CostCalculator = (props: ICostCalculator) => {
             selectedValues={selectedValues}
             priceData={priceData}
             setPriceData={setPriceData}
+            setTotalAmount={setTotalAmount}
           />
         );
     }

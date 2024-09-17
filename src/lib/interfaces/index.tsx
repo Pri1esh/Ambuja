@@ -847,6 +847,7 @@ export interface ICostEstimation {
   selectedValues?: IConstructionTabValues | null;
   priceData: IPriceData[];
   setPriceData: React.Dispatch<SetStateAction<IPriceData[]>>;
+  setTotalAmount:React.Dispatch<SetStateAction<GLuint64>>;
 }
 
 export interface IPriceData {
