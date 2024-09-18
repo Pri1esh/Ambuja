@@ -1816,6 +1816,8 @@ export interface ITextSection {
   heading?: string;
   description?: string;
   imageAlt: string;
+  iconImage?: string;
+  iconUrl?:string;
 }
 export interface ISubNav {
   compData: {
