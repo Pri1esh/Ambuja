@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Button } from '@components';
 import {
   IConstructionDetails,
@@ -13,7 +14,7 @@ import { Form } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
 import { SelectDropdown, CostCalcTabInput } from 'src/components/Forms/Fields';
 import styles from './constructionDetails.module.scss';
-import { Checkbox, CostCalcDropdown } from '../../Forms/Fields';
+import { CostCalcDropdown } from '../../Forms/Fields';
 
 const ConstructionDetails = (props: IConstructionDetails) => {
   const { compData, handleFormSubmit, inPage = true, selectedValues = null, apiData = null } = props;
@@ -23,7 +24,6 @@ const ConstructionDetails = (props: IConstructionDetails) => {
   const [areaOptions, setAreaOptions] = useState<IDDOption[]>([]);
 
   
-  const [queryOptions, setQueryOptions] = useState<IDDOption[]>([]);
   const [resetOnOptionChange, setResetOnOptionChange] = useState(false);
   
 
@@ -129,6 +129,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
             setValue('district', '');
             setValue('area', '');
             setAreaOptions([]);
+            console.warn(errors?.['state'])
           } else if (inputTab?.placeholder.toLowerCase()?.includes('district')) {
             setAreaOptions(e?.areaOptions || []);
             setResetOnOptionChange(true);
@@ -227,7 +228,7 @@ const ConstructionDetails = (props: IConstructionDetails) => {
                       control={control}
                       name={inputTab?.fieldName || ''}
                       rules={{
-                        validate: () => validateConstructionSelect({...getValues(inputTab?.fieldName || '')},inputTab?.type),
+                        validate: () => validateConstructionSelect({...getValues(inputTab?.fieldName || '')}),
                       }}
 
                       render={({ field: { onChange, onBlur, value } }) => (

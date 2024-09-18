@@ -2,7 +2,6 @@ import { ENDPOINT } from '@api-manager';
 import {
   AboutSection,
   AppCookie,
-  CardSlider,
   CostCalculatorWidget,
   CustomVideo,
   ErrorFallback,

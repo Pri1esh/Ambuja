@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 'use client';
 import { ENDPOINT, getAPI } from '@api-manager';
 import { ConstructionDetails, CostEstimation, CustomIcon, CustomLoader } from '@components';
@@ -17,7 +19,7 @@ import {
   handleMaterialEstimationTabFilterChange,
   updateCostInCostEstimation,
 } from '@logic/costCalculator';
-import { apiDataFilter, setFallBack, useDeviceType } from '@utils';
+import { apiDataFilter, useDeviceType } from '@utils';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Container, Offcanvas } from 'react-bootstrap';
@@ -48,6 +50,10 @@ const CostCalculator = (props: ICostCalculator) => {
   const [loading, setLoading] = useState(searchParams?.get('area') !== null);
   const [priceData, setPriceData] = useState<IPriceData[]>([]);
 
+  const [selectedData, setSelectedData] = useState<any[]>([]);
+
+  
+
   useEffect(() => {
     if (searchParams?.get('area')) {
       setSelectedValues({
@@ -60,56 +66,35 @@ const CostCalculator = (props: ICostCalculator) => {
       });
       setLoading(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     deviceType !== 'desktop' && activeTab !== 0 ? setShow(true) : setShow(false);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deviceType]);
+  }, [deviceType,activeTab]);
 
   useEffect(() => {
     updateMaterialData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [materialData]);
+  }, [materialData,selectedData]);
+
 
   const updateMaterialData = async () => {
     const newPdfData: ICostPdfData[] = [];
-    let price = 0;
 
     materialData?.materialInfo?.map(async (material: ICostPdfData) => {
-      const idx = priceData?.findIndex((i: any) => i?.label === material?.label);
+      const gotSlab:any = selectedData.find((data:any)=>(data?.label === material?.label));
       newPdfData.push({
         label: material?.label,
-        price: idx === -1 ? 0 : parseInt(priceData?.[idx]?.price?.toString()),
+        price: gotSlab?.cost,
         qty: material?.qty,
         type: material?.type,
+        product: gotSlab?.product
       });
-      if (idx !== -1) {
-        if (material?.type === 'percentage') {
-          const percentAmount = (parseInt(priceData?.[idx]?.price?.toString()) * price) / 100;
-          price = price + percentAmount;
-          setPercentageData({
-            percentageAmount: percentAmount,
-            percentage: parseInt(priceData?.[idx]?.price?.toString()),
-          });
-        } else if (!material?.qty && material?.qty !== 0) {
-          price +=
-            parseInt(priceData?.[idx]?.price?.toString()) *
-            parseInt(setFallBack(selectedValues?.area?.toString(), '0'));
-          setLabourCharges(
-            parseInt(priceData?.[idx]?.price?.toString()) *
-              parseInt(setFallBack(selectedValues?.area?.toString(), '0')),
-          );
-        } else {
-          price += parseInt(priceData?.[idx]?.price?.toString()) * material?.qty;
-        }
-      }
     });
-    setTotalAmount(price);
     setPdfData(newPdfData);
   };
+
+
   const getTabDetails = (tab: any) => {
     switch (tab?.type) {
       case 'constructionDetails':
@@ -138,6 +123,7 @@ const CostCalculator = (props: ICostCalculator) => {
             priceData={priceData}
             setPriceData={setPriceData}
             setTotalAmount={setTotalAmount}
+            setSelectedData={setSelectedData}
           />
         );
     }
@@ -197,10 +183,6 @@ const CostCalculator = (props: ICostCalculator) => {
       const stateWiseData = getStateWiseData(data.CostCalculatorAPIStateData.fields?.costInfo,payload?.stateName);
       const constructionData = filteredData?.[dataIdx === -1 ? 0 : dataIdx]?.data?.data;
 
-      console.log("statedata",stateWiseData)
-      console.log("*",constructionData)
-      console.warn(mergeData(constructionData,stateWiseData))
-
       setMaterialData({
         materialInfo: mergeData(constructionData,stateWiseData),
         materialDropdownOptions: data?.dropdownOptions?.fields?.dropdownOptions?.[0],
@@ -258,7 +240,6 @@ const CostCalculator = (props: ICostCalculator) => {
     setLoading(true);
 
     try {
-      console.warn(payload)
       if (tabData?.length > 1) {
         const res = await getAPI(ENDPOINT.CLIENT.costCalculatorResponse, false);
         const data = apiDataFilter(res);
@@ -318,6 +299,7 @@ const CostCalculator = (props: ICostCalculator) => {
                 show={show}
                 activeTab={activeTab}
                 selectedValues={selectedValues}
+                selectedData={selectedData}
                 inPage={inPage}
                 pdfData={pdfData}
                 totalAmount={totalAmount}
@@ -341,6 +323,7 @@ const CostCalculator = (props: ICostCalculator) => {
               inPage={inPage}
               pdfData={pdfData}
               totalAmount={totalAmount}
+              selectedData={selectedData}
             />
           </Container>
         </div>
@@ -357,6 +340,7 @@ const CostCalculator = (props: ICostCalculator) => {
           selectedValues={selectedValues}
           inPage={inPage}
           pdfData={pdfData}
+          selectedData={selectedData}
           totalAmount={totalAmount}
         />
       )}

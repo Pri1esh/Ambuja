@@ -20,7 +20,10 @@ const CostCalculatorBody = (props: ICostCalculatorBody) => {
     pdfData,
     totalAmount,
     selectedValues,
+    selectedData
   } = props;
+
+  const pdfKey = JSON.stringify({ pdfData});
 
   return (
     <div className={`${styles.wrapper} ${!inPage ? styles.inPageWrapper : ''}`}>
@@ -116,15 +119,16 @@ const CostCalculatorBody = (props: ICostCalculatorBody) => {
       {labels?.downloadEstimateLabel && deviceType === 'desktop' && pdfData?.length > 0 && (
         <div className={styles.downloadEstimate}>
           <PDFDownloadLink
-            document={<PdfToDownload compData={{ pdfData, totalAmount, labels }} />}
+           document={<PdfToDownload compData={{ pdfData, totalAmount, labels,selectedData }} totalPrice={totalAmount} />}
             fileName={labels?.pdfLabels?.pdfFileName}
-            onClick={() =>
+            onClick={() =>{
               GTMHelper({
                 ...labels?.pdfLabels?.gtmData,
                 construction_type: selectedValues?.structureType,
                 construction_stage: selectedValues?.dropdown,
                 construction_area: selectedValues?.area,
               })
+            }
             }
           >
             <div className={styles.downloadWrapper}>
@@ -145,11 +149,12 @@ const CostCalculatorBody = (props: ICostCalculatorBody) => {
               </h4>
               <p>{tabData?.[activeTab]?.data?.labels?.totalCostLabel}</p>
             </div>
-            {labels?.downloadEstimateLabel && (
+            {labels?.downloadEstimateLabel && totalAmount && (
               <div className={styles.downloadBtn}>
                 <PDFDownloadLink
-                  document={<PdfToDownload compData={{ pdfData, totalAmount, labels }} />}
+                  document={<PdfToDownload compData={{ pdfData, totalAmount, labels,selectedData }} totalPrice={totalAmount} />}
                   fileName={labels?.pdfLabels?.pdfFileName}
+                  key={pdfKey}
                   onClick={() =>
                     GTMHelper({
                       ...labels?.pdfLabels?.gtmData,

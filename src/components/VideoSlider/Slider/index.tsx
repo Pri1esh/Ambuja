@@ -1,4 +1,4 @@
-import { BaseVideoSlider, CustomImage, CustomLink, CustomVideo } from '@components';
+import { BaseVideoSlider, CustomLink } from '@components';
 import { ICardSliderData, ISliderCardData } from '@interfaces';
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
@@ -10,20 +10,6 @@ import playBtn from '../../../assets/icons/playCircle.svg';
 const Slider = (item: ICardSliderData) => {
   const { cardDetails } = item;
   const preFix = process.env.NEXT_PUBLIC_STAGING_LINK;
-
-  const sliderCard = (item: ISliderCardData) => {
-    return (
-      <div className={styles.item}>
-        <div className={styles.textContainer}>
-          {item?.description && <p className={styles.description}>{item?.description}</p>}
-          <div className={styles.author}>
-            {item?.heading && <h3>{item?.heading}</h3>}
-            {item?.date && <p>{item?.date}</p>}
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   const TestVideoCard = (item: any) => {
     const [isPlaying, setIsPlaying] = useState(false);

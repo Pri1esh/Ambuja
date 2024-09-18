@@ -6,21 +6,19 @@ import { getIconByName, setFallBack, useDeviceType } from '@utils';
 import { useEffect, useRef, useState } from 'react';
 import styles from './costEstimation.module.scss';
 
-const CostSlab = (props: any) => {
+const CostSlab = (props: ICostSlab) => {
   const {
     label,
     qty,
-    updateCost,
     icon,
-    calculatorNum = 1,
     type = 'number',
     priceData,
     setPriceData,
     defaultPrice,
     data,
-    costList,
     setCostList,
     deviceType,
+    setSelectedData
   } = props;
 
   const [enteredPrice, setEnteredPrice] = useState<string | number>(
@@ -41,23 +39,39 @@ const CostSlab = (props: any) => {
   };
 
   const getBagPrice = (bagName: string) => {
-    let bagRate = data[0]?.categorydata.find((item: any) => item.category === bagName)?.rate;
-    if (bagRate === 'na') {
+    let bagRate = data[0]?.categorydata?.find((item: any) => item.category === bagName)?.rate;
+    if (bagRate === 'na' && isNaN(bagRate) ) {
       bagRate = 0;
     }
     return qty * bagRate;
   };
 
   const updateCostList = (label: string, newCost: number) => {
-    setCostList((prevList: any[]) => {
-      const existingIndex = prevList.findIndex((item) => item.label === label);
-
-      if (existingIndex !== -1) {
-        return prevList.map((item, index) => (index === existingIndex ? { ...item, cost: newCost } : item));
-      } else {
-        return [...prevList, { label, cost: newCost }];
-      }
-    });
+    if(setCostList){
+      setCostList((prevList: any[]) => {
+        const existingIndex = prevList.findIndex((item) => item.label === label);
+  
+        if (existingIndex !== -1) {
+          return prevList.map((item, index) => (index === existingIndex ? { ...item, cost: newCost } : item));
+        } else {
+          return [...prevList, { label, cost: newCost }];
+        }
+      });
+    }
+  };
+  
+  const updateSelectedList = (label: string, newSelected: string,newCost:number):any => {
+    if(setSelectedData){
+      setSelectedData((prevList: any[]) => {
+        const existingIndex = prevList.findIndex((item) => item.label === label);
+  
+        if (existingIndex !== -1) {
+          return prevList.map((item, index) => (index === existingIndex ? { ...item, product: newSelected, cost :newCost } : item));
+        } else {
+          return [...prevList, { label, product: newSelected,cost:newCost }];
+        }
+      });
+    }
   };
 
   const formatIndianNumber = (num: number): string => {
@@ -90,16 +104,15 @@ const CostSlab = (props: any) => {
       updateCostList(label, getBagPrice(shouldActive));
       setActivebag(shouldActive);
       setSlabPrice(getBagPrice(shouldActive));
+      updateSelectedList(label,shouldActive,getBagPrice(shouldActive))
+
     } else {
       updateCostList(label, getProductPrice('budget'));
       setSlabPrice(getProductPrice('budget'));
       setActiveprod('budget');
+      updateSelectedList(label,"Budget",getProductPrice('budget'))
     }
   }, []);
-
-  useEffect(() => {
-    console.log('list', costList);
-  }, [costList]);
 
   useEffect(() => {
     const idx = priceData?.findIndex((i: any) => i?.label === label);
@@ -158,6 +171,8 @@ const CostSlab = (props: any) => {
                         premiumBtnRef?.current?.classList.remove(styles.active);
                         updateCostList(label, getBagPrice(bagButton?.category));
                         setSlabPrice(getBagPrice(bagButton?.category));
+                        updateSelectedList(label,bagButton?.category,getBagPrice(bagButton?.category))
+
 
                         if (premiumSlabRef.current) {
                           Array.from(premiumSlabRef.current.children).forEach((child) => {
@@ -200,6 +215,7 @@ const CostSlab = (props: any) => {
                         budgetBtnRef?.current?.classList.remove(styles.active);
                         updateCostList(label, getBagPrice(bagButton?.category));
                         setSlabPrice(getBagPrice(bagButton?.category));
+                        updateSelectedList(label,bagButton?.category,getBagPrice(bagButton?.category))
 
                         if (budgetSlabRef.current) {
                           Array.from(budgetSlabRef.current.children).forEach((child) => {
@@ -305,6 +321,7 @@ const CostSlab = (props: any) => {
                 premiumBtnRef?.current?.classList.remove(styles.active);
                 updateCostList(label, getProductPrice('budget'));
                 setSlabPrice(getProductPrice('budget'));
+                updateSelectedList(label,"Budget",getBagPrice('budget'))
               }}
             >
               Budget
@@ -318,6 +335,7 @@ const CostSlab = (props: any) => {
                 budgetBtnRef?.current?.classList.remove(styles.active);
                 updateCostList(label, getProductPrice('premium'));
                 setSlabPrice(getProductPrice('premium'));
+                updateSelectedList(label,"Premium",getBagPrice('premium'))
               }}
             >
               Premium
@@ -345,6 +363,7 @@ const CostSlab = (props: any) => {
                     premiumBtnRef?.current?.classList.remove(styles.active);
                     updateCostList(label, getBagPrice(bagButton?.category));
                     setSlabPrice(getBagPrice(bagButton?.category));
+                    updateSelectedList(label,bagButton?.category,getBagPrice(bagButton?.category))
 
                     if (premiumSlabRef.current) {
                       Array.from(premiumSlabRef.current.children).forEach((child) => {
@@ -384,6 +403,7 @@ const CostSlab = (props: any) => {
                     budgetBtnRef?.current?.classList.remove(styles.active);
                     updateCostList(label, getBagPrice(bagButton?.category));
                     setSlabPrice(getBagPrice(bagButton?.category));
+                    updateSelectedList(label,bagButton?.category,getBagPrice(bagButton?.category))
 
                     if (budgetSlabRef.current) {
                       Array.from(budgetSlabRef.current.children).forEach((child) => {
@@ -432,6 +452,7 @@ const CostSlab = (props: any) => {
               premiumBtnRef?.current?.classList.remove(styles.active);
               updateCostList(label, getProductPrice('budget'));
               setSlabPrice(getProductPrice('budget'));
+              updateSelectedList(label,"Budget",getProductPrice('budget'))
             }}
           >
             Budget
@@ -447,6 +468,7 @@ const CostSlab = (props: any) => {
               budgetBtnRef?.current?.classList.remove(styles.active);
               updateCostList(label, getProductPrice('premium'));
               setSlabPrice(getProductPrice('premium'));
+              updateSelectedList(label,"Premium",getProductPrice('premium'))
             }}
           >
             Premium
@@ -465,16 +487,14 @@ const CostEstimation = (props: ICostEstimation) => {
   const {
     materialData,
     compData,
-    handleFilterChange,
     updateCost,
-    totalAmount,
     selectedValues = null,
     priceData,
     setPriceData,
-    setTotalAmount
+    setTotalAmount,
+    setSelectedData
   } = props;
 
-  const [selectedFilter, setSelectedFilter] = useState<IMaterialEstimateFilter>();
   const [costList, setCostList] = useState<any>([]);
   const [totalCost, setTotalCost] = useState<any>([]);
 
@@ -502,22 +522,20 @@ const CostEstimation = (props: ICostEstimation) => {
       const selectedDropdownValue = materialData?.materialDropdownOptions?.options?.find(
         (option) => option.label === selectedValues?.dropdown,
       );
-      setSelectedFilter({ constructionStage: selectedDropdownValue });
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log('slabdata', materialData);
   }, []);
 
   useEffect(() => {
     if (costList) {
       var totalCosting = 0;
       costList.forEach((item: any) => {
-        console.warn('777', item?.cost);
-        totalCosting = totalCosting + item?.cost;
+        if(item.cost !=='na' && item.cost && !isNaN(item.cost)){
+          totalCosting = totalCosting + item?.cost;
+        }
       });
       setTotalCost(totalCosting);
-      setTotalAmount(totalCosting);
+      setTotalAmount(totalCosting);;
     }
   }, [costList]);
 
@@ -554,6 +572,7 @@ const CostEstimation = (props: ICostEstimation) => {
                 setCostList={setCostList}
                 data={data?.data}
                 deviceType={deviceType}
+                setSelectedData={setSelectedData}
                 defaultPrice={
                   priceData?.findIndex((i: any) => i?.label === data?.label) === -1
                     ? 0

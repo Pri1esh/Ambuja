@@ -811,6 +811,7 @@ export interface ICostCalculatorBody {
   pdfData: ICostPdfData[];
   totalAmount: number;
   selectedValues?: IConstructionTabValues | null;
+  selectedData: any[];
 }
 
 export interface IConstructionTooltipData {
@@ -827,6 +828,11 @@ export interface ICostSlab {
   priceData: IPriceData[];
   setPriceData: React.Dispatch<SetStateAction<IPriceData[]>>;
   defaultPrice: string | number;
+  data?:any;
+  costList?:IPriceData[];
+  setCostList?:React.Dispatch<SetStateAction<IPriceData[]>>,
+  deviceType:string,
+  setSelectedData:React.Dispatch<SetStateAction<ISelectedeData[]>>
 }
 
 export interface ICostEstimation {
@@ -848,17 +854,25 @@ export interface ICostEstimation {
   priceData: IPriceData[];
   setPriceData: React.Dispatch<SetStateAction<IPriceData[]>>;
   setTotalAmount:React.Dispatch<SetStateAction<GLuint64>>;
+  setSelectedData:React.Dispatch<SetStateAction<ISelectedeData[]>>;
+  
 }
 
 export interface IPriceData {
   label: string;
   price: string | number;
 }
+export interface ISelectedeData {
+  label: string;
+  product: string | number;
+  cost: string | number;
+}
 export interface ICostPdfData {
   type: string;
   label: string;
   price?: number;
   qty: number;
+  product? :string
 }
 
 export interface ICostAreaSelected {

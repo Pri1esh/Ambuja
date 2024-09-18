@@ -31,7 +31,7 @@ const validateConstructionTabInputs = (values: IConstructionTabValues) => {
   return true;
 };
 
-const validateConstructionSelect = (value: any,fieldType:string) =>{
+const validateConstructionSelect = (value: any) =>{
   if(JSON.stringify(value) === '{}'){
     return false;
   }

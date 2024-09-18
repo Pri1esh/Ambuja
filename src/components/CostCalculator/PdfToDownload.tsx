@@ -5,7 +5,38 @@ import { Fragment } from 'react';
 
 const PdfToDownload = (props: any) => {
   const { compData } = props;
-  const { labels, totalAmount, pdfData } = compData;
+  const { labels, totalAmount, pdfData,selectedData } = compData;
+
+  const formatIndianNumber = (num: number): string => {
+    if (num < 100000) {
+      return num.toLocaleString('en-IN');
+    } else if (num < 10000000) {
+      const lakhs = num / 100000;
+      const formattedLakhs = lakhs.toFixed(2); // Format to 2 decimal places
+      return `${formattedLakhs} lakh`;
+    } else {
+      const crores = num / 10000000;
+      const formattedCrores = crores.toFixed(2); // Format to 2 decimal places
+      return `${formattedCrores} Cr`;
+    }
+  };
+  
+  const getCost = (label:string)=>{
+    if(selectedData){
+      const cost = selectedData.find((item:any)=>(item?.label === label))?.cost;
+      return(formatIndianNumber(cost))
+    }
+    return 0;
+  }
+
+  const getProduct = (label:string)=>{
+    if(selectedData){
+      const prod = selectedData.find((item:any)=>(item?.label === label))?.product;
+      return prod;
+    }
+    return '';
+  }
+
 
   return (
     <Document>
@@ -33,18 +64,22 @@ const PdfToDownload = (props: any) => {
                   flexDirection: 'row',
                 }}
               >
-                <Text style={{ fontSize: '18px', color: '#333', flex: '0 0 38%', fontWeight: 600 }}>
+                <Text style={{ fontSize: '16px', color: '#333', flex: '0 0 25%', fontWeight: 600 }}>
                   {labels?.pdfLabels?.pdfMaterialLabel}
                 </Text>
 
                 <Text
-                  style={{ fontSize: '18px', color: '#333', flex: '0 0 38%', fontWeight: 600, textAlign: 'center' }}
+                  style={{ fontSize: '16px', color: '#333', flex: '0 0 25%', fontWeight: 600, textAlign: 'center' }}
                 >
                   {labels?.pdfLabels?.pdfQuantityLabel}
                 </Text>
-                <Text style={{ fontSize: '18px', color: '#333', flex: '0 0 38%', fontWeight: 600, textAlign: 'right' }}>
+                <Text style={{ fontSize: '16px', color: '#333', flex: '0 0 25%', fontWeight: 600, textAlign: 'right' }}>
+                  Product
+                </Text>
+                <Text style={{ fontSize: '16px', color: '#333', flex: '0 0 25%', fontWeight: 600, textAlign: 'right' }}>
                   {labels?.pdfLabels?.pdfPricePerUnitLabel}
                 </Text>
+                
               </View>
               <View>
                 {pdfData?.map((data: any, index: number) => (
@@ -60,12 +95,15 @@ const PdfToDownload = (props: any) => {
                         flexDirection: 'row',
                       }}
                     >
-                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 38%' }}>{data?.label}</Text>
-                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 38%', textAlign: 'center' }}>
+                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 25%' }}>{data?.label}</Text>
+                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 25%', textAlign: 'center' }}>
                         {data?.qty}
                       </Text>{' '}
-                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 38%', textAlign: 'right' }}>
-                        {data?.price || 0}
+                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 25%', textAlign: 'right' }}>
+                        {getProduct(data?.label)}
+                      </Text>
+                      <Text style={{ fontSize: '14px', color: '#666', flex: '0 0 25%', textAlign: 'right' }}>
+                        {getCost(data?.label)}
                       </Text>
                     </View>
                   </Fragment>
