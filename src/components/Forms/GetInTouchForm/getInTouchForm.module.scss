@@ -19,6 +19,10 @@
   }
 }
 
+.emptyfield{
+  display: none !important;
+}
+
 .form {
   @include media($sm, min) {
     @include padding(0, 24, 0, 24);
@@ -229,3 +233,4 @@
     width: 100%;
   }
 }
+

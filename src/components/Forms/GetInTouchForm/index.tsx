@@ -8,7 +8,7 @@ import { apiDataFilter } from '@utils/server';
 import { useEffect, useState } from 'react';
 import { Form, Offcanvas } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
-import { Checkbox, SelectDropdownCustom } from '../Fields';
+import { Checkbox, OTPInput, SelectDropdownCustom } from '../Fields';
 import OtpInput from '../OtpInput';
 import styles from './getInTouchForm.module.scss';
 
@@ -29,13 +29,32 @@ const GetInTouchForm = (props: any) => {
   const [payloadData, setPayloadData] = useState<any>(null);
   const [formLoader, setFormLoader] = useState(false);
 
+  const [enableSend, setEnableSend] = useState(true);
+  const [sendTxt, setSendTxt] = useState<string>('Send OTP');
+  const [startTimer, setstartTimer] = useState<boolean>(false);
+  const [resetTimer, setResetTimer] = useState<boolean>(false);
+
+   // First form
+   const {
+    control: controlDetail,
+    handleSubmit: handleDetail,
+    getValues: getValuesDetail,
+    setValue: setValueDetail,
+    reset: resetDetail,
+    formState: { errors: errorsDetail },
+  } = useForm<any>({
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+  });
+
+  // Second form
   const {
-    control,
-    handleSubmit,
-    getValues,
-    setValue,
-    reset,
-    formState: { errors },
+    control: controlPlace,
+    handleSubmit: handlePlace,
+    getValues: getValuesPlace,
+    setValue: setValuePlace,
+    reset: resetPlace,
+    formState: { errors: errorsPlace },
   } = useForm<any>({
     mode: 'onSubmit',
     reValidateMode: 'onChange',
@@ -158,7 +177,7 @@ const GetInTouchForm = (props: any) => {
         setShowOtp(false);
         isPopup && setShow(false);
         setMobileNumber(null);
-        reset();
+        // reset();
         GTMHelper({
           ...getIntouchOtp?.submitButton?.gtmData,
           product_type: productType,
@@ -204,6 +223,9 @@ const GetInTouchForm = (props: any) => {
     }
   };
 
+  const sendOTP = ()=>{
+  }
+
   const onHideOTP = () => {
     setShowOtp(!showOtp);
     setResetOnOptionChange(false);
@@ -241,6 +263,7 @@ const GetInTouchForm = (props: any) => {
       return '';
     }
   };
+  
   const getDropDownOptions = (formField: IFieldData) => {
     if (formField?.fieldName?.toLowerCase()?.includes('querytype')) {
       return queryOptions;
@@ -263,21 +286,21 @@ const GetInTouchForm = (props: any) => {
           if (formField?.fieldName?.toLowerCase()?.includes('lookingfor')) {
             setQueryOptions(setFallBack(e?.subOptions, []));
             setResetOnOptionChange(true);
-            setValue('queryType', '');
+            setValuePlace('queryType', '');
           } else if (formField?.fieldName?.toLowerCase()?.includes('state')) {
             setDistrictOptions(e?.subOptions || []);
             setResetOnOptionChange(true);
-            setValue('district', '');
-            setValue('area', '');
+            setValuePlace('district', '');
+            setValuePlace('area', '');
             setAreaOptions([]);
           } else if (formField?.fieldName?.toLowerCase()?.includes('district')) {
             setAreaOptions(e?.areaOptions || []);
             setResetOnOptionChange(true);
-            setValue('area', '');
+            setValuePlace('area', '');
           }
         }}
         selected={value}
-        errorMessage={errors?.[formField?.fieldName ?? '']?.message as string}
+        errorMessage={errorsPlace?.[formField?.fieldName ?? '']?.message as string}
         placeholder={formField?.placeholder}
         onBlur={onBlur}
         options={getDropDownOptions(formField)}
@@ -291,15 +314,15 @@ const GetInTouchForm = (props: any) => {
           if (formField?.fieldName?.toLowerCase()?.includes('lookingfor')) {
             setQueryOptions(e?.subOptions || []);
             setResetOnOptionChange(true);
-            setValue('queryType', '');
+            setValuePlace('queryType', '');
           } else if (formField?.fieldName?.toLowerCase()?.includes('state')) {
             setDistrictOptions(e?.subOptions || []);
             setResetOnOptionChange(true);
-            setValue('district', '');
+            setValuePlace('district', '');
           }
         }}
         selected={value}
-        errorMessage={errors?.[formField?.fieldName ?? '']?.message as string}
+        errorMessage={errorsDetail?.[formField?.fieldName ?? '']?.message as string}
         placeholder={formField?.placeholder}
         onBlur={onBlur}
         options={getDropDownOptions(formField)}
@@ -318,7 +341,7 @@ const GetInTouchForm = (props: any) => {
           <FloatingInput
             label={formField?.placeholder}
             onChange={(e: { target: { value: string } }) => onChange(e?.target?.value)}
-            errorMessage={errors?.[formField?.fieldName || '']?.message as string}
+            errorMessage={errorsDetail?.[formField?.fieldName || '']?.message as string}
             isClear={formField?.isClear}
             onClear={() => onChange('')}
             onBlur={onBlur}
@@ -326,7 +349,7 @@ const GetInTouchForm = (props: any) => {
             maxLen={formField?.maxAllowedLength}
             inputRef={ref}
             controlProps={{
-              value: getValues(formField?.fieldName) || '',
+              value: getValuesDetail(formField?.fieldName) || '',
             }}
           />
         );
@@ -336,13 +359,37 @@ const GetInTouchForm = (props: any) => {
             label={formField?.placeholder}
             onChangeMobileNumber={(e: IMobileNumberData) => onChange(e)}
             onBlur={onBlur}
-            errorMessage={errors?.[formField?.fieldName || '']?.message as string}
+            errorMessage={errorsDetail?.[formField?.fieldName || '']?.message as string}
             name={formField?.fieldName}
             inputRef={ref}
-            value={getValues(formField?.fieldName)?.phoneNumber || ''}
+            value={getValuesDetail(formField?.fieldName)?.phoneNumber || ''}
             contactNoLen={10}
+            enableSend={enableSend}
+            sendTxt={sendTxt}
+            sendOTP={sendOTP}
           />
         );
+      case 'OTP':
+        return (
+          <OTPInput
+          label={formField?.placeholder}
+          onChange={(e: { target: { value: string } }) => onChange(e?.target?.value)}
+          errorMessage={errorsDetail?.[formField?.fieldName || '']?.message as string}
+          isClear={formField?.isClear}
+          onClear={() => onChange('')}
+          onBlur={onBlur}
+          name={formField?.fieldName || ''}
+          maxLen={formField?.maxAllowedLength}
+          inputRef={ref}
+          controlProps={{
+            value: getValuesDetail(formField?.fieldName) || '',
+          }}
+          startTimer={startTimer}
+          resetTimer={resetTimer}
+          handleTimerComplete={timerComplete}
+          />
+        );
+
       case 'dropdown':
         return (
           <div className={getDropDownStyle(formField)}>{getDropDown(formField, onChange, onBlur, value, ref)}</div>
@@ -352,55 +399,101 @@ const GetInTouchForm = (props: any) => {
     }
   };
 
+  const getPlaceInputField = (formField: IFieldData, onChange: any, onBlur: any, value: any, ref: any) => {
+    switch (formField?.fieldType) {
+      case 'placedropdown':
+        return (
+          <div className={getDropDownStyle(formField)}>{getDropDown(formField, onChange, onBlur, value, ref)}</div>
+        );
+      default:
+        return <></>;
+    }
+  };
+
+  const timerComplete = ()=>{
+
+  }
+
   const formFileds = () => {
     return (
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset disabled={loading}>
-          <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
-            {getInTouchForm?.formFields?.map((item: any, index: number) => (
-              <div key={`formField__${item?.fieldName + index}`} className={styles.field}>
-                <Controller
-                  key={`formField__${item?.fieldName + index}`}
-                  control={control}
-                  name={item?.fieldName || ''}
-                  rules={{
-                    required: item?.errorMessages?.requiredFieldErrorMessage,
-                    validate: () => formValidator(item, getValues(item?.fieldName)),
+      <>
+        <Form onSubmit={handleDetail(onSubmit)}>
+          <fieldset disabled={loading}>
+            <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
+              {getInTouchForm?.formFields?.map((item: any, index: number) => (
+                <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? styles.emptyfield : ''}`}>
+                  <Controller
+                    key={`formField__${item?.fieldName + index}`}
+                    control={controlDetail}
+                    name={item?.fieldName || ''}
+                    rules={{
+                      required: item?.errorMessages?.requiredFieldErrorMessage,
+                      validate: () => formValidator(item, getValuesDetail(item?.fieldName)),
+                    }}
+                    render={({ field: { onChange, onBlur, value, ref } }) =>
+                      getInputField(item, onChange, onBlur, value, ref)
+                    }
+                  />
+                </div>
+              ))}
+            </div>
+
+          </fieldset>
+        </Form>
+
+        <Form onSubmit={handlePlace(onSubmit)}>
+          <fieldset disabled={loading}>
+            <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
+              {getInTouchForm?.formFields?.map((item: any, index: number) => (
+                <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? ''  : styles.emptyfield}`}>
+                  <Controller
+                    key={`formField__${item?.fieldName + index}`}
+                    control={controlPlace}
+                    name={item?.fieldName || ''}
+                    rules={{
+                      required: item?.errorMessages?.requiredFieldErrorMessage,
+                      validate: () => formValidator(item, getValuesPlace(item?.fieldName)),
+                    }}
+                    render={({ field: { onChange, onBlur, value, ref } }) =>
+                      getPlaceInputField(item, onChange, onBlur, value, ref)
+                    }
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.buttonGroup}>
+              {deviceType !== 'desktop' && isPopup && (
+                <Button
+                  className={styles.cencelBtn}
+                  variant="outline-light"
+                  onClick={() => {
+                    setShow(false);
+                    resetPlace();
+                    GTMHelper({ ...getInTouchForm?.cancelButton?.gtmData });
                   }}
-                  render={({ field: { onChange, onBlur, value, ref } }) =>
-                    getInputField(item, onChange, onBlur, value, ref)
-                  }
-                />
-              </div>
-            ))}
-          </div>
+                >
+                  {getInTouchForm?.cancelButtonText}
+                </Button>
+              )}
+              {getInTouchForm?.submitButtonText && (
+                <Button type="submit" loading={loading} className={styles.btn}>
+                  {getInTouchForm?.submitButtonText}
+                </Button>
+              )}
+            </div>
 
-          <div className={styles.buttonGroup}>
-            {deviceType !== 'desktop' && isPopup && (
-              <Button
-                className={styles.cencelBtn}
-                variant="outline-light"
-                onClick={() => {
-                  setShow(false);
-                  reset();
-                  GTMHelper({ ...getInTouchForm?.cancelButton?.gtmData });
-                }}
-              >
-                {getInTouchForm?.cancelButtonText}
-              </Button>
+            {getInTouchForm?.checkboxField && (
+              <Checkbox
+                control={controlPlace}
+                errors={errorsPlace}
+                setValue={setValuePlace}
+                compData={getInTouchForm?.checkboxField}
+              />
             )}
-            {getInTouchForm?.submitButtonText && (
-              <Button type="submit" loading={loading} className={styles.btn}>
-                {getInTouchForm?.submitButtonText}
-              </Button>
-            )}
-          </div>
-
-          {getInTouchForm?.checkboxField && (
-            <Checkbox control={control} errors={errors} setValue={setValue} compData={getInTouchForm?.checkboxField} />
-          )}
-        </fieldset>
-      </Form>
+          </fieldset>
+        </Form>
+      </>
     );
   };
 
@@ -442,7 +535,7 @@ const GetInTouchForm = (props: any) => {
                         <button
                           onClick={() => {
                             if (setShow) setShow(false);
-                            reset();
+                            resetDetail();
                             GTMHelper({ ...getInTouchForm.gtmData });
                           }}
                         >

@@ -104,6 +104,26 @@
           @include rem(padding-left, 8);
         }
       }
+
+      .SendOTP {
+        background-color: #ffffff;
+        color: #0a3c69;
+        position: absolute;
+        right: 0;
+        padding-right: 8px;
+        border: none;
+        @include rem(font-size,17);
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: right;
+        text-decoration: underline;
+
+        &.disabled{
+          color:#666;
+          pointer-events: none;
+        }
+      }
     }
 
     &:focus-within,

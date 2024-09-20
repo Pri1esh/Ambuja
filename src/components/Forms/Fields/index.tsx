@@ -5,6 +5,7 @@ export { default as FloatingInput } from './FloatingInput';
 export { default as CostCalcFloatingInput } from './CostCalcFloatingInput';
 export { default as FormDatePicker } from './FormDatePicker';
 export { default as MobileNumberInput } from './MobileNumberInput';
+export { default as OTPInput } from './OTPInput';
 export { default as SelectDropdown } from './SelectDropdown';
 export { default as SelectDropdownCustom } from './SelectDropdownCustom';
 export { default as CostCalcDropdown } from './CostCalcDropdown';

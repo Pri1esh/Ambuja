@@ -2251,6 +2251,9 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
     classname = '',
     name = '',
     value,
+    enableSend,
+    sendTxt,
+    sendOTP,
     // eslint-disable-next-line react-hooks/rules-of-hooks
     inputRef = useRef(null), //NOSONAR
   } = props;
@@ -2365,6 +2368,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 onClear={resetMobileNumber}
                 isClear={isClear}
               />
+              <button type="submit" className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>
             </div>
           </div>
         </div>

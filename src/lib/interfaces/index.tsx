@@ -147,6 +147,39 @@ export interface IFooterData {
   bottomLinks: IBottomLinks;
   backgroundImage: IFooterBg;
 }
+export interface IOTPInput {
+  key?: any;
+  type?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onChange?: (a: any) => void;
+  placeholder?: string;
+  label?: string;
+  disabled?: boolean;
+  controlProps?: any;
+  name?: string;
+  errorMessage?: string;
+  classname?: string;
+  isClear?: boolean;
+  borderOnFocus?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onClear?: () => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onBlur?: (a?: any) => void;
+  maxLen?: number | string;
+  defaultValue?: string;
+  inputType?: string;
+  isVerified?: boolean;
+  alignValueToRight?: boolean;
+  onFocus?: (a: any) => void;
+  disableBorder?: boolean;
+  readOnly?: boolean;
+  inputVal?: string;
+  startTimer: boolean,
+  resetTimer: boolean,
+  handleTimerComplete: any;
+}
+
 export interface IFloatingInput {
   key?: any;
   type?: string;
@@ -175,6 +208,57 @@ export interface IFloatingInput {
   disableBorder?: boolean;
   readOnly?: boolean;
   inputVal?: string;
+}
+
+export interface IOTPInput {
+  key?: any;
+  type?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onChange?: (a: any) => void;
+  placeholder?: string;
+  label?: string;
+  disabled?: boolean;
+  controlProps?: any;
+  name?: string;
+  errorMessage?: string;
+  classname?: string;
+  isClear?: boolean;
+  borderOnFocus?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onClear?: () => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onBlur?: (a?: any) => void;
+  maxLen?: number | string;
+  defaultValue?: string;
+  inputType?: string;
+  isVerified?: boolean;
+  alignValueToRight?: boolean;
+  onFocus?: (a: any) => void;
+  disableBorder?: boolean;
+  readOnly?: boolean;
+  inputVal?: string;
+  startTimer: boolean,
+  resetTimer: boolean,
+  handleTimerComplete: any;
+}
+
+export interface IMobileNumberInput {
+  selectedCountryCode?: string;
+  label?: string;
+  countryCode?: boolean;
+  onChangeMobileNumber?: (e: IMobileNumberData) => void;
+  onBlur?: () => void;
+  errorMessage?: string;
+  options?: ICountryFlag[];
+  isDropdown?: boolean;
+  controlProps?: any;
+  contactNoLen?: number;
+  isClear?: boolean;
+  classname?: string;
+  name?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
+  value?: string;
 }
 
 export interface IButton {
@@ -286,6 +370,9 @@ export interface IMobileNumberInput {
   name?: string;
   inputRef?: React.RefObject<HTMLInputElement>;
   value?: string;
+  enableSend: boolean;
+  sendTxt: string;
+  sendOTP: any;
 }
 
 export interface ICountryFlagDropdown {
