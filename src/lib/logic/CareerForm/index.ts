@@ -18,3 +18,12 @@ export const formValidator = (formFieldData: IFieldData, value: any) => {
       return true;
   }
 };
+
+export const formPlaceValidator = (formFieldData: IFieldData, value: any) => {
+  switch (formFieldData?.fieldType) {
+    case 'placedropdown':
+      return dropdownInputValidator(formFieldData, value);
+    default:
+      return true;
+  }
+};

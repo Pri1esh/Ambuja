@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const OTP_TIMER_DURATION = 60; // Duration in seconds
+const OTP_TIMER_DURATION = 10; // Duration in seconds
 
 interface OTPTimerProps {
   startTimer: boolean;
@@ -34,6 +34,9 @@ const OTPTimer: React.FC<OTPTimerProps> = ({ startTimer, resetTimer, onComplete 
     if (startTimer) {
       setIsActive(true);
     }
+    else{
+      setIsActive(false);
+    }
   }, [startTimer]);
 
   useEffect(() => {
@@ -51,8 +54,8 @@ const OTPTimer: React.FC<OTPTimerProps> = ({ startTimer, resetTimer, onComplete 
 
   return (
     <div>
-      {/* <p>You will receive an OTP in <strong>{formatTime(seconds)}</strong> Seconds.</p> */}
-      {isActive && <p>Timer is active</p>}
+      {isActive && <p>You will receive an OTP in <strong>{formatTime(seconds)}</strong> Seconds.</p>}
+      {/* {isActive && <p>Timer is active</p>} */}
     </div>
   );
 };

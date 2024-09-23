@@ -2,7 +2,7 @@ import { ENDPOINT, getAPI, postAPI } from '@api-manager';
 import { Button, CustomLoader, CustomToast, FloatingInput, MobileNumberInput, SelectDropdown } from '@components';
 import { CAREER_FORM_STAGE } from '@enum';
 import { IDDOption, IFieldData, IMobileNumberData } from '@interfaces';
-import { formValidator } from '@logic/CareerForm';
+import { formValidator,formPlaceValidator } from '@logic/CareerForm';
 import { GTMHelper, getIconByName, setFallBack, useDeviceType } from '@utils';
 import { apiDataFilter } from '@utils/server';
 import { useEffect, useState } from 'react';
@@ -28,11 +28,19 @@ const GetInTouchForm = (props: any) => {
   const [formData, setFormData] = useState<any>({});
   const [payloadData, setPayloadData] = useState<any>(null);
   const [formLoader, setFormLoader] = useState(false);
-
-  const [enableSend, setEnableSend] = useState(true);
+  
+  
+  const [showPlace, setShowPlace] = useState(false);
+  const [enableSend, setEnableSend] = useState(false);
   const [sendTxt, setSendTxt] = useState<string>('Send OTP');
   const [startTimer, setstartTimer] = useState<boolean>(false);
   const [resetTimer, setResetTimer] = useState<boolean>(false);
+  const [validateOTP, setValidateOTP] = useState<boolean>(false);
+  const [enableSubmit, setEnableSubmit] = useState<boolean>(false);
+  const [disableInfo, setDisableInfo] = useState<boolean>(false);
+  const [OTPerror, setOTPerror] = useState<any>();
+
+
 
    // First form
    const {
@@ -41,6 +49,7 @@ const GetInTouchForm = (props: any) => {
     getValues: getValuesDetail,
     setValue: setValueDetail,
     reset: resetDetail,
+    trigger: triggerDetail,
     formState: { errors: errorsDetail },
   } = useForm<any>({
     mode: 'onSubmit',
@@ -100,6 +109,10 @@ const GetInTouchForm = (props: any) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    console.log(errorsDetail)
+  }, [errorsDetail]);
+
   const getFormAPIData = async () => {
     const res = await getAPI(ENDPOINT.CLIENT.getInTouchForm, false);
     const data = apiDataFilter(res);
@@ -118,52 +131,66 @@ const GetInTouchForm = (props: any) => {
     return token;
   };
 
-  const onSubmit = async (data: any) => {
-    GTMHelper({
-      ...getInTouchForm?.submitButton?.gtmData,
-      event: 'form_otp_send',
-      product_type: productType,
-    });
-    setLoading(true);
-    const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
-    const postData = {
-      firstName: data?.firstName,
-      lastName: data?.lastName,
-      email: data?.email,
-      phoneNo: data?.phoneNo ? data?.phoneNo?.phoneNumber : '',
-      lookingFor: data?.lookingFor?.label,
-      queryType: data?.queryType?.label,
-      state: data?.state?.label,
-      district: data?.district?.label,
-      area: data?.area?.label,
-      termsAndConditions: data?.termsAndConditions,
-    };
-    __RECAPTCHA__ ? setPayloadData({ ...postData, reResponse: captchaResponse }) : setPayloadData(postData);
+  const onFinalSubmit = async (data: any) => {
+    const isDetailValid = await triggerDetail();
+    
+    console.log("inside",44,isDetailValid);
 
-    try {
-      // call Api here to send OTP
-      const res = await postAPI(ENDPOINT.CLIENT.enquirySubmitApi, postData);
-      setToastData(`${res?.Result ? res?.Result : ''} ${res?.TicketId ? res?.TicketId : ''}`);
-      setFormState(CAREER_FORM_STAGE?.SUCESS);
-      setLoading(false);
-      //to be enabled after OTP
-      setShowOtp(true);
-      setMobileNumber({ countryCode: data?.phoneNo?.countryCode, phoneNumber: data?.phoneNo?.phoneNumber });
-    } catch (error) {
-      setMobileNumber(null);
-      setShowOtp(false);
-      setLoading(false);
-      setToastData(errorMessage);
-      setFormState('true');
-      GTMHelper({
-        ...getInTouchForm?.submitButton?.gtmData,
-        event: 'form_submit_fail',
-        product_type: productType,
-        error_text: errorMessage,
-        query_type: `${data?.lookingFor?.label} | ${data?.queryType?.label}`,
-      });
+    if(isDetailValid){
+
     }
-  };
+
+  }
+
+  // const onSubmit = async (data: any) => {
+    
+  //   GTMHelper({
+  //     ...getInTouchForm?.submitButton?.gtmData,
+  //     event: 'form_otp_send',
+  //     product_type: productType,
+  //   });
+  //   setLoading(true);
+  //   const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
+  //   const postData = {
+  //     firstName: data?.firstName,
+  //     lastName: data?.lastName,
+  //     email: data?.email,
+  //     phoneNo: data?.phoneNo ? data?.phoneNo?.phoneNumber : '',
+  //     lookingFor: data?.lookingFor?.label,
+  //     queryType: data?.queryType?.label,
+  //     state: data?.state?.label,
+  //     district: data?.district?.label,
+  //     area: data?.area?.label,
+  //     termsAndConditions: data?.termsAndConditions,
+  //   };
+  //   __RECAPTCHA__ ? setPayloadData({ ...postData, reResponse: captchaResponse }) : setPayloadData(postData);
+
+  //     console.log("iiiii")
+  //     try {
+  //       // call Api here to send OTP
+  //       const res = await postAPI(ENDPOINT.CLIENT.enquirySubmitApi, postData);
+  //       setToastData(`${res?.Result ? res?.Result : ''} ${res?.TicketId ? res?.TicketId : ''}`);
+  //       setFormState(CAREER_FORM_STAGE?.SUCESS);
+  //       setLoading(false);
+  //       //to be enabled after OTP
+  //       setShowOtp(true);
+  //       setMobileNumber({ countryCode: data?.phoneNo?.countryCode, phoneNumber: data?.phoneNo?.phoneNumber });
+  //     } catch (error) {
+  //       setMobileNumber(null);
+  //       setShowOtp(false);
+  //       setLoading(false);
+  //       setToastData(errorMessage);
+  //       setFormState('true');
+  //       GTMHelper({
+  //         ...getInTouchForm?.submitButton?.gtmData,
+  //         event: 'form_submit_fail',
+  //         product_type: productType,
+  //         error_text: errorMessage,
+  //         query_type: `${data?.lookingFor?.label} | ${data?.queryType?.label}`,
+  //       });
+  //     }
+    
+  // };
 
   const onSubmitOtp = async (e: any, inputOtp: string, setInputValues?: any) => {
     e.preventDefault();
@@ -224,12 +251,54 @@ const GetInTouchForm = (props: any) => {
   };
 
   const sendOTP = ()=>{
+    setResetTimer(false);
+    setstartTimer(true);
+    setEnableSend(false);
+
+    setEnableSubmit(true);
+    setValidateOTP(false);
+    
   }
+
+  const timerComplete = ()=>{
+    setResetTimer(true);
+    setstartTimer(false);
+    setSendTxt("Resend OTP");
+    setEnableSend(true);
+  }
+
+    const submitOTP = () => {
+      setValidateOTP(true);
+
+      if(OTPValidation(getValuesDetail('OTP'))){
+        setShowPlace(true);
+        setDisableInfo(true);
+        setEnableSend(false);
+        setEnableSubmit(false);
+      }
+      else{
+        setShowPlace(false);
+      }
+    }
 
   const onHideOTP = () => {
     setShowOtp(!showOtp);
     setResetOnOptionChange(false);
   };
+
+  const OTPValidation = (otp:number)=>{
+    console.log("otp",otp);
+    setstartTimer(false);
+
+    if(otp==1234){
+      return true;
+    }
+    else{
+      console.log(">.",errorsDetail?.OTP?.message);
+      getValuesDetail()?.OTP ? setOTPerror("Please Enter a Valid OTP"): setOTPerror("")
+      return false;
+    }
+  }
 
   const resendOtp = async () => {
     setLoading(true);
@@ -357,7 +426,12 @@ const GetInTouchForm = (props: any) => {
         return (
           <MobileNumberInput
             label={formField?.placeholder}
-            onChangeMobileNumber={(e: IMobileNumberData) => onChange(e)}
+            onChangeMobileNumber={(e: IMobileNumberData) => {
+              onChange(e);
+              setResetTimer(true);
+              setstartTimer(false);
+              setSendTxt("Send OTP");
+            }}
             onBlur={onBlur}
             errorMessage={errorsDetail?.[formField?.fieldName || '']?.message as string}
             name={formField?.fieldName}
@@ -367,13 +441,15 @@ const GetInTouchForm = (props: any) => {
             enableSend={enableSend}
             sendTxt={sendTxt}
             sendOTP={sendOTP}
+            setEnableSend={setEnableSend}
+            disableInfo={disableInfo}
           />
         );
       case 'OTP':
         return (
           <OTPInput
           label={formField?.placeholder}
-          onChange={(e: { target: { value: string } }) => onChange(e?.target?.value)}
+          onChange={(e: { target: { value: string } }) => {onChange(e?.target?.value);setOTPerror("")}}
           errorMessage={errorsDetail?.[formField?.fieldName || '']?.message as string}
           isClear={formField?.isClear}
           onClear={() => onChange('')}
@@ -387,6 +463,10 @@ const GetInTouchForm = (props: any) => {
           startTimer={startTimer}
           resetTimer={resetTimer}
           handleTimerComplete={timerComplete}
+          enableSubmit={enableSubmit}
+          submitOTP={submitOTP}
+          OTPerror={OTPerror}
+          disableInfo={disableInfo}
           />
         );
 
@@ -410,24 +490,22 @@ const GetInTouchForm = (props: any) => {
     }
   };
 
-  const timerComplete = ()=>{
-
-  }
-
   const formFileds = () => {
     return (
       <>
-        <Form onSubmit={handleDetail(onSubmit)}>
+        <Form onSubmit={handleDetail(sendOTP)}>
           <fieldset disabled={loading}>
             <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
               {getInTouchForm?.formFields?.map((item: any, index: number) => (
-                <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? styles.emptyfield : ''}`}>
+                <>
+                {item?.fieldType !== "placedropdown" &&
+                  <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? styles.emptyfield : ''}`}>
                   <Controller
                     key={`formField__${item?.fieldName + index}`}
                     control={controlDetail}
                     name={item?.fieldName || ''}
                     rules={{
-                      required: item?.errorMessages?.requiredFieldErrorMessage,
+                      required: item?.fieldType!=="OTP" ? item?.errorMessages?.requiredFieldErrorMessage : validateOTP ? item?.errorMessages?.requiredFieldErrorMessage : '',
                       validate: () => formValidator(item, getValuesDetail(item?.fieldName)),
                     }}
                     render={({ field: { onChange, onBlur, value, ref } }) =>
@@ -435,32 +513,38 @@ const GetInTouchForm = (props: any) => {
                     }
                   />
                 </div>
+                }
+                </>
               ))}
             </div>
 
           </fieldset>
         </Form>
 
-        <Form onSubmit={handlePlace(onSubmit)}>
+        <Form onSubmit={handlePlace(onFinalSubmit)}>
           <fieldset disabled={loading}>
-            <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
+            {showPlace && <div className={!isPopup && deviceType === 'desktop' ? styles.fieldsWrapper : ''}>
               {getInTouchForm?.formFields?.map((item: any, index: number) => (
-                <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? ''  : styles.emptyfield}`}>
+                <>
+                { item?.fieldType === "placedropdown" &&
+                  <div key={`formField__${item?.fieldName + index}`} className={`${styles.field} ${item?.fieldType === "placedropdown" ? ''  : styles.emptyfield}`}>
                   <Controller
                     key={`formField__${item?.fieldName + index}`}
                     control={controlPlace}
                     name={item?.fieldName || ''}
                     rules={{
                       required: item?.errorMessages?.requiredFieldErrorMessage,
-                      validate: () => formValidator(item, getValuesPlace(item?.fieldName)),
+                      validate: () => formPlaceValidator(item, getValuesPlace(item?.fieldName)),
                     }}
                     render={({ field: { onChange, onBlur, value, ref } }) =>
                       getPlaceInputField(item, onChange, onBlur, value, ref)
                     }
                   />
                 </div>
+                }
+                </>
               ))}
-            </div>
+            </div>}
 
             <div className={styles.buttonGroup}>
               {deviceType !== 'desktop' && isPopup && (
@@ -477,7 +561,7 @@ const GetInTouchForm = (props: any) => {
                 </Button>
               )}
               {getInTouchForm?.submitButtonText && (
-                <Button type="submit" loading={loading} className={styles.btn}>
+                <Button type="submit" loading={loading} className={`${styles.btn} ${showPlace ? '' : styles.disabled }`} disabled={!showPlace}>
                   {getInTouchForm?.submitButtonText}
                 </Button>
               )}

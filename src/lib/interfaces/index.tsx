@@ -155,6 +155,7 @@ export interface IOTPInput {
   onChange?: (a: any) => void;
   placeholder?: string;
   label?: string;
+  OTPerror?:string;
   disabled?: boolean;
   controlProps?: any;
   name?: string;
@@ -178,6 +179,9 @@ export interface IOTPInput {
   startTimer: boolean,
   resetTimer: boolean,
   handleTimerComplete: any;
+  enableSubmit: boolean;
+  submitOTP:any;
+  disableInfo:boolean;
 }
 
 export interface IFloatingInput {
@@ -373,6 +377,8 @@ export interface IMobileNumberInput {
   enableSend: boolean;
   sendTxt: string;
   sendOTP: any;
+  setEnableSend: React.Dispatch<React.SetStateAction<boolean>>;
+  disableInfo:boolean;
 }
 
 export interface ICountryFlagDropdown {

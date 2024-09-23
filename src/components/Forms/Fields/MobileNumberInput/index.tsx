@@ -2256,6 +2256,8 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
     sendOTP,
     // eslint-disable-next-line react-hooks/rules-of-hooks
     inputRef = useRef(null), //NOSONAR
+    setEnableSend,
+    disableInfo=false
   } = props;
 
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -2280,7 +2282,6 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
     const value = e?.target?.value || passedValue;
     const re = /^[0-9\b]+$/;
     if ((value === '' || re.test(value)) && value.length <= contactNoLen) {
-      setPhoneNumber(value);
       onChangeMobileNumber({
         phoneNumber: value,
         countryCode: selectedCountry?.dialCode ?? '',
@@ -2288,6 +2289,16 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
       });
     }
   };
+
+  const handleSendBtn = (e: { target: { value: string } }) => {
+    const value = e?.target?.value;
+    if(value.length < contactNoLen){
+      setEnableSend(false);
+    }
+    else{
+      setEnableSend(true);
+    }
+  }
 
   const selectCountry = (item: ICountryFlag) => {
     setCountryDropDown(false);
@@ -2356,6 +2367,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 }}
                 onChange={(e: any) => {
                   handlePhoneNumber(e);
+                  handleSendBtn(e);
                 }}
                 onBlur={onBlur}
                 name={name}
@@ -2367,6 +2379,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 borderOnFocus={false}
                 onClear={resetMobileNumber}
                 isClear={isClear}
+                disabled={disableInfo}
               />
               <button type="submit" className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>
             </div>

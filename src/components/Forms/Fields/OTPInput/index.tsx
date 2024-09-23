@@ -37,7 +37,12 @@ const OTPInput = (props: IOTPInput) => {
     readOnly = false,
     startTimer,
     resetTimer,
-    handleTimerComplete
+    handleTimerComplete,
+    enableSubmit,
+    OTPerror='',
+    submitOTP,
+    disableInfo
+
   } = props;
   const { deviceType } = useDeviceType();
 
@@ -120,7 +125,7 @@ const OTPInput = (props: IOTPInput) => {
             }
           }}
           placeholder={placeholder}
-          disabled={disabled}
+          disabled={disableInfo}
           name={name}
           onBlur={(e) => {
             onBlur(e);
@@ -153,9 +158,11 @@ const OTPInput = (props: IOTPInput) => {
             </button>
           )
         )}
+      <button type="submit" className={`${styles.SubmitOTP} ${enableSubmit? '' : styles.disabled}`} disabled={!enableSubmit} onClick={submitOTP} >Submit OTP</button>
       </FloatingLabel>
       {<OTPTimer startTimer={startTimer} resetTimer={resetTimer} onComplete={handleTimerComplete} />}
       {errorMessage && <Error errorMessage={errorMessage} />}
+      {OTPerror && <Error errorMessage={OTPerror} />}
     </div>
   );
 };
