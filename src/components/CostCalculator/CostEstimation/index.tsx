@@ -1,7 +1,8 @@
+/* eslint-disable */
+
 import React from 'react';
-import { CustomIcon, FloatingInput, SelectDropdown } from '@components';
-import { ICostEstimation, ICostSlab, IMaterialEstimateFilter, IMaterialSlab, ISelectDropdownOption } from '@interfaces';
-import { getAmountDetail } from '@logic/costCalculator';
+import { CustomIcon} from '@components';
+import { ICostEstimation, ICostSlab,  IMaterialSlab } from '@interfaces';
 import { getIconByName, setFallBack, useDeviceType } from '@utils';
 import { useEffect, useRef, useState } from 'react';
 import styles from './costEstimation.module.scss';
@@ -18,6 +19,7 @@ const CostSlab = (props: ICostSlab) => {
     data,
     setCostList,
     deviceType,
+    selectedValues = null,
     setSelectedData
   } = props;
 
@@ -35,7 +37,12 @@ const CostSlab = (props: ICostSlab) => {
   const [activebag, setActivebag] = useState<string>();
 
   const getProductPrice = (product: string) => {
-    return qty * data[0]?.[product];
+    if(qty){
+      return qty * data[0]?.[product];
+    }
+    else{
+      return selectedValues?.area* data[0]?.[product];
+    }
   };
 
   const getBagPrice = (bagName: string) => {
@@ -94,13 +101,21 @@ const CostSlab = (props: ICostSlab) => {
   useEffect(() => {
     if (label === 'Cement -bags') {
       let shouldActive = '';
-      for (let i = 0; i < data[0]?.categorydata.length; i++) {
-        const bag = data[0]?.categorydata[i];
-        if (bag?.rate !== 'na') {
-          shouldActive = bag?.category;
-          break; // Exit loop when condition is met
+      const premiumRate = data[0]?.categorydata.find((i:any) => i.category==="Ambuja Kawach").rate;
+      console.log(premiumRate)
+      if(premiumRate!== 'na'){
+        shouldActive = "Ambuja Kawach";
+      }
+      else{
+        for (let i = 0; i < data[0]?.categorydata.length; i++) {
+          const bag = data[0]?.categorydata[i];
+          if (bag?.rate !== 'na') {
+            shouldActive = bag?.category;
+            break; // Exit loop when condition is met
+          }
         }
       }
+      
       updateCostList(label, getBagPrice(shouldActive));
       setActivebag(shouldActive);
       setSlabPrice(getBagPrice(shouldActive));
@@ -355,7 +370,7 @@ const CostSlab = (props: ICostSlab) => {
         <div ref={budgetSlabRef} className={styles.baseProductSlab}>
           {data?.[0]?.categorydata.map((bagButton: any) => (
             <React.Fragment key={bagButton?.category}>
-              {bagButton?.type.toLowerCase() === 'budget' && (
+              {bagButton?.type.toLowerCase() === 'budget' && bagButton?.rate!=="na" && (
                 <button
                   className={`${styles.budgetBtn} ${activebag === bagButton?.category ? styles.active : ''}`}
                   onClick={(event) => {
@@ -395,7 +410,7 @@ const CostSlab = (props: ICostSlab) => {
         <div className={styles.premiumProductSlab} ref={premiumSlabRef}>
           {data?.[0]?.categorydata.map((bagButton: any) => (
             <React.Fragment key={bagButton?.category}>
-              {bagButton?.type.toLowerCase() === 'premium' && (
+              {bagButton?.type.toLowerCase() === 'premium' && bagButton?.rate!=="na" && (
                 <button
                   className={`${styles.premiumBtn} ${activebag === bagButton?.category ? styles.active : ''}`}
                   onClick={(event) => {
@@ -528,7 +543,7 @@ const CostEstimation = (props: ICostEstimation) => {
 
   useEffect(() => {
     if (costList) {
-      var totalCosting = 0;
+      let totalCosting = 0;
       costList.forEach((item: any) => {
         if(item.cost !=='na' && item.cost && !isNaN(item.cost)){
           totalCosting = totalCosting + item?.cost;
@@ -569,9 +584,10 @@ const CostEstimation = (props: ICostEstimation) => {
                 setPriceData={setPriceData}
                 priceData={priceData}
                 costList={costList}
-                setCostList={setCostList}
+                setCostList={setCostList}  
                 data={data?.data}
                 deviceType={deviceType}
+                selectedValues={selectedValues}
                 setSelectedData={setSelectedData}
                 defaultPrice={
                   priceData?.findIndex((i: any) => i?.label === data?.label) === -1

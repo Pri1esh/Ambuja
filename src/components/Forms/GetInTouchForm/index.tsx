@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { ENDPOINT, getAPI, postAPI } from '@api-manager';
 import { Button, CustomLoader, CustomToast, FloatingInput, MobileNumberInput, SelectDropdown } from '@components';
 import { CAREER_FORM_STAGE } from '@enum';

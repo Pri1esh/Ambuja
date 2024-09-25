@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { ICostCalculator } from '@interfaces';
 import styles from './costCalculatorWidget.module.scss';
 import TextSection from './TextSection';

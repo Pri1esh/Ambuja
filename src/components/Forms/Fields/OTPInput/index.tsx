@@ -17,7 +17,6 @@ const OTPInput = (props: IOTPInput) => {
     onChange = () => {},
     placeholder = 'name',
     label = '',
-    disabled = false,
     controlProps,
     name,
     errorMessage = '',

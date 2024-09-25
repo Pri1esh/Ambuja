@@ -926,6 +926,7 @@ export interface ICostSlab {
   setCostList?:React.Dispatch<SetStateAction<IPriceData[]>>,
   deviceType:string,
   setSelectedData:React.Dispatch<SetStateAction<ISelectedeData[]>>
+  selectedValues?:any
 }
 
 export interface ICostEstimation {
