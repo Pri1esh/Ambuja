@@ -379,6 +379,8 @@ export interface IMobileNumberInput {
   sendOTP: any;
   setEnableSend: React.Dispatch<React.SetStateAction<boolean>>;
   disableInfo:boolean;
+  mobileError:string;
+  setMobileError:React.Dispatch<React.SetStateAction<string>>
 }
 
 export interface ICountryFlagDropdown {

@@ -124,6 +124,23 @@
           pointer-events: none;
         }
       }
+
+      .Verified{
+        color: #13a144;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 24px;
+      line-height: 16px;
+      margin-bottom: 0;
+      margin-right: 5px;
+      text-align: left;
+      position: absolute;
+        right: 0;
+        padding-right: 8px;
+        border: none;
+        @include rem(font-size,16);
+        background-color: transparent;
+      }
     }
 
     &:focus-within,

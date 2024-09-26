@@ -2254,6 +2254,8 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
     enableSend,
     sendTxt,
     sendOTP,
+    mobileError,
+    setMobileError,
     // eslint-disable-next-line react-hooks/rules-of-hooks
     inputRef = useRef(null), //NOSONAR
     setEnableSend,
@@ -2368,6 +2370,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 onChange={(e: any) => {
                   handlePhoneNumber(e);
                   handleSendBtn(e);
+                  setMobileError('');
                 }}
                 onBlur={onBlur}
                 name={name}
@@ -2381,11 +2384,13 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 isClear={isClear}
                 disabled={disableInfo}
               />
-              <button type="submit" className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>
+              {!disableInfo && <button className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>}
+              {disableInfo && <button className={styles.Verified}>Verified</button>}
             </div>
           </div>
         </div>
-        {errorMessage && <Error errorMessage={errorMessage} />}
+        
+        {(errorMessage || mobileError) && <Error errorMessage={errorMessage ? errorMessage : mobileError} />}
         {isDropdown && countryDropDown && (
           <CountryFlagDropdown
             selectedCountry={selectedCountry}

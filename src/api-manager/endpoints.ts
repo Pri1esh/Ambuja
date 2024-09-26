@@ -51,5 +51,8 @@ export default class ENDPOINT {
     otpSubmitApi: '/formsapi/GetInTouch/verifyotp',
     costCalculatorResponse:
       '/sitecore/api/layout/render?item=/sitecore/content/Ambuja/Home/cost-calculator-client-api&sc_apikey={77E0D3EA-F46F-46AE-8A42-15D2036FCC40}&sc_site=Ambuja',
+
+      generateOTP: '/formsapi/GetInTouch/generate',
+      validateOTP: '/formsapi/GetInTouch/verifyotp'
   };
 }

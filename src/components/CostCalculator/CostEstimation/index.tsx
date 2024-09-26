@@ -101,10 +101,16 @@ const CostSlab = (props: ICostSlab) => {
   useEffect(() => {
     if (label === 'Cement -bags') {
       let shouldActive = '';
-      const premiumRate = data[0]?.categorydata.find((i:any) => i.category==="Ambuja Kawach").rate;
-      console.log(premiumRate)
-      if(premiumRate!== 'na'){
-        shouldActive = "Ambuja Kawach";
+      const premiumProducts = data[0]?.categorydata.filter((i:any) => i.type==="Premium" && i.rate!=="na");
+
+      if(premiumProducts.length){
+        const kawach = premiumProducts.find((i:any) => i.category==="Ambuja Kawach");
+        if(kawach){
+            shouldActive = "Ambuja Kawach";
+          }
+        else{
+          shouldActive = premiumProducts?.[0].category;
+        }
       }
       else{
         for (let i = 0; i < data[0]?.categorydata.length; i++) {

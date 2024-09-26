@@ -157,7 +157,7 @@ const OTPInput = (props: IOTPInput) => {
             </button>
           )
         )}
-      <button type="submit" className={`${styles.SubmitOTP} ${enableSubmit? '' : styles.disabled}`} disabled={!enableSubmit} onClick={submitOTP} >Submit OTP</button>
+      <button type="submit" className={`${styles.SubmitOTP} ${enableSubmit? '' : styles.disabled}`} disabled={!enableSubmit} >Submit OTP</button>
       </FloatingLabel>
       {<OTPTimer startTimer={startTimer} resetTimer={resetTimer} onComplete={handleTimerComplete} />}
       {errorMessage && <Error errorMessage={errorMessage} />}
