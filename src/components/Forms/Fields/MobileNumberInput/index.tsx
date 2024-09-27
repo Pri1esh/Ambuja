@@ -7,6 +7,9 @@ import { FloatingInput } from '../index';
 import CountryFlagDropdown from './CountryFlagDropdown';
 import styles from './mobileNumberInput.module.scss';
 
+import Image from 'next/image';
+import greenTick from '../../../../assets/temp/greeen_tick.svg';
+
 const countries: ICountryFlag[] = [
   {
     countryName: 'India',
@@ -2385,7 +2388,12 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 disabled={disableInfo}
               />
               {!disableInfo && <button className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>}
-              {disableInfo && <button className={styles.Verified}>Verified</button>}
+              {disableInfo && <button className={styles.Verified}>Verified
+              <Image
+              src={greenTick}
+              alt="Verified"
+            />
+              </button>}
             </div>
           </div>
         </div>

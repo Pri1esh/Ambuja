@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const OTP_TIMER_DURATION = 10; // Duration in seconds
+const OTP_TIMER_DURATION = 60; // Duration in seconds
 
 interface OTPTimerProps {
   startTimer: boolean;
