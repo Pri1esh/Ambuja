@@ -67,6 +67,9 @@ const MainBanner = (props: IMainBanner) => {
                       defaultVideoSourceMobileOgg: item?.videoSourceMobileOGG,
                       defaultVideoSourceTablet: item?.videoSourceTablet,
                       defaultVideoSourceTabletOgg: item?.videoSourceTabletOGG,
+                      mediaType: item?.mediaType,
+                      videoSource: item?.videoSource,
+                      videoSourceOgg: item?.videoSourceOGG
                     }}
                   />
                 </div>
