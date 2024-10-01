@@ -13,6 +13,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { Checkbox, OTPInput, SelectDropdownCustom } from '../Fields';
 import OtpInput from '../OtpInput';
 import styles from './getInTouchForm.module.scss';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const GetInTouchForm = (props: any) => {
   const { show, setShow, isPopup = false, productType } = props;
@@ -42,6 +43,11 @@ const GetInTouchForm = (props: any) => {
   const [otherQuery, setOtherQuery] = useState<boolean>(false);
   const [OTPerror, setOTPerror] = useState<any>();
   const [mobileError, setMobileError] = useState<string>('');
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const enq_query = searchParams.get('query')?.replace(/-/g,' ');
+  const [requestQuery, setRequestQuery] = useState<any>('');
 
   // First form
   const {
@@ -89,6 +95,13 @@ const GetInTouchForm = (props: any) => {
       document.querySelector('.grecaptcha-badge')?.classList?.add('d-none');
     }
   };
+
+  const RequestedQuery = (options:any) =>{
+    if(pathname.includes('get-in-touch') && enq_query){
+      const defaultQuery:any  = options?.find((item:any)=>(item.label === enq_query));
+      setRequestQuery(defaultQuery);
+    }
+  }
 
   useEffect(() => {
     if (show || !isPopup) {
@@ -413,6 +426,11 @@ const GetInTouchForm = (props: any) => {
   };
 
   const getDropDown = (formField: IFieldData, onChange: any, onBlur: any, value: any, ref: any) => {
+    
+    if(formField?.fieldName?.toLowerCase()?.includes('lookingfor')){
+      RequestedQuery(getDropDownOptions(formField))
+    }
+
     return formField?.fieldName?.toLowerCase()?.includes('state') ||
       formField?.fieldName?.toLowerCase()?.includes('district') ||
       formField?.fieldName?.toLowerCase()?.includes('area') ? (
@@ -457,7 +475,9 @@ const GetInTouchForm = (props: any) => {
             setValuePlace('district', '');
           }
         }}
-        selected={value}
+        selected={
+          formField?.fieldName?.toLowerCase()?.includes('lookingfor') && !value ? requestQuery : value
+        }
         errorMessage={errorsDetail?.[formField?.fieldName ?? '']?.message as string}
         placeholder={formField?.placeholder}
         onBlur={onBlur}
