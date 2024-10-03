@@ -1,0 +1,177 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.card {
+  @include padding(16, 16, 22, 16);
+  @include rem(border-radius, 8);
+  @include rem(min-height, 440);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: $secondary;
+
+  &.primiumCard {
+    background-color: $cornSilk;
+
+    .hovered {
+      background-color: $cornSilk;
+    }
+  }
+
+  @include media($sm, min) {
+    @include padding(20, 20, 40, 20);
+  }
+
+  @include media($md, min) {
+    &:hover {
+      .cardFront {
+        opacity: 0.8;
+      }
+
+      .hovered {
+        @include rem(top, 10);
+        left: 0;
+        transition: all 1s ease-in-out;
+      }
+    }
+  }
+
+  .cardFront {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      @include rem(font-size, 25);
+      @include rem(margin-top, 20);
+      text-align: center;
+      color: $raisinblack;
+      color: #184f79;
+    }
+
+    .imgContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 2.5;
+
+      img {
+        width: 80%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .badge {
+    @include rem(font-size, 14);
+    @include rem(width, 105);
+    @include rem(height, 30);
+    @include padding(5, 25, 5, 10);
+    font-family: $font-medium;
+    position: relative;
+    background-color: $chineeseyellow;
+    color: $darkBronze;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    z-index: $zindex-2;
+
+    &::after {
+      background: $chineeseyellow;
+      border-bottom: 0.938rem solid transparent;
+      border-left: 0.875rem solid $cornSilk;
+      border-top: 0.938rem solid transparent;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(180deg);
+    }
+
+    i {
+      @include rem(font-size, 12);
+      @include rem(margin-right, 6);
+      vertical-align: text-bottom;
+    }
+  }
+
+  .textContainer {
+    @include padding(0, 20, 0, 20);
+
+    @include media($md, min) {
+      @include padding(0, 16, 0, 16);
+    }
+
+    
+
+    .subTitle {
+      @include rem(font-size, 16);
+      margin: 0;
+      text-align: center;
+      color: $granite;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .hovered {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    top: 100%;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    background-color: $secondary;
+    left: 0;
+
+    .hoveredtitle{
+      @include rem(font-size, 18);
+      text-align: center;
+      color: $raisinblack;
+    }
+
+    .iconContainer {
+      @include rem(margin-top, 40);
+      @include rem(margin-bottom, 45);
+      display: flex;
+      justify-content: center;
+
+      .singleIconContainer {
+        @include padding(0, 24, 0, 24);
+
+        &:not(:last-child) {
+          border-right: 0.0625rem solid $platinum;
+        }
+
+        img {
+          @include rem(width, 30);
+          @include rem(height, 30);
+          margin: auto auto 0.75rem auto;
+        }
+
+        p {
+          @include rem(font-size, 14);
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+
+    .linkButton {
+      @include rem(width, 216);
+      color: $raisinblack;
+    }
+  }
+}
+
+.mobileCard {
+  height: 100%;
+}

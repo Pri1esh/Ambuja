@@ -1,0 +1,134 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  padding: 0;
+
+  @include media($md, min) {
+    padding: 0 1.875rem;
+  }
+
+  .tabs {
+    @include rem(gap, 16);
+    display: flex;
+
+    .tabOption {
+      @include rem(font-size, 14);
+      font-family: $font-regular;
+      color: $granite;
+      cursor: pointer;
+      letter-spacing: -0.02rem;
+      display: flex;
+
+      &.selected {
+        color: $darkcharcoal;
+      }
+    }
+
+    @include media($lg, min) {
+      @include rem(gap, 30);
+
+      .tabOption {
+        @include rem(font-size, 16);
+      }
+    }
+  }
+
+  .constructionForm {
+    @include rem(padding-top, 20);
+    @include rem(margin-right, 0);
+
+    @include media($md, min) {
+      @include rem(padding-top, 40);
+    }
+
+    .formInputs {
+      @include rem(gap, 16);
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .dropdown,
+      .tabInput {
+        flex: 0 0 100%;
+        width: 100%;
+      }
+    }
+
+    .submitButton {
+      @include rem(border-radius, 30);
+      @include rem(font-size, 16);
+      @include rem(margin-top, 40);
+      width: 100%;
+
+      @include media($md, min) {
+        width: 50%;
+      }
+    }
+
+    @include media($lg, min) {
+      @include rem(margin-right, 42);
+
+      .formInputs {
+        .dropdown,
+        .tabInput {
+          flex: 0 0 32%;
+        }
+      }
+
+      .submitButton {
+        @include rem(margin-top, 30);
+      }
+    }
+  }
+
+  &.inPageWrapper {
+    @include media($md, min) {
+      padding: 0;
+    }
+
+    .constructionForm {
+      @include rem(margin-right, 0);
+
+      .formInputs {
+        @include rem(gap, 20);
+
+        .dropdown,
+        .tabInput {
+          flex: 0 0 100%;
+        }
+      }
+
+      .submitButton {
+        @include rem(margin-top, 50);
+      }
+    }
+  }
+
+  input[type='radio'] {
+    @include rem(height, 18);
+    @include rem(margin-left, 0);
+    @include rem(margin-right, 8);
+    @include rem(width, 18);
+    margin-top: 0.15rem;
+    border-color: $darkcharcoal;
+    background-color: #fff;
+    outline: none;
+    box-shadow: none;
+  }
+
+  input:checked[type='radio'] ~ label {
+    color: $darkcharcoal;
+    font-family: $font-bold;
+  }
+
+  input:checked[type='radio'] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3.5 -3.5 7 7'%3e%3ccircle r='2' fill='%23222222'/%3e%3c/svg%3e");
+  }
+
+  .disabled {
+    pointer-events: none;
+  }
+  
+}
+

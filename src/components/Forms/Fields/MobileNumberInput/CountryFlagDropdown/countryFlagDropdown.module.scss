@@ -1,0 +1,179 @@
+@import 'styles/partials/variable.scss';
+@import 'styles/partials/mixins.scss';
+
+.countryCodeLayer {
+  background-color: $secondary;
+  border: 0.063rem solid $gainsboro;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 1.25rem 0 hsl(0deg 0% 53% / 20%);
+  max-height: 20.63rem;
+  overflow: auto;
+  position: absolute;
+  top: 3.7rem;
+  width: 100%;
+  z-index: $zindex-3;
+  overflow-x: hidden;
+
+  .searchBoxParent {
+    background-color: $secondary;
+    @include padding(8, 16, 10, 16);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: $zindex-1;
+  }
+
+  .searchBox {
+    @include font-size(16);
+    align-items: center;
+    background-color: $culturedGrey;
+    border-radius: 2rem;
+    color: $raisinblack;
+    display: flex;
+    height: 2.75rem;
+    padding: 0 1.25rem;
+    position: relative;
+
+    .searchField {
+      background: transparent;
+      flex: 1 1;
+      height: 100%;
+      padding-left: 0.3125rem;
+      padding-right: 1.5625rem;
+      border: none;
+      outline: none;
+    }
+
+    .clearIcon {
+      fill: $raisinblack;
+      position: absolute;
+      top: 0.2rem;
+      width: 2rem;
+      height: 2rem;
+      right: 1rem;
+      cursor: pointer;
+      background: url('../../../../../assets/icons/cross.svg');
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  .countryList {
+    background: transparent;
+    border: 0;
+    width: 100%;
+    padding: 0;
+    flex: 1 1;
+    height: 100%;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
+    @include media($lg, min) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    li {
+      @include font-size(16);
+      align-items: center;
+      color: darkcharcoal;
+      cursor: pointer;
+      display: flex;
+      padding: 0.875rem 1.25rem;
+      transition: background-color 0.4s linear;
+
+      figure,
+      canvas,
+      .flag {
+        @include rem(margin-right, 10);
+        @include font-size(24);
+        width: 1.5rem;
+        height: 1.25rem;
+        line-height: normal;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        z-index: $zindex-0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        margin-left: 2rem;
+      }
+
+      span {
+        margin: 0;
+        margin-left: auto;
+      }
+
+      &.activeCountry {
+        background-color: $snow;
+      }
+
+      &:hover {
+        background-color: $snow;
+      }
+    }
+  }
+}
+
+.offcanvas {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  height: 90vh;
+
+  &:global(.offcanvas-bottom) {
+    height: 90vh;
+  }
+
+  :global(.offcanvas-header) {
+    :global(.btn-close) {
+      opacity: 0.8;
+      @include rem(background-size, 15);
+    }
+  }
+
+  .offcanvasHeading {
+    @include font-size(16);
+    @include rem(padding-top, 8);
+    @include rem(padding-left, 4);
+    @include rem(margin-bottom, 0);
+    color: $baastrichtblue;
+    font-family: $font-regular;
+  }
+
+  .offcanvasBody {
+    padding: 0;
+
+    .countryCodeLayer {
+      border: none;
+      border-radius: none;
+      box-shadow: none;
+      max-height: unset;
+      max-width: unset;
+      padding-bottom: 2rem;
+      height: 100%;
+
+      .countryList {
+        height: unset;
+      }
+    }
+  }
+}

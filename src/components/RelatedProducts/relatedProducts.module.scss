@@ -1,0 +1,41 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  .heading {
+    @include rem(font-size, 26);
+    @include rem(margin-bottom, 10);
+    font-family: $font-bold;
+    color: $indigo;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 40);
+    }
+  }
+
+  .link {
+    @include rem(top, 52);
+    @include rem(right, 20);
+    color: $raisinblack;
+    position: absolute;
+  }
+
+  &.blueTheme {
+    @include rem(padding-top, 52);
+    @include rem(padding-bottom, 20);
+    background-color: $aliceblue;
+
+    @include media($sm, min) {
+      @include rem(padding-top, 72);
+      @include rem(padding-bottom, 100);
+    }
+  }
+}

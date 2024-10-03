@@ -1,0 +1,141 @@
+{
+  "materialInfo": [
+    {
+      "filter": [{ "id": "overall-conststruction" }],
+      "data": [
+        {
+          "type": "number",
+          "icon": "cement",
+          "label": "Cement -bags",
+          "qty": "34"
+        },
+        {
+          "type": "number",
+          "icon": "steel",
+          "label": "Steel -kg",
+          "qty": "14"
+        },
+        { "type": "number", "icon": "sand", "label": "Sand -cft", "qty": "23" },
+        { "type": "number", "icon": "bricks", "label": "Bricks -nos", "qty": "566" },
+        { "type": "number", "icon": "bricks", "label": "CA -cft", "qty": "12" },
+        { "type": "percentage", "icon": "bricks", "label": "Finishing Items", "qty": null },
+        { "type": "number", "icon": "steel", "label": "Labour Charges", "qty": null, "calculatorNum": 1000 }
+      ]
+    },
+    {
+      "filter": [{ "id": "only-floors" }],
+      "data": [
+        {
+          "type": "number",
+          "icon": "cement",
+          "label": "Cement -bags",
+          "qty": "32"
+        },
+        {
+          "type": "number",
+          "icon": "steel",
+          "label": "Steel -kg",
+          "qty": "19"
+        },
+        { "type": "number", "icon": "sand", "label": "Sand -cft", "qty": "27" },
+        { "type": "number", "icon": "bricks", "label": "Bricks -nos", "qty": "556" },
+        { "type": "number", "icon": "bricks", "label": "CA -cft", "qty": "13" },
+        { "type": "percentage", "icon": "bricks", "label": "Finishing Items", "qty": null },
+        { "type": "number", "icon": "steel", "label": "Labour Charges", "qty": null, "calculatorNum": 1000 }
+      ]
+    },
+    {
+      "filter": [{ "id": "slabs" }],
+      "data": [
+        {
+          "type": "number",
+          "icon": "cement",
+          "label": "Cement -bags",
+          "qty": "30"
+        },
+        {
+          "type": "number",
+          "icon": "steel",
+          "label": "Steel -kg",
+          "qty": "10"
+        },
+        { "type": "number", "icon": "sand", "label": "Sand -cft", "qty": "24" },
+        { "type": "number", "icon": "bricks", "label": "Bricks -nos", "qty": "366" },
+        { "type": "number", "icon": "bricks", "label": "CA -cft", "qty": "22" },
+        { "type": "percentage", "icon": "bricks", "label": "Finishing Items", "qty": null },
+        { "type": "number", "icon": "steel", "label": "Labour Charges", "qty": null, "calculatorNum": 1000 }
+      ]
+    },
+    {
+      "filter": [{ "id": "building-frames" }],
+      "data": [
+        {
+          "type": "number",
+          "icon": "cement",
+          "label": "Cement -bags",
+          "qty": "34"
+        },
+        {
+          "type": "number",
+          "icon": "steel",
+          "label": "Steel -kg",
+          "qty": "14"
+        },
+        { "type": "number", "icon": "sand", "label": "Sand -cft", "qty": "23" },
+        { "type": "number", "icon": "bricks", "label": "Bricks -nos", "qty": "566" },
+        { "type": "number", "icon": "bricks", "label": "CA -cft", "qty": "12" },
+        { "type": "percentage", "icon": "bricks", "label": "Finishing Items", "qty": null },
+        { "type": "number", "icon": "steel", "label": "Labour Charges", "qty": null, "calculatorNum": 1000 }
+      ]
+    },
+    {
+      "filter": [{ "id": "complete-structure" }],
+      "data": [
+        {
+          "type": "number",
+          "icon": "cement",
+          "label": "Cement -bags",
+          "qty": "34"
+        },
+        {
+          "type": "number",
+          "icon": "steel",
+          "label": "Steel -kg",
+          "qty": "14"
+        },
+        { "type": "number", "icon": "sand", "label": "Sand -cft", "qty": "23" },
+        { "type": "number", "icon": "bricks", "label": "Bricks -nos", "qty": "566" },
+        { "type": "number", "icon": "bricks", "label": "CA -cft", "qty": "12" },
+        { "type": "percentage", "icon": "bricks", "label": "Finishing Items", "qty": null },
+        { "type": "number", "icon": "steel", "label": "Labour Charges", "qty": null, "calculatorNum": 1000 }
+      ]
+    }
+  ],
+  "materialDropdownOptions": {
+    "type": "dropdown",
+    "errorMessage": "Please selected a value",
+    "placeholder": "Construction Stage",
+    "options": [
+      {
+        "id": "overall-conststruction",
+        "label": "Overall Construction"
+      },
+      {
+        "id": "only-floors",
+        "label": "Only Floors"
+      },
+      {
+        "id": "slabs",
+        "label": "Slabs"
+      },
+      {
+        "id": "building-frames",
+        "label": "Building Frames"
+      },
+      {
+        "id": "complete-structure",
+        "label": "Complete Structure"
+      }
+    ]
+  }
+}

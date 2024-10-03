@@ -1,0 +1,206 @@
+@import 'styles/partials/variable';
+@import 'styles/partials/mixins';
+
+.cardWrapper {
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  .heading {
+    @include rem(font-size, 26);
+    @include rem(margin-bottom, 30);
+    font-family: $font-bold;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 16);
+      color: $indigo;
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      @include rem(font-size, 20);
+      @include rem(margin-right, 16);
+      display: none;
+
+      @include media($md, min) {
+        display: block;
+      }
+    }
+  }
+
+  .desc {
+    @include rem(font-size, 20);
+    @include rem(margin-bottom, 95);
+    @include rem(margin-left, 36);
+    display: none;
+
+    @include media($md, min) {
+      display: block;
+    }
+  }
+
+  .imgWrapper {
+    @include media($md, max) {
+      @include rem(margin-bottom, 30);
+    }
+
+    img {
+      width: 100%;
+
+      @include media($md, max) {
+        @include padding(25, 35, 0, 35);
+        background-color: $aliceblue;
+        border-radius: 0.5rem;
+      }
+
+      @include media($md, min) {
+        @include rem(padding-left, 24);
+      }
+    }
+  }
+
+  .cardItem {
+    @include rem(margin-bottom, 52);
+
+    &:last-child {
+      @include rem(margin-bottom, 0);
+    }
+
+    .textWrapper {
+      padding-left: 0;
+
+      @include media($md, min) {
+        @include rem(padding-left, 116);
+        max-width: 85%;
+      }
+
+      h3 {
+        @include rem(font-size, 18);
+        @include rem(margin-bottom, 10);
+        color: $raisinblack;
+
+        @include media($md, min) {
+          @include rem(font-size, 30);
+          @include rem(margin-bottom, 12);
+        }
+
+        span {
+          color: $platinum;
+        }
+      }
+
+      .desktopDesc {
+        margin-left: 0;
+        display: none;
+
+        @include media($md, min) {
+          @include rem(font-size, 20);
+          display: block;
+        }
+      }
+    }
+
+    @include media($md, min) {
+      align-items: center;
+      margin-bottom: 0;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        .textWrapper {
+          max-width: 100%;
+        }
+
+        .imgWrapper {
+          img {
+            @include rem(padding-right, 24);
+          }
+        }
+
+        .bordered {
+          &::before {
+            bottom: 0;
+            top: auto;
+          }
+
+          &::after {
+            bottom: auto;
+            top: 0;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        .bordered {
+          display: block;
+        }
+      }
+    }
+
+    .bordered {
+      @include padding(42, 0, 42, 0);
+      display: none;
+      width: 80%;
+      margin: auto;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        @include rem(height, 42);
+        border-left: 1px dotted $granite;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &::after {
+        right: 0;
+        left: auto;
+        top: auto;
+      }
+
+      span {
+        display: block;
+        border-bottom: 1px dotted $granite;
+      }
+
+      @include media($md, max) {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobileDesc {
+  @include rem(font-size, 16);
+  display: block;
+
+  .readBtn {
+    &:global(.btn-link) {
+      color: $raisinblack;
+    }
+  }
+
+  p {
+    @include rem(margin-bottom, 10);
+    height: auto;
+  }
+
+  p.truncated {
+    @include rem(margin-bottom, 10);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  @include media($md, min) {
+    display: none;
+  }
+}

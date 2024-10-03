@@ -1,0 +1,127 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+
+  &:nth-of-type(even){
+    .textContainer {
+      background-color: #ECF6FF;
+    }
+  }
+  @include rem(margin-bottom, 50);
+
+  @include media($sm, max) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .cardIco{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,-50%);
+    height: auto;
+    aspect-ratio: 1;
+    width: 22%;
+  }
+  .cardArrow{
+    height: 100%;
+  }
+
+  .imageWrapper {
+    @include rem(margin-bottom, 20);
+    overflow: hidden;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    @include rem(border-radius, 8);
+    margin-bottom: 0;
+
+    a {
+      @include rem(border-radius, 20);
+      overflow: hidden;
+    }
+
+    img {
+      @include rem(border-radius, 20);
+      width: 100%;
+      aspect-ratio: 364 / 129;
+      object-fit: cover;
+
+      @include media($sm, min) {
+        transform: scale(1);
+        transition: ease-in-out all 2600ms;
+      }
+    }
+  }
+
+  &:hover {
+    .imageWrapper {
+      overflow: hidden;
+
+      img {
+        @include rem(border-radius, 8);
+        transition: ease-in-out transform 2600ms;
+
+        @include media($md, min) {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .textContainer {
+    background-color: #FEF9EF;
+    width: calc(100% - 1rem);
+    margin: auto;
+    border-radius: 10px;
+    @include rem(padding,30);
+    @include rem(margin-top,-25);
+    position: relative;
+    flex-grow: 1;
+
+    h3 {
+      @include font-size(18);
+      @include rem(margin-bottom, 10);
+      @include rem(margin-top, 20);
+      color: $raisinblack;
+      font-family: $font-bold;
+
+      @include media($md, min) {
+        @include font-size(20);
+      }
+    }
+
+    p {
+      @include rem(margin-bottom, 10);
+      @include rem(line-height, 24);
+      color: $granite;
+    }
+    a{
+      text-decoration: none;
+      button{
+        border: 1px solid #000000;
+        @include rem(max-width,200);
+        width: -webkit-fill-available;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-inline:10px ;
+        position: absolute;
+        bottom: 20px;
+        div{
+          font-size: 30px;
+          line-height: 18px;
+        }
+        
+      }
+    }
+  }
+}

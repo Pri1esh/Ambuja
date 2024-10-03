@@ -1,0 +1,131 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(margin-bottom, 22);
+
+  &.extraMargin {
+    @include media($md, min) {
+      @include rem(margin-bottom, 48);
+    }
+  }
+
+  .listHeading {
+    @include rem(margin-bottom, 30);
+    @include rem(font-size, 20);
+    @include rem(line-height, 28);
+    font-family: $font-bold;
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 50);
+      @include rem(font-size, 28);
+      @include rem(line-height, 30);
+    }
+  }
+
+  .listWrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include media($md, min) {
+      @include rem(column-gap, 50);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .item {
+    @include rem(margin-bottom, 30);
+    display: flex;
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 52);
+    }
+
+    .iconContainer {
+      @include rem(width, 57);
+      @include rem(max-width, 57);
+      @include rem(height, 57);
+      @include rem(margin-right, 16);
+      @include rem(border-radius, 8);
+      background-color: $cultured;
+      display: flex;
+      flex-basis: 100%;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        @include rem(max-width, 24);
+      }
+
+      @include media($md, min) {
+        @include rem(width, 80);
+        @include rem(max-width, 80);
+        @include rem(height, 80);
+        @include rem(margin-right, 30);
+
+        img {
+          @include rem(max-width, 37);
+        }
+      }
+    }
+
+    .textContainer {
+      h3 {
+        @include rem(font-size, 18);
+        @include rem(margin-bottom, 10);
+        font-family: $font-bold;
+        color: $raisinblack;
+
+        @include media($md, min) {
+          @include rem(font-size, 24);
+          color: $raisinblack;
+        }
+      }
+
+      p {
+        @include rem(font-size, 16);
+        @include rem(line-height, 24);
+        font-family: $font-regular;
+        color: $granite;
+        margin-bottom: 0;
+
+        @include media($md, min) {
+          @include rem(font-size, 20);
+        }
+      }
+
+      a,
+      :global(.btn) {
+        @include rem(font-size, 16);
+        @include rem(line-height, 30);
+        @include rem(margin-top, 10);
+        margin-bottom: 0;
+
+        @include media($md, min) {
+          @include rem(font-size, 20);
+        }
+      }
+    }
+  }
+}
+
+.description {
+  @include rem(font-size, 16);
+  display: block;
+
+  p {
+    @include rem(margin-bottom, 10);
+    height: auto;
+  }
+
+  p.truncated {
+    @include rem(max-height, 72);
+    @include rem(margin-bottom, 10);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

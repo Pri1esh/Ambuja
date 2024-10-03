@@ -1,0 +1,1955 @@
+{
+  "header": {
+    "headerLogo": "./assets/images/ambuja-logo.png",
+    "logo": "./assets/images/ambuja-logo.png",
+    "mobileLogo": "./assets/images/logo.png",
+    "buLink": "/",
+    "linkTarget": "",
+    "buLogoAltText": "Adani",
+    "isAbsolute": true,
+    "addOnClass": "hideTopNav",
+    "navData": [
+      {
+        "link": "/url",
+        "linkText": "Home Builder",
+        "isActive": false,
+        "headerCallback": false,
+        "items": [
+          {
+            "linkText": "Link1",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link1",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link2",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link2",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link3",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link3",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link4",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link4",
+            "linkTarget": ""
+          }
+        ],
+        "defaultImage": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Cost Calculator",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "link": "/url",
+        "linkText": "Products & Solutions",
+        "isActive": false,
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": [
+          {
+            "subMenu": [
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Cement",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Kawach",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Plus",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Compocem",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              }
+            ],
+            "linkText": "Cement",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Mortar & Block",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Sand",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Non-trade",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          }
+        ],
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Find a Dealer",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "About Us",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Enquiry",
+        "link": "#",
+        "linkTarget": "",
+        "headerCallback": true,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      }
+    ],
+    "hamburgerMenuData": [
+      {
+        "linkText": "Ambuja Help",
+        "linkTarget": "",
+        "link": "https://www.ambujacement.com",
+        "headerLeftIcon": "i-businesses",
+        "headerRightIcon": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "link": "Tel: 1800 103 3444",
+            "linkText": "1800 103 3444",
+            "linkTarget": "",
+            "itemLeftIcon": "mobile",
+            "highlightLabel": "CALL",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            }
+          },
+          {
+            "linkText": "Home",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "/",
+            "linkTarget": "",
+            "itemLeftIcon": "home"
+          },
+          {
+            "linkText": "Product & Solutions",
+            "itemLeftIcon": "menu",
+            "itemRightIcon": "i-arrow-d icon",
+            "collapseItems": [
+              {
+                "linkText": "Cement",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-cement"
+              },
+              {
+                "linkText": "Mortar & Blocks",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-mortar"
+              },
+              {
+                "linkText": "Sand",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-sand"
+              },
+              {
+                "linkText": "Non-trade",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-nonTrade"
+              },
+              {
+                "linkText": "View All",
+                "itemSubText": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "url",
+                "linkTarget": "",
+                "itemLeftIcon": "i-grids"
+              }
+            ]
+          },
+          {
+            "linkText": "Home Builder",
+            "itemLeftIcon": "homeBuilders",
+            "itemRightIcon": "i-arrow-d icon",
+            "collapseItems": [
+              {
+                "linkText": "Link1",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link1"
+              },
+              {
+                "linkText": "Link2",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link2"
+              },
+              {
+                "linkText": "Link3",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link3"
+              },
+              {
+                "linkText": "Link4",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link4"
+              },
+              {
+                "linkText": "View All",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-grids"
+              }
+            ]
+          },
+          {
+            "linkText": "Find a Dealer",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "dealer"
+          },
+          {
+            "linkText": "Cost Calculator",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "calculator"
+          }
+        ]
+      },
+      {
+        "linkText": "Adani Businesses",
+        "link": "url",
+        "linkTarget": "",
+        "headerLeftIcon": "businesses",
+        "headerRightIcon": "i-arrow-d icon",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "collapseItems": [
+          {
+            "linkText": "Airports",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanione.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "airport",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Capital",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanicapital.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "capital",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Electricity",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanielectricity.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "electricity",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Housing Finance",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanihousing.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "housing",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Realty",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.uat.adanirealty.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "realty",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Total Gas",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanigas.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "gas",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Wilmar",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adaniwilmar.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "wilmar",
+            "isActive": false
+          }
+        ]
+      },
+      {
+        "linkText": "Others",
+        "linkTarget": "",
+        "link": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "linkText": "About Us",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "about"
+          },
+          {
+            "linkText": "FAQs",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "faqs"
+          },
+          {
+            "linkText": "Get in touch",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "mobile"
+          },
+          {
+            "linkText": "Chat Support",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "chat"
+          },
+          {
+            "linkText": "Terms & Conditions",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "terms"
+          },
+          {
+            "linkText": "Privacy Policy",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "privacy"
+          },
+          {
+            "linkText": "Legal & Disclaimer",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "legal"
+          }
+        ]
+      }
+    ],
+    "topbarList": [
+      {
+        "phone": "1800 103 3444",
+        "phoneLink": "/url",
+        "phoneIcon": "i-mobile",
+        "linkText": "Businesses",
+        "link": "https://www.uat.adanirealty.com",
+        "headerLeftIcon": "businesses",
+        "headerRightIcon": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "linkText": "Airports",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanione.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "airport",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Total Gas",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanicapital.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "gas",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Electricity",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanielectricity.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "electricity",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Wilmar",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanihousing.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "wilmar",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Realty",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.uat.adanirealty.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "realty",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Capital",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanigas.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "capital",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Housing Finance",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adaniwilmar.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "housing",
+            "isActive": false
+          }
+        ]
+      }
+    ]
+  },
+  "seoData": {
+    "baseUrl": "https://www.ambujahelp.com",
+    "pageTitle": "Welcome to Ambuja Help",
+    "metaDescription": "Ambuja Help",
+    "metaKeywords": "Ambuja Help",
+    "metaTitle": "Ambuja Help",
+    "ogTitle": "Ambuja Help",
+    "browserTitle": "Ambuja Help",
+    "ogImage": "https://www.ambujahelp.com/image.jpg",
+    "ogDescription": "Ambuja Help",
+    "ogKeyword": "Ambuja Help",
+    "ogUrl": "ambujahelp.com",
+    "canonicalUrl": "https://www.ambujahelp.com/",
+    "googleSiteVerification": "NsrtBG1AEJXqImN7FAQ_4CFkSVcrx5NPf1cQs206jQU",
+    "msValidate": "2B0C34807FA5B7ACA277D5A725CDE76D",
+    "robotsTags": {
+      "index": false,
+      "follow": true,
+      "nocache": true,
+      "googleBot": {
+        "index": true,
+        "follow": false,
+        "noimageindex": true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1
+      }
+    },
+    "orgSchema": {
+      "telephone": "1800 108 0009",
+      "contactType": "Customer Service",
+      "areaServed": "India",
+      "streetAddress": "Address,",
+      "addressLocality": "Ahmedabad , Gujrat",
+      "addressRegion": "IN",
+      "postalCode": "382421",
+      "sameAs": [
+        "https://www.instagram.com/ambujahelp/",
+        "https://www.facebook.com/ambujahelp",
+        "https://twitter.com/ambujahelp",
+        "https://www.linkedin.com/company/ambujahelp",
+        "https://www.youtube.com/c/ambujahelp"
+      ],
+      "contactOption": "Toll Free",
+      "logo": "https://www.ambujahelp.com/logo.svg",
+      "url": "https://www.ambujahelp.com/"
+    }
+  },
+  "mainBanner": {
+    "fields": {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageAlt": "",
+      "description": null
+    }
+  },
+  "subNav": {
+    "fields": {
+      "subNavItems": [
+        {
+          "active": false,
+          "link": "/url",
+          "linkText": "Terms & Conditions",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "Privacy Policy"
+          }
+        },
+        {
+          "active": false,
+          "link": "/url",
+          "linkText": "Privacy Policy",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "Privacy Policy"
+          }
+        },
+        {
+          "active": true,
+          "link": "/url",
+          "linkText": "Legal & Disclaimer",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "Privacy Policy"
+          }
+        }
+      ]
+    }
+  },
+  "breadCrumbList": {
+    "fields": [
+      {
+        "link": "/url",
+        "linkText": "Home",
+        "linkTarget": "",
+        "active": false,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "legal"
+        }
+      },
+      {
+        "link": "/url",
+        "linkText": "legal",
+        "linkTarget": "",
+        "active": true,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "legal"
+        }
+      }
+    ]
+  },
+  "details": {
+    "heading": "Legal & Disclaimer",
+    "data": "<p>Ambuja Help (hereinafter referred to as the ‘Company’) is committed to respect privacy of every person, including employees of the Company, business partners as well as vendors, dealers and all others who share their sensitive personal data or information (‘Sensitive Personal Information’) with the Company.</p><p>This Legal (‘Policy’) is applicable to employees, businesses partners/associates, vendors, dealers, customers etc. (‘Information Providers’), who disclose Sensitive Personal Information to the Company for lawful business requirements of the Company.</p><p>The purpose of this Policy, as amended from time to time, is to give the Information Providers an understanding on how the Company intends to collect, receive, possess, store, transfer, handle, deal with and use the Sensitive Personal Information provided.</p><p>Sensitive Personal Information of the Information Providers may be required to be collected, maintained and transferred for business and official purposes with the express consent of the Information Providers. Such Sensitive Personal Information may have to be shared with other Group Companies or third party, within and outside the country, as per lawful business requirements of the Company.</p><p>The Company shall ensure confidentiality of such Sensitive Personal Information and grievances, if any, related to such issues shall be resolved by the grievance officer appointed by the Company for this purpose (‘Grievance Officer’).</p><p>By executing a consent letter provided by the Company, the Information Providers shall consent to the collection, storage, usage, disclosure, processing and transfer of their Sensitive Personal Information provided to the Company for the purposes mentioned in this Policy.</p><p>The Information Providers have the option of not providing their Sensitive Personal Information sought to be collected if they do not agree with this Policy or even otherwise. Further, the Information Providers also have the option to withdraw their consent given earlier, provided such withdrawal of consent is intimated in writing.</p> <h4>Purpose of Collection</h4> <p>The Company may collect, use, receive, possess store, disclose, process and transfer the Sensitive Personal Information for various purposes, including but not limited to, the following:</p><ul><li>To enable functioning of the Company’s business,</li><li>In connection with a variety of purposes relating to employment or engagement of employees, including but not limited to, general HR administration; organization planning and management;</li><li>Compliance with company policies, code of conduct and internal regulations;</li><li>Business mergers and acquisitions; business transfers, etc.;</li><li>Legal, judicial, governmental and regulatory compliance;</li><li>Tax administration and compliance;</li><li>Overseas affiliates’ compliance with foreign laws and cooperation with overseas regulators;</li><li>To transfer to IT services providers;</li><li>To administer or otherwise carry out obligations in relation to any agreement the Information Providers have with the Company; and </li><li>To investigate, prevent, or take action regarding illegal activities, suspected fraud, violations of the law or as otherwise required by law.</li></ul><p>The Information Providers consent that the collection, usage, storage, disclosure, processing and transfer of any Sensitive Personal Information or any other information as disclosed under this Policy shall not cause any loss or wrongful gain to the Information Providers if the same is used for the above-mentioned lawful purposes.</p> <h4>Sharing and transferring of Sensitive Personal Information:</h4> <p>The Company may need to share the Sensitive Personal Information with group companies within and outside India, business associates and/ or third parties within and outside India in connection with the lawful purposes, as mentioned above.</p><p>The Information Providers authorize the Company to exchange, disclose, transfer, share, part with the Sensitive Personal Information and/or any information provided, within or outside India for the above purposes.</p> <h4>Security</h4> <p>The Company has adopted reasonable security practices and procedure to ensure that the Sensitive Personal Information is collected and preserved in a secured manner. In case the Information Providers wish to know more details about the adopted reasonable security practices and procedures, they may contact the designated person for the same.</p><p>While the Company will endeavour to take all reasonable and appropriate steps to keep secure any information and prevent its unauthorized access, the information providers agree and acknowledge that the Company cannot provide any absolute assurance regarding the security of the Sensitive Personal Information. To the fullest extent permissible under applicable laws, the Company disclaims any liability in relation to any breach of security or loss or disclosure of information in relation to the Personal Information.</p><p>If the Information Provider needs to access update or correct the Sensitive Personal Information, he/she may contact the designated person for the same.</p> <h4>Data Retention</h4> <p>It is the Company’s policy to retain Sensitive Personal Information of the Information Providers only for as long as the Company believes it to be necessary for the purposes for which such Sensitive Personal Information was collected, subject to any legal requirements for the information to be retained for longer period, if any.</p> <h4>Changes to this Legal</h4> <p>The Company reserves the right to revise and update this Legal at any time without expressly informing the Information Providers. Any such revisions will be effective on and from the date of posting the same to the intranet/internet website of the Company, and will apply to all information collected both prior to and following the effective date. You should visit the website and intranet periodically to review the current policies with regard to Sensitive Personal Information.</p><p>Please note: <span>Use of the website of the Company/intranet following any such revisions will be deemed acceptance by the Information Providers of such revisions.</span></p> <h4>Grievance</h4> <p>The Company has nominated Ms. Aashita Kalra as the Grievance Officer of the Company. The Information Providers may approach the Grievance Officer if they have any grievance, questions or concerns with respect to the processing and use of their Sensitive Personal Information. The Grievance Officer can be contacted by mail at the email id <a href='mailto:Grievance.Officer@ambujacement.com'>Grievance.Officer@ambujacement.com</a>.</p>"
+  },
+  "footer": {
+    "footerData": {
+      "bottomLinks": {
+        "links": [
+          {
+            "linkText": "Find a Dealer",
+            "description": "Find a Dealer at your nearby location for local assistance",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Cost Calculator",
+            "description": "Get a quick estimate budget for construction immediately",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Home Builder",
+            "description": "Get valuable suggestions and solution from experiences builder",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Help & Support",
+            "description": "Do you have any suggestion? We'd love to hear from you!",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          }
+        ]
+      },
+      "mainNavigations": [
+        {
+          "heading": "Product and Solutions",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Ambuja Cement",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Plus",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Kawach",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Cool Walls",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Compocem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Blockol",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Purasand for plaster ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Purasand for Concreate ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Powercem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Buildcem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Railcem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Explore",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Find a Dealer",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Cost Calculator",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Home Builder",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "News & Media",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Sitemap",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Cement Business",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "About Us",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Commercial Help",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "ACC Help",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Adani Business",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Adani Realty",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Housing Finance",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Electricity",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Total Gas",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Airports",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Captial ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Wilmar ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Help & Support",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "FAQs",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Get In Touch",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ],
+      "buCopyright": "2023 Ambuja Help",
+      "socialLinks": [
+        {
+          "heading": "Footer Social Links",
+          "items": [
+            {
+              "link": "https://www.facebook.com/ambujahelp",
+              "linkText": "Facebook",
+              "itemicon": "i-facebook",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://twitter.com/ambujahelp",
+              "linkText": "Twitter",
+              "itemicon": "i-twitter",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.linkedin.com/company/ambujahelp",
+              "linkText": "Linkedin",
+              "itemicon": "i-linkedin",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.youtube.com/channel/UCy13h-75Nb2m6FtUDV0e4lg",
+              "linkText": "Youtube",
+              "itemicon": "i-youtube",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.instagram.com/ambujahelp",
+              "linkText": "Instagram",
+              "itemicon": "i-instagram",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ],
+      "logo": {
+        "imageSource": "/assets/images/logo.png",
+        "imageSourceMobile": " ",
+        "imageSourceTablet": " ",
+        "imageAlt": "imageAlt",
+        "imageTitle": ""
+      },
+      "copyRight": [
+        {
+          "heading": "Footer copyRight",
+          "subHeading": "2023 Ambuja Help",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Privacy",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Legal",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Terms",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "stickyNavData": {
+      "tabs": [
+        {
+          "label": "Home",
+          "activeId": "home",
+          "icon": "home",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "Legal",
+            "title": ""
+          }
+        },
+
+        {
+          "label": "Home Guide",
+          "activeId": "homeguide",
+          "icon": "homeBuilders",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "Legal",
+            "title": ""
+          }
+        },
+        {
+          "label": "Calculator",
+          "activeId": "calculator",
+          "icon": "calculator",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "Legal",
+            "title": ""
+          }
+        },
+        {
+          "label": "Products",
+          "activeId": "products",
+          "icon": "menu",
+          "isOffcanvas": true,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "Legal",
+            "title": ""
+          }
+        },
+        {
+          "label": "Enquiry",
+          "activeId": "enquiry",
+          "icon": "mobile",
+          "isOffcanvas": true,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "Legal",
+            "title": ""
+          }
+        }
+      ],
+      "navData": {
+        "heading": "Home Builder",
+        "description": "Get valuable suggestions and solution from experiences builder",
+        "headingIcon": "triangle",
+        "otherData": {
+          "heading": "Others",
+          "items": [
+            {
+              "iconName": "mobile",
+              "label": "About Us",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Get in Touch",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "FAQs",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Chat Support",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Terms & Conditions",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Legal",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Legal Disclaimer",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "Legal",
+                "title": ""
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "productLabel": "Cement",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "cement",
+          "subProduct": [
+            {
+              "linkText": "Ambuja Cement",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Ambuja Kawach",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Ambuja Plus",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Ambuja Compocem",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            }
+          ]
+        },
+        {
+          "productLabel": "Sand",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "sand",
+          "subProduct": [
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            }
+          ]
+        },
+        {
+          "productLabel": "Non-trade",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "non-trade",
+          "subProduct": [
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "Legal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

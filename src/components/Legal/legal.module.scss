@@ -1,0 +1,45 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.description {
+  h4 {
+    @include rem(font-size, 22);
+    @include rem(margin-bottom, 20);
+    color: $raisinblack;
+  }
+
+  p {
+    @include rem(font-size, 16);
+    color: $raisinblack;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  ul {
+    @include rem(padding-left, 14);
+
+    li {
+      color: $raisinblack;
+    }
+  }
+}
+
+.detailContent {
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  h2 {
+    @include rem(font-size, 26);
+    color: $ateneoblue;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 20);
+    }
+  }
+}

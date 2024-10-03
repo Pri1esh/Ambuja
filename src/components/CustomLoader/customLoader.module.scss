@@ -1,0 +1,58 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.loader {
+  &Dot {
+    background-color: $primary;
+    @include circle(6px);
+    display: inline-block;
+    -webkit-animation-name: loader_animation;
+    animation-name: loader_animation;
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    vertical-align: middle;
+
+    &:first-child {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+
+    &:nth-child(2n) {
+      -webkit-animation-delay: -0.15s;
+      animation-delay: -0.15s;
+      margin: 0 3px;
+    }
+  }
+}
+
+@-webkit-keyframes loader_animation {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  30%,
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes loader_animation {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  30%,
+  50% {
+    opacity: 1;
+  }
+}

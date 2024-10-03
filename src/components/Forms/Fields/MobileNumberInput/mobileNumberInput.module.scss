@@ -1,0 +1,170 @@
+@import 'styles/partials/variable.scss';
+@import 'styles/partials/mixins.scss';
+
+.wrapper {
+  position: relative;
+
+  .combineOption {
+    @include rem('height', 60);
+    border-radius: 0.5rem;
+    display: flex;
+    background-color: $ghostwhite;
+    position: relative;
+    overflow: hidden;
+    border: 0.063rem solid $gainsboro;
+
+    .countryCode {
+      pointer-events: unset;
+      display: flex;
+      flex: 0 0 5rem;
+      cursor: pointer;
+      position: relative;
+      padding: 0.625rem 0.5rem 0.625rem 1rem;
+      background-color: $secondary;
+
+      @include media($sm, min) {
+        padding: 0.625rem 0.5rem 0.625rem 1.125rem;
+      }
+
+      .selectFlag {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+
+        input[type='text'] {
+          @include font-size(16);
+          background-color: $secondary;
+          caret-color: transparent;
+          cursor: pointer;
+          padding: 0 0 0 1.7rem;
+          width: 100%;
+          border: none;
+          outline: none;
+
+          @include media($lg, min) {
+            @include font-size(14);
+          }
+        }
+      }
+
+      .icon {
+        @include center(vertical);
+        right: 0.75rem;
+        top: 1.35rem;
+        height: 1rem;
+        width: 1rem;
+        background-position: center;
+        transition: ease all 0.3s;
+        transform: rotate(-180deg);
+        @include font-size(8);
+
+        &.arrowUp {
+          transform: rotate(0deg);
+        }
+      }
+
+      &::after {
+        background-color: $chinesesilver;
+        bottom: 0.625rem;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0.625rem;
+        width: 0.063rem;
+      }
+    }
+
+    .numWrap {
+      align-items: center;
+      display: flex;
+      flex: 1 1;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+
+      input {
+        background: $secondary;
+        border: transparent;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .mobileInput {
+        height: 100%;
+        width: 100%;
+        border: none;
+
+        input,
+        label {
+          @include rem(padding-left, 8);
+        }
+      }
+
+      .SendOTP {
+        background-color: #ffffff;
+        color: #0a3c69;
+        position: absolute;
+        right: 0;
+        padding-right: 8px;
+        border: none;
+        @include rem(font-size,17);
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: right;
+        text-decoration: underline;
+
+        &.disabled{
+          color:#666;
+          pointer-events: none;
+        }
+      }
+
+      .Verified{
+        color: #13a144;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 24px;
+      line-height: 16px;
+      margin-bottom: 0;
+      margin-right: 5px;
+      text-align: left;
+      position: absolute;
+        right: 0;
+        padding-right: 8px;
+        border: none;
+        @include rem(font-size,16);
+        background-color: transparent;
+        display: flex;
+        img{
+        margin-left: 3px;
+          @include rem(height,16);
+        }
+      }
+    }
+
+    &:focus-within,
+    &:hover {
+      border-color: $gainsboro;
+      background-color: $secondary;
+    }
+
+    &:active,
+    &:hover {
+      border: 0.063rem solid $primary;
+      outline: none;
+      background: $secondary;
+    }
+  }
+}
+
+.error {
+  .combineOption {
+    border: 0.063rem solid $red;
+  }
+}

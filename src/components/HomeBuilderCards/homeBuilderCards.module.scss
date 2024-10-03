@@ -1,0 +1,24 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 50);
+  }
+
+  .heading {
+    @include rem(font-size, 26);
+    @include rem(margin-bottom, 30);
+    @include rem(margin-top, 30);
+    font-family: $font-bold;
+    color: $raisinblack;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 50);
+      color: $indigo;
+    }
+  }
+}

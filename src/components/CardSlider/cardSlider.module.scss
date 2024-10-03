@@ -1,0 +1,34 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(padding-top, 52);
+  @include rem(padding-bottom, 30);
+  @include rem(margin-bottom, 52);
+
+  &.noMargin {
+    margin-bottom: 0;
+  }
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+    @include rem(padding-top, 100);
+    @include rem(padding-bottom, 80);
+  }
+}
+
+.sliderContainer {
+  @include padding(0, 20, 0, 20);
+
+  @include media($sm, min) {
+    padding: 0;
+  }
+}
+
+.darkTheme {
+  background-color: $ateneoblue;
+}
+
+.lightTheme {
+  background-color: $chineeseyellow;
+}

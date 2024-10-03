@@ -1,0 +1,1524 @@
+{
+  "getInTouchForm": {
+    "heading": "Enquiry",
+    "description": "If you have any query, feedback, or complaint, fill in the form below.",
+    "submitButtonText": "Submit",
+    "gtmData": {
+      "event": "",
+      "category": "",
+      "sub_category": "",
+      "title": "",
+      "label": "",
+      "page_type": ""
+    },
+    "submitButton": {
+      "gtmData": {
+        "category": "",
+        "sub_category": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "cancelButtonText": "Cancel",
+    "cancelButton": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "agreeTxt": "By continuing, you agree to our <a href=\"/terms-and-conditions\">T&amp;Cs</a> and <a href=\"/privacy-policy\">Privacy Policy</a>.",
+    "formFields": [
+      {
+        "fieldType": "text",
+        "fieldName": "firstName",
+        "isClear": true,
+        "required": true,
+        "placeholder": "First Name",
+        "maxAllowedLength": 128,
+        "minRequiredLength": 1,
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter a valid name.",
+          "maxLengthErrorMessage": "You have exceeded the character limit.",
+          "minLengthErrorMessage": "Please enter a valid input.",
+          "regexErrorMessage": "Please enter a valid input."
+        }
+      },
+      {
+        "fieldType": "text",
+        "fieldName": "lastName",
+        "isClear": true,
+        "required": true,
+        "placeholder": "Last Name",
+        "maxAllowedLength": 128,
+        "minRequiredLength": 1,
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter a valid name.",
+          "maxLengthErrorMessage": "You have exceeded the character limit.",
+          "minLengthErrorMessage": "Please enter a valid input.",
+          "regexErrorMessage": "Please enter a valid input."
+        }
+      },
+      {
+        "fieldType": "phone",
+        "fieldName": "phoneNo",
+        "isClear": true,
+        "required": true,
+        "placeholder": "Mobile Number",
+        "minRequiredLength": 3,
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter your Mobile Number",
+          "maxLengthErrorMessage": "You have exceeded the character limit.",
+          "minLengthErrorMessage": "Please enter a valid input.",
+          "regexErrorMessage": "Please enter a valid input."
+        }
+      },
+      {
+        "fieldType": "text",
+        "fieldName": "email",
+        "isClear": true,
+        "required": true,
+        "placeholder": "Enter Email",
+        "maxAllowedLength": 128,
+        "minRequiredLength": 1,
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter a valid Email.",
+          "regexErrorMessage": "Please enter a valid Email."
+        }
+      },
+      {
+        "fieldType": "dropdown",
+        "placeholder": "I am looking for",
+        "fieldName": "lookingFor",
+        "fieldOptions": [
+          {
+            "label": "Cement Purchase",
+            "id": "Cement Purchase",
+            "subOptions": [
+              {
+                "label": "I am constructing now & need Cement",
+                "id": "I am constructing now & need Cement"
+              }
+            ]
+          },
+          {
+            "label": "Ready Mix Concrete",
+            "id": "Ready Mix Concrete",
+            "subOptions": [
+              {
+                "label": "I want to purchase RMX ECOPact",
+                "id": "I want to purchase RMX ECOPact"
+              },
+              {
+                "label": "I want to purchase ACC ready Mix Concrete (RMX)",
+                "id": "I want to purchase ACC ready Mix Concrete (RMX)"
+              }
+            ]
+          },
+          {
+            "label": "Construction Chemicals & Ready Mortars",
+            "id": "Construction Chemicals & Ready Mortars",
+            "subOptions": [
+              {
+                "label": "I want to purchase ACC leakblock",
+                "id": "I want to purchase ACC leakblock"
+              },
+              {
+                "label": "I want to purchase Ready to use Plaster",
+                "id": "I want to purchase Ready to use Plaster"
+              },
+              {
+                "label": "I want to purchase Tile Adhesives",
+                "id": "I want to purchase Tile Adhesives"
+              }
+            ]
+          },
+          {
+            "label": "Pre-Cast Concrete Products",
+            "id": "Pre-Cast Concrete Products",
+            "subOptions": [
+              {
+                "label": "I am interested in wall solutions ",
+                "id": "I am interested in wall solutions "
+              },
+              {
+                "label": "I am interested in pavement solutions",
+                "id": "I am interested in pavement solutions"
+              },
+              {
+                "label": "I am interested in Concrete doors & Window Frames",
+                "id": "I am interested in Concrete doors & Window Frames"
+              },
+              {
+                "label": "I am interested in Roofing solutions",
+                "id": "I am interested in Roofing solutions"
+              }
+            ]
+          },
+          {
+            "label": "Cement Dealership",
+            "id": "Cement Dealership",
+            "subOptions": [
+              {
+                "label": "I am interested in Cement Dealership",
+                "id": "I am interested in Cement Dealership"
+              }
+            ]
+          },
+          {
+            "label": "A Call Back From ACC Expert Engineer",
+            "id": "A Call Back From ACC Expert Engineer",
+            "subOptions": [
+              {
+                "label": "Site Related Queries",
+                "id": "Site Related Queries"
+              },
+              {
+                "label": "ACC Product Related Queries",
+                "id": "ACC Product Related Queries"
+              },
+              {
+                "label": "Purchase Related Queries",
+                "id": "Purchase Related Queries"
+              }
+            ]
+          },
+          {
+            "label": "I have a complaint",
+            "id": "I have a complaint",
+            "subOptions": [
+              {
+                "label": "I am interested in GBC Franchise",
+                "id": "I am interested in GBC Franchise"
+              }
+            ]
+          },
+          {
+            "label": "Green Building Centre Franchise",
+            "id": "Green Building Centre Franchise"
+          }
+        ],
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter a valid reason."
+        }
+      },
+      {
+        "fieldType": "dropdown",
+        "placeholder": "Select type of query",
+        "fieldName": "queryType",
+        "fieldOptions": [],
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please enter a valid reason."
+        }
+      },
+      {
+        "fieldType": "dropdown",
+        "placeholder": "Select State",
+        "fieldName": "state",
+        "fieldOptions": [
+          {
+            "label": "ANDHRA PRADESH",
+            "id": "ANDHRA PRADESH",
+            "subOptions": [
+              {
+                "label": "ANANTAPUR",
+                "id": "ANANTAPUR",
+                "areaOptions": [
+                  {
+                    "label": "Singanamala",
+                    "id": "Singanamala"
+                  },
+                  {
+                    "label": "Garladinne",
+                    "id": "Garladinne"
+                  }
+                ]
+              },
+              {
+                "label": "CHITTOOR",
+                "id": "CHITTOOR",
+                "areaOptions": [
+                  {
+                    "label": "Gudipala",
+                    "id": "Gudipala"
+                  },
+                  {
+                    "label": "Ramachandrapuram",
+                    "id": "Ramachandrapuram"
+                  }
+                ]
+              },
+              {
+                "label": "CUDDAPAH",
+                "id": "CUDDAPAH"
+              },
+              {
+                "label": "EAST GODAVARI",
+                "id": "EAST GODAVARI"
+              },
+              {
+                "label": "GUNTUR",
+                "id": "GUNTUR"
+              },
+              {
+                "label": "KRISHNA",
+                "id": "KRISHNA"
+              },
+              {
+                "label": "KURNOOL",
+                "id": "KURNOOL"
+              },
+              {
+                "label": "NELLORE",
+                "id": "NELLORE"
+              },
+              {
+                "label": "PRAKASHAM",
+                "id": "PRAKASHAM"
+              },
+              {
+                "label": "SRIKAKULAM",
+                "id": "SRIKAKULAM"
+              },
+              {
+                "label": "VISAKHAPATAM",
+                "id": "VISAKHAPATAM"
+              },
+              {
+                "label": "VIZIANAGARAM",
+                "id": "VIZIANAGARAM"
+              },
+              {
+                "label": "WEST GODAVARI",
+                "id": "WEST GODAVARI"
+              }
+            ]
+          },
+          {
+            "label": "ARUNACHAL PRADESH",
+            "id": "ARUNACHAL PRADESH",
+            "subOptions": [
+              {
+                "label": "ANJAW",
+                "id": "ANJAW",
+                "areaOptions": [
+                  {
+                    "label": "Hawai",
+                    "id": "Hawai"
+                  },
+                  {
+                    "label": "Chaglagam",
+                    "id": "Chaglagam"
+                  }
+                ]
+              },
+              {
+                "label": "CHANGLANG",
+                "id": "CHANGLANG",
+                "areaOptions": [
+                  {
+                    "label": "Bordumsa",
+                    "id": "Bordumsa"
+                  },
+                  {
+                    "label": "Jairampur",
+                    "id": "Jairampur"
+                  }
+                ]
+              },
+              {
+                "label": "DIBANG VALLEY",
+                "id": "DIBANG VALLEY"
+              },
+              {
+                "label": "LOHIT",
+                "id": "LOHIT"
+              },
+              {
+                "label": "TIRAP",
+                "id": "TIRAP"
+              }
+            ]
+          },
+          {
+            "label": "ASSAM",
+            "subOptions": [
+              {
+                "label": "BAKSHA",
+                "id": "BAKSHA",
+                "areaOptions": [
+                  {
+                    "label": "Ahopa",
+                    "id": "Ahopa"
+                  },
+                  {
+                    "label": "Allia",
+                    "id": "Allia"
+                  },
+                  {
+                    "label": "Amarawati",
+                    "id": "Amarawati"
+                  }
+                ]
+              },
+              {
+                "label": "BARPETA",
+                "id": "BARPETA",
+                "areaOptions": [
+                  {
+                    "label": "Howly",
+                    "id": "Howly"
+                  },
+                  {
+                    "label": "Kalgachia",
+                    "id": "Kalgachia"
+                  },
+                  {
+                    "label": "Nagaon",
+                    "id": "Nagaon"
+                  }
+                ]
+              },
+              {
+                "label": "BISWANATH",
+                "id": "BISWANATH"
+              },
+              {
+                "label": "BONGAIGAON",
+                "id": "BONGAIGAON"
+              },
+              {
+                "label": "CHRISTIANSH?B",
+                "id": "CHRISTIANSH?B"
+              },
+              {
+                "label": "DARRANG",
+                "id": "DARRANG"
+              },
+              {
+                "label": "DHEMAJI",
+                "id": "DHEMAJI"
+              },
+              {
+                "label": "DHUBRI",
+                "id": "DHUBRI"
+              },
+              {
+                "label": "DIBRUGARH",
+                "id": "DIBRUGARH"
+              },
+              {
+                "label": "GOALPARA",
+                "id": "GOALPARA"
+              },
+              {
+                "label": "GODTHAVN",
+                "id": "GODTHAVN"
+              },
+              {
+                "label": "GOLAGHAT",
+                "id": "GOLAGHAT"
+              },
+              {
+                "label": "HOJAI",
+                "id": "HOJAI"
+              },
+              {
+                "label": "JORHAT",
+                "id": "JORHAT"
+              },
+              {
+                "label": "KAMRUP",
+                "id": "KAMRUP"
+              },
+              {
+                "label": "KARBI ANGLONG",
+                "id": "KARBI ANGLONG"
+              },
+              {
+                "label": "KARIMGANJ",
+                "id": "KARIMGANJ"
+              },
+              {
+                "label": "KOKRAJHAR",
+                "id": "KOKRAJHAR"
+              },
+              {
+                "label": "LAKHIMPUR",
+                "id": "LAKHIMPUR"
+              },
+              {
+                "label": "MARIGAON",
+                "id": "MARIGAON"
+              },
+              {
+                "label": "NAGAON",
+                "id": "NAGAON"
+              },
+              {
+                "label": "NALBARI",
+                "id": "NALBARI"
+              },
+              {
+                "label": "SIBSAGAR",
+                "id": "SIBSAGAR"
+              },
+              {
+                "label": "SONITPUR",
+                "id": "SONITPUR"
+              },
+              {
+                "label": "TINSUKIA",
+                "id": "TINSUKIA"
+              },
+              {
+                "label": "U.M. & N.C. HILLS",
+                "id": "U.M. & N.C. HILLS"
+              },
+              {
+                "label": "WEST KARBI ANGLONG",
+                "id": "WEST KARBI ANGLONG"
+              }
+            ],
+            "id": "ASSAM"
+          },
+          {
+            "label": "BIHAR",
+            "subOptions": [
+              {
+                "label": "ARARIA",
+                "id": "ARARIA",
+                "areaOptions": [
+                  {
+                    "label": "ARARIA",
+                    "id": "ARARIA"
+                  },
+                  {
+                    "label": "Ajitnagar",
+                    "id": "Ajitnagar"
+                  }
+                ]
+              },
+              {
+                "label": "AURANGABAD - BH",
+                "id": "AURANGABAD - BH",
+                "areaOptions": [
+                  {
+                    "label": "Haspura",
+                    "id": "Haspura"
+                  },
+                  {
+                    "label": "Daudnagar",
+                    "id": "Daudnagar"
+                  }
+                ]
+              },
+              {
+                "label": "BANKA",
+                "id": "BANKA"
+              },
+              {
+                "label": "BEGUSARAI",
+                "id": "BEGUSARAI"
+              },
+              {
+                "label": "BHAGALPUR",
+                "id": "BHAGALPUR"
+              },
+              {
+                "label": "BHAGALPUR",
+                "id": "BHAGALPUR"
+              },
+              {
+                "label": "BHOJPUR",
+                "id": "BHOJPUR"
+              },
+              {
+                "label": "BUXER",
+                "id": "BUXER"
+              },
+              {
+                "label": "DARBHANGA",
+                "id": "DARBHANGA"
+              },
+              {
+                "label": "EAST CHAMPARAN",
+                "id": "EAST CHAMPARAN"
+              },
+              {
+                "label": "GAYA",
+                "id": "GAYA"
+              },
+              {
+                "label": "GOPALGANJ",
+                "id": "GOPALGANJ"
+              },
+              {
+                "label": "JAMUI",
+                "id": "JAMUI"
+              },
+              {
+                "label": "JEHANABAD",
+                "id": "JEHANABAD"
+              },
+              {
+                "label": "KAIMUR",
+                "id": "KAIMUR"
+              },
+              {
+                "label": "KATIHAR",
+                "id": "KATIHAR"
+              },
+              {
+                "label": "KHAGARIA",
+                "id": "KHAGARIA"
+              },
+              {
+                "label": "KISHANGANJ",
+                "id": "KISHANGANJ"
+              },
+              {
+                "label": "LAKHISARAI",
+                "id": "LAKHISARAI"
+              },
+              {
+                "label": "MADAHEPURA",
+                "id": "MADAHEPURA"
+              },
+              {
+                "label": "MADHUBANI",
+                "id": "MADHUBANI"
+              },
+              {
+                "label": "MONGHYR",
+                "id": "MONGHYR"
+              },
+              {
+                "label": "MUNGER",
+                "id": "MUNGER"
+              },
+              {
+                "label": "MUZAFFARPUR",
+                "id": "MUZAFFARPUR"
+              },
+              {
+                "label": "NALANDA",
+                "id": "NALANDA"
+              },
+              {
+                "label": "NAUGACHIA",
+                "id": "NAUGACHIA"
+              },
+              {
+                "label": "NAWADAH",
+                "id": "NAWADAH"
+              },
+              {
+                "label": "PATNA",
+                "id": "PATNA"
+              },
+              {
+                "label": "PURNIA",
+                "id": "PURNIA"
+              },
+              {
+                "label": "RAJOULI",
+                "id": "RAJOULI"
+              },
+              {
+                "label": "ROHTAS",
+                "id": "ROHTAS"
+              },
+              {
+                "label": "SAHARSA",
+                "id": "SAHARSA"
+              },
+              {
+                "label": "SAMASTIPUR",
+                "id": "SAMASTIPUR"
+              },
+              {
+                "label": "SARAN",
+                "id": "SARAN"
+              },
+              {
+                "label": "SHEIKHPURA",
+                "id": "SHEIKHPURA"
+              },
+              {
+                "label": "SHEOHAR",
+                "id": "SHEOHAR"
+              },
+              {
+                "label": "SITAMARHI",
+                "id": "SITAMARHI"
+              },
+              {
+                "label": "SIWAN",
+                "id": "SIWAN"
+              },
+              {
+                "label": "SUPAUL",
+                "id": "SUPAUL"
+              },
+              {
+                "label": "VAISHALI",
+                "id": "VAISHALI"
+              },
+              {
+                "label": "WEST CHAMPARAN",
+                "id": "WEST CHAMPARAN"
+              }
+            ],
+            "id": "BIHAR"
+          },
+          {
+            "label": "CHANDIGARH",
+            "subOptions": [
+              {
+                "label": "CHANDIGARH",
+                "id": "CHANDIGARH"
+              }
+            ],
+            "id": "CHANDIGARH"
+          },
+          {
+            "label": "CHHATTISGARH",
+            "subOptions": [
+              {
+                "label": "BALOD",
+                "id": "BALOD"
+              },
+              {
+                "label": "BALODABAZAR",
+                "id": "BALODABAZAR"
+              },
+              {
+                "label": "BALRAMPUR-CG",
+                "id": "BALRAMPUR-CG"
+              },
+              {
+                "label": "BAMETARA",
+                "id": "BAMETARA"
+              },
+              {
+                "label": "BASTAR",
+                "id": "BASTAR"
+              },
+              {
+                "label": "BIJAPUR-CG",
+                "id": "BIJAPUR-CG"
+              },
+              {
+                "label": "BILASPUR",
+                "id": "BILASPUR"
+              },
+              {
+                "label": "DANTEWADA",
+                "id": "DANTEWADA"
+              },
+              {
+                "label": "DHAMTARI",
+                "id": "DHAMTARI"
+              },
+              {
+                "label": "DURG",
+                "id": "DURG"
+              },
+              {
+                "label": "GARIABAND",
+                "id": "GARIABAND"
+              },
+              {
+                "label": "JANJGIR",
+                "id": "JANJGIR"
+              },
+              {
+                "label": "JASHPUR",
+                "id": "JASHPUR"
+              },
+              {
+                "label": "KABIRDHAM",
+                "id": "KABIRDHAM"
+              },
+              {
+                "label": "KANKER",
+                "id": "KANKER"
+              },
+              {
+                "label": "KAWARDHA",
+                "id": "KAWARDHA"
+              },
+              {
+                "label": "KONDAGAON",
+                "id": "KONDAGAON"
+              },
+              {
+                "label": "KORBA",
+                "id": "KORBA"
+              },
+              {
+                "label": "KORIA",
+                "id": "KORIA"
+              },
+              {
+                "label": "MAHASAMUND",
+                "id": "MAHASAMUND"
+              },
+              {
+                "label": "MUNGELI",
+                "id": "MUNGELI"
+              },
+              {
+                "label": "NARAYANPUR",
+                "id": "NARAYANPUR"
+              },
+              {
+                "label": "RAIGARH",
+                "id": "RAIGARH"
+              },
+              {
+                "label": "RAIPUR",
+                "id": "RAIPUR"
+              },
+              {
+                "label": "RAJNANDGAON",
+                "id": "RAJNANDGAON"
+              },
+              {
+                "label": "SUKMA",
+                "id": "SUKMA"
+              },
+              {
+                "label": "SURAJPUR",
+                "id": "SURAJPUR"
+              },
+              {
+                "label": "SURGUJA",
+                "id": "SURGUJA"
+              }
+            ],
+            "id": "CHHATTISGARH"
+          },
+          {
+            "label": "DAMAN AND DIU",
+            "subOptions": [
+              {
+                "label": "DAMAN",
+                "id": "DAMAN"
+              },
+              {
+                "label": "DAMAN",
+                "id": "DAMAN"
+              },
+              {
+                "label": "DIU",
+                "id": "DIU"
+              }
+            ],
+            "id": "DAMAN AND DIU"
+          },
+          {
+            "label": "DELHI",
+            "subOptions": [
+              {
+                "label": "DELHI",
+                "id": "DELHI"
+              },
+              {
+                "label": "DELHI (EAST)",
+                "id": "DELHI (EAST)"
+              },
+              {
+                "label": "DELHI (NORTH)",
+                "id": "DELHI (NORTH)"
+              },
+              {
+                "label": "DELHI (SOUTH)",
+                "id": "DELHI (SOUTH)"
+              },
+              {
+                "label": "DELHI (WEST)",
+                "id": "DELHI (WEST)"
+              },
+              {
+                "label": "DELHI-EAST (TBA)",
+                "id": "DELHI-EAST (TBA)"
+              },
+              {
+                "label": "DELHI-SOUTH (TBA)",
+                "id": "DELHI-SOUTH (TBA)"
+              },
+              {
+                "label": "DELHI-WEST(MKD)",
+                "id": "DELHI-WEST(MKD)"
+              }
+            ],
+            "id": "DELHI"
+          },
+          {
+            "label": "GOA",
+            "subOptions": [
+              {
+                "label": "GOA",
+                "id": "GOA"
+              },
+              {
+                "label": "NORTH GOA",
+                "id": "NORTH GOA"
+              },
+              {
+                "label": "SOUTH GOA",
+                "id": "SOUTH GOA"
+              }
+            ],
+            "id": "GOA"
+          },
+          {
+            "label": "GUJARAT",
+            "subOptions": [
+              {
+                "label": "AHMEDABAD",
+                "id": "AHMEDABAD"
+              },
+              {
+                "label": "AMRELI",
+                "id": "AMRELI"
+              },
+              {
+                "label": "BANASKANTHA",
+                "id": "BANASKANTHA"
+              },
+              {
+                "label": "BARODA",
+                "id": "BARODA"
+              },
+              {
+                "label": "BHARUCH",
+                "id": "BHARUCH"
+              },
+              {
+                "label": "BHAVNAGAR",
+                "id": "BHAVNAGAR"
+              },
+              {
+                "label": "GANDHINAGAR",
+                "id": "GANDHINAGAR"
+              },
+              {
+                "label": "JAMNAGAR",
+                "id": "JAMNAGAR"
+              },
+              {
+                "label": "JUNAGADH",
+                "id": "JUNAGADH"
+              },
+              {
+                "label": "KHEDA",
+                "id": "KHEDA"
+              },
+              {
+                "label": "KUTCH",
+                "id": "KUTCH"
+              },
+              {
+                "label": "MEHSANA",
+                "id": "MEHSANA"
+              },
+              {
+                "label": "NAVSARI",
+                "id": "NAVSARI"
+              },
+              {
+                "label": "PANCHMAHAL",
+                "id": "PANCHMAHAL"
+              },
+              {
+                "label": "RAJKOT",
+                "id": "RAJKOT"
+              },
+              {
+                "label": "SABARKANTHA",
+                "id": "SABARKANTHA"
+              },
+              {
+                "label": "SILVASSA",
+                "id": "SILVASSA"
+              },
+              {
+                "label": "SILVASSA",
+                "id": "SILVASSA"
+              },
+              {
+                "label": "SURAT",
+                "id": "SURAT"
+              },
+              {
+                "label": "SURENDRANAGAR",
+                "id": "SURENDRANAGAR"
+              },
+              {
+                "label": "TAPI",
+                "id": "TAPI"
+              },
+              {
+                "label": "VALSAD",
+                "id": "VALSAD"
+              }
+            ],
+            "id": "GUJARAT"
+          },
+          {
+            "label": "HARYANA",
+            "subOptions": [
+              {
+                "label": "AMBALA",
+                "id": "AMBALA"
+              },
+              {
+                "label": "BAHADURGARH",
+                "id": "BAHADURGARH"
+              },
+              {
+                "label": "BHIWANI",
+                "id": "BHIWANI"
+              },
+              {
+                "label": "FARIDABAD",
+                "id": "FARIDABAD"
+              },
+              {
+                "label": "FATEHABAD",
+                "id": "FATEHABAD"
+              },
+              {
+                "label": "GURGAON",
+                "id": "GURGAON"
+              },
+              {
+                "label": "HISSAR",
+                "id": "HISSAR"
+              },
+              {
+                "label": "JHAJJAR",
+                "id": "JHAJJAR"
+              },
+              {
+                "label": "JIND",
+                "id": "JIND"
+              },
+              {
+                "label": "KAITHAL",
+                "id": "KAITHAL"
+              },
+              {
+                "label": "KARNAL",
+                "id": "KARNAL"
+              },
+              {
+                "label": "KURUKSHETRA",
+                "id": "KURUKSHETRA"
+              },
+              {
+                "label": "MEWAT",
+                "id": "MEWAT"
+              },
+              {
+                "label": "MOHINDERGARH",
+                "id": "MOHINDERGARH"
+              },
+              {
+                "label": "PALWAL",
+                "id": "PALWAL"
+              },
+              {
+                "label": "PANIPAT",
+                "id": "PANIPAT"
+              },
+              {
+                "label": "REWARI",
+                "id": "REWARI"
+              },
+              {
+                "label": "ROHTAK",
+                "id": "ROHTAK"
+              },
+              {
+                "label": "SIRSA",
+                "id": "SIRSA"
+              },
+              {
+                "label": "SONEPAT",
+                "id": "SONEPAT"
+              },
+              {
+                "label": "YAMUNA NAGAR",
+                "id": "YAMUNA NAGAR"
+              }
+            ],
+            "id": "HARYANA"
+          },
+          {
+            "label": "HIMACHAL PRADESH",
+            "subOptions": [
+              {
+                "label": "BILASPUR (H.P.)",
+                "id": "BILASPUR (H.P.)"
+              },
+              {
+                "label": "CHAMBA",
+                "id": "CHAMBA"
+              },
+              {
+                "label": "HAMIRPUR - HP",
+                "id": "HAMIRPUR - HP"
+              },
+              {
+                "label": "KANGRA",
+                "id": "KANGRA"
+              },
+              {
+                "label": "KINNAUR",
+                "id": "KINNAUR"
+              },
+              {
+                "label": "KULU",
+                "id": "KULU"
+              },
+              {
+                "label": "LAHAUL & SPITI",
+                "id": "LAHAUL & SPITI"
+              },
+              {
+                "label": "MANDI",
+                "id": "MANDI"
+              },
+              {
+                "label": "SHIMLA",
+                "id": "SHIMLA"
+              },
+              {
+                "label": "SIRMOUR",
+                "id": "SIRMOUR"
+              },
+              {
+                "label": "SOLAN",
+                "id": "SOLAN"
+              },
+              {
+                "label": "UNA",
+                "id": "UNA"
+              }
+            ],
+            "id": "HIMACHAL PRADESH"
+          },
+          {
+            "label": "JAMMU AND KASHMIR",
+            "subOptions": [
+              {
+                "label": "ANANTNAG",
+                "id": "ANANTNAG"
+              },
+              {
+                "label": "BADGAM",
+                "id": "BADGAM"
+              },
+              {
+                "label": "BANDIPORA",
+                "id": "BANDIPORA"
+              },
+              {
+                "label": "BARAMULA",
+                "id": "BARAMULA"
+              },
+              {
+                "label": "DODA",
+                "id": "DODA"
+              },
+              {
+                "label": "GANDERBAL",
+                "id": "GANDERBAL"
+              },
+              {
+                "label": "HIRANAGAR",
+                "id": "HIRANAGAR"
+              },
+              {
+                "label": "JAMMU",
+                "id": "JAMMU"
+              },
+              {
+                "label": "KARGIL",
+                "id": "KARGIL"
+              },
+              {
+                "label": "KATHUA",
+                "id": "KATHUA"
+              },
+              {
+                "label": "KISHTWAR",
+                "id": "KISHTWAR"
+              },
+              {
+                "label": "KULGAM",
+                "id": "KULGAM"
+              },
+              {
+                "label": "KUPWARA",
+                "id": "KUPWARA"
+              },
+              {
+                "label": "LADHAKH",
+                "id": "LADHAKH"
+              },
+              {
+                "label": "LEH",
+                "id": "LEH"
+              },
+              {
+                "label": "LEH",
+                "id": "LEH"
+              },
+              {
+                "label": "LEH",
+                "id": "LEH"
+              },
+              {
+                "label": "POONCH",
+                "id": "POONCH"
+              },
+              {
+                "label": "PULWAMA",
+                "id": "PULWAMA"
+              },
+              {
+                "label": "RAJOURI",
+                "id": "RAJOURI"
+              },
+              {
+                "label": "RAMBAN",
+                "id": "RAMBAN"
+              },
+              {
+                "label": "REASI",
+                "id": "REASI"
+              },
+              {
+                "label": "SAMBA",
+                "id": "SAMBA"
+              },
+              {
+                "label": "SHOPIAN",
+                "id": "SHOPIAN"
+              },
+              {
+                "label": "SRINAGAR",
+                "id": "SRINAGAR"
+              },
+              {
+                "label": "UDHAMPUR",
+                "id": "UDHAMPUR"
+              }
+            ],
+            "id": "JAMMU AND KASHMIR"
+          },
+          {
+            "label": "JHARKHAND",
+            "subOptions": [
+              {
+                "label": "BOKARO",
+                "id": "BOKARO"
+              },
+              {
+                "label": "CHATRA",
+                "id": "CHATRA"
+              },
+              {
+                "label": "DEOGARH",
+                "id": "DEOGARH"
+              },
+              {
+                "label": "DHANBAD",
+                "id": "DHANBAD"
+              },
+              {
+                "label": "DUMKA",
+                "id": "DUMKA"
+              },
+              {
+                "label": "EAST-SINGHBHUM",
+                "id": "EAST-SINGHBHUM"
+              },
+              {
+                "label": "GARHWA",
+                "id": "GARHWA"
+              },
+              {
+                "label": "GIRIDIH",
+                "id": "GIRIDIH"
+              },
+              {
+                "label": "GODDA",
+                "id": "GODDA"
+              },
+              {
+                "label": "GUMLA",
+                "id": "GUMLA"
+              },
+              {
+                "label": "HAZARIBAGH",
+                "id": "HAZARIBAGH"
+              },
+              {
+                "label": "JAMSHEDPUR",
+                "id": "JAMSHEDPUR"
+              },
+              {
+                "label": "JAMTARA",
+                "id": "JAMTARA"
+              },
+              {
+                "label": "KHUNTI",
+                "id": "KHUNTI"
+              },
+              {
+                "label": "KODERMA",
+                "id": "KODERMA"
+              },
+              {
+                "label": "LATERHAR",
+                "id": "LATERHAR"
+              },
+              {
+                "label": "LOHARDAGA",
+                "id": "LOHARDAGA"
+              },
+              {
+                "label": "PAKUR",
+                "id": "PAKUR"
+              },
+              {
+                "label": "PALAMAU",
+                "id": "PALAMAU"
+              },
+              {
+                "label": "RAMGARH",
+                "id": "RAMGARH"
+              },
+              {
+                "label": "RANCHI",
+                "id": "RANCHI"
+              },
+              {
+                "label": "SAHEBGANJ",
+                "id": "SAHEBGANJ"
+              },
+              {
+                "label": "SARAIKELLA -KHARSWAN",
+                "id": "SARAIKELLA -KHARSWAN"
+              },
+              {
+                "label": "SIMDEGA",
+                "id": "SIMDEGA"
+              },
+              {
+                "label": "WEST-SINGHBHUM",
+                "id": "WEST-SINGHBHUM"
+              }
+            ],
+            "id": "JHARKHAND"
+          },
+          {
+            "label": "KARNATAKA",
+            "subOptions": [],
+            "id": "KARNATAKA"
+          },
+          {
+            "label": "KERALA",
+            "subOptions": [],
+            "id": "KERALA"
+          },
+          {
+            "label": "MADHYA PRADESH",
+            "subOptions": [],
+            "id": "MADHYA PRADESH"
+          },
+          {
+            "label": "MAHARASHTRA",
+            "subOptions": [],
+            "id": "MAHARASHTRA"
+          },
+          {
+            "label": "MEGHALAYA",
+            "subOptions": [],
+            "id": "MEGHALAYA"
+          },
+          {
+            "label": "NAGALAND",
+            "subOptions": [],
+            "id": "NAGALAND"
+          },
+          {
+            "label": "ORISSA",
+            "subOptions": [],
+            "id": "ORISSA"
+          },
+          {
+            "label": "PONDICHERRY",
+            "subOptions": [],
+            "id": "PONDICHERRY"
+          },
+          {
+            "label": "PUNJAB",
+            "subOptions": [],
+            "id": "PUNJAB"
+          },
+          {
+            "label": "RAJASTHAN",
+            "subOptions": [],
+            "id": "RAJASTHAN"
+          },
+          {
+            "label": "SIKKIM",
+            "subOptions": [],
+            "id": "SIKKIM"
+          },
+          {
+            "label": "TAMIL NADU",
+            "subOptions": [],
+            "id": "TAMIL NADU"
+          },
+          {
+            "label": "TELANGANA",
+            "subOptions": [],
+            "id": "TELANGANA"
+          },
+          {
+            "label": "TRIPURA",
+            "subOptions": [],
+            "id": "TRIPURA"
+          },
+          {
+            "label": "UTTAR PRADESH",
+            "subOptions": [],
+            "id": "UTTAR PRADESH"
+          },
+          {
+            "label": "UTTARANCHAL",
+            "subOptions": [],
+            "id": "UTTARANCHAL"
+          },
+          {
+            "label": "WEST BENGAL",
+            "subOptions": [],
+            "id": "WEST BENGAL"
+          }
+        ],
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please select the State."
+        }
+      },
+      {
+        "fieldType": "dropdown",
+        "placeholder": "Select District",
+        "fieldName": "district",
+        "fieldOptions": [],
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please select the District."
+        }
+      },
+      {
+        "fieldType": "dropdown",
+        "placeholder": "Area",
+        "fieldName": "area",
+        "fieldOptions": [],
+        "errorMessages": {
+          "requiredFieldErrorMessage": "Please select area."
+        }
+      }
+    ],
+    "checkboxField": {
+      "fieldType": "checkbox",
+      "fieldName": "termsAndConditions",
+      "fieldID": "acceptTerms",
+      "placeholder": "By continuing, you agree to our <a href=\"/terms-and-conditions\">T&amp;Cs</a> and <a href=\"/privacy-policy\">Privacy Policy</a>.",
+      "errorMessages": {
+        "requiredFieldErrorMessage": "Please accept the terms."
+      },
+      "selected": false,
+      "required": true
+    }
+  },
+  "getIntouchOtp": {
+    "heading": "Enter OTP",
+    "wehavesentviaSMStoLabel": "We've sent via SMS to",
+    "editButtonLabel": "Edit",
+    "submitButtonText": "Submit",
+    "resendButtonLabel": "Resend",
+    "notReceivedOtpLabel": "Haven't received a OTP?",
+    "youWillReceiveOtpLabel": "You will receive an OTP in",
+    "secondLabel": "Seconds",
+    "editMobileNOTitle": "Edit Mobile Number",
+    "resendOtpTitle": "Resend OTP",
+    "timer": 30,
+    "gtmData": {
+      "event": "",
+      "category": "",
+      "sub_category": "",
+      "label": "",
+      "page_type": ""
+    },
+    "editButton": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "submitButton": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "resendButton": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "otpSuccess": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "label": "",
+        "page_type": ""
+      }
+    },
+    "otpFail": {
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "label": "",
+        "page_type": ""
+      }
+    }
+  },
+  "successMessage": "Your enquiry submitted successfully!",
+  "progressMessage": "Form submission in progress.",
+  "errorMessage": "Form Submit Failed. Something went wrong."
+}

@@ -1,0 +1,273 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+
+  > div {
+    @include rem(margin-left, -20);
+    @include rem(margin-right, -20);
+
+    @include media($sm, min) {
+      @include rem(margin-left, 0);
+      @include rem(margin-right, 0);
+      padding: 0;
+    }
+  }
+
+  .item {
+    @include rem(border-radius, 8);
+    @include rem(min-height, 355);
+    position: relative;
+    background-color: $cornSilk;
+    overflow: hidden;
+
+    @include media($sm, min) {
+      @include rem(min-height, 440);
+    }
+
+    &.secondary {
+      background-color: $secondary;
+
+      @include media($sm, min) {
+        min-height: 26.5rem;
+      }
+
+      img {
+        max-height: inherit;
+        position: initial;
+        transform: translate(0);
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .textContainer {
+        @include padding(30, 30, 30, 30);
+        text-align: left;
+
+        p {
+          text-overflow: inherit;
+          overflow: inherit;
+          -webkit-line-clamp: inherit;
+          -webkit-box-orient: inherit;
+        }
+      }
+    }
+
+    img {
+      @include rem(border-radius, 8);
+      width: 65%;
+      height: 100%;
+      margin: auto;
+
+      @include media($sm, min) {
+        @include rem(width, 238);
+        @include rem(max-height, 238);
+      }
+    }
+
+    .textContainer {
+      @include padding(14, 20, 30, 20);
+      text-align: center;
+      width: 100%;
+
+      @include media($sm, min) {
+        @include padding(32, 36, 40, 36);
+      }
+
+      h3 {
+        @include font-size(18);
+        @include rem(padding, 0);
+        @include rem(margin, 0);
+        @include rem(margin-bottom, 10);
+        color: $raisinblack;
+      }
+
+      p {
+        @include rem(margin-bottom, 0);
+        text-transform: none;
+        color: $granite;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .badge {
+      @include rem(width, 105);
+      @include rem(font-size, 14);
+      @include rem(margin-top, 20);
+      @include rem(margin-left, 20);
+      @include rem(margin-bottom, 20);
+      @include padding(5, 25, 5, 10);
+      @include rem(max-height, 30);
+      font-family: $font-medium;
+      position: relative;
+      background-color: $chineeseyellow;
+      color: $darkBronze;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+
+      &::after {
+        background: transparent;
+        border-bottom: 0.938rem solid transparent;
+        border-left: 0.875rem solid $cornSilk;
+        border-top: 0.938rem solid transparent;
+        content: '';
+        position: absolute;
+        right: -0.019rem;
+        top: 0;
+        transform: rotate(180deg);
+      }
+
+      i {
+        @include rem(font-size, 12);
+        @include rem(margin-right, 6);
+        vertical-align: text-bottom;
+      }
+    }
+
+    .imageWrapper {
+      overflow: hidden;
+      position: relative;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+
+      img {
+        @include media($sm, min) {
+          transform: scale(1);
+          transition: ease-in-out all 2600ms;
+        }
+      }
+    }
+
+    &:hover {
+      .imageWrapper {
+        img {
+          transform: scale(1.1);
+          transition: ease-in-out transform 2600ms;
+        }
+      }
+    }
+  }
+
+  :global(.slick-track) {
+    @include rem(margin-left, -20);
+
+    > div:last-child {
+      @include rem(margin-right, 20);
+    }
+
+    @include media($md, min) {
+      margin-left: calc(((100% - 60rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 60rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($lgb, min) {
+      margin-left: calc(((100% - 71.25rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 71.25rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($xxxl, min) {
+      margin-left: calc(((100% - 82.5rem) / 2) - 0.938rem);
+
+      > div:last-child {
+        margin-right: calc(((100vw - 82.5rem) / 2) - 0.938rem);
+      }
+    }
+  }
+
+  .secondary {
+    :global(.slick-list) {
+      :global(.slick-track) {
+        :global(.slick-slide) {
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+
+  :global(.slick-list) {
+    @include margin(0, -10, 0, -10);
+
+    :global(.slick-track) {
+      display: flex;
+      -webkit-transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      margin-left: 0;
+
+      :global(.slick-slide) {
+        @include rem(border-radius, 8);
+        background-color: $cornSilk;
+        height: auto;
+        margin: 0 0.625rem;
+
+        > div {
+          display: block;
+        }
+
+        .item {
+          position: relative;
+          transition: ease all 0.6s;
+
+          img {
+            object-fit: cover;
+            object-position: top left;
+          }
+        }
+      }
+    }
+  }
+
+  :global(.slick-arrow) {
+    top: -3.75rem;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+
+    &:global(.slick-prev) {
+      right: calc(((100% - 45rem) / 2) + 4.375rem);
+      left: unset;
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 4.375rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 4.375rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 4.375rem);
+      }
+    }
+
+    &:global(.slick-next) {
+      right: calc(((100% - 45rem) / 2) + 0.938rem);
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 0.938rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 0.938rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 0.938rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.backToTop {
+  @include rem(border-radius, 64);
+  position: fixed;
+  top: auto;
+  transform: none;
+  bottom: 6.125rem;
+  right: 2%;
+  z-index: 9;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+
+  &:global(.ripple_root) {
+    position: fixed;
+  }
+
+  @include media-min-max($md, $lg) {
+    bottom: 7.5rem;
+  }
+
+  .inner {
+    @include rem(border-radius, 64);
+    @include padding(0, 8, 0, 8);
+    align-items: center;
+    background-color: $lightgraycultured;
+    display: inline-flex;
+    height: 3rem;
+    justify-content: center;
+    min-width: 3rem;
+
+    i {
+      transition: margin 250ms ease-in-out;
+    }
+
+    i:before {
+      @include font-size(7.4);
+      color: $darkcharcoal;
+      vertical-align: middle;
+    }
+
+    span {
+      @include font-size(12);
+      font-family: $font-medium;
+      clip: initial;
+      max-width: 0;
+      overflow: hidden;
+      transform-origin: left;
+      transition: max-width 0.25s ease;
+      white-space: nowrap;
+      color: $darkcharcoal;
+    }
+
+    &:hover {
+      @include rem(padding-right, 19.2);
+
+      i {
+        @include margin(0, 5, 0, 5);
+      }
+
+      span {
+        max-width: 12.5rem;
+      }
+    }
+  }
+
+  &.active {
+    .inner {
+      background-color: $raisinblack;
+      color: $secondary;
+
+      i:before {
+        color: $secondary;
+      }
+
+      span {
+        color: $secondary;
+      }
+    }
+  }
+}

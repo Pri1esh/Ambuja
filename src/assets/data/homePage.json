@@ -1,0 +1,3080 @@
+{
+  "header": {
+    "headerLogo": "./assets/images/ambuja-logo.png",
+    "logo": "./assets/images/ambuja-logo.png",
+    "mobileLogo": "./assets/images/logo.png",
+    "buLink": "/",
+    "linkTarget": "",
+    "buLogoAltText": "Adani",
+    "isAbsolute": true,
+    "addOnClass": "hideTopNav",
+    "navData": [
+      {
+        "link": "/url",
+        "linkText": "Home Builder",
+        "activeId": "homebuilder",
+        "isActive": false,
+        "headerCallback": false,
+        "items": [
+          {
+            "linkText": "Link1",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link1",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link2",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link2",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link3",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link3",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Link4",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "Link4",
+            "linkTarget": ""
+          }
+        ],
+        "defaultImage": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Cost Calculator",
+        "activeId": "calculator",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "link": "/url",
+        "linkText": "Products & Solutions",
+        "activeId": "products",
+        "isActive": false,
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": [
+          {
+            "subMenu": [
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Cement",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Kawach",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Plus",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              },
+              {
+                "subMenu": [],
+                "link": "/url",
+                "linkText": "Ambuja Compocem",
+                "linkTarget": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "title": "",
+                  "label": "Vision, Mission & Values",
+                  "page_type": "homepage"
+                }
+              }
+            ],
+            "linkText": "Cement",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Mortar & Block",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Sand",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          },
+          {
+            "linkText": "Non-trade",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": ""
+          }
+        ],
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Find a Dealer",
+        "activeId": "findadealer",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "About Us",
+        "activeId": "aboutus",
+        "isActive": false,
+        "link": "url",
+        "linkTarget": "",
+        "headerCallback": false,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        }
+      },
+      {
+        "linkText": "Enquiry",
+        "link": "#",
+        "linkTarget": "",
+        "headerCallback": true,
+        "defaultImage": "",
+        "items": null,
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        }
+      }
+    ],
+    "hamburgerMenuData": [
+      {
+        "linkText": "Ambuja Help",
+        "linkTarget": "",
+        "link": "https://www.ambujacement.com",
+        "headerLeftIcon": "i-businesses",
+        "headerRightIcon": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "link": "Tel: 1800 103 3444",
+            "linkText": "1800 103 3444",
+            "linkTarget": "",
+            "itemLeftIcon": "mobile",
+            "highlightLabel": "CALL",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            }
+          },
+          {
+            "linkText": "Home",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "/",
+            "linkTarget": "",
+            "itemLeftIcon": "home"
+          },
+          {
+            "linkText": "Product & Solutions",
+            "itemLeftIcon": "menu",
+            "itemRightIcon": "i-arrow-d icon",
+            "collapseItems": [
+              {
+                "linkText": "Cement",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-cement"
+              },
+              {
+                "linkText": "Mortar & Blocks",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-mortar"
+              },
+              {
+                "linkText": "Sand",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-sand"
+              },
+              {
+                "linkText": "Non-trade",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-nonTrade"
+              },
+              {
+                "linkText": "View All",
+                "itemSubText": "",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "url",
+                "linkTarget": "",
+                "itemLeftIcon": "i-grids"
+              }
+            ]
+          },
+          {
+            "linkText": "Home Builder",
+            "itemLeftIcon": "homeBuilders",
+            "itemRightIcon": "i-arrow-d icon",
+            "collapseItems": [
+              {
+                "linkText": "Link1",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link1"
+              },
+              {
+                "linkText": "Link2",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link2"
+              },
+              {
+                "linkText": "Link3",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link3"
+              },
+              {
+                "linkText": "Link4",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-Link4"
+              },
+              {
+                "linkText": "View All",
+                "gtmData": {
+                  "event": "",
+                  "category": "",
+                  "sub_category": "",
+                  "title": "",
+                  "label": "",
+                  "page_type": "homepage"
+                },
+                "link": "",
+                "linkTarget": "",
+                "itemLeftIcon": "i-grids"
+              }
+            ]
+          },
+          {
+            "linkText": "Find a Dealer",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "dealer"
+          },
+          {
+            "linkText": "Cost Calculator",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "calculator"
+          }
+        ]
+      },
+      {
+        "linkText": "Adani Businesses",
+        "link": "url",
+        "linkTarget": "",
+        "headerLeftIcon": "businesses",
+        "headerRightIcon": "i-arrow-d icon",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "collapseItems": [
+          {
+            "linkText": "Airports",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanione.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "airport",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Capital",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanicapital.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "capital",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Electricity",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanielectricity.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "electricity",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Housing Finance",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanihousing.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "housing",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Realty",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.uat.adanirealty.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "realty",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Total Gas",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanigas.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "gas",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Wilmar",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adaniwilmar.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "wilmar",
+            "isActive": false
+          }
+        ]
+      },
+      {
+        "linkText": "Others",
+        "linkTarget": "",
+        "link": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "linkText": "About Us",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "about"
+          },
+          {
+            "linkText": "FAQs",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "faqs"
+          },
+          {
+            "linkText": "Get in touch",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "mobile"
+          },
+          {
+            "linkText": "Chat Support",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "chat"
+          },
+          {
+            "linkText": "Terms & Conditions",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "terms"
+          },
+          {
+            "linkText": "Privacy Policy",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "privacy"
+          },
+          {
+            "linkText": "Legal & Disclaimer",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "",
+            "linkTarget": "",
+            "itemLeftIcon": "legal"
+          }
+        ]
+      }
+    ],
+    "topbarList": [
+      {
+        "phone": "1800 103 3444",
+        "phoneLink": "/url",
+        "phoneIcon": "i-mobile",
+        "linkText": "Businesses",
+        "link": "https://www.uat.adanirealty.com",
+        "headerLeftIcon": "businesses",
+        "headerRightIcon": "",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "title": "",
+          "label": "Vision, Mission & Values",
+          "page_type": "homepage"
+        },
+        "items": [
+          {
+            "linkText": "Airports",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanione.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "airport",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Total Gas",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanicapital.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "gas",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Electricity",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanielectricity.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "electricity",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Wilmar",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanihousing.in/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "wilmar",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Realty",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.uat.adanirealty.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "realty",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Capital",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adanigas.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "capital",
+            "isActive": false
+          },
+          {
+            "linkText": "Adani Housing Finance",
+            "itemSubText": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": "homepage"
+            },
+            "link": "https://www.adaniwilmar.com/",
+            "linkTarget": "_blank",
+            "itemLeftIcon": "housing",
+            "isActive": false
+          }
+        ]
+      }
+    ]
+  },
+  "seoData": {
+    "baseUrl": "https://www.ambujahelp.com",
+    "pageTitle": "Welcome to Ambuja Help",
+    "metaDescription": "Ambuja Help",
+    "metaKeywords": "Ambuja Help",
+    "metaTitle": "Ambuja Help",
+    "ogTitle": "Ambuja Help",
+    "browserTitle": "Ambuja Help",
+    "ogImage": "https://www.ambujahelp.com/image.jpg",
+    "ogDescription": "Ambuja Help",
+    "ogKeyword": "Ambuja Help",
+    "ogUrl": "ambujahelp.com",
+    "canonicalUrl": "https://www.ambujahelp.com/",
+    "googleSiteVerification": "NsrtBG1AEJXqImN7FAQ_4CFkSVcrx5NPf1cQs206jQU",
+    "msValidate": "2B0C34807FA5B7ACA277D5A725CDE76D",
+    "robotsTags": {
+      "index": false,
+      "follow": true,
+      "nocache": true,
+      "googleBot": {
+        "index": true,
+        "follow": false,
+        "noimageindex": true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1
+      }
+    },
+    "orgSchema": {
+      "telephone": "1800 108 0009",
+      "contactType": "Customer Service",
+      "areaServed": "India",
+      "streetAddress": "Address,",
+      "addressLocality": "Ahmedabad , Gujrat",
+      "addressRegion": "IN",
+      "postalCode": "382421",
+      "sameAs": [
+        "https://www.instagram.com/ambujahelp/",
+        "https://www.facebook.com/ambujahelp",
+        "https://twitter.com/ambujahelp",
+        "https://www.linkedin.com/company/ambujahelp",
+        "https://www.youtube.com/c/ambujahelp"
+      ],
+      "contactOption": "Toll Free",
+      "logo": "https://www.ambujahelp.com/logo.svg",
+      "url": "https://www.ambujahelp.com/"
+    }
+  },
+  "mainBanner": {
+    "data": [
+      {
+        "link": "/url",
+        "linkText": "Explore",
+        "linkTarget": "_blank",
+        "heading": "Built from Strength. Built for People.",
+        "subHeading": "A trusted name in home building",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "mediaType": "",
+        "videoSource": "https://www.youtube.com",
+        "videoSourceMobile": "https://www.youtube.com",
+        "videoSourceTablet": "https://www.youtube.com",
+        "videoSourceOGG": "https://www.youtube.com",
+        "videoSourceMobileOGG": "https://www.youtube.com",
+        "videoSourceTabletOGG": "https://www.youtube.com",
+        "autoPlay": false,
+        "isOverlayRequired": false,
+        "imageSource": "./assets/images/banner1.png",
+        "imageSourceMobile": "./assets/images/banner1-m.png",
+        "imageSourceTablet": "",
+        "imageAlt": ""
+      },
+      {
+        "link": "/url",
+        "linkText": "Explore",
+        "linkTarget": "_blank",
+        "heading": "Built from Strength. Built for People.",
+        "subHeading": "A trusted name in home building",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "mediaType": "",
+        "videoSource": "https://www.youtube.com",
+        "videoSourceMobile": "https://www.youtube.com",
+        "videoSourceTablet": "https://www.youtube.com",
+        "videoSourceOGG": "https://www.youtube.com",
+        "videoSourceMobileOGG": "https://www.youtube.com",
+        "videoSourceTabletOGG": "https://www.youtube.com",
+        "autoPlay": false,
+        "isOverlayRequired": false,
+        "imageSource": "./assets/images/banner1.png",
+        "imageSourceMobile": "./assets/images/banner1-m.png",
+        "imageSourceTablet": "",
+        "imageAlt": ""
+      },
+      {
+        "link": "/url",
+        "linkText": "Explore",
+        "linkTarget": "_blank",
+        "heading": "Built from Strength. Built for People.",
+        "subHeading": "A trusted name in home building",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "mediaType": "",
+        "videoSource": "https://www.youtube.com",
+        "videoSourceMobile": "https://www.youtube.com",
+        "videoSourceTablet": "https://www.youtube.com",
+        "videoSourceOGG": "https://www.youtube.com",
+        "videoSourceMobileOGG": "https://www.youtube.com",
+        "videoSourceTabletOGG": "https://www.youtube.com",
+        "autoPlay": false,
+        "isOverlayRequired": false,
+        "imageSource": "./assets/images/banner1.png",
+        "imageSourceMobile": "./assets/images/banner1-m.png",
+        "imageSourceTablet": "",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "categoriesList": [
+    {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageAlt": "",
+      "imageTitle": "",
+      "productName": "All",
+      "productCount": "",
+      "link": "#",
+      "linkTarget": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      }
+    },
+    {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageAlt": "",
+      "imageTitle": "",
+      "productName": "Premium Products",
+      "productCount": "",
+      "link": "#",
+      "linkTarget": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      }
+    },
+    {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageAlt": "",
+      "imageTitle": "",
+      "productName": "Flagship Product",
+      "productCount": "",
+      "link": "#",
+      "linkTarget": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      }
+    },
+    {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageAlt": "",
+      "imageTitle": "",
+      "productName": "Other Products",
+      "productCount": "",
+      "link": "#",
+      "linkTarget": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      }
+    },
+    {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/200x200.png",
+      "imageAlt": "",
+      "imageTitle": "",
+      "productName": "B2B offerings",
+      "productCount": "",
+      "link": "#",
+      "linkTarget": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      }
+    }
+  ],
+  "cardSlider": {
+    "fields": {
+      "sectionID": "",
+      "variant": "",
+      "gallery": [
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "Students participation in art event at Adani International School",
+          "heading": "Mrs. Anushka Sharma",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "girls playing with the bollyball at Adani International School",
+          "heading": "Mrs. Utsavi Trivedi",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "students performing drama at Adani International School",
+          "heading": "Mr. Kanhiyalal Patel",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "students looking at the portrait which is displaying in a showcase",
+          "heading": "Mr. Gautam Adani ",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "a teacher & student at Adani International School",
+          "heading": "Mr. Jeet Adani",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "doctor checking the health of a student at Adani International School",
+          "heading": "Mr. Virat Kohli ",
+          "description": "Ambuja helped me build my dream project quickly with their continuous support and material supply. Ambuja helped me build my dream project quickly with their continuous support and material supply. ",
+          "date": "15 January 2023"
+        }
+      ],
+      "theme": "light",
+      "cardType": null,
+      "mediaType": null,
+      "heading": "Hear from Happy Homeowners.",
+      "subHeading": "Strengthening Your Dreams",
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageAlt": "",
+      "imageTitle": ""
+    }
+  },
+  "scaleSlider": {
+    "fields": {
+      "sectionID": "",
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageAlt": "Image",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "sub_category": "",
+        "title": "",
+        "label": "",
+        "page_type": "homepage"
+      },
+      "gallery": [
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "Students participation in art event at Adani International School",
+          "heading": "Planning & Home design",
+          "description": "Devise a comprehensive plan to ensure successful execution…"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "girls playing with the bollyball at Adani International School",
+          "heading": "The Right Land and Location",
+          "description": "Consider accessibility, the neighbourhood and amenities…s."
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "students performing drama at Adani International School",
+          "heading": "Construction Budget",
+          "description": "Carefully assess and allocate your finances"
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "students looking at the portrait which is displaying in a showcase",
+          "heading": "Co - Curricular ",
+          "description": "Enhancing character and confidence to build lifelong friendships."
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "a teacher & student at Adani International School",
+          "heading": "Pastoral Care ",
+          "description": "Helping each child by showing care and concern for others."
+        },
+        {
+          "link": "/url",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "title": "",
+            "label": "",
+            "page_type": "homepage"
+          },
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/280x220.png",
+          "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "doctor checking the health of a student at Adani International School",
+          "heading": "Health & Safety ",
+          "description": "Creating a safe environment in and around school premises."
+        }
+      ],
+      "cardType": null,
+      "mediaType": null,
+      "link": "/url",
+      "linkText": "Explore",
+      "linkTarget": "",
+      "heading": "Making your dream home a reality! ",
+      "subHeading": "Ultimate home-building guide"
+    }
+  },
+  "costCalculatorData": {
+    "labels": {
+      "headingLabel": "Let's Begin!"
+    },
+    "tabData": [
+      {
+        "type": "constructionDetails",
+        "label": "Construction Details",
+        "subTitle": "",
+        "tooltipData": [
+          {
+            "title": "RCC Frame Structure",
+            "description": " The load are transmitted to the foundation via reinforced concrete beams and columns."
+          },
+          {
+            "title": "Load Bearing Structure",
+            "description": "A load-bearing structure is one that bears the weight of the floor or roof structure above it."
+          }
+        ],
+        "data": {
+          "buttonTabs": [
+            {
+              "label": "RCC Frame Structure",
+              "initiallyChecked": "true",
+              "id": "rcc"
+            },
+            {
+              "label": "Load Bearing Structure",
+              "initiallyChecked": false,
+              "id": "load"
+            }
+          ],
+          "inputTabs": [
+            {
+              "type": "dropdown",
+              "placeholder": "Conststruction Stage",
+              "errorMessage": "Please selected a value",
+              "options": [
+                {
+                  "id": 1,
+                  "label": "Overall Construction",
+                  "placeholder": "Overall Construction"
+                },
+                {
+                  "id": 2,
+                  "label": "Only Floors",
+                  "placeholder": "Only Floors"
+                },
+                {
+                  "id": 3,
+                  "label": "Slabs",
+                  "placeholder": "Slabs"
+                },
+                {
+                  "id": 4,
+                  "label": "Building Frames",
+                  "placeholder": "Building Frames"
+                },
+                {
+                  "id": 5,
+                  "label": "Complete Structure",
+                  "placeholder": "Complete Structure"
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "placeholder": "Total Construction Area (sq/ft)",
+              "errorMessage": "Please enter a value",
+              "fieldName": "tabInput"
+            }
+          ],
+          "labels": {
+            "submitButtonLabel": "View Estimate",
+            "headingLabel": "Enter Construction Area",
+            "defaultActiveKey": 2
+          },
+          "submitButton": {
+            "link": "/home-cost-calculator",
+            "linkTarget": "",
+            "type": "link"
+          }
+        }
+      }
+    ],
+    "textData": {
+      "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+      "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+      "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+      "imageAlt": "imageAlt",
+      "heading": "Get a Cost Estimate in Minutes",
+      "description": "Realise your dream with budget. Make informed decisions with our reliable home cost calculator."
+    }
+  },
+  "verticalCarousel": {
+    "starImage": "./assets/images/star.png",
+    "starImageAlt": "star",
+    "sectionHeading": "Featured Products",
+    "data": [
+      {
+        "id": 0,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Ambuja Cement",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 1,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Sand",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 2,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Non-trade",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 3,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Mortar",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 4,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Ambuja Cement",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 5,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Sand",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 6,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Ambuja Cement",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 7,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Mortar",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 8,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Ambuja Cement",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 9,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Sand",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 10,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Mortar",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      },
+      {
+        "id": 11,
+        "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/490x550.png",
+        "imageSourceMobile": "https://placehold.jp/24/b8c7bd/b8c7bd/243x252.png",
+        "imageSourceTablet": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+        "imageAlt": "imageAlt",
+        "features": [
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "No Leakage"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Durability"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Anti-Efflorescence"
+          },
+          {
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "imageAlt": "imageAlt",
+            "heading": "Corrosion-Resistant"
+          }
+        ],
+        "linkText": "View Detail",
+        "linkTarget": "_self",
+        "link": "/url",
+        "gtmData": {
+          "event": "",
+          "category": "",
+          "sub_category": "",
+          "title": "",
+          "label": "",
+          "page_type": "homepage"
+        },
+        "heading": "Ambuja Cement",
+        "description": "Engineered with cutting-edge technology, Ambuja Cement is a specially formulated cement and a one-of-its-kind product with high quality water-repellent properties."
+      }
+    ]
+  },
+  "videoBanner": {
+    "fields": {
+      "heading": "Featured Video",
+      "autoplay": false,
+      "mediaType": "video",
+      "defaultVideoSource": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "defaultVideoSourceMobile": "",
+      "defaultVideoSourceTablet": "",
+      "defaultVideoSourceOgg": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "defaultVideoSourceMobileOgg": "",
+      "defaultVideoSourceTabletOgg": "",
+      "videoSource": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "videoSourceMobile": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "videoSourceTablet": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "videoSourceOgg": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "videoSourceMobileOgg": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "videoSourceTabletOgg": "https://www.adanione.com/corpsites-sitecore-storage/adani_international_school_1440x810_l.mp4",
+      "sectionID": "virtualtour",
+      "posterImage": "https://placehold.jp/24/b8c7bd/b8c7bd/100x55.png",
+      "seoDescription": "Take a tour of our sprawling campus situated in the idyllic setting of Shantigram township, Ahmedabad.",
+      "seoName": "",
+      "gtmData": {
+        "event": "",
+        "category": "",
+        "banner_category": null,
+        "title": null,
+        "section_title": null,
+        "label": "",
+        "index": null,
+        "page_type": "homepage",
+        "sub_category": "",
+        "click_text": null
+      },
+      "gtmVideoStart": {
+        "video_duration": "",
+        "video_action": "",
+        "event": "",
+        "category": "",
+        "banner_category": null,
+        "title": "",
+        "section_title": null,
+        "label": "",
+        "index": null,
+        "page_type": "homepage",
+        "sub_category": "",
+        "click_text": null
+      },
+      "gtmVideoComplete": {
+        "video_duration": "",
+        "video_action": "",
+        "event": "",
+        "category": "",
+        "banner_category": null,
+        "title": "",
+        "section_title": null,
+        "label": "",
+        "index": null,
+        "page_type": "homepage",
+        "sub_category": "",
+        "click_text": null
+      },
+      "gtmVideoProgress": {
+        "video_percent": "",
+        "video_duration": "",
+        "video_action": null,
+        "event": "",
+        "category": "",
+        "banner_category": null,
+        "title": "",
+        "section_title": null,
+        "label": "",
+        "index": null,
+        "page_type": "homepage",
+        "sub_category": "",
+        "click_text": null
+      }
+    }
+  },
+  "faqs": {
+    "link": "/url",
+    "linkText": "View All",
+    "sectionHeading": "Frequently Asked Questions",
+    "linkTarget": "",
+    "gtmData": {
+      "event": "",
+      "category": "",
+      "sub_category": "",
+      "title": "",
+      "label": "",
+      "page_type": "homepage"
+    },
+    "data": [
+      {
+        "heading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "categoryID": "pedagogy",
+        "categoryHeading": "Pedagogy",
+        "questionID": "pedagogy1"
+      },
+      {
+        "heading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "categoryID": "pedagogy",
+        "categoryHeading": "Pedagogy",
+        "questionID": "pedagogy2"
+      },
+      {
+        "heading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "categoryID": "pedagogy",
+        "categoryHeading": "Pedagogy",
+        "questionID": "pedagogy3"
+      },
+      {
+        "heading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "categoryID": "pedagogy",
+        "categoryHeading": "Pedagogy",
+        "questionID": "pedagogy4"
+      },
+      {
+        "heading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "categoryID": "pedagogy",
+        "categoryHeading": "Pedagogy",
+        "questionID": "pedagogy5"
+      }
+    ]
+  },
+  "footer": {
+    "footerData": {
+      "backgroundImage": {
+        "imageSource": "/assets/images/footer-bg.png",
+        "imageSourceMobile": "/assets/images/footer-bg.png",
+        "imageSourceTablet": "/assets/images/footer-bg.png",
+        "imageAlt": "imageAlt"
+      },
+      "bottomLinks": {
+        "links": [
+          {
+            "linkText": "Find a Dealer",
+            "description": "Find a Dealer at your nearby location for local assistance",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Cost Calculator",
+            "description": "Get a quick estimate budget for construction immediately",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Home Builder",
+            "description": "Get valuable suggestions and solution from experiences builder",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          },
+          {
+            "linkText": "Help & Support",
+            "description": "Do you have any suggestion? We'd love to hear from you!",
+            "link": "/url",
+            "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+            "linkTarget": "",
+            "gtmData": {
+              "event": "",
+              "category": "",
+              "sub_category": "",
+              "title": "",
+              "label": "",
+              "page_type": ""
+            }
+          }
+        ]
+      },
+      "mainNavigations": [
+        {
+          "heading": "Product and Solutions",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Ambuja Cement",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Plus",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Kawach",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Cool Walls",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Compocem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Ambuja Blockol",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Purasand for plaster ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Purasand for Concreate ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Powercem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Buildcem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Railcem",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Explore",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Find a Dealer",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Cost Calculator",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Home Builder",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "News & Media",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Sitemap",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Cement Business",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "About Us",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Commercial Help",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "ACC Help",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Adani Business",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Adani Realty",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Housing Finance",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Electricity",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Total Gas",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Airports",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Captial ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Adani Wilmar ",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Help & Support",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "FAQs",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Get In Touch",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ],
+      "buCopyright": "2023 Ambuja Help",
+      "socialLinks": [
+        {
+          "heading": "Footer Social Links",
+          "items": [
+            {
+              "link": "https://www.facebook.com/ambujahelp",
+              "linkText": "Facebook",
+              "itemicon": "i-facebook",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://twitter.com/ambujahelp",
+              "linkText": "Twitter",
+              "itemicon": "i-twitter",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.linkedin.com/company/ambujahelp",
+              "linkText": "Linkedin",
+              "itemicon": "i-linkedin",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.youtube.com/channel/UCy13h-75Nb2m6FtUDV0e4lg",
+              "linkText": "Youtube",
+              "itemicon": "i-youtube",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "https://www.instagram.com/ambujahelp",
+              "linkText": "Instagram",
+              "itemicon": "i-instagram",
+              "linkTarget": "_blank",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ],
+      "logo": {
+        "imageSource": "/assets/images/logo.png",
+        "imageSourceMobile": " ",
+        "imageSourceTablet": " ",
+        "imageAlt": "imageAlt",
+        "imageTitle": ""
+      },
+      "copyRight": [
+        {
+          "heading": "Footer copyRight",
+          "subHeading": "2023 Ambuja Help",
+          "items": [
+            {
+              "link": "/url",
+              "linkText": "Privacy",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Legal",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "link": "/url",
+              "linkText": "Terms",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "stickyNavData": {
+      "tabs": [
+        {
+          "label": "Home",
+          "activeId": "home",
+          "icon": "home",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "homepage",
+            "title": ""
+          }
+        },
+
+        {
+          "label": "Home Guide",
+          "activeId": "homeguide",
+          "icon": "homeBuilders",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "homepage",
+            "title": ""
+          }
+        },
+        {
+          "label": "Calculator",
+          "activeId": "calculator",
+          "icon": "calculator",
+          "isOffcanvas": false,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "homepage",
+            "title": ""
+          }
+        },
+        {
+          "label": "Products",
+          "activeId": "products",
+          "icon": "menu",
+          "isOffcanvas": true,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "homepage",
+            "title": ""
+          }
+        },
+        {
+          "label": "Enquiry",
+          "activeId": "enquiry",
+          "icon": "mobile",
+          "isOffcanvas": true,
+          "link": "/url",
+          "linkText": "",
+          "linkTarget": "",
+          "gtmData": {
+            "event": "",
+            "category": "",
+            "sub_category": "",
+            "label": "",
+            "page_type": "homepage",
+            "title": ""
+          }
+        }
+      ],
+      "navData": {
+        "heading": "Home Builder",
+        "description": "Get valuable suggestions and solution from experiences builder",
+        "headingIcon": "triangle",
+        "otherData": {
+          "heading": "Others",
+          "items": [
+            {
+              "iconName": "mobile",
+              "label": "About Us",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Get in Touch",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "FAQs",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Chat Support",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Terms & Conditions",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "privacy Policy",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            },
+            {
+              "iconName": "mobile",
+              "label": "Legal Disclaimer",
+              "link": "",
+              "linkTarget": "",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "label": "",
+                "page_type": "homepage",
+                "title": ""
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "productLabel": "Cement",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "cement",
+          "subProduct": [
+            {
+              "linkText": "Ambuja Cement",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Ambuja Kawach",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Ambuja Plus",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Ambuja Compocem",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            }
+          ]
+        },
+        {
+          "productLabel": "Sand",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "sand",
+          "subProduct": [
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            }
+          ]
+        },
+        {
+          "productLabel": "Non-trade",
+          "imageSource": "https://placehold.jp/24/b8c7bd/b8c7bd/100x100.png",
+          "imageAlt": "imageAlt",
+          "activeId": "non-trade",
+          "subProduct": [
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            },
+            {
+              "linkText": "Item",
+              "linkTarget": "_self",
+              "link": "/url",
+              "gtmData": {
+                "event": "",
+                "category": "",
+                "sub_category": "",
+                "title": "",
+                "label": "",
+                "page_type": "homepage"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cookies": {
+    "heading": "This website uses cookies",
+    "description": "Kindly accept cookies and continue using our website for a smoother experience.",
+    "decline": "Decline",
+    "acceptCookies": "Accept Cookies",
+    "gtmData": {
+      "event": "",
+      "category": "",
+      "sub_category": "",
+      "label": "",
+      "page_type": "homepage",
+      "title": ""
+    }
+  },
+  "aboutPage": {
+    "sectionID": "",
+    "heading": "About Ambuja Help",
+    "content": "<p>Ambuja Cemenet Ltd is the real estate arm of one of India&rsquo;s leading infrastructure and development entities &ndash; Adani Group. With resolute commitment to &lsquo;Nation Building&rsquo; and &lsquo;Growth with Goodness&rsquo;, we are developing real estate projects in the most promising destinations, integrating design aesthetics with cutting-edge construction technology. We have developed close to 22.5 Mn. Sq. Ft. and approximately 35.1 Mn. Sq. Ft. of real estate space is under development, including residential, commercial, and social club projects across Ahmedabad, Mumbai, Pune, and Gurugram.</p>",
+    "moreContent": "<p>Within a decade, Adani Realty has achieved exponential growth in the residential and commercial sectors. We have helped numerous families find their dream houses where they are happily residing.  We have also created state-of-the-art commercial spaces with futuristic setups for companies to work, feel empowered, and flourish. We have some of the most sought-after award-winning commercial and retail spaces which promise craftsmanship and superior design by Adani Realty.</p>\n<p>This also extends to our social clubs– The Belvedere Golf and Country Club, Ahmedabad and Belvedere Club, Gurugram, which offer their members an array of exclusive amenities. The Belvedere Golf and Country Club, Ahmedabad is known for its Golf Club, fine dining restaurants and luxurious rooms for a perfect staycation.</p>\n<p>Our endeavour has always been to build projects that are synonymous with global real estate standards. Adani Realty continues to develop projects that never compromise on quality and craftsmanship; we contribute dedicatedly to India’s expeditious real estate sector with our premium services.   </p>",
+    "readMore": "Learn More",
+    "readLess": "Learn Less"
+  }
+}

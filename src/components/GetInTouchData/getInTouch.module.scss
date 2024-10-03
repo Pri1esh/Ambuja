@@ -1,0 +1,118 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(margin-bottom, 52);
+  display: flex;
+  flex-direction: row-reverse;
+
+  &:global(.row) {
+    @include rem(margin-top, 52);
+  }
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 72);
+
+    &:global(.row) {
+      @include rem(margin-top, 100);
+    }
+  }
+}
+
+.formWrapper {
+  @include padding(40, 40, 0, 40);
+  border: 0.0625rem solid $platinum;
+  border-radius: 0.5rem;
+  height: 100%;
+
+  h3 {
+    @include font-size(26);
+    @include rem(margin-bottom, 20);
+    color: $ateneoblue;
+  }
+
+  p {
+    @include rem(margin-bottom, 40);
+  }
+}
+
+.topHeading {
+  @include font-size(18);
+  @include rem(margin-bottom, 4);
+  font-family: $font-bold;
+  color: $raisinblack;
+
+  @include media($md, min) {
+    @include font-size(26);
+    @include rem(margin-bottom, 10);
+  }
+}
+
+.locationHeading {
+  @include rem(margin-bottom, 20);
+  @include font-size(18);
+  font-family: $font-bold;
+  color: $ateneoblue;
+
+  @include media($md, max) {
+    @include font-size(26);
+  }
+}
+
+.sectionHeading {
+  @include rem(margin-bottom, 30);
+  @include font-size(26);
+  color: $ateneoblue;
+  font-family: $font-bold;
+
+  @include media($md, min) {
+    @include font-size(60);
+    @include rem(margin-bottom, 40);
+  }
+}
+
+.addressWrapper {
+  .subHeading {
+    margin-top: -1rem;
+  }
+
+  .area {
+    margin-bottom: 0;
+  }
+
+  .heading {
+    @include rem(margin-bottom, 16);
+  }
+
+  .mail {
+    color: $granite;
+    font-family: $font-regular;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    @include font-size(16);
+    @include rem(margin-bottom, 16);
+    font-family: $font-regular;
+  }
+
+  .icon {
+    display: flex;
+  }
+
+  i {
+    @include rem(margin-right, 10);
+    display: inline;
+  }
+}
+
+.form {
+  @include rem(min-height, 500);
+  position: relative;
+}

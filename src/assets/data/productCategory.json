@@ -1,0 +1,158 @@
+{
+  "productTypeData": [
+    {
+      "id": "1",
+      "label": "ACC Cement Range",
+      "products": [
+        {
+          "id": "1",
+          "label": "ACC F2R Cement",
+          "url": "/cement-range/acc-f2r-cement"
+        },
+        {
+          "id": "2",
+          "label": "ACC Gold Water Shield Cement at Best Price | ACC Cement",
+          "url": "/cement-range/gold-water-cement"
+        },
+        {
+          "id": "3",
+          "label": "ACC Suraksha Power Cement",
+          "url": "/cement-range/suraksha-power-cement"
+        },
+        {
+          "id": "4",
+          "label": "ACC HPC Cement",
+          "url": "/cement-range/acc-hpc-cement"
+        },
+        {
+          "id": "5",
+          "label": "ACC Suraksha Power Plus Cement",
+          "url": "/cement-range/power-plus-cement"
+        },
+        {
+          "id": "6",
+          "label": "ACC Concrete Plus Cement",
+          "url": "/cement-range/concrete-plus-cement"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "label": "Ready Mix Concrete",
+      "products": [
+        {
+          "id": "1",
+          "label": "ACC ECOMaxX",
+          "url": "/ready-mix-concrete/acc-ecomaxx"
+        },
+        {
+          "id": "2",
+          "label": "ACC Flowcrete",
+          "url": "/ready-mix-concrete/acc-flowcrete"
+        },
+        {
+          "id": "3",
+          "label": "ACC Imprintcrete",
+          "url": "/ready-mix-concrete/acc-imprintcrete"
+        },
+        {
+          "id": "4",
+          "label": "ACC Fibercrete",
+          "url": "/ready-mix-concrete/acc-fibercrete"
+        },
+        {
+          "id": "5",
+          "label": "ACC Jetsetcrete",
+          "url": "/ready-mix-concrete/acc-jetsetcrete"
+        },
+        {
+          "id": "6",
+          "label": "ACC Ultivacrete",
+          "url": "/ready-mix-concrete/acc-ultivacrete"
+        },
+        {
+          "id": "7",
+          "label": "ACC Feathercrete",
+          "url": "/ready-mix-concrete/acc-ecomaxx"
+        },
+        {
+          "id": "8",
+          "label": "ACC Coolcrete",
+          "url": "/ready-mix-concrete/acc-feathercrete"
+        },
+        {
+          "id": "9",
+          "label": "ACC Column 4 & 6",
+          "url": "/ready-mix-concrete/acc-column-4-6"
+        },
+        {
+          "id": "10",
+          "label": "ACC Aeromax",
+          "url": "/ready-mix-concrete/acc-aeromax"
+        },
+        {
+          "id": "11",
+          "label": "ACC Colorcrete",
+          "url": "/ready-mix-concrete/acc-colorcrete"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "label": "Solutions & Products",
+      "products": [
+        {
+          "id": "1",
+          "label": "ACC LeakBlock Cement Mix LB-202",
+          "url": "/solutions-and-products/lb-202"
+        },
+        {
+          "id": "2",
+          "label": "ACC LeakBlock Cement Mix LB-303",
+          "url": "/solutions-and-products/lb-303"
+        },
+        {
+          "id": "3",
+          "label": "ACC Xtra Strong Tile Adhesive - XT 111",
+          "url": "/solutions-and-products/xt-111"
+        },
+        {
+          "id": "4",
+          "label": "ACC Xtra Strong Tile Adhesive - XT 222",
+          "url": "/solutions-and-products/xt-222"
+        },
+        {
+          "id": "5",
+          "label": "ACC Xtra Strong Tile Adhesive - XT 333",
+          "url": "/solutions-and-products/xt-333"
+        },
+        {
+          "id": "6",
+          "label": "ACC Xtra Premium White Adhesive - XT 444",
+          "url": "/solutions-and-products/xt-444"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "label": "Green Building Centre",
+      "products": [
+        {
+          "id": "1",
+          "label": "ACC Green Bricks",
+          "url": "/green-building-center/acc-green"
+        },
+        {
+          "id": "2",
+          "label": "ACC+ Green AAC Blocks (for Retail)",
+          "url": "/green-building-center/acc-plus-green"
+        },
+        {
+          "id": "3",
+          "label": "ACC Green Concrete Hollow & Solid Blocks",
+          "url": "/green-building-center/acc-green-hollow"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'slick-carousel/slick/slick-theme.css';
+@import 'slick-carousel/slick/slick.css';
+@import './partials/variable';
+@import './partials/mixins';
+@import './partials/fonts';
+@import './partials/icons';
+
+html,
+body {
+  color: $granite;
+  padding: 0;
+  margin: 0;
+  font-family: $font-regular;
+}
+
+a {
+  color: $blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $blue;
+  font-family: $font-bold;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.menuOpen {
+  position: relative;
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+.container {
+  @include media($md, max) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    max-width: 100%;
+  }
+
+  @include media($sm, max) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.bgLoader {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: Shimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 800px 104px;
+  min-height: 2rem;
+}
+
+@keyframes Shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.offcanvas {
+  &.offcanvas-bottom,
+  &.offcanvas-start {
+    height: auto;
+    border: none;
+  }
+
+  .btn-close {
+    opacity: 1;
+  }
+}
+
+@include media($sm, max) {
+  .menu-show {
+    .offcanvas-start {
+      @include rem(width, 325);
+    }
+
+    .offcanvas-bottom {
+      height: auto;
+      max-height: 98%;
+    }
+  }
+}
+
+.ripple_root {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  .ripple_waves {
+    border-radius: 50%;
+    background-color: rgba($black, 10%);
+    transform: scale(0);
+    animation: ripple_waves 0.5s linear;
+
+    &.primary_waves {
+      background-color: $lightgray;
+    }
+  }
+
+  @keyframes ripple_waves {
+    to {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+}
+
+.pageLoader {
+  @include center(both);
+  opacity: 1;
+  background-color: $secondary;
+}
+
+div.grecaptcha-badge {
+  z-index: 1046;
+}
+
+
+@media (min-width:$lg){
+  .hbg-Container{
+    max-height: 600px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    .hbg-Overview{
+      margin-top: 0;
+    }
+  }
+}

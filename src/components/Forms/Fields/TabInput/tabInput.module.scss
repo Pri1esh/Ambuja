@@ -1,0 +1,14 @@
+@import '../../../../../styles/partials/variable';
+@import '../../../../../styles/partials/mixins';
+
+.wrapper {
+  flex: 0 0 100%;
+
+  @include media($md, min) {
+    flex: 0 0 45%;
+  }
+
+  &.inPageWrapper {
+    flex: 0 0 100%;
+  }
+}

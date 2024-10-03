@@ -1,0 +1,121 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(top, 80);
+  position: fixed;
+  left: 0;
+  z-index: 1056;
+  width: 100%;
+
+  :global(.toast) {
+    @include center(horizontal);
+    border-radius: 0.5rem;
+    border: 1px solid $raisinblack;
+    background: $raisinblack;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.08);
+    width: auto;
+  }
+
+  &.success {
+    :global(.toast) {
+      background-color: $junglegreen;
+      border: 1px solid $junglegreen;
+    }
+  }
+
+  .toastWrapper {
+    @include padding(12, 20, 12, 20);
+    text-align: center;
+
+    :global(.toast-header) {
+      border: 0;
+      position: relative;
+      padding: 0;
+      background: none;
+      height: 0;
+      display: none;
+
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0;
+        @include rem(width, 13);
+        @include rem(height, 13);
+        padding: 0;
+        opacity: 1;
+        outline: 0;
+        box-shadow: 0 0 0 0 transparent;
+      }
+    }
+
+    :global(.toast-body) {
+      padding: 0;
+    }
+  }
+
+  .toastHeading {
+    h2 {
+      font-size: 1rem;
+      color: $blue;
+      margin-bottom: 0.5rem;
+      font-family: $font-regular;
+
+      i {
+        position: absolute;
+        background: $crayola;
+        color: $secondary;
+        @include rem(height, 28);
+        @include rem(width, 28);
+        left: -2.5rem;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .toastbody {
+    p {
+      font-size: 0.875rem;
+      color: $secondary;
+      margin: 0;
+    }
+  }
+
+  &.progress {
+    :global(.toast) {
+      background: $seashell;
+      border: 1px solid $verypaleorange;
+    }
+
+    .toastHeading {
+      i {
+        background: $deepsafron;
+      }
+    }
+  }
+
+  &.error {
+    :global(.toast) {
+      background: $lavenderblush;
+      border: 1px solid $palepink;
+    }
+
+    .toastHeading {
+      i {
+        background: $venetianred;
+      }
+    }
+
+    .toastbody {
+      p {
+        color: $primary;
+      }
+    }
+  }
+}

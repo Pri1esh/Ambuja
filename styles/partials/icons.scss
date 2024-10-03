@@ -1,0 +1,354 @@
+@font-face {
+  font-family: 'iconfont';
+  font-display: fallback;
+  src:
+    url('/assets/fonts/iconfont.ttf?ebb112a320c2fb7d177679ef3c76736d') format('truetype'),
+    url('/assets/fonts/iconfont.woff?ebb112a320c2fb7d177679ef3c76736d') format('woff'),
+    url('/assets/fonts/iconfont.woff2?ebb112a320c2fb7d177679ef3c76736d') format('woff2'),
+    url('/assets/fonts/iconfont.svg?ebb112a320c2fb7d177679ef3c76736d#iconfont') format('svg'),
+    url('/assets/fonts/iconfont.eot?ebb112a320c2fb7d177679ef3c76736d#iefix') format('embedded-opentype');
+}
+
+i[class^='icon-']:before,
+i[class*=' icon-']:before {
+  font-family: iconfont, sans-serif !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-about:before {
+  content: '\f101';
+}
+
+.icon-add:before {
+  content: '\f102';
+}
+
+.icon-airport:before {
+  content: '\f103';
+}
+
+.icon-antiefforescence:before {
+  content: '\f104';
+}
+
+.icon-arrowdown:before {
+  content: '\f105';
+}
+
+.icon-arrowleft:before {
+  content: '\f106';
+}
+
+.icon-arrowright:before {
+  content: '\f107';
+}
+
+.icon-attachment:before {
+  content: '\f108';
+}
+
+.icon-bottom:before {
+  content: '\f109';
+}
+
+.icon-bricks:before {
+  content: '\f10a';
+}
+
+.icon-businesses:before {
+  content: '\f10b';
+}
+
+.icon-caCft:before {
+  content: '\f10c';
+}
+
+.icon-calculator:before {
+  content: '\f10d';
+}
+
+.icon-calculatorwidget:before {
+  content: '\f10e';
+}
+
+.icon-capacity:before {
+  content: '\f10f';
+}
+
+.icon-capital:before {
+  content: '\f110';
+}
+
+.icon-cement:before {
+  content: '\f111';
+}
+
+.icon-chat:before {
+  content: '\f112';
+}
+
+.icon-checklist:before {
+  content: '\f113';
+}
+
+.icon-clock:before {
+  content: '\f114';
+}
+
+.icon-close:before {
+  content: '\f115';
+}
+
+.icon-copyLink:before {
+  content: '\f116';
+}
+
+.icon-corrosionresistant:before {
+  content: '\f117';
+}
+
+.icon-costcalculator:before {
+  content: '\f118';
+}
+
+.icon-cross:before {
+  content: '\f119';
+}
+
+.icon-dealer:before {
+  content: '\f11a';
+}
+
+.icon-discoverproducts:before {
+  content: '\f11b';
+}
+
+.icon-down:before {
+  content: '\f11c';
+}
+
+.icon-download:before {
+  content: '\f11d';
+}
+
+.icon-durability:before {
+  content: '\f11e';
+}
+
+.icon-electricity:before {
+  content: '\f11f';
+}
+
+.icon-email:before {
+  content: '\f120';
+}
+
+.icon-error:before {
+  content: '\f121';
+}
+
+.icon-facebook:before {
+  content: '\f122';
+}
+
+.icon-faqs:before {
+  content: '\f123';
+}
+
+.icon-finddealer:before {
+  content: '\f124';
+}
+
+.icon-finishingitem:before {
+  content: '\f125';
+}
+
+.icon-gas:before {
+  content: '\f126';
+}
+
+.icon-grindingunit:before {
+  content: '\f127';
+}
+
+.icon-ground:before {
+  content: '\f128';
+}
+
+.icon-ground1:before {
+  content: '\f129';
+}
+
+.icon-ground2:before {
+  content: '\f12a';
+}
+
+.icon-ground3:before {
+  content: '\f12b';
+}
+
+.icon-hamburger:before {
+  content: '\f12c';
+}
+
+.icon-home:before {
+  content: '\f12d';
+}
+
+.icon-homebuilder:before {
+  content: '\f12e';
+}
+
+.icon-homeBuilders:before {
+  content: '\f12f';
+}
+
+.icon-housing:before {
+  content: '\f130';
+}
+
+.icon-info:before {
+  content: '\f131';
+}
+
+.icon-instagram:before {
+  content: '\f132';
+}
+
+.icon-labourcharges:before {
+  content: '\f133';
+}
+
+.icon-left:before {
+  content: '\f134';
+}
+
+.icon-legal:before {
+  content: '\f135';
+}
+
+.icon-linkedin:before {
+  content: '\f136';
+}
+
+.icon-location:before {
+  content: '\f137';
+}
+
+.icon-mail:before {
+  content: '\f138';
+}
+
+.icon-manufacturingunit:before {
+  content: '\f139';
+}
+
+.icon-menu:before {
+  content: '\f13a';
+}
+
+.icon-mission:before {
+  content: '\f13b';
+}
+
+.icon-mobile:before {
+  content: '\f13c';
+}
+
+.icon-noLeakage:before {
+  content: '\f13d';
+}
+
+.icon-privacy:before {
+  content: '\f13e';
+}
+
+.icon-profile:before {
+  content: '\f13f';
+}
+
+.icon-realty:before {
+  content: '\f140';
+}
+
+.icon-right:before {
+  content: '\f141';
+}
+
+.icon-sand:before {
+  content: '\f142';
+}
+
+.icon-search:before {
+  content: '\f143';
+}
+
+.icon-share:before {
+  content: '\f144';
+}
+
+.icon-star:before {
+  content: '\f145';
+}
+
+.icon-starwidget:before {
+  content: '\f146';
+}
+
+.icon-steel:before {
+  content: '\f147';
+}
+
+.icon-terminals:before {
+  content: '\f148';
+}
+
+.icon-terms:before {
+  content: '\f149';
+}
+
+.icon-testimonial:before {
+  content: '\f14a';
+}
+
+.icon-tick:before {
+  content: '\f14b';
+}
+
+.icon-tiles:before {
+  content: '\f14c';
+}
+
+.icon-triangle:before {
+  content: '\f14d';
+}
+
+.icon-twitter:before {
+  content: '\f14e';
+}
+
+.icon-ultimatehome:before {
+  content: '\f14f';
+}
+
+.icon-up:before {
+  content: '\f150';
+}
+
+.icon-whatsapp:before {
+  content: '\f151';
+}
+
+.icon-wilmar:before {
+  content: '\f152';
+}
+
+.icon-youtube:before {
+  content: '\f153';
+}

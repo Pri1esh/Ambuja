@@ -1,0 +1,150 @@
+@import 'styles/partials/variable';
+@import 'styles/partials/mixins';
+
+.wrapper {
+  @include rem(padding-bottom, 32);
+
+  @include media($sm, min) {
+    @include rem(padding-bottom, 100);
+  }
+
+  h2 {
+    @include font-size(26);
+    @include rem(margin-bottom, 0);
+    font-family: $font-bold;
+    color: $ateneoblue;
+
+    @include media-min-max($sm, $md) {
+      @include rem(margin-bottom, 20);
+    }
+
+    @include media($md, min) {
+      @include font-size(60);
+      @include rem(margin-bottom, 40);
+    }
+  }
+
+  .cardList {
+    @include padding(50, 20, 54, 20);
+
+    @include media($sm, max) {
+      border: 0.0625rem solid $platinum;
+    }
+
+    img {
+      @include rem(width, 50);
+      @include rem(height, 50);
+      @include rem(margin-bottom, 64);
+
+      @include media($sm, max) {
+        @include rem(margin-bottom, 34);
+      }
+    }
+
+    h3 {
+      @include font-size(22);
+      @include rem(margin-bottom, 20);
+      font-family: $font-bold;
+      color: $indigo;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .hoverEffect {
+      display: none;
+    }
+
+    @include media($md, min) {
+      &:hover {
+        .hoverEffect {
+          display: block;
+        }
+
+        .staticImage {
+          display: none;
+        }
+      }
+    }
+  }
+
+  :global(.slick-list) {
+    @include margin(0, -10, 0, -10);
+
+    :global(.slick-track) {
+      display: flex;
+      -webkit-transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      margin-left: 0;
+
+      :global(.slick-slide) {
+        margin: 0 0.625rem;
+        border: 0.0625rem solid $platinum;
+        border-radius: 0.5rem;
+        height: auto;
+
+        &:hover {
+          border-color: $chineeseyellow;
+        }
+
+        > div {
+          display: block;
+        }
+
+        .item {
+          position: relative;
+          transition: ease all 0.6s;
+
+          img {
+            object-fit: cover;
+            object-position: top left;
+            transition: ease all 0.5s;
+            transition-delay: 0.7s;
+          }
+        }
+      }
+    }
+  }
+
+  :global(.slick-arrow) {
+    top: -3.75rem;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+    border: 00.063rem solid $platinum;
+
+    &:global(.slick-prev) {
+      right: calc(((100% - 45rem) / 2) + 4.375rem);
+      left: unset;
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 4.375rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 4.375rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 4.375rem);
+      }
+    }
+
+    &:global(.slick-next) {
+      right: calc(((100% - 45rem) / 2) + 0.938rem);
+
+      @include media($md, min) {
+        right: calc(((100% - 60rem) / 2) + 0.938rem);
+      }
+
+      @include media($lgb, min) {
+        right: calc(((100% - 71.25rem) / 2) + 0.938rem);
+      }
+
+      @include media($xxxl, min) {
+        right: calc(((100% - 82.5rem) / 2) + 0.938rem);
+      }
+    }
+  }
+}

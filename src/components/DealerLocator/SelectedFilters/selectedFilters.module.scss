@@ -1,0 +1,55 @@
+@import '../../../../styles/partials/variable';
+@import '../../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(border-radius, 8);
+  @include rem(margin-bottom, 20);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 0.063rem solid $platinum;
+
+  .filterWrapper {
+    .areaWrapper {
+      @include rem(margin-top, 10);
+      line-height: 1;
+    }
+
+    .filterData {
+      @include rem(font-size, 14);
+      font-family: $font-regular;
+      color: $granite;
+      white-space: nowrap;
+    }
+
+    .stateWrapper {
+      line-height: 1;
+
+      .filterData {
+        &:last-child {
+          &::before {
+            @include rem(border-radius, 5);
+            @include rem(margin-left, 6);
+            @include rem(margin-right, 6);
+            @include rem(margin-bottom, 2);
+            @include rem(height, 5);
+            @include rem(width, 5);
+            background-color: $lightsilver;
+            content: '';
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .editButton {
+    @include rem(font-size, 16);
+    text-decoration: underline;
+    color: $raisinblack;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+}

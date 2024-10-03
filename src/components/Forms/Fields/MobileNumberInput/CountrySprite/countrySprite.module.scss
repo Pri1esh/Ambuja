@@ -1,0 +1,982 @@
+@import 'styles/partials/variable.scss';
+@import 'styles/partials/mixins.scss';
+
+$countries: kr af al dz as ad ao ai so ag ar am aw au at az bs bh bd bb by be bz bj bm bt bo ba bw no br io bg bn bg kh
+  bi bf cm ca cv bq ky cf td cl cn cx cc co km cd cg ck cr cl ie td cu cw cz ck dk dj dm do ec eg sv gq er ee sz fk fo
+  fi fj fr gf pf tf td ga gm ge de gn gi gr gl gd fr gu gt gg gn gw gy ht hm hk hu is id ir iq ci im il it jm jp je jo
+  kz ke ki kw kg ly la li lv lt lb lu ls mo lr mk mg mw mv ml my ml mt mh fr mr mu mx fm md mc mn me ms ma mz mm na nr
+  np nl nc nz ni ne ng nu nf nk np no om pk pw ps pa pg py pe ph pn pl pt pr qa ro ru rw ws sm st sa sn rs sc sl sg sx
+  si sb so za gs ss es lk vi sh kn lc flag-saint-vincent sd sr no se sz sy tw tj tz th tl tg tk to tt tn tr rm tc tv us
+  vi ug gb ua ae uy uz vu va ve vn eh ve zm zw hn vg in;
+
+.countrySprite {
+  width: 24px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: 1px -46px;
+  background-size: 100%;
+  background-image: url('../../../../../../public/assets/images/countryFlagSprite.png');
+
+  &.smFlag {
+    transform: scale(0.7);
+    position: absolute;
+  }
+}
+
+@mixin spriteFlag($contryflag) {
+  @if $contryflag== 'kr' {
+    background-position: 1px 0;
+  }
+
+  @if $contryflag== 'af' {
+    background-position: 1px -18px;
+  }
+
+  @if $contryflag== 'al' {
+    background-position: 1px -37px;
+  }
+
+  @if $contryflag== 'dz' {
+    background-position: 1px -55px;
+  }
+
+  @if $contryflag== 'as' {
+    background-position: 1px -92px;
+  }
+
+  @if $contryflag== 'ad' {
+    background-position: 1px -111px;
+  }
+
+  @if $contryflag== 'ao' {
+    background-position: 1px -129px;
+  }
+
+  @if $contryflag== 'ai' {
+    background-position: 1px -129px;
+  }
+
+  @if $contryflag== 'so' {
+    background-position: 1px -185px;
+  }
+
+  @if $contryflag== 'ag' {
+    background-position: 1px -166px;
+  }
+
+  @if $contryflag== 'ar' {
+    background-position: 1px -185px;
+  }
+
+  @if $contryflag== 'am' {
+    background-position: 1px -203px;
+  }
+
+  @if $contryflag== 'aw' {
+    background-position: 1px -221px;
+  }
+
+  @if $contryflag== 'au' {
+    background-position: 1px -240px;
+  }
+
+  @if $contryflag== 'at' {
+    background-position: 1px -259px;
+  }
+
+  @if $contryflag== 'az' {
+    background-position: 1px -277px;
+  }
+
+  @if $contryflag== 'bs' {
+    background-position: 1px -295px;
+  }
+
+  @if $contryflag== 'bh' {
+    background-position: 1px -314px;
+  }
+
+  @if $contryflag== 'bd' {
+    background-position: 1px -333px;
+  }
+
+  @if $contryflag== 'bb' {
+    background-position: 1px -351px;
+  }
+
+  @if $contryflag== 'by' {
+    background-position: 1px -369px;
+  }
+
+  @if $contryflag== 'be' {
+    background-position: 1px -388px;
+  }
+
+  @if $contryflag== 'bz' {
+    background-position: 1px -407px;
+  }
+
+  @if $contryflag== 'bj' {
+    background-position: 1px -425px;
+  }
+
+  @if $contryflag== 'bm' {
+    background-position: 1px -443px;
+  }
+
+  @if $contryflag== 'bt' {
+    background-position: 1px -462px;
+  }
+
+  @if $contryflag== 'bo' {
+    background-position: 1px -480px;
+  }
+
+  @if $contryflag== 'ba' {
+    background-position: 1px -499px;
+  }
+
+  @if $contryflag== 'bw' {
+    background-position: 1px -517px;
+  }
+
+  @if $contryflag== 'no' {
+    background-position: 1px -536px;
+  }
+
+  @if $contryflag== 'br' {
+    background-position: 1px -555px;
+  }
+
+  @if $contryflag== 'io' {
+    background-position: 1px -574px;
+  }
+
+  @if $contryflag== 'bg' {
+    background-position: 1px -610px;
+  }
+
+  @if $contryflag== 'bn' {
+    background-position: 1px -591px;
+  }
+
+  @if $contryflag== 'bg' {
+    background-position: 1px -610px;
+  }
+
+  @if $contryflag== 'bi' {
+    background-position: 1px -647px;
+  }
+
+  @if $contryflag== 'bf' {
+    background-position: 1px -665px;
+  }
+
+  @if $contryflag== 'cm' {
+    background-position: 1px -684px;
+  }
+
+  @if $contryflag== 'ca' {
+    background-position: 1px -702px;
+  }
+
+  @if $contryflag== 'cv' {
+    background-position: 1px -722px;
+  }
+
+  @if $contryflag== 'bq' {
+    background-position: 1px -739px;
+  }
+
+  @if $contryflag== 'ky' {
+    background-position: 1px -757px;
+  }
+
+  @if $contryflag== 'cf' {
+    background-position: 1px -776px;
+  }
+
+  @if $contryflag== 'kh' {
+    background-position: -1px -628px;
+  }
+
+  @if $contryflag== 'td' {
+    background-position: -1px -794px;
+  }
+
+  @if $contryflag== 'cl' {
+    background-position: -1px -813px;
+  }
+
+  @if $contryflag== 'cn' {
+    background-position: -1px -831px;
+  }
+
+  @if $contryflag== 'cx' {
+    background-position: -1px -850px;
+  }
+
+  @if $contryflag== 'cc' {
+    background-position: -1px -868px;
+  }
+
+  @if $contryflag== 'co' {
+    background-position: -1px -887px;
+  }
+
+  @if $contryflag== 'km' {
+    background-position: -1px -905px;
+  }
+
+  @if $contryflag== 'cd' {
+    background-position: -1px -924px;
+  }
+
+  @if $contryflag== 'cg' {
+    background-position: 1px -1155px;
+  }
+
+  @if $contryflag== 'ck' {
+    background-position: -1px -960px;
+  }
+
+  @if $contryflag== 'cr' {
+    background-position: -1px -979px;
+  }
+
+  @if $contryflag== 'ie' {
+    background-position: -1px -997px;
+  }
+
+  @if $contryflag== 'cu' {
+    background-position: -1px -1035px;
+  }
+
+  @if $contryflag== 'cw' {
+    background-position: 1px -1316px;
+  }
+
+  @if $contryflag== 'cz' {
+    background-position: 1px -1362px;
+  }
+
+  @if $contryflag== 'dk' {
+    background-position: -1px -1109px;
+  }
+
+  @if $contryflag== 'dj' {
+    background-position: -1px -1126px;
+  }
+
+  @if $contryflag== 'dm' {
+    background-position: -1px -1145px;
+  }
+
+  @if $contryflag== 'do' {
+    background-position: -1px -1165px;
+  }
+
+  @if $contryflag== 'ec' {
+    background-position: -1px -1183px;
+  }
+
+  @if $contryflag== 'eg' {
+    background-position: -1px -1201px;
+  }
+
+  @if $contryflag== 'sv' {
+    background-position: -1px -1219px;
+  }
+
+  @if $contryflag== 'gq' {
+    background-position: -1px -1237px;
+  }
+
+  @if $contryflag== 'er' {
+    background-position: -1px -1256px;
+  }
+
+  @if $contryflag== 'ee' {
+    background-position: -1px -1274px;
+  }
+
+  @if $contryflag== 'sz' {
+    background-position: -1px -1293px;
+  }
+
+  @if $contryflag== 'fk' {
+    background-position: -1px -1311px;
+  }
+
+  @if $contryflag== 'fo' {
+    background-position: 1px -1639px;
+  }
+
+  @if $contryflag== 'fj' {
+    background-position: -1px -1349px;
+  }
+
+  @if $contryflag== 'fi' {
+    background-position: -1px -1330px;
+  }
+
+  @if $contryflag== 'fr' {
+    background-position: -1px -1385px;
+  }
+
+  @if $contryflag== 'gf' {
+    background-position: -1px -1404px;
+  }
+
+  @if $contryflag== 'pf' {
+    background-position: -1px -1422px;
+  }
+
+  @if $contryflag== 'tf' {
+    background-position: -1px -1440px;
+  }
+
+  @if $contryflag== 'ga' {
+    background-position: 1px -1823px;
+  }
+
+  @if $contryflag== 'gm' {
+    background-position: 1px -1847px;
+  }
+
+  @if $contryflag== 'ge' {
+    background-position: -1px -1459px;
+  }
+
+  @if $contryflag== 'de' {
+    background-position: -1px -1515px;
+  }
+
+  @if $contryflag== 'gn' {
+    background-position: -1px -1521px;
+  }
+
+  @if $contryflag== 'gi' {
+    background-position: -1px -1552px;
+  }
+
+  @if $contryflag== 'gr' {
+    background-position: -1px -1570px;
+  }
+
+  @if $contryflag== 'gl' {
+    background-position: -1px -1589px;
+  }
+
+  @if $contryflag== 'gd' {
+    background-position: -1px -1607px;
+  }
+
+  @if $contryflag== 'gu' {
+    background-position: -1px -1644px;
+  }
+
+  @if $contryflag== 'gt' {
+    background-position: -1px -1662px;
+  }
+
+  @if $contryflag== 'gg' {
+    background-position: -1px -1681px;
+  }
+
+  @if $contryflag== 'gn' {
+    background-position: -1px -1699px;
+  }
+
+  @if $contryflag== 'gw' {
+    background-position: -1px -1718px;
+  }
+
+  @if $contryflag== 'gy' {
+    background-position: -1px -1736px;
+  }
+
+  @if $contryflag== 'ht' {
+    background-position: -1px -1754px;
+  }
+
+  @if $contryflag== 'hm' {
+    background-position: 1px -2216px;
+  }
+
+  @if $contryflag== 'hk' {
+    background-position: -1px -1791px;
+  }
+
+  @if $contryflag== 'hu' {
+    background-position: -1px -1810px;
+  }
+
+  @if $contryflag== 'is' {
+    background-position: -1px -1829px;
+  }
+
+  @if $contryflag== 'id' {
+    background-position: -1px -1847px;
+  }
+
+  @if $contryflag== 'ir' {
+    background-position: -1px -1866px;
+  }
+
+  @if $contryflag== 'iq' {
+    background-position: -1px -1884px;
+  }
+
+  @if $contryflag== 'ci' {
+    background-position: -1px -1902px;
+  }
+
+  @if $contryflag== 'im' {
+    background-position: -1px -1921px;
+  }
+
+  @if $contryflag== 'il' {
+    background-position: -1px -1939px;
+  }
+
+  @if $contryflag== 'it' {
+    background-position: -1px -1956px;
+  }
+
+  @if $contryflag== 'jm' {
+    background-position: -1px -1977px;
+  }
+
+  @if $contryflag== 'jp' {
+    background-position: -1px -1995px;
+  }
+
+  @if $contryflag== 'je' {
+    background-position: -1px -2012px;
+  }
+
+  @if $contryflag== 'jo' {
+    background-position: -1px -2032px;
+  }
+
+  @if $contryflag== 'kz' {
+    background-position: -1px -2050px;
+  }
+
+  @if $contryflag== 'ke' {
+    background-position: -1px -2069px;
+  }
+
+  @if $contryflag== 'ki' {
+    background-position: -1px -2087px;
+  }
+
+  @if $contryflag== 'kw' {
+    background-position: -1px -2106px;
+  }
+
+  @if $contryflag== 'kg' {
+    background-position: -1px -2124px;
+  }
+
+  @if $contryflag== 'ly' {
+    background-position: -1px -2143px;
+  }
+
+  @if $contryflag== 'la' {
+    background-position: -1px -2161px;
+  }
+
+  @if $contryflag== 'li' {
+    background-position: -1px -2180px;
+  }
+
+  @if $contryflag== 'lv' {
+    background-position: -1px -2198px;
+  }
+
+  @if $contryflag== 'lt' {
+    background-position: -1px -2217px;
+  }
+
+  @if $contryflag== 'lb' {
+    background-position: -1px -2235px;
+  }
+
+  @if $contryflag== 'lu' {
+    background-position: -1px -2253px;
+  }
+
+  @if $contryflag== 'ls' {
+    background-position: -1px -2272px;
+  }
+
+  @if $contryflag== 'mo' {
+    background-position: -1px -2290px;
+  }
+
+  @if $contryflag== 'lr' {
+    background-position: -1px -2309px;
+  }
+
+  @if $contryflag== 'mk' {
+    background-position: -1px -2327px;
+  }
+
+  @if $contryflag== 'mg' {
+    background-position: -1px -2346px;
+  }
+
+  @if $contryflag== 'mw' {
+    background-position: -1px -2364px;
+  }
+
+  @if $contryflag== 'mv' {
+    background-position: -1px -2364px;
+  }
+
+  @if $contryflag== 'ml' {
+    background-position: 0 -2955px;
+  }
+
+  @if $contryflag== 'my' {
+    background-position: -1px -2382px;
+  }
+
+  @if $contryflag== 'ml' {
+    background-position: -1px -2419px;
+  }
+
+  @if $contryflag== 'mt' {
+    background-position: -1px -2438px;
+  }
+
+  @if $contryflag== 'mh' {
+    background-position: -1px -2457px;
+  }
+
+  @if $contryflag== 'mr' {
+    background-position: -1px -2494px;
+  }
+
+  @if $contryflag== 'mu' {
+    background-position: -1px -2512px;
+  }
+
+  @if $contryflag== 'mx' {
+    background-position: -1px -2548px;
+  }
+
+  @if $contryflag== 'fm' {
+    background-position: -1px -2568px;
+  }
+
+  @if $contryflag== 'md' {
+    background-position: -1px -2585px;
+  }
+
+  @if $contryflag== 'mc' {
+    background-position: -1px -2604px;
+  }
+
+  @if $contryflag== 'mn' {
+    background-position: -1px -2623px;
+  }
+
+  @if $contryflag== 'me' {
+    background-position: -1px -2641px;
+  }
+
+  @if $contryflag== 'ms' {
+    background-position: -1px -2659px;
+  }
+
+  @if $contryflag== 'ma' {
+    background-position: -1px -2679px;
+  }
+
+  @if $contryflag== 'mz' {
+    background-position: -1px -2696px;
+  }
+
+  @if $contryflag== 'mm' {
+    background-position: -1px -2715px;
+  }
+
+  @if $contryflag== 'na' {
+    background-position: -1px -2734px;
+  }
+
+  @if $contryflag== 'nr' {
+    background-position: -1px -2753px;
+  }
+
+  @if $contryflag== 'np' {
+    background-position: -1px -2770px;
+  }
+
+  @if $contryflag== 'nl' {
+    background-position: -1px -2789px;
+  }
+
+  @if $contryflag== 'nc' {
+    background-position: -1px -2808px;
+  }
+
+  @if $contryflag== 'nz' {
+    background-position: -1px -2825px;
+  }
+
+  @if $contryflag== 'ni' {
+    background-position: -1px -2844px;
+  }
+
+  @if $contryflag== 'ne' {
+    background-position: -1px -2863px;
+  }
+
+  @if $contryflag== 'ng' {
+    background-position: -1px -2881px;
+  }
+
+  @if $contryflag== 'nu' {
+    background-position: -1px -2900px;
+  }
+
+  @if $contryflag== 'nf' {
+    background-position: -1px -2919px;
+  }
+
+  @if $contryflag== 'nk' {
+    background-position: -1px -2937px;
+  }
+
+  @if $contryflag== 'np' {
+    background-position: -1px -2974px;
+  }
+
+  @if $contryflag== 'no' {
+    background-position: -1px -2974px;
+  }
+
+  @if $contryflag== 'om' {
+    background-position: -1px -2992px;
+  }
+
+  @if $contryflag== 'pk' {
+    background-position: -1px -3010px;
+  }
+
+  @if $contryflag== 'pw' {
+    background-position: -1px -3029px;
+  }
+
+  @if $contryflag== 'ps' {
+    background-position: -1px -3048px;
+  }
+
+  @if $contryflag== 'pa' {
+    background-position: -1px -3066px;
+  }
+
+  @if $contryflag== 'pg' {
+    background-position: -1px -3085px;
+  }
+
+  @if $contryflag== 'py' {
+    background-position: -1px -3103px;
+  }
+
+  @if $contryflag== 'pe' {
+    background-position: -1px -3121px;
+  }
+
+  @if $contryflag== 'ph' {
+    background-position: -1px -3140px;
+  }
+
+  @if $contryflag== 'pn' {
+    background-position: -1px -3158px;
+  }
+
+  @if $contryflag== 'pl' {
+    background-position: -1px -3177px;
+  }
+
+  @if $contryflag== 'pt' {
+    background-position: -1px -3196px;
+  }
+
+  @if $contryflag== 'pr' {
+    background-position: -1px -3213px;
+  }
+
+  @if $contryflag== 'qa' {
+    background-position: -1px -3232px;
+  }
+
+  @if $contryflag== 'ro' {
+    background-position: -1px -3269px;
+  }
+
+  @if $contryflag== 'ru' {
+    background-position: -1px -3288px;
+  }
+
+  @if $contryflag== 'rw' {
+    background-position: -1px -3306px;
+  }
+
+  @if $contryflag== 'ws' {
+    background-position: -1px -3324px;
+  }
+
+  @if $contryflag== 'sm' {
+    background-position: -1px -3344px;
+  }
+
+  @if $contryflag== 'st' {
+    background-position: -1px -3362px;
+  }
+
+  @if $contryflag== 'sa' {
+    background-position: -1px -3379px;
+  }
+
+  @if $contryflag== 'sn' {
+    background-position: -1px -3398px;
+  }
+
+  @if $contryflag== 'rs' {
+    background-position: -1px -3417px;
+  }
+
+  @if $contryflag== 'sc' {
+    background-position: -1px -3434px;
+  }
+
+  @if $contryflag== 'sl' {
+    background-position: -1px -3453px;
+  }
+
+  @if $contryflag== 'sg' {
+    background-position: -1px -3472px;
+  }
+
+  @if $contryflag== 'sx' {
+    background-position: -1px -3491px;
+  }
+
+  @if $contryflag== 'si' {
+    background-position: -1px -3546px;
+  }
+
+  @if $contryflag== 'sb' {
+    background-position: -1px -3565px;
+  }
+
+  @if $contryflag== 'so' {
+    background-position: -1px -3564px;
+  }
+
+  @if $contryflag== 'za' {
+    background-position: -1px -3583px;
+  }
+
+  @if $contryflag== 'gs' {
+    background-position: 0 -4501px;
+  }
+
+  @if $contryflag== 'ss' {
+    background-position: -1px -3639px;
+  }
+
+  @if $contryflag== 'es' {
+    background-position: -1px -3657px;
+  }
+
+  @if $contryflag== 'lk' {
+    background-position: -1px -3675px;
+  }
+
+  @if $contryflag== 'vi' {
+    background-position: -1px -3694px;
+  }
+
+  @if $contryflag== 'sh' {
+    background-position: -1px -3712px;
+  }
+
+  @if $contryflag== 'kn' {
+    background-position: -1px -3731px;
+  }
+
+  @if $contryflag== 'lc' {
+    background-position: -1px -3749px;
+  }
+
+  @if $contryflag== 'lflag-saint-vincent' {
+    background-position: -1px -3805px;
+  }
+
+  @if $contryflag== 'sd' {
+    background-position: -1px -3823px;
+  }
+
+  @if $contryflag== 'sr' {
+    background-position: -1px -3842px;
+  }
+
+  @if $contryflag== 'no' {
+    background-position: -1px -3860px;
+  }
+
+  @if $contryflag== 'se' {
+    background-position: -1px -3879px;
+  }
+
+  @if $contryflag== 'sz' {
+    background-position: -1px -3897px;
+  }
+
+  @if $contryflag== 'sy' {
+    background-position: -1px -3915px;
+  }
+
+  @if $contryflag== 'tw' {
+    background-position: -1px -3934px;
+  }
+
+  @if $contryflag== 'tj' {
+    background-position: -1px -3952px;
+  }
+
+  @if $contryflag== 'tz' {
+    background-position: -1px -3971px;
+  }
+
+  @if $contryflag== 'th' {
+    background-position: -1px -3989px;
+  }
+
+  @if $contryflag== 'tl' {
+    background-position: -1px -4008px;
+  }
+
+  @if $contryflag== 'tg' {
+    background-position: -1px -4026px;
+  }
+
+  @if $contryflag== 'tk' {
+    background-position: -1px -4045px;
+  }
+
+  @if $contryflag== 'to' {
+    background-position: -1px -4063px;
+  }
+
+  @if $contryflag== 'tt' {
+    background-position: -1px -4081px;
+  }
+
+  @if $contryflag== 'tn' {
+    background-position: 0 -5126px;
+  }
+
+  @if $contryflag== 'tn' {
+    background-position: -1px -4100px;
+  }
+
+  @if $contryflag== 'tr' {
+    background-position: -1px -4119px;
+  }
+
+  @if $contryflag== 'tm' {
+    background-position: -1px -4137px;
+  }
+
+  @if $contryflag== 'tc' {
+    background-position: -1px -4156px;
+  }
+
+  @if $contryflag== 'tv' {
+    background-position: -1px -4174px;
+  }
+
+  @if $contryflag== 'us' {
+    background-position: -1px -4194px;
+  }
+
+  @if $contryflag== 'ug' {
+    background-position: -1px -4229px;
+  }
+
+  @if $contryflag== 'gb' {
+    background-position: -1px -4248px;
+  }
+
+  @if $contryflag== 'ua' {
+    background-position: -1px -4266px;
+  }
+
+  @if $contryflag== 'ae' {
+    background-position: -1px -4285px;
+  }
+
+  @if $contryflag== 'uy' {
+    background-position: -1px -4303px;
+  }
+
+  @if $contryflag== 'uz' {
+    background-position: -1px -4340px;
+  }
+
+  @if $contryflag== 'vu' {
+    background-position: -1px -4359px;
+  }
+
+  @if $contryflag== 'va' {
+    background-position: -1px -4377px;
+  }
+
+  @if $contryflag== 've' {
+    background-position: -1px -4396px;
+  }
+
+  @if $contryflag== 'vn' {
+    background-position: -1px -4414px;
+  }
+
+  @if $contryflag== 'eh' {
+    background-position: -1px -4451px;
+  }
+
+  @if $contryflag== 'zm' {
+    background-position: -1px -4488px;
+  }
+
+  @if $contryflag== 'zw' {
+    background-position: -1px -4507px;
+  }
+
+  @if $contryflag== 'hn' {
+    background-position: -1px -4525px;
+  }
+
+  @if $contryflag== 'vg' {
+    background-position: -1px -4544px;
+  }
+
+  @if $contryflag== 'in' {
+    background-position: -1px -4562px;
+  }
+}
+
+@for $i from 1 through length($countries) {
+  $country: nth($countries, $i);
+
+  .flag-#{$country} {
+    @include spriteFlag($country);
+  }
+}

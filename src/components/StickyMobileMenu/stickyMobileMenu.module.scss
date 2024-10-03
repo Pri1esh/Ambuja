@@ -1,0 +1,222 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.stickyMenuWrapper {
+  :global(.button-active) {
+    opacity: 1;
+
+    svg {
+      filter: unset;
+    }
+  }
+}
+
+.stickymenu {
+  display: none;
+  border-top: 0.063rem solid $platinum;
+
+  @include media($md, max) {
+    display: block;
+    position: fixed;
+    bottom: -0.1rem;
+    width: 100%;
+    z-index: $zindex-3;
+    background: $secondary;
+    transition: ease all 0.6s;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+
+    li {
+      @include rem(padding-bottom, 22);
+      flex-grow: 1;
+      flex-basis: 0;
+      text-align: center;
+      position: relative;
+
+      a {
+        @include rem(font-size, 10);
+        background: transparent;
+        text-decoration: none;
+        border: 0;
+        color: $granite;
+        overflow: unset;
+        position: relative;
+        border-radius: 0;
+        transform: scale(1);
+        display: block;
+        padding: 0.5rem;
+        width: 100%;
+        font-family: $font-medium;
+
+        &::before {
+          content: '';
+          @include rem(top, -1);
+          width: 0;
+          height: 0.125rem;
+          opacity: 0;
+          @include center(horizontal);
+          background: $chineeseyellow;
+          transition: ease all 0.3s;
+        }
+
+        &:hover,
+        &:focus {
+          transform: scale(1);
+          background: $secondary;
+          border-radius: 0;
+        }
+
+        &.active {
+          font-family: $font-bold;
+          color: $raisinblack;
+
+          &:before {
+            @include rem(height, 2);
+            opacity: 1;
+            transition: ease all 0.1s;
+            width: 100%;
+          }
+
+          i {
+            color: $chineeseyellow;
+          }
+        }
+
+        &.inactive {
+          span {
+            opacity: 0.6;
+            filter: grayscale(1) brightness(0.5) contrast(1);
+          }
+
+          &:hover {
+            filter: unset;
+          }
+        }
+      }
+
+      span {
+        margin-bottom: 0.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          @include rem(font-size, 18);
+          color: $granite;
+        }
+      }
+    }
+  }
+}
+
+.offCanvas {
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+
+  &:global(.offcanvas.offcanvas-bottom) {
+    max-height: 90%;
+  }
+
+  .offcanvasHeader {
+    @include rem(font-size, 22);
+    @include rem(padding-top, 34);
+    font-family: $font-medium;
+    color: $ateneoblue;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media($sm, min) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    i {
+      color: $primary;
+    }
+  }
+
+  :global(.offcanvas-body) {
+    padding: 0;
+
+    footer {
+      > img {
+        display: none;
+      }
+    }
+  }
+}
+
+.navDataWrapper {
+  .navData {
+    padding: 0 1rem;
+
+    .primary {
+      display: flex;
+      gap: 1rem;
+      @include rem(padding-bottom, 40);
+
+      p {
+        @include rem(font-size, 14);
+        color: $darkgrey;
+        margin: 0;
+        padding: 0;
+      }
+
+      label {
+        color: $primary;
+        @include rem(font-size, 18);
+      }
+    }
+
+    .secondary {
+      @include rem(padding-bottom, 16);
+
+      .heading {
+        @include rem(font-size, 16);
+        @include rem(padding-bottom, 16);
+        text-transform: uppercase;
+        color: $primary;
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+          @include rem(margin-bottom, 24);
+
+          a {
+            @include rem(font-size, 18);
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.enquiry {
+  h3 {
+    display: none;
+  }
+}
+
+.menuvisible {
+  opacity: 1;
+}
+
+.menuhidden {
+  bottom: -5.2rem;
+  transition: ease all 0.6s;
+}

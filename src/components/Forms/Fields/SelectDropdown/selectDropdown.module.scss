@@ -1,0 +1,304 @@
+@import 'styles/partials/variable.scss';
+@import 'styles/partials/mixins.scss';
+
+.wrapper {
+  @include rem('border-radius', 8);
+
+  .selectdropdown {
+    @include padding(16, 20, 20, 18);
+    @include font-size(16);
+    display: block;
+    width: 100%;
+    height: 3.75rem;
+    line-height: 1.5;
+    background-color: $secondary;
+    border: 0.063rem solid $gainsboro;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    @include media($lg, min) {
+      @include font-size(14);
+    }
+
+    @include media($sm, min) {
+      @include padding(17, 20, 20, 18);
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      border: 0.063rem solid $primary;
+      outline: 0;
+      background: $secondary;
+    }
+
+    label {
+      @include font-size(16);
+      color: $granite;
+      transition: all 300ms;
+
+      @include media($lg, min) {
+        @include font-size(14);
+      }
+    }
+
+    label.selectfloatinglabel {
+      @include rem(font-size, 12);
+      opacity: 0.65;
+      transform: scale(0.85) translateY(-0.75rem) translateX(-0.75rem);
+      position: absolute;
+    }
+
+    .selectvalue {
+      @include rem(top, 10);
+      @include rem(left, 0);
+      position: absolute;
+      width: 100%;
+      transition: 0.3s ease;
+      height: 100%;
+      padding: 1rem 1rem;
+      color: $raisinblack;
+      font-family: $font-regular;
+
+      .selectvalueLabel {
+        display: -webkit-box;
+        max-width: 90%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    .selectarrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      right: 1.25rem;
+      stroke: $granite;
+      transition: 0.3s ease;
+      font-size: 1rem;
+
+      .close {
+        z-index: $zindex-1;
+      }
+
+      .angleUp {
+        font-size: 0.5rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      &.selectClose:not(.crossIcon) {
+        transform: translateY(-50%) rotate(0deg);
+        background-position: center;
+      }
+
+      &.crossIcon {
+        z-index: $zindex-1;
+      }
+
+      button {
+        padding: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        &:focus {
+          border: none;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .dropdownbox {
+      @include rem(max-height, 235);
+      @include rem(border-radius, 12);
+      @include rem(top, 68);
+      position: absolute;
+      width: 100%;
+      background: $secondary;
+      border: 0.063rem solid $chinesesilver;
+      box-shadow: 0 0 1.25rem 0 rgba(136, 136, 136, 0.2);
+      z-index: $zindex-3;
+      padding: 0.625rem 0;
+      display: none;
+      transition: 0.3s ease;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      min-height: inherit;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      ul {
+        @include rem(margin, 0);
+        @include rem(padding, 0);
+        list-style: none;
+
+        li {
+          width: 100%;
+          background: $secondary;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            color: $darkcharcoal;
+            text-decoration: none;
+            background-color: $antiflashSecondary;
+          }
+
+          button {
+            @include padding(12, 20, 12, 20);
+            @include rem(font-size, 14);
+            width: 100%;
+            text-align: left;
+            border: none;
+            background: none;
+            color: $darkcharcoal;
+
+            &:focus {
+              outline: none;
+              box-shadow: none;
+              color: $darkcharcoal;
+              text-decoration: none;
+              background-color: $antiflashSecondary;
+            }
+          }
+
+          &.selected {
+            background-color: $antiflashSecondary;
+            font-family: $font-medium;
+
+            i {
+              @include center(vertical);
+              @include rem(font-size, 10);
+              color: $raisinblack;
+              right: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .selectOpen {
+      display: block;
+    }
+  }
+
+  .error {
+    border: 0.063rem solid $red;
+  }
+}
+
+.dropDownoffCanvas {
+  ul {
+    padding: 0;
+
+    li {
+      button {
+        @include font-size(14);
+        @include padding(12, 20, 12, 20);
+        color: $darkcharcoal;
+        align-items: center;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        transition: background-color 0.4s linear;
+        border: none;
+        background: none;
+
+        &:global(.btn) {
+          &:active,
+          &:focus {
+            background-color: $antiflashSecondary;
+          }
+
+          &:hover {
+            background-color: transparent;
+            border-color: transparent;
+            color: $darkcharcoal;
+          }
+        }
+      }
+
+      &.selected {
+        background-color: $antiflashSecondary;
+        font-family: $font-regular;
+        position: relative;
+
+        i {
+          @include center(vertical);
+          @include rem(font-size, 10);
+          color: $raisinblack;
+          right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.offcanvas {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+
+  &:global(.show) {
+    &:global(.offcanvas-bottom),
+    &:global(.offcanvas-start) {
+      height: 60vh;
+    }
+  }
+
+  :global(.offcanvas-header) {
+    @include padding(30, 20, 12, 12);
+
+    :global(.btn-close) {
+      opacity: 0.8;
+      @include rem(background-size, 15);
+    }
+  }
+
+  .offcanvasHeading {
+    @include padding(23, 20, 25, 20);
+    @include font-size(22);
+    @include rem(padding-top, 8);
+    @include rem(margin-bottom, 0);
+    color: $ateneoblue;
+    font-family: $font-bold;
+  }
+
+  .offcanvasBody {
+    padding: 0;
+  }
+
+  :global(.btn-close) {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.backdrop {
+  z-index: 1045;
+
+  &:global(.offcanvas-backdrop) {
+    z-index: 1045;
+  }
+}
+
+.loader {
+  @include rem('border-radius', 8);
+  min-height: 1rem;
+  width: 6rem;
+}

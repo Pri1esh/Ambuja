@@ -1,0 +1,130 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+
+  > div {
+    @include rem(margin-left, -20);
+    @include rem(margin-right, -20);
+
+    > div {
+      div {
+        min-height: 0;
+      }
+    }
+
+    @include media($sm, min) {
+      @include rem(margin-left, 0);
+      @include rem(margin-right, 0);
+      padding: 0;
+    }
+  }
+
+  .item {
+    position: relative;
+
+    a {
+      display: block;
+
+      .imageWrapper {
+        position: relative;
+        @include rem(margin-bottom, 20);
+        overflow: hidden;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        @include rem(border-radius, 8);
+        width: 100%;
+
+        img {
+          @include rem(border-radius, 8);
+          @include rem(max-height, 258);
+          width: 100%;
+
+          @include media($sm, min) {
+            transform: scale(1);
+            transition: ease-in-out all 2600ms;
+          }
+
+          @include media($md, min) {
+            @include rem(max-height, 350);
+          }
+        }
+
+        span {
+          @include center(both);
+
+          i {
+            @include font-size(32);
+            color: $secondary;
+          }
+        }
+
+        .hovered {
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .textContainer {
+      h3 {
+        @include font-size(20);
+        @include rem(padding, 0);
+        @include rem(margin-bottom, 10);
+        color: $raisinblack;
+        font-family: $font-bold;
+      }
+
+      p {
+        @include rem(margin-bottom, 0);
+        @include rem(line-height, 24);
+        color: $granite;
+      }
+    }
+
+    section {
+      @include rem(margin-bottom, 0);
+    }
+  }
+
+  :global(.slick-track) {
+    display: flex;
+
+    :global(.slick-slide) {
+      @include rem(margin-right, 30);
+    }
+
+    > div:last-child {
+      @include rem(margin-right, 20);
+    }
+
+    @include media($md, min) {
+      > div:last-child {
+        margin-right: calc(((100vw - 60rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($lgb, min) {
+      > div:last-child {
+        margin-right: calc(((100vw - 71.25rem) / 2) - 0.938rem);
+      }
+    }
+
+    @include media($xxxl, min) {
+      margin-left: 0;
+    }
+  }
+
+  .desktopView {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 60px;
+  }
+}

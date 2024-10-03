@@ -1,0 +1,154 @@
+@use 'sass:math';
+
+// 768px
+$sm: 48em;
+//992px
+$md: 62em;
+//1025px
+$lg: 64.0625em;
+//1200px
+$lgb: 75em;
+//1280px
+$xl: 80em;
+//1366px
+$xxl: 85.375em;
+//1400px
+$xxxl: 87.5em;
+//1920px
+$xxxxl: 120rem;
+
+@mixin media($breakpoint, $breakpoint-map) {
+  @if $breakpoint-map ==max {
+    @media (max-width: ($breakpoint - 0.0625em)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: ($breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-min-max($min, $max) {
+  @media (min-width: $min) and (max-width: ($max - 0.0625em)) {
+    @content;
+  }
+}
+
+// Center position Usage
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $position == 'horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Calculate rem Usage calculateRem(14)
+@function calculateRem($value) {
+  @return calc($value / 16) + rem;
+}
+
+// Circle Usage
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: calc($size / 2);
+}
+
+// Transition @include transition(color 1s, background-color 1s, border-color 1s);
+@mixin transition($x...) {
+  transition: $x;
+}
+
+// Scale @include scale(1.1)
+@mixin scale($ratio) {
+  transform: scale($ratio);
+}
+
+@mixin rem($property, $value) {
+  #{$property}: calc($value / 16) + rem;
+}
+
+// Gradient Usage
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+
+  @if $orientation == 'vertical' {
+    background: linear-gradient(to top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: linear-gradient(to left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: radial-gradient(to center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+// Truncate
+// Usage .abc{@include truncate(200px)
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+// Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: calculateRem($top);
+  padding-right: calculateRem($right);
+  padding-bottom: calculateRem($bottom);
+  padding-left: calculateRem($left);
+}
+
+// Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: calculateRem($top);
+  margin-right: calculateRem($right);
+  margin-bottom: calculateRem($bottom);
+  margin-left: calculateRem($left);
+}
+
+// Border-radius mixin
+@mixin border-radius($radiusTop: 4px, $radiusRight: 4px, $radiusBottom: 4px, $radiusLeft: 4px) {
+  border-radius: $radiusTop $radiusRight $radiusBottom $radiusLeft;
+}
+
+// Font face mixing
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal, $display: swap) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.eot');
+    src:
+      url($file-name + '.eot?#iefix') format('embedded-opentype'),
+      url($file-name + '.woff2') format('woff2'),
+      url($file-name + '.ttf') format('truetype'),
+      url($file-name + '.svg##{$font-name}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+  }
+}
+
+@mixin text-shadow($color) {
+  text-shadow: 0.025rem 0 $color;
+}
+
+@mixin keyframetransition($name, $duration, $timingFunction, $delay) {
+  animation: $name $duration $timingFunction;
+  animation-delay: $delay;
+}

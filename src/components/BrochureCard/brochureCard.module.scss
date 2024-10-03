@@ -1,0 +1,86 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(padding-top, 52);
+  @include rem(margin-bottom, 52);
+  background-color: $floralwhite;
+  position: relative;
+
+  @include media($md, min) {
+    @include rem(padding-top, 194);
+  }
+
+  @include media($sm, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  .textContainer {
+    @include rem(padding-bottom, 194);
+
+    @include media($md, max) {
+      @include rem(padding-bottom, 40);
+    }
+
+    h3 {
+      @include font-size(16);
+      @include rem(margin-bottom, 4);
+      color: $raisinblack;
+      font-family: $font-medium;
+
+      @include media($md, min) {
+        @include rem(margin-bottom, 12);
+        @include font-size(26);
+      }
+    }
+
+    h2 {
+      @include font-size(26);
+      @include rem(margin-bottom, 16);
+      color: $ateneoblue;
+
+      @include media($md, min) {
+        @include font-size(60);
+        @include rem(margin-bottom, 40);
+        position: relative;
+      }
+    }
+
+    .desc {
+      @include font-size(16);
+      @include rem(margin-bottom, 32);
+
+      @include media($sm, min) {
+        @include font-size(18);
+        @include rem(margin-bottom, 40);
+      }
+
+      @include media($xl, min) {
+        max-width: 80%;
+      }
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a {
+      @include media($sm, max) {
+        width: 100%;
+        text-align: center;
+      }
+
+      &:active {
+        transform: scale(0.94);
+      }
+    }
+  }
+
+  .imgContainer {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 0;
+  }
+}

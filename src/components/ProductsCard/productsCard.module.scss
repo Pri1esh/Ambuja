@@ -1,0 +1,43 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  @include rem(padding-top, 52);
+  @include rem(padding-bottom, 10);
+  @include rem(margin-bottom, 52);
+  position: relative;
+
+  @include media($sm, min) {
+    @include rem(padding-top, 100);
+    @include rem(padding-bottom, 80);
+    @include rem(margin-bottom, 100);
+  }
+
+  .heading {
+    @include rem(font-size, 26);
+    @include rem(margin-bottom, 0);
+    font-family: $font-bold;
+    color: $secondary;
+
+    @include media($sm, min) {
+      @include rem(margin-bottom, 40);
+    }
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+
+      color: $secondary;
+    }
+  }
+
+  .link {
+    position: absolute;
+    top: 3.25rem;
+    right: 1.25rem;
+    color: $raisinblack;
+  }
+
+  &.blue {
+    background-color: $ateneoblue;
+  }
+}

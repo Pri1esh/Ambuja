@@ -1,0 +1,50 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.wrapper {
+  @include rem(margin-bottom, 52);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  &.homePageWrapper {
+    @include rem(margin-bottom, 30);
+  }
+
+  .heading {
+    @include rem(margin-bottom, 16);
+    @include font-size(26);
+    font-family: $font-bold;
+    color: $indigo;
+
+    @include media($md, min) {
+      @include font-size(60);
+    }
+  }
+
+  .text {
+    @include font-size(16);
+    @include rem(margin-bottom, 10);
+    color: $granite;
+
+    &.textOverflow {
+      @include rem(line-height, 24);
+      @include rem(max-height, 72);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  button {
+    &.readMore {
+      &:global(.btn-link) {
+        &:hover {
+          color: $raisinblack;
+        }
+      }
+    }
+  }
+}

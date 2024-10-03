@@ -1,0 +1,124 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.cookiesLayer {
+  @include rem(width, 335);
+  @include rem(border-radius, 16);
+  @include rem(bottom, 84);
+  @include rem(padding, 30);
+  @include center(horizontal);
+  background: $secondary;
+  border: 0.0625rem solid $platinum;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: $zindex-4;
+
+  @include media($sm, min) {
+    @include rem(width, 380);
+    @include rem(left, 32);
+    transform: translateX(0);
+  }
+
+  @include media($md, min) {
+    @include rem(bottom, 32);
+  }
+
+  .closeIcon {
+    @include rem(margin-bottom, 16);
+    @include rem(margin-left, -4);
+
+    .closeBtn {
+      @include rem(width, 32);
+      @include rem(height, 32);
+      display: flex;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $antiflashwhite;
+      }
+    }
+
+    i {
+      @include rem(font-size, 24);
+      @include rem(line-height, 16);
+      color: $primary;
+    }
+  }
+
+  label {
+    font-family: $font-bold;
+    @include rem(font-size, 20);
+    @include rem(margin-bottom, 12);
+    color: $raisinblack;
+  }
+}
+
+.cookiesContent {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    @include rem(font-size, 14);
+    color: $raisinblack;
+    margin-bottom: 0;
+  }
+
+  .acceptCookies {
+    &:global(.btn) {
+      @include rem(font-size, 16);
+      @include padding(10, 32, 10, 32);
+      font-family: $font-medium;
+      color: $primary;
+      text-align: center;
+      width: auto;
+    }
+  }
+}
+
+.offCanvas {
+  &:global(.offcanvas) {
+    height: auto;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    padding: 1.125rem;
+
+    .closeBtn {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+
+    i {
+      @include rem(margin-bottom, 10);
+      @include font-size(24);
+      display: block;
+    }
+
+    label {
+      font-family: $font-bold;
+      @include rem(font-size, 20);
+      @include rem(margin-bottom, 12);
+      color: $raisinblack;
+    }
+
+    p {
+      @include rem(font-size, 14);
+      color: $raisinblack;
+      margin-bottom: 0;
+    }
+  }
+}

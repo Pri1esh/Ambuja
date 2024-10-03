@@ -1,0 +1,118 @@
+@import 'styles/partials/variable.scss';
+@import 'styles/partials/mixins.scss';
+
+.wrapper {
+  @include rem('border-radius', 8);
+  width: 100%;
+  position: relative;
+
+  :global(.form-floating) {
+    label {
+      @include font-size(16);
+      color: $granite;
+      white-space: nowrap;
+      @include padding(20, 20, 20, 18);
+      line-height: 1.25;
+
+      @include media($lg, min) {
+        @include font-size(14);
+      }
+    }
+
+    :global(.form-control:disabled ~ label::after) {
+      background-color: transparent;
+    }
+
+    :global(.form-control:disabled) {
+      background-color: transparent;
+    }
+  }
+
+  .floatingInput {
+    @include font-size(16);
+    background-color: $secondary;
+    border: 0.063rem solid $gainsboro;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0.5rem;
+    height: 100%;
+    @include padding(18, 52, 20, 16);
+    color: $baastrichtblue;
+
+    @include media($sm, min) {
+      @include padding(18, 52, 20, 18);
+    }
+
+    @include media($lg, min) {
+      @include font-size(14);
+    }
+
+    &.alignRight {
+      text-align: right;
+    }
+
+    &:focus,
+    &:active,
+    &:not(:placeholder-shown) {
+      & ~ label {
+        @include rem(line-height, 16);
+        @include font-size(12);
+        opacity: 1;
+      }
+    }
+
+    &.border:focus,
+    &.border:hover,
+    &.border:active {
+      border: 0.063rem solid $primary;
+      outline: none;
+      background: $secondary;
+      box-shadow: none;
+    }
+
+    &:global(.form-control) {
+      @include rem(padding-left, 16);
+
+      @include media($sm, min) {
+        @include rem(padding-left, 18);
+      }
+
+      &:not(:placeholder-shown) {
+        & ~ label {
+          &::after {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &.noBorder {
+      border: none;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .clearIcon {
+    @include center(vertical);
+    right: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.error {
+  .border {
+    border: 0.063rem solid $red;
+  }
+}

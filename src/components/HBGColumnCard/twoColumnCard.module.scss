@@ -1,0 +1,635 @@
+@import '../../../styles/partials/variable';
+@import '../../../styles/partials/mixins';
+
+.twoColumnCardWrapper {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: wrap;
+
+  @include media($sm, min) {
+    @include rem(margin-bottom, 72);
+  }
+
+  &.reverseColumn {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include media($sm, min) {
+      flex-direction: row-reverse;
+    }
+
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include media($sm, min) {
+        @include padding(72, 72, 72, 72);
+      }
+
+      @include media($lg, min) {
+        @include rem(padding-left, 72);
+        margin-right: auto;
+        max-width: 31.5rem;
+        padding-right: 0;
+      }
+
+      @include media($xl, min) {
+        @include rem(padding-left, 72);
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 37rem;
+        padding-right: 0;
+      }
+
+      @include media($xxxl, min) {
+        @include rem(padding-left, 72);
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 43rem;
+        padding-right: 0;
+      }
+
+      @include media($xxxxl, min) {
+        @include rem(padding-left, 72);
+        @include rem(padding-right, 72);
+        margin-right: auto;
+        max-width: 100%;
+      }
+
+      h2 {
+        @include font-size(22);
+        @include rem(margin-bottom, 10);
+        color: $raisinblack;
+
+        @include media($sm, min) {
+          @include font-size(24);
+          @include rem(margin-bottom, 30);
+        }
+      }
+
+      p {
+        @include font-size(18);
+        @include rem(margin-bottom, 10);
+
+        @include media($md, min) {
+          @include font-size(16);
+          @include rem(margin-bottom, 20);
+        }
+      }
+
+      .subHeading {
+        @include rem(font-size, 18);
+        @include rem(margin-bottom, 12);
+        color: $ateneoblue;
+        position: relative;
+        font-family: $font-medium;
+      }
+    }
+  }
+
+  .mediaSection {
+    @include rem(margin-bottom, 30);
+    width: 100%;
+
+    @include media($sm, min) {
+      @include rem(margin-bottom, 0);
+      width: 50%;
+    }
+
+    @include media($lg, min) {
+      width: 48%;
+      min-height: auto;
+    }
+
+    .media,
+    video,
+    img,
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &.dark {
+    @include padding(0, 20, 0, 20);
+    @include rem(margin-bottom, 52);
+
+    .textWrapper {
+      h2 {
+        @include rem(margin-bottom, 16);
+        @include font-size(26);
+        color: $ateneoblue;
+      }
+    }
+
+    .mediaSection {
+      img {
+        border-radius: 0.5rem;
+
+        @include media($sm, min) {
+          border-radius: 0;
+        }
+      }
+    }
+
+    @include media($sm, min) {
+      padding: 0;
+      background-color: $aliceblue;
+    }
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 100);
+
+      .textWrapper {
+        h2 {
+          @include rem('margin-bottom', 26);
+          @include font-size(60);
+        }
+      }
+    }
+
+    .description {
+      @include rem(margin-bottom, 10);
+    }
+  }
+
+  &.light {
+    background-color: $chineeseyellow;
+
+    .textWrapper {
+      h2 {
+        @include rem(margin-bottom, 16);
+        @include font-size(26);
+        color: $ateneoblue;
+      }
+    }
+
+    &.reverseColumn {
+      .textWrapper {
+        @include media($sm, max) {
+          @include padding(22, 20, 40, 20);
+        }
+      }
+    }
+
+    @include media($md, min) {
+      .textWrapper {
+        h2 {
+          @include rem(margin-bottom, 26);
+          @include font-size(60);
+        }
+      }
+    }
+  }
+}
+
+.textWrapper {
+  width: 100%;
+
+  @include media($sm, min) {
+    @include padding(72, 72, 72, 0);
+    width: 50%;
+  }
+
+  @include media($lg, min) {
+    @include padding(72, 0, 72, 0);
+    width: 52%;
+  }
+
+  @include media($lg, min) {
+    @include rem(padding-right, 72);
+    margin-right: auto;
+    max-width: 31.5rem;
+    padding-left: 0;
+  }
+
+  @include media($xl, min) {
+    @include rem(padding-right, 72);
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 37rem;
+    padding-left: 0;
+  }
+
+  @include media($xxxl, min) {
+    @include rem(padding-right, 72);
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 43rem;
+    padding-left: 0;
+  }
+
+  @include media($xxxxl, min) {
+    @include rem(padding-left, 72);
+    @include rem(padding-right, 72);
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  h2 {
+    @include font-size(26);
+    color: $ateneoblue;
+
+    @include media($sm, min) {
+      @include font-size(24);
+      @include rem(margin-bottom, 30);
+    }
+  }
+
+  p {
+    @include font-size(18);
+    @include rem(margin-bottom, 10);
+    color: $granite;
+
+    @include media($sm, min) {
+      @include font-size(16);
+      @include rem(margin-bottom, 20);
+    }
+  }
+
+  .buttonWrapper {
+    a {
+      cursor: pointer;
+    }
+
+    button {
+      font-family: $font-regular;
+      text-align: left;
+      text-decoration: underline;
+      padding: 0;
+
+      &:hover {
+        color: $raisinblack;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.messageCard {
+  @include padding(52, 0, 40, 0);
+  @include rem(margin-bottom, 52);
+  background-color: $floralwhite;
+
+  .rowWrapper {
+    @include rem(padding-right, 20);
+  }
+
+  @include media($md, min) {
+    @include padding(100, 0, 100, 0);
+    @include rem(margin-bottom, 100);
+  }
+
+  .textAreaWrapper {
+    width: 100%;
+    padding: 0;
+
+    h2 {
+      @include media($md, min) {
+        @include rem(margin-bottom, 16);
+        @include font-size(60);
+        color: $ateneoblue;
+      }
+    }
+
+    .textWrapper {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      .description {
+        @include rem(margin-bottom, 10);
+        color: $granite;
+
+        @include media($md, min) {
+          @include rem(margin-bottom, 24);
+        }
+
+        ul {
+          @include padding(16, 0, 0, 17);
+        }
+
+        &.truncated {
+          line-height: 1.5rem;
+          max-height: 12rem;
+
+          @include media($sm, min) {
+            max-height: 11.5rem;
+          }
+
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .subDescription {
+        @include rem(font-size, 16);
+        margin-bottom: 0;
+        color: $raisinblack;
+        font-family: $font-medium;
+      }
+    }
+  }
+}
+
+.mediaWrapper {
+  @include rem(margin-bottom, 40);
+  overflow: hidden;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  @include rem(border-radius, 8);
+
+  img,
+  iframe {
+    @include rem(max-height, 480);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+
+  @include media($sm, min) {
+    @include rem(margin-bottom, 0);
+  }
+
+  h2 {
+    @include rem(margin-bottom, 20);
+    @include rem(font-size, 26);
+
+    @include media($md, min) {
+      @include rem(margin-bottom, 0);
+    }
+  }
+
+  img {
+    @include rem(border-radius, 8);
+
+    @include media($sm, min) {
+      transform: scale(1);
+      transition: ease-in-out all 2600ms;
+    }
+  }
+
+  &:hover {
+    overflow: hidden;
+
+    img {
+      @include rem(border-radius, 8);
+      transform: scale(1.1);
+      transition: ease-in-out transform 2600ms;
+    }
+  }
+}
+
+.visionWrapper {
+  .section {
+    padding-left: 0;
+
+    @include media($sm, min) {
+      @include rem(padding-left, 12);
+    }
+  }
+
+  .sectionWrapper {
+    @include rem(padding-bottom, 22);
+    @include rem(padding-left, 20);
+    @include rem(padding-right, 20);
+
+    @include media($sm, max) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .section {
+      flex: 0 0 45%;
+      margin: auto 0;
+
+      .figure {
+        @include rem(height, 90);
+        @include rem(width, 90);
+        @include rem(margin-bottom, 30);
+      }
+
+      .visionTextWrapper {
+        @include rem(margin-bottom, 30);
+        border-bottom: 0.063rem solid $platinum;
+        width: 90%;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        .heading {
+          @include rem(font-size, 26);
+          @include rem(margin-bottom, 10);
+          color: $ateneoblue;
+          font-family: $font-bold;
+
+          @include media($lg, min) {
+            @include rem(font-size, 40);
+            @include rem(margin-bottom, 20);
+          }
+        }
+
+        .description {
+          @include rem(font-size, 16);
+          @include rem(margin-bottom, 30);
+          color: $granite;
+        }
+      }
+    }
+
+    @include media($md, min) {
+      @include rem(padding-bottom, 80);
+      @include rem(padding-left, 0);
+      @include rem(padding-right, 0);
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.imgWrapper {
+  overflow: hidden;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  @include rem(border-radius, 8);
+
+  img {
+    width: 100%;
+    height: 100%;
+    @include rem(max-height, 186);
+    @include rem(margin-bottom, 30);
+    @include rem(border-radius, 8);
+
+    @include media($md, min) {
+      @include rem(max-height, 650);
+      @include rem(margin-bottom, 0);
+      transform: scale(1);
+      transition: ease-in-out all 2600ms;
+    }
+  }
+
+  &:hover {
+    overflow: hidden;
+
+    img {
+      @include rem(border-radius, 8);
+      transform: scale(1.1);
+      transition: ease-in-out transform 2600ms;
+    }
+  }
+}
+
+.cardWrapper {
+  @include rem(margin-bottom, 0);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 50);
+  }
+
+  .sectionWrapper {
+    @include padding(0, 20, 52, 20);
+
+    @include media($md, max) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @include media($md, min) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .section {
+      flex: 0 0 44%;
+      margin: auto 0;
+
+      .cardTextWrapper {
+        .heading {
+          @include rem(font-size, 26);
+          @include rem(margin-bottom, 10);
+          color: $indigo;
+          font-family: $font-bold;
+
+          @include media($md, min) {
+            @include rem(font-size, 50);
+            @include rem(margin-bottom, 20);
+          }
+        }
+
+        .description {
+          @include rem(font-size, 16);
+          @include rem(margin-bottom, 10);
+          color: $granite;
+
+          @include media($md, min) {
+            @include rem(font-size, 20);
+            @include rem(margin-bottom, 20);
+          }
+        }
+
+        .trimDescription {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+        }
+
+        a {
+          @include rem(font-size, 16);
+          color: $raisinblack;
+
+          @include media($md, min) {
+            @include rem(font-size, 20);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cardImgWrapper {
+  .imageWrapper {
+    @include rem(margin-bottom, 20);
+    @include rem(border-radius, 8);
+    overflow: hidden;
+    position: relative;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    @include media($lg, min) {
+      aspect-ratio: 4 / 5;
+    }
+
+    a {
+      @include rem(border-radius, 8);
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      @include rem(border-radius, 8);
+
+      @include media($md, min) {
+        @include rem(min-height, 600);
+        @include rem(margin-bottom, 0);
+      }
+
+      @include media($lg, min) {
+        transform: scale(1);
+        transition: ease-in-out all 2600ms;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @include media($lg, min) {
+    &:hover {
+      .imageWrapper {
+        overflow: hidden;
+
+        img {
+          @include rem(border-radius, 8);
+          transform: scale(1.1);
+          transition: ease-in-out transform 2600ms;
+        }
+      }
+    }
+  }
+
+  width: 100%;
+
+  @include media($md, min) {
+    width: 46%;
+  }
+}
+
+.cardReverseColumn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+

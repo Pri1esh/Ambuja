@@ -1,0 +1,23 @@
+@import '/styles/partials/variable.scss';
+@import '/styles/partials/_mixins.scss';
+
+.wrapper {
+  position: relative;
+  @include rem(margin-bottom, 32);
+
+  @include media($md, min) {
+    @include rem(margin-bottom, 100);
+  }
+
+  .heading {
+    @include rem(font-size, 26);
+    @include rem(margin-bottom, 0);
+    font-family: $font-bold;
+    color: $indigo;
+
+    @include media($md, min) {
+      @include rem(font-size, 60);
+      @include rem(margin-bottom, 40);
+    }
+  }
+}
