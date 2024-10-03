@@ -39,3 +39,10 @@ package-lock.json
 .next
 /.next/*
 .next/cache
+
+
+# customfiles
+
+/src/components/CustomImage/index.tsx
+/src/api-manager/endpoints.ts
+.env

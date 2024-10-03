@@ -323,9 +323,8 @@ const GetInTouchForm = (props: any) => {
         setResetTimer(true);
       }
     } catch (error) {
+      setFormState('true')
       setResetTimer(true);
-    console.log('OTpppsenttttt');
-      setFormState('true');
       setToastData(errorMessage);
     }
   };
@@ -427,7 +426,7 @@ const GetInTouchForm = (props: any) => {
   };
 
   const getDropDown = (formField: IFieldData, onChange: any, onBlur: any, value: any, ref: any) => {
-    
+
     if(formField?.fieldName?.toLowerCase()?.includes('lookingfor')){
       RequestedQuery(getDropDownOptions(formField))
     }
