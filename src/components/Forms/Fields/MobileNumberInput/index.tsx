@@ -2368,7 +2368,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 controlProps={{
                   ...controlProps,
                   value: phoneNumber,
-                  autoComplete: 'off',
+                  autoComplete: 'new-password',
                 }}
                 onChange={(e: any) => {
                   handlePhoneNumber(e);

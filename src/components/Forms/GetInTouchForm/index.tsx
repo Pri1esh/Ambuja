@@ -314,7 +314,6 @@ const GetInTouchForm = (props: any) => {
       setstartTimer(true);
       setEnableSend(false);
 
-      setValidateOTP(false);
       const res = await postAPI(ENDPOINT.CLIENT.generateOTP, phoneNo);
       if (res.Status == 1) {
         setEnableSubmit(true);
@@ -337,7 +336,7 @@ const GetInTouchForm = (props: any) => {
   };
 
   const submitOTP = async () => {
-    setValidateOTP(true);
+    console.log("5555")
     const validOTp = await OTPValidation(getValuesDetail('OTP'));
     if (validOTp) {
       setShowPlace(true);
@@ -468,7 +467,7 @@ const GetInTouchForm = (props: any) => {
           if (formField?.fieldName?.toLowerCase()?.includes('lookingfor')) {
             setQueryOptions(e?.subOptions || []);
             setResetOnOptionChange(true);
-            setValuePlace('queryType', '');
+            setValueDetail('queryType', '');
           } else if (formField?.fieldName?.toLowerCase()?.includes('state')) {
             setDistrictOptions(e?.subOptions || []);
             setResetOnOptionChange(true);
@@ -589,7 +588,7 @@ const GetInTouchForm = (props: any) => {
     setSendTxt('Send OTP');
     setEnableSubmit(false);
     setDisableInfo(false);
-    setResetTimer(false);
+    setResetTimer((prev:boolean)=> (prev? false:true));
     setShowPlace(false);
     setValueDetail('lookingFor', null);
     setValueDetail('queryType', null);
@@ -622,12 +621,7 @@ const GetInTouchForm = (props: any) => {
                               control={controlDetail}
                               name={item?.fieldName || ''}
                               rules={{
-                                required:
-                                  item?.fieldType !== 'OTP'
-                                    ? item?.errorMessages?.requiredFieldErrorMessage
-                                    : validateOTP
-                                      ? item?.errorMessages?.requiredFieldErrorMessage
-                                      : '',
+                                required:item?.errorMessages?.requiredFieldErrorMessage,
                                 validate: () => formValidator(item, getValuesDetail(item?.fieldName)),
                               }}
                               render={({ field: { onChange, onBlur, value, ref } }) =>
@@ -646,12 +640,7 @@ const GetInTouchForm = (props: any) => {
                             control={controlDetail}
                             name={item?.fieldName || ''}
                             rules={{
-                              required:
-                                item?.fieldType !== 'OTP'
-                                  ? item?.errorMessages?.requiredFieldErrorMessage
-                                  : validateOTP
-                                    ? item?.errorMessages?.requiredFieldErrorMessage
-                                    : '',
+                              required:item?.errorMessages?.requiredFieldErrorMessage,
                               validate: () => formValidator(item, getValuesDetail(item?.fieldName)),
                             }}
                             render={({ field: { onChange, onBlur, value, ref } }) =>

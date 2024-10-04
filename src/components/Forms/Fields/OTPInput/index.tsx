@@ -39,7 +39,6 @@ const OTPInput = (props: IOTPInput) => {
     handleTimerComplete,
     enableSubmit,
     OTPerror='',
-    submitOTP,
     disableInfo
 
   } = props;
