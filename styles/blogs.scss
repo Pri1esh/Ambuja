@@ -613,7 +613,7 @@
   background-color: #ffffff;
   position: absolute;
   width: calc(100% - var(--bs-gutter-x));
-  z-index: 10;
+  z-index: 2;
   left: calc(var(--bs-gutter-x) * 0.5);
   overflow-y: scroll;
 }
@@ -639,9 +639,10 @@
   text-align: left;
 }
 .blog-search .blog-SearchTile .result-head{
+  font-size: 1.2rem;
   margin-bottom: 0;
   text-wrap: balance;
-  margin-bottom: 0;
+  margin-bottom: 8px !important;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -649,6 +650,7 @@
   -webkit-box-orient: vertical;
 }
 .blog-search .blog-SearchTile .result-description {
+  font-size: 1rem;
   margin-bottom: 0;
   text-wrap: balance;
   margin-bottom: 0;

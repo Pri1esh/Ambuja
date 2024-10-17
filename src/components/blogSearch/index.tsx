@@ -6,9 +6,11 @@ import Image from 'next/image'
 
 
 import axios from "axios";
+import CustomImage from "../CustomImage";
 
 const BlogSearch = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
+  const clientHost = process.env.NEXT_PUBLIC_API_HOST_CLIENT;
 
   const [searchData, setsearchData] = useState<string>();
   const [showResult, setShowResult] = useState<boolean>(false);
@@ -18,7 +20,7 @@ const BlogSearch = () => {
   const fetchBlogData = async (searchTerm: string): Promise<any> => {
     try {
       const response = await axios.post<any>(
-        "https://acchelp.dev.local/formsapi/GetInTouch/getblog",
+        `${clientHost}/formsapi/GetInTouch/getblog`,
         {
           searchTerm,
         },
@@ -84,7 +86,7 @@ const BlogSearch = () => {
                     <a href={convertCTA(item.CTALink)} className="text-dark text-decoration-none" key={index}>
                       <div className="blog-SearchTile">
                         <div className="d-flex align-items-center">
-                        <Image className="result-img" src={baseUrl + item.Image} alt="" />
+                          {item?.Image && <CustomImage className='result-img' src={{ defaultSource: item.Image }} alt="" loader={'false'} />}
                           <div className="result-content">
                             {item.Title && <h5 className="result-head">{item.Title}</h5>}
                             {item.Description && <p className="result-description text-truncate">{item.Description}</p>}
