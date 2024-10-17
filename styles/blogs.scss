@@ -159,7 +159,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 20;
+  z-index: 2;
   margin-left: 35px;
 }
 .blogs-banner .content .title {
@@ -237,14 +237,14 @@
 }
 
 .bloglgCard .innerBox h5 {
-  font-size: 24px;
+  font-size: 1.2rem;
   line-height: 29px;
   letter-spacing: 0;
   font-weight: 500;
   color: #222222;
 }
 .bloglgCard .innerBox p {
-  font-size: 19px;
+  font-size: 1rem;
   line-height: 24px;
   letter-spacing: 0;
   font-weight: 500;
@@ -334,14 +334,14 @@
 }
 
 .blogsmCard .innerBox h5 {
-  font-size: 21px;
+  font-size: 1.2rem;
   line-height: 25px;
   letter-spacing: 0;
   font-weight: 600;
   color: #222222;
 }
 .blogsmCard .innerBox p {
-  font-size: 19px;
+  font-size: 1rem;
   line-height: 23px;
   letter-spacing: 0;
   font-weight: 500;
@@ -391,7 +391,7 @@
   object-fit: cover;
 }
 .blog_tile p {
-  font-size: 19px;
+  font-size: 1rem;
   line-height: 24px;
   letter-spacing: 0;
   font-weight: 500;
@@ -408,17 +408,17 @@
 /* Blog List */
 .cate-head {
   text-align: left;
-  font-size: 30px;
-  line-height: 37px;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
   letter-spacing: 0;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .cat-button {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   letter-spacing: 0;
   font-weight: 500;
   color: #666666;
@@ -433,11 +433,11 @@
 
 .cat-button.active,
 .cat-button:hover {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   letter-spacing: 0;
   font-weight: 500;
-  background-color: #ffb200;
+  background-color: #ffb200 !important;
   border: none;
   color: #ffffff;
   padding-block: 8px;

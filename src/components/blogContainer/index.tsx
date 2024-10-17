@@ -8,6 +8,11 @@ import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import { Pagination, Navigation, EffectFlip } from "swiper/modules";
 
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+
 
 import rightChev from "../../assets/icons/right.svg";
 import leftChev from "../../assets/icons/left.svg";
@@ -128,28 +133,27 @@ const BlogContainer = (props:any) => {
                     <div className="right-list">
 
 
-                      <div className="mb-5">
-                        <h3 className="cate-head">Keywords</h3>
-
-                        
-                        <div className="row" role="tablist">
-                          {data.fields?.recentBlogs &&
+                      
+                      <Tab.Container id="left-tabs-example" defaultActiveKey={"Retailer"}>
+                      
+                      <Nav variant="pills" className="mb-4">
+                      <h3 className="cate-head">Keywords</h3>
+                        <div className='d-flex gap-3 flex-wrap'>
+                        {data.fields?.recentBlogs &&
                             data.fields?.recentBlogs.map((item: any, index: number) => (
-                              <div key={index} className="col-md-4 col-6">
-                                <button className={index == 0 ? "cat-button rounded-pill active show" : "cat-button rounded-pill"} data-bs-toggle="tab" data-bs-target={`#tab-${item.category}`}>
-                                  {item.category}
-                                </button>
-                              </div>
+                              <Nav.Item className='' key={index}>
+                                <Nav.Link eventKey={item.category} className="cat-button rounded-pill">
+                                    {item.category}
+                                </Nav.Link>
+                              </Nav.Item>
                             ))}
                         </div>
-                        
-                      </div>
-
-
-                      <div className="tab-content">
-                        {data.fields?.recentBlogs &&
+                        </Nav>
+                          
+                            <Tab.Content>
+                            {data.fields?.recentBlogs &&
                           data.fields?.recentBlogs.map((item: any, index: number) => (
-                            <div key={index} id={`tab-${item.category}`} className={index == 0 ? "tab-pane fade active show" : "tab-pane fade"}>
+                            <Tab.Pane key={index} eventKey={item.category}>
                               <div className="mb-5">
                                 <h3 className="cate-head">{item.category}</h3>
                                 {item?.data.map((recentBlog: any, ind: number) => (
@@ -164,10 +168,15 @@ const BlogContainer = (props:any) => {
                                     <BlogTile key={trendNum} tileData={trendBlog} num={trendNum} />
                                   ))}
                               </div>
-                            </div>
+                              </Tab.Pane>
                           ))}
-                      </div>
+                              
+                            </Tab.Content>
+                        
+                        
+                      </Tab.Container>
 
+                      
 
 
                     </div>
