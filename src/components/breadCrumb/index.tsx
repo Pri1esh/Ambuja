@@ -4,7 +4,7 @@ const BreadCrumb = (props: any) => {
   return (
     <section className="crumbs d-none d-md-block mt-3 mb-5">
       <div className="container">
-        <p>
+        <div className="bread-line">
           {props.crumbs &&
             props.crumbs.map((crumb: any, index: number) =>
               props.crumbs.length - 1 > index ? (
@@ -22,7 +22,7 @@ const BreadCrumb = (props: any) => {
                 </div>
               )
             )}
-        </p>
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@
 }
 
 /* Bread Crumb-------------------------------------- */
-.crumbs p {
+.crumbs .bread-line {
   color: #666666 !important;
   font-size: 13px;
   margin-bottom: 30px;
@@ -12,17 +12,17 @@
   display: flex;
 }
 
-.crumbs p > div > a {
+.crumbs .bread-line > div > a {
   color: #666666 !important;
   text-decoration: none !important;
 }
 
-.crumbs p > div > a:hover {
+.crumbs .bread-line > div > a:hover {
   color: #222222 !important;
   text-decoration: underline !important;
 }
 
-.crumbs p > div:first-child > a {
+.crumbs .bread-line > div:first-child > a {
   color: #222222 !important;
   text-decoration: underline !important;
 }
@@ -394,7 +394,7 @@
   font-size: 1rem;
   line-height: 24px;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 600;
   color: #222222;
   overflow: hidden;
   text-overflow: ellipsis;

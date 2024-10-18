@@ -1,14 +1,9 @@
 import React from "react";
-import {BlogBanner, BlogContainer, ErrorFallback} from "@components";
+import {BlogBanner, BlogContainer, ErrorFallback,BlogSearch,Layout} from "@components";
 import {BreadCrumb} from "@components";
-import '../../styles/blogs.scss';
 import { getApiData, getMetadata } from '@utils/server';
-
-import leftChev from "../../assets/images/blog-left-chev.svg";
-import rightChev from "../../assets/images/blog-right-chev.svg";
-
-import {BlogSearch,Layout} from '@components';
 import { ENDPOINT } from "@api-manager";
+import '../../styles/blogs.scss';
 
 export async function generateMetadata(): Promise<any> {
   const apiData = await getApiData(ENDPOINT.SSR.blogListPage);
@@ -27,7 +22,6 @@ const Bloglist = async () => {
   const apiData = await getApiData(ENDPOINT.SSR.blogListPage);
   const { data, errorData } = apiData;
   const { footer, header, main } = data;
-  console.log("data",data?.main?.HomeSection)
   const BlogListData:any = main;
 
   if (errorData || !data) {

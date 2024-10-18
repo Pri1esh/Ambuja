@@ -16,8 +16,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
                   <CustomImage className='h-100' src={{ defaultSource: props.data?.Image?.value?.src }} alt="" loader={'false'} />
                 </div>
                 <div className='content'>
-                    <div className="title">{props.data?.title}</div>
-                    <div className="description">{props.data?.subTitle}</div>
+                    <div className="title">{props.data?.Title?.value}</div>
+                    <div className="description">{props.data?.SubHeading?.value}</div>
                 </div>
              </div>
         </div>

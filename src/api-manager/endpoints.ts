@@ -44,7 +44,7 @@ export default class ENDPOINT {
 
     blogListPage : '/sitecore/api/layout/render?item={67C4EE0D-4B57-49B1-87B1-BD08C3BB1C2C}&sc_apikey={77E0D3EA-F46F-46AE-8A42-15D2036FCC40}&bloglist=true',
 
-    blogDetail : '/sitecore/api/layout/render?sc_apikey={77E0D3EA-F46F-46AE-8A42-15D2036FCC40}&sc_content=web&item=/sitecore/content/ACCHelp/Home/Blog/Local-Datasource-Folder/Blogs/'
+    blogDetail : '/sitecore/api/layout/render?sc_apikey={77E0D3EA-F46F-46AE-8A42-15D2036FCC40}&item=/sitecore/content/Ambuja/Home/Blog/Local%20Content/Blogs/'
   };
   static CLIENT = {
     postForm: '/api',

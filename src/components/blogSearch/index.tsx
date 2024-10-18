@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import searchBtn from "../../assets/temp/search_mag.svg";
-import bgImg from "../../assets/temp/chuttersnap-Q_KdjKxntH8-unsplash@2x.jpg";
 import { ThreeDots } from "react-loader-spinner";
 import Image from 'next/image'
 
@@ -9,7 +8,6 @@ import axios from "axios";
 import CustomImage from "../CustomImage";
 
 const BlogSearch = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
   const clientHost = process.env.NEXT_PUBLIC_API_HOST_CLIENT;
 
   const [searchData, setsearchData] = useState<string>();
@@ -83,7 +81,7 @@ const BlogSearch = () => {
               {searchList &&
                 searchList.map((item: any, index: number) => (
                   <li>
-                    <a href={convertCTA(item.CTALink)} className="text-dark text-decoration-none" key={index}>
+                    <a href={"/blogs/"+convertCTA(item.CTALink)} className="text-dark text-decoration-none" key={index}>
                       <div className="blog-SearchTile">
                         <div className="d-flex align-items-center">
                           {item?.Image && <CustomImage className='result-img' src={{ defaultSource: item.Image }} alt="" loader={'false'} />}

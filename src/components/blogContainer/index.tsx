@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import {BlogListSection, BlogTile, CustomIcon} from "@components";
+import {BlogListSection, BlogTile} from "@components";
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
@@ -8,9 +8,7 @@ import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import { Pagination, Navigation, EffectFlip } from "swiper/modules";
 
-import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 
 
@@ -155,13 +153,13 @@ const BlogContainer = (props:any) => {
                           data.fields?.recentBlogs.map((item: any, index: number) => (
                             <Tab.Pane key={index} eventKey={item.category}>
                               <div className="mb-5">
-                                <h3 className="cate-head">{item.category}</h3>
+                                <h3 className="cate-head">Recent Blogs</h3>
                                 {item?.data.map((recentBlog: any, ind: number) => (
                                   <BlogTile key={ind} tileData={recentBlog} num={ind} />
                                 ))}
                               </div>
                               <div className="mb-5">
-                                <h3 className="cate-head">Keywords</h3>
+                                <h3 className="cate-head">Trending</h3>
                                 {data.fields?.trendingBlogs && data.fields?.trendingBlogs
                                   .find((trend: any) => trend.category === item.category)
                                   ?.data?.map((trendBlog: any, trendNum: number) => (

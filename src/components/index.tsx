@@ -83,3 +83,4 @@ export {default as BlogTile} from './blogTile';
 export {default as BlogSearch} from './blogSearch';
 export {default as BlogListSection} from './blogListSection';
 export {default as BlogContainer} from './blogContainer';
+export {default as BlogDetailComponent} from './blogDetail';
