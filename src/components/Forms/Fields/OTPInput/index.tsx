@@ -39,7 +39,8 @@ const OTPInput = (props: IOTPInput) => {
     handleTimerComplete,
     enableSubmit,
     OTPerror='',
-    disableInfo
+    disableInfo,
+    submitOTP,
 
   } = props;
   const { deviceType } = useDeviceType();
@@ -114,6 +115,12 @@ const OTPInput = (props: IOTPInput) => {
           onChange={(e) => {
             handleOnChange(e, true);
             isClear && onChangeClear(e);
+          }}
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+            if (e.key === 'Enter' && enableSubmit) {
+              e.preventDefault();
+              submitOTP();
+            }
           }}
           onFocus={(e) => {
             onFocusClear(e);

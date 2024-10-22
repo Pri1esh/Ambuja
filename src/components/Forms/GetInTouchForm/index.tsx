@@ -104,14 +104,9 @@ const GetInTouchForm = (props: any) => {
   }
 
   useEffect(() => {
-    if (show || !isPopup) {
-      __RECAPTCHA__ && addCaptcha();
-    }
-
+    __RECAPTCHA__ && addCaptcha();
     return () => {
-      if (show || !isPopup) {
         removeCaptcha();
-      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
@@ -151,8 +146,7 @@ const GetInTouchForm = (props: any) => {
 
   const onFinalSubmit = async (data: any) => {
     const isDetailValid = await triggerDetail();
-
-    console.log('inside', 44, isDetailValid);
+    const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
 
     if (isDetailValid) {
       GTMHelper({
@@ -174,6 +168,8 @@ const GetInTouchForm = (props: any) => {
         district: placeData?.district?.label,
         area: placeData?.area?.label,
         termsAndConditions: placeData?.termsAndConditions,
+        otp:detailData?.OTP,
+        reResponse: captchaResponse
       };
 
       try {
@@ -249,7 +245,7 @@ const GetInTouchForm = (props: any) => {
   // };
 
   const onSubmitOtp = async (e: any, inputOtp: string, setInputValues?: any) => {
-    e.preventDefault();
+    e?.preventDefault();
     // *inputOtp: string* --- get it from argument
     setLoading(true);
     try {
@@ -306,15 +302,20 @@ const GetInTouchForm = (props: any) => {
     }
   };
 
-  const sendOTP = async () => {
-    const phoneNo = { phoneNo: getValuesDetail('phoneNo')?.phoneNumber };
-
+  const sendOTP = async (event:any) => {
+    event?.preventDefault();
+    const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
+    const payLoad = { 
+      phoneNo: getValuesDetail('phoneNo')?.phoneNumber,
+      reResponse: captchaResponse
+     };
+    
     try {
       setResetTimer(false);
       setstartTimer(true);
       setEnableSend(false);
 
-      const res = await postAPI(ENDPOINT.CLIENT.generateOTP, phoneNo);
+      const res = await postAPI(ENDPOINT.CLIENT.generateOTP, payLoad);
       if (res.Status == 1) {
         setEnableSubmit(true);
       } else {
@@ -336,7 +337,6 @@ const GetInTouchForm = (props: any) => {
   };
 
   const submitOTP = async () => {
-    console.log("5555")
     const validOTp = await OTPValidation(getValuesDetail('OTP'));
     if (validOTp) {
       setShowPlace(true);
@@ -359,10 +359,12 @@ const GetInTouchForm = (props: any) => {
   };
 
   const OTPValidation = async (otp: number) => {
+    const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
     setstartTimer(false);
     const payLoad = {
       phoneNo: getValuesDetail('phoneNo')?.phoneNumber,
       OTP: otp,
+      reResponse: captchaResponse
     };
 
     try {
@@ -555,7 +557,7 @@ const GetInTouchForm = (props: any) => {
             resetTimer={resetTimer}
             handleTimerComplete={timerComplete}
             enableSubmit={enableSubmit}
-            submitOTP={submitOTP}
+            submitOTP={handleDetail(submitOTP)}
             OTPerror={OTPerror}
             disableInfo={disableInfo}
           />
