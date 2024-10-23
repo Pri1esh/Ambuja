@@ -15,6 +15,7 @@ const FloatingInput = (props: IFloatingInput) => {
     inputRef = useRef(null), //NOSONAR
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     onChange = () => {},
+    onKeyDown = () => {},
     placeholder = 'name',
     label = '',
     disabled = false,
@@ -108,6 +109,9 @@ const FloatingInput = (props: IFloatingInput) => {
           onChange={(e) => {
             handleOnChange(e, true);
             isClear && onChangeClear(e);
+          }}
+          onKeyDown={(e)=>{
+            onKeyDown(e);
           }}
           onFocus={(e) => {
             onFocusClear(e);

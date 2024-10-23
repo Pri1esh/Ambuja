@@ -2297,7 +2297,7 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
 
   const handleSendBtn = (e: { target: { value: string } }) => {
     const value = e?.target?.value;
-    if(value.length < contactNoLen){
+    if(value?.length < contactNoLen){
       setEnableSend(false);
     }
     else{
@@ -2386,6 +2386,12 @@ const MobileNumberInput = (props: IMobileNumberInput) => {
                 onClear={resetMobileNumber}
                 isClear={isClear}
                 disabled={disableInfo}
+                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                  if (e.key === 'Enter' && enableSend) {
+                    e.preventDefault();
+                    sendOTP();
+                  }
+                }}
               />
               {!disableInfo && <button className={`${styles.SendOTP} ${enableSend? '' : styles.disabled}`} disabled={!enableSend} onClick={sendOTP} >{sendTxt}</button>}
               {disableInfo && <button className={styles.Verified}>Verified

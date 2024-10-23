@@ -190,6 +190,7 @@ export interface IFloatingInput {
   inputRef?: React.RefObject<HTMLInputElement>;
   // eslint-disable-next-line @typescript-eslint/ban-types
   onChange?: (a: any) => void;
+  onKeyDown?: (a: any) => void;
   placeholder?: string;
   label?: string;
   disabled?: boolean;
