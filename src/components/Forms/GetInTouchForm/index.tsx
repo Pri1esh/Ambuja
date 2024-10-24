@@ -76,6 +76,7 @@ const GetInTouchForm = (props: any) => {
     mode: 'onSubmit',
     reValidateMode: 'onChange',
   });
+  
 
   const watchQuery = watch('lookingFor');
 
@@ -102,6 +103,10 @@ const GetInTouchForm = (props: any) => {
       setRequestQuery(defaultQuery);
     }
   }
+
+  useEffect(()=>{
+    setValueDetail("lookingFor",requestQuery);
+  },[requestQuery]);
 
   useEffect(() => {
     if (show || !isPopup) {

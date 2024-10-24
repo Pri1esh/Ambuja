@@ -11,7 +11,6 @@ import {
   MainBanner,
   HBGMenu,
   VerticalCarousel,
-  VideoSlider,
   CardSlider,
 } from '@components';
 import { getApiData, getMetadata } from '@utils/server';
