@@ -103,6 +103,10 @@ const GetInTouchForm = (props: any) => {
     }
   }
 
+  useEffect(()=>{
+    setValueDetail("lookingFor",requestQuery);
+  },[requestQuery]);
+
   useEffect(() => {
     __RECAPTCHA__ && addCaptcha();
     return () => {
