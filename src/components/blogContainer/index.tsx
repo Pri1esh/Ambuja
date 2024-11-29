@@ -98,7 +98,7 @@ const BlogContainer = (props:any) => {
                   >
                     {data?.fields?.blog &&
                       data?.fields?.blog.map((blogset: any, index: number) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                           <BlogListSection key={index} blogSet={blogset.data} />
                         </SwiperSlide>
                       ))}

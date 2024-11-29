@@ -48,6 +48,7 @@ const GetInTouchForm = (props: any) => {
   const searchParams = useSearchParams();
   const enq_query = searchParams.get('query')?.replace(/-/g,' ');
   const [requestQuery, setRequestQuery] = useState<any>('');
+  const [ticketId, setTicketId] = useState<any>('');
 
   // First form
   const {
@@ -102,6 +103,10 @@ const GetInTouchForm = (props: any) => {
       setRequestQuery(defaultQuery);
     }
   }
+
+  useEffect(()=>{
+    setValueDetail("lookingFor",requestQuery);
+  },[requestQuery]);
 
   useEffect(() => {
     __RECAPTCHA__ && addCaptcha();
@@ -169,15 +174,18 @@ const GetInTouchForm = (props: any) => {
         area: placeData?.area?.label,
         termsAndConditions: placeData?.termsAndConditions,
         otp:detailData?.OTP,
+        TicketID:ticketId,
         reResponse: captchaResponse
       };
 
       try {
         // call Api here to send OTP
         const res = await postAPI(ENDPOINT.CLIENT.enquirySubmitApi, postData);
-        setToastData(`${res?.Result ? res?.Result : ''} ${res?.TicketId ? res?.TicketId : ''}`);
+        setToastData(`${res?.message ? res?.message : ''} ${res?.TicketId ? res?.TicketId : ''}`);
         setFormState(CAREER_FORM_STAGE?.SUCESS);
         setLoading(false);
+        resetForm();
+        setShow(false);
       } catch (error) {
         setMobileNumber(null);
         setLoading(false);
@@ -361,15 +369,24 @@ const GetInTouchForm = (props: any) => {
   const OTPValidation = async (otp: number) => {
     const captchaResponse = __RECAPTCHA__ ? await executeRecaptcha() : '';
     setstartTimer(false);
+    const detailData = getValuesDetail();
     const payLoad = {
-      phoneNo: getValuesDetail('phoneNo')?.phoneNumber,
+      firstName: detailData?.firstName,
+      lastName: detailData?.lastName,
+      email: detailData?.email,
+      phoneNo: detailData?.phoneNo ? detailData?.phoneNo?.phoneNumber : '',
+      lookingFor: detailData?.lookingFor?.label,
+      queryType: detailData?.queryType?.label ? detailData?.queryType?.label : detailData?.lookingFor?.label, 
+      reResponse: captchaResponse,
       OTP: otp,
-      reResponse: captchaResponse
-    };
+     };
 
     try {
       const res = await postAPI(ENDPOINT.CLIENT.validateOTP, payLoad);
       if (res.Status == 1) {
+        setFormState(CAREER_FORM_STAGE?.SUCESS);
+        setToastData(`${res?.Result ? res?.Result : ''} ${res?.TicketId ? res?.TicketId : ''}`);
+        setTicketId(res?.TicketId);
         return true;
       } else {
         getValuesDetail()?.OTP ? setOTPerror(res?.Result) : setOTPerror('');

@@ -4,7 +4,6 @@ import CustomImage from "../CustomImage";
 
 
 const BlogTile = (props: any) => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const convertCTA = (uri: string): any => {
     return uri?.split("/")?.pop()?.replace(/ /g, "-");

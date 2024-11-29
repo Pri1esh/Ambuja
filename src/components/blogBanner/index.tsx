@@ -2,8 +2,6 @@ import React from 'react';
 import CustomImage from '../CustomImage';
 
 const BlogBanner = (props:any) => {
-const baseUrl = process.env.REACT_APP_BASE_URL;
-
   return (
     <>
     {props.data && 

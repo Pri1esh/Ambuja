@@ -42,7 +42,7 @@ const BlogSearch = () => {
   };
 
   const searchBlog = async (event: any) => {
-    let searchValue = event.target.value;
+    const searchValue = event.target.value;
     setsearchList(null);
     setsearchData(searchValue);
     if (searchValue.length >= 3) {
@@ -80,7 +80,7 @@ const BlogSearch = () => {
             <ul className="list-unstyled">
               {searchList &&
                 searchList.map((item: any, index: number) => (
-                  <li>
+                  <li key={index}>
                     <a href={"/blogs/"+convertCTA(item.CTALink)} className="text-dark text-decoration-none" key={index}>
                       <div className="blog-SearchTile">
                         <div className="d-flex align-items-center">
